@@ -1,0 +1,3 @@
+name,member,skill,bimini,history
+adam,False,0,True,xantippe
+al,True,1,False,xantippe,beluga_iii

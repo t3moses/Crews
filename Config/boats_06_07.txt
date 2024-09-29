@@ -1,0 +1,3 @@
+name,owner,slip,bimini,crew_min,crew_max
+astraeus,linda,b-79,False,2,2
+beluga_iii,geoff_k,w-33,True,1,3

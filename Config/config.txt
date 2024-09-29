@@ -1,0 +1,2 @@
+boats file: boats_06_07.txt // file of boats on a particular day.
+sailors file: sailors_06_07.txt // file of sailors on a particular day.
