@@ -1,0 +1,86 @@
+name,partner,member,skill,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20
+Adam,,True,1,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Al,Dominique,True,1,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Andrew,,False,0,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Angelle,Charles,True,1,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Angus,Janet,True,2,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Anik,,False,0,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Ann,,True,0,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Anne L,,False,0,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Anne S,,False,1,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Ben,Lois,False,2,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Brenda,,False,0,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Brian,,True,1,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Cara,,True,0,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xel Ha
+Carla,,True,1,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Carlos,,True,1,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Caroline,,True,2,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Charles,Angelle,True,1,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Christine,Eric,True,1,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Claire,,False,0,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Clara,,False,0,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Colin,,True,1,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Corneliu,Loredana,True,2,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Craig,,True,1,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Denis,,False,0,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Dominque,Al,True,1,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Don M,,True,2,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Don P,,True,1,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Doug,,False,0,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Elaine,,False,0,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Eliza,,False,0,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Elizabeth,,True,0,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Emily,Mike S,False,0,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Eric,Christine,True,0,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Fiona,,False,2,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Gary,,True,1,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Geoff,Kimberley,True,1,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Gillian,,False,0,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Gina,,False,0,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Glenn,,True,2,Brisa,Beluga V,Cariad,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Gretta,,True,2,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Heather,,True,0,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+James,,False,0,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Janet,Angus,True,0,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Jean M,,True,0,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Jean-Paul,,False,1,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Joachim,Wendy,True,2,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+John B,,True,2,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+John L,Laura,True,2,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Katrina,,False,0,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Kelly,,False,0,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Kimberley,Geoff,True,0,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Laura,John L,True,2,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Leonore,,True,2,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Linda,,False,0,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Lois,Ben,False,0,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Loredana,Corneliu,True,1,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Luise,,False,1,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Malcolm,,True,1,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Marc,,False,0,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Marie-Louise,,False,0,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Mike C,Olena,False,0,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Mike S,Emily,False,1,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Mike T,,False,1,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Milan,,True,2,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xel Ha
+Nancy,,True,1,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Nathalie D,,False,0,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Nathalie S,,True,0,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Nawar,,False,0,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Nicole,,False,0,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Olena,Mike C,False,0,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Pat,,True,2,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Paul B,,True,2,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Paul T,,True,1,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Paul V,,False,0,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Peter,Sandra,True,2,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Rob,,True,1,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Ruth,,True,2,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Sandra,Peter,True,0,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Steve C,Sylvie,True,0,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Steve K,,True,2,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Sylvie,Steve C,True,2,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Tom,,True,2,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Tracy,,False,1,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Wendy,Joachim,True,2,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha
+Wynet,,False,1,Astraeus,Brisa,Beluga V,Cariad,Fixen,Kaleidoscope,Kookaburra,Princess Fe,Shawanaga,Sparrow,Triton,Tropical Quest,Valkyrie,Veleda III,Xantippe,Xel Ha

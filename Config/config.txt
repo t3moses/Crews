@@ -1,2 +1,4 @@
-boats file: boats_06_07.txt // file of boats on a particular day.
-sailors file: sailors_06_07.txt // file of sailors on a particular day.
+boats data file: boats data.txt // file of boats data.
+sailors data file: sailors data.txt // file of sailors data.
+boats available file: boats available.txt // file of boats availability.
+sailors available file: sailors available.txt // file of sailors availability.
