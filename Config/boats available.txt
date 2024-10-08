@@ -8,6 +8,7 @@ Kaleidoscope,,,,,,,,,,Y,,,,,,,
 Kookaburra,,,,,,,,,,,,Y,,Y,Y,Y,
 Princess Fe,,Y,,,Y,,,Y,Y,,Y,Y,Y,,Y,Y,Y
 Shawanaga,Y,Y,,Y,Y,Y,,Y,,Y,Y,Y,,Y,Y,Y,Y
+Sparrow,,Y,,,Y,,,,,,,,,,,,
 Triton,,,Y,Y,,Y,,Y,,Y,Y,Y,,Y,,,
 Tropical Quest,Y,Y,Y,,Y,,,Y,,,Y,,,Y,,Y,Y
 Valkyrie,,Y,Y,,Y,,,Y,,,,,,Y,,,

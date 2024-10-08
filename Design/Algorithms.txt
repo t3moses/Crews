@@ -1,0 +1,88 @@
+
+Design a namespace for assign.
+
+Pass:
+
+available_boats # list of dictionaries for boats available on a given date,
+available_sailors # list of dictionaries for sailors availabe on a given date.
+sailor_histories # list of dictionaries for sailor histories.
+
+Return:
+
+crews ... list of crew, which is a list of exactly one boat and one or more sailor.
+
+# for a particular date, count number_of_boats, number_of_member_sailors and number_of_non_member_sailors
+
+number_of_sailors = number_of_member_sailors + number_of_non_member_sailors
+
+----------------------------------------------------------------
+
+# case 1: number_of_sailors < total_min_capacity.
+
+remove boats at random until number_of_sailors >= total_min_capacity and number_of_sailors <= total_max_capacity
+apply case 2 or 3 as appropriate
+
+----------------------------------------------------------------
+
+# case 2 number_of_sailors == total_max_capacity.
+
+assign all boats and all sailors to crews
+
+----------------------------------------------------------------
+
+# case 3 number_of_sailors < total_max_capacity.
+# start by setting boat_occupancy equal to boat_capacity for each boat.
+
+for each boat
+	boat_occupancy = boat_capacity
+
+# pass through the crews repeatedly until the total_occupancy == number_of_sailors.
+
+pass = 0
+while (total_occupancy  = sum of boat_occupancy) > number_of_sailors
+
+	# reduce the occupancy of each boat at random until all boat occupancies have been reduced by 1
+	# or total_occupancy == number_of_sailors.
+	# repeat
+
+	while total_max_capacity - pass * number_of_boats > number_of_sailors # until exactly 1 has been removed from each boat.
+		choose boat at random
+		if boat_occupancy >= boat_capacity - pass 
+			boat_occupancy = boat_occupancy - 1
+		if sum_of_boat_occupancy <= number_of_sailors break
+	pass = pass + 1
+
+assign all boats and all sailors to crews
+	
+----------------------------------------------------------------
+
+# case 4 total_max_capacity < number_of_sailors.
+
+----------------------------------------------------------------
+
+# case 4a total_max_capacity < number_of_member_sailors
+
+remove non_member_sailors.
+list member_sailors in ascending order of history. Randomize order of entries with identical histories.
+delete entries after total_max_capacity.
+assign all boats and all sailors to crews
+
+----------------------------------------------------------------
+
+# case 4b total_max_capacity == number_of_member_sailors
+
+remove non-member sailors.
+assign all boats and all sailors to crews
+
+----------------------------------------------------------------
+
+# case 4c total_max_capacity > number_of_member_sailors 
+
+number_of_included_non_member_sailors = total_max_capacity - number_of_member_sailors
+list non_member_sailors in ascending order of history. Randomize order of entries with identical histories.
+delete entries after number_of_included_non_member_sailors
+combine member_sailors and included_non_member_sailors
+assign all boats and all sailors to crews
+
+----------------------------------------------------------------
+
