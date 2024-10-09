@@ -5,8 +5,8 @@ def assign(available_boats, available_sailors):
 
     random.seed(42)
 
-    ordered_sailors = order_sailors(available_sailors)
-    ordered_boats = order_boats(available_boats)
+    ordered_sailors = order_sailors_by_loyalty(available_sailors)
+    ordered_boats = order_boats_by_loyalty(available_boats)
 
 #    crews = [] # list of crew, crew is a list of exactly one boat and one or more sailors.
 
@@ -18,113 +18,103 @@ def assign(available_boats, available_sailors):
 
     if len(ordered_sailors) < min_occupancy:
         crews = case_1(ordered_boats, ordered_sailors)
-    elif len(ordered_sailors) < max_occupancy:
+    elif len(ordered_sailors) > max_occupancy:
         crews = case_2(ordered_boats, ordered_sailors)
-    elif len(ordered_sailors) == max_occupancy:
+    else: # len(ordered_sailors) >= min_occupancy AND len(ordered_sailors) <= max_occupancy
         crews = case_3(ordered_boats, ordered_sailors)
-    else: # len(ordered_sailors) > max_occupancy:
-        crews = case_4(ordered_boats, ordered_sailors)
 
     return crews
 
 def case_1(boats, sailors):
 
-    # The number of sailors is less than the minimum number of spaces.
+    # The number of sailors is less than the minimum number required.
+    # remove boats until the minimum number of sailors required is greater than
+    # or equal to the number of sailors.
 
     min_overall = 0
     for boat in boats:
         min_overall += int(boat["min_occupancy"])
 
     while len(sailors) < min_overall:
-        boat_number = random.randint(0, len(boats) - 1)
-        min_overall -= int(boats[boat_number]["min_occupancy"])
-        del boats[boat_number]
+        min_overall -= int(boats[-1]["min_occupancy"])
+        boats.pop()
 
-    for boat in boats:
-        boat["occupancy"] = boat["min_occupancy"]
-
-    if len(sailors) > min_overall:
-        crews = case_2(boats, sailors)
-    else:
-        crews = case_3(boats, sailors)
+    crews = case_3(boats, sailors)
         
     return crews
 
 def case_2(boats, sailors):
 
-    # The number of sailors is less than the maximum number of spaces.
+    # The number of sailors is greater than the maximum number of spaces available.
 
-    # initially set each boat occupancy to its maximum capacity.
+    # remove sailors until the number of sailors is equal to max_occupancy.
 
-    overall_capacity = 0
+    max_overall = 0
     for boat in boats:
-        boat["occupancy"] = boat["max_occupancy"]
-        overall_capacity += int(boat["max_occupancy"])
-    overall_occupancy = overall_capacity
+        max_overall += int(boat["max_occupancy"])
 
-    # pass through partially_filled_boats repeatedly until overall capacity is equal to the number of sailors.
-
-    iteration = 0
-    while overall_occupancy > len(sailors):
-
-        # reduce the occupancy of each boat at random until all boat occupancies have been reduced by 1
-        # or overall_occupancy is equal to the number of sailors.
-
-        while overall_capacity - iteration * len(boats) > len(sailors): # repeat until exactly 1 occupancy has been removed from each boat.
-            boat_number = random.randint(0, len(boats) - 1)
-            if int(boats[boat_number]["occupancy"]) >= int(boats[boat_number]['max_occupancy']) - iteration:
-                boats[boat_number]["occupancy"] = str( int(boats[boat_number]["occupancy"]) - 1)
-                overall_occupancy -= 1
-                if overall_occupancy <= len(sailors):
-                    break # out of the closest while loop.
-
-        iteration += 1
-
-    crews = case_3(boats, sailors)
+    crews = case_3(boats, sailors[0, max_overall])
 
     return crews
 
 def case_3(boats, sailors):
 
-    # The number of sailors is equal to the number of available spaces.
+    # The number of sailors is greater than or equal to min_occupancy AND
+    # The number of sailors is less than or equal to max_occupancy.
 
-    overall_occupancy = 0
+    # Set the occupancy of each boat.  Start with min_occupancy.
+    # Order the boats by headroom.  For the boat with the greatest headroom, increment
+    # the occupancy by 1.  Repeat ordering and incrementing until overall_occupancy
+    # is equal to the number of sailors.
+    # Reorder boats by loyalty, then assign boats and sailors to crews by loyalty
+    # until the number of sailors assigned to each boat is equal to its occupancy.
+
+    min_overall = 0
+    max_overall = 0
     for boat in boats:
-        overall_occupancy += int(boat["occupancy"])
+        boat["occupancy"] = boat["min_occupancy"]
+        min_overall += int(boat["min_occupancy"])
+        max_overall += int(boat["max_occupancy"])
 
-    if not overall_occupancy == len(sailors):
-        raise Exception("Number of sailors not equal to overall number of available spaces.")
+    if not ( len(sailors) >= min_overall ):
+        raise Exception("Number of sailors is less than min_occupancy.")
+
+    if not ( len(sailors) <= max_overall ):
+        raise Exception("Number of sailors is greater than max_occupancy.")
+
+    overall_occupancy = min_overall
+
+    while len(sailors) > overall_occupancy:
+        boats = order_boats_by_headroom(boats)
+        boats[-1]["occupancy"] = str(int(boats[-1]["occupancy"]) + 1)
+        overall_occupancy += 1
+
+    crews = allocate(boats, sailors)
+
+    for crew in crews:
+        print(crew)
+
+    return crews
+
+def allocate(boats, sailors):
 
     crews = []
+    sailor_number = 0
 
-    while not (len(boats) == 0):
+    for boat in boats:
         crew = []
-        boat_number = random.randint(0, len(boats) - 1)
-        crew.append(boats[boat_number]['name'])
-        occupants = 0
-        while occupants < int(boats[boat_number]['max_occupancy']):
-            if len(sailors) == 0:
-                break
-            sailor_number = random.randint(0, len(sailors) - 1)
-            crew.append(sailors[sailor_number]['name'])
-            del sailors[sailor_number]
-            occupants += 1
+        crew.append(boat["name"])
+        for _ in range(int(boat["occupancy"])):
+            crew.append(sailors[sailor_number]["name"])
+            sailor_number += 1
         crews.append(crew)
-        del boats[boat_number]
 
     return crews
 
-def case_4(boats, sailors):
-    
-    # The number of sailors is greater than the number of available spaces.
+def order_sailors_by_loyalty(sailors):
 
-    crews = []
-
-    pass
-    return crews
-
-
-def order_sailors(sailors):
+    # create a list that orders sailors by their membership status and loyalty band.
+    # the order of sailors in the same loyalty band is randomized.
 
     members = []
     non_members = []
@@ -167,7 +157,7 @@ def order_sailors(sailors):
     # For members first and then for non-members, randomize the order within each loyalty level.
     # ordered_sailors will then contain the list of sailors in priority order.
     # First, members are prioritized over non-members.
-    # Then those with the lower loyalty levels are prioritized over those with higher loyalty levels.
+    # Then those with low loyalty levels are prioritized over those with higher loyalty levels.
 
     while len(ordered_members) > 0:
         loyal_members = ordered_members[0]
@@ -198,7 +188,10 @@ def order_sailors(sailors):
     return ordered_sailors
 
 
-def order_boats(boats):
+def order_boats_by_loyalty(boats):
+
+    # create a list that orders boats by their loyalty band.
+    # the order of boats in the same loyalty band is randomized.
 
     ordered_boats = []
     banded_boats = []
@@ -224,8 +217,37 @@ def order_boats(boats):
             del banded_boats[0][banded_boat_number]
         del banded_boats[0]
 
-    for i in range(len(ordered_boats)):
-        print(ordered_boats[i])
-    print()
+    return ordered_boats
+
+
+def order_boats_by_headroom(boats):
+
+    # create a list that orders boats by their headroom band.
+    # a boat's headroom is the difference between its max_occupancy and its assigned occupancy.
+    # the order of boats in the same headroom band is randomized.
+
+    ordered_boats = []
+    banded_boats = []
+
+    i = len(boats)
+    headroom = 0
+    while i > 0:
+        headroom_boats = [] # list of boats in the same headroom band
+        for boat in boats:
+            if int(boat["max_occupancy"]) - int(boat["occupancy"]) == headroom:
+                headroom_boats.append(boat)
+                i -= 1
+        headroom += 1
+        banded_boats.append(headroom_boats)
+
+    while len(banded_boats) > 0:
+        while len(banded_boats[0]) > 0:
+            if len(banded_boats[0]) > 1:
+                banded_boat_number = random.randint(0, len(banded_boats[0]) - 1)
+            else:
+                banded_boat_number = 0
+            ordered_boats.append(banded_boats[0][banded_boat_number])
+            del banded_boats[0][banded_boat_number]
+        del banded_boats[0]
 
     return ordered_boats
