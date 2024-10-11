@@ -4,6 +4,7 @@ import datetime
 def assign(available_boats, available_sailors):
 
     random.seed(42)
+    # random.seed(str(datetime.datetime.now))
 
     ordered_sailors = order_sailors_by_loyalty(available_sailors)
     ordered_boats = order_boats_by_loyalty(available_boats)
@@ -28,8 +29,9 @@ def assign(available_boats, available_sailors):
 def case_1(boats, sailors):
 
     # The number of sailors is less than the minimum number required.
-    # remove boats until the minimum number of sailors required is greater than
+    # Remove boats until the minimum number of sailors required is greater than
     # or equal to the number of sailors.
+    # Then apply case 3.
 
     min_overall = 0
     for boat in boats:
@@ -47,7 +49,8 @@ def case_2(boats, sailors):
 
     # The number of sailors is greater than the maximum number of spaces available.
 
-    # remove sailors until the number of sailors is equal to max_occupancy.
+    # Remove sailors until the number of sailors is equal to max_occupancy.
+    # Then apply case 3.
 
     max_overall = 0
     for boat in boats:
@@ -84,6 +87,9 @@ def case_3(boats, sailors):
 
     overall_occupancy = min_overall
 
+    # Repeatedly add 1 to the occupancy of the boat with the greatest headroom,
+    # until overall_occupancy is equal to the number of sailors.
+
     while len(sailors) > overall_occupancy:
         boats = order_boats_by_headroom(boats)
         boats[-1]["occupancy"] = str(int(boats[-1]["occupancy"]) + 1)
@@ -91,21 +97,22 @@ def case_3(boats, sailors):
 
     crews = allocate(boats, sailors)
 
-    for crew in crews:
-        print(crew)
-
     return crews
 
 def allocate(boats, sailors):
 
+    # Allocate individual sailors to individual boats in loyalty order of both sailors and boats.
+
     crews = []
     sailor_number = 0
 
+    boats = order_boats_by_loyalty(boats)
+
     for boat in boats:
         crew = []
-        crew.append(boat["name"])
+        crew.append(boat)
         for _ in range(int(boat["occupancy"])):
-            crew.append(sailors[sailor_number]["name"])
+            crew.append(sailors[sailor_number])
             sailor_number += 1
         crews.append(crew)
 
@@ -113,8 +120,8 @@ def allocate(boats, sailors):
 
 def order_sailors_by_loyalty(sailors):
 
-    # create a list that orders sailors by their membership status and loyalty band.
-    # the order of sailors in the same loyalty band is randomized.
+    # Create a list that orders sailors by their membership status and loyalty band.
+    # The order of sailors in the same loyalty band is randomized.
 
     members = []
     non_members = []
@@ -130,12 +137,12 @@ def order_sailors_by_loyalty(sailors):
         else:
             non_members.append(sailor)
 
-    # order members and non-members into lists of sailors with identical loyalty levels.
+    # Order members and non-members into lists of sailors in the same loyalty band.
 
     i = len(members)
     loyalty = 0
     while i > 0:
-        loyal_members = [] # list of members with the same loyalty level
+        loyal_members = [] # list of members in the same loyalty band.
         for member in members:
             if int(member["loyalty"]) == loyalty:
                 loyal_members.append(member)
@@ -154,10 +161,10 @@ def order_sailors_by_loyalty(sailors):
         loyalty += 1
         ordered_non_members.append(loyal_non_members)
 
-    # For members first and then for non-members, randomize the order within each loyalty level.
-    # ordered_sailors will then contain the list of sailors in priority order.
+    # For members first and then for non-members, randomize the order within each loyalty band.
+    # Ordered_sailors will then contain the list of sailors in priority order.
     # First, members are prioritized over non-members.
-    # Then those with low loyalty levels are prioritized over those with higher loyalty levels.
+    # Then those in low loyalty bands are prioritized over those in higher bands.
 
     while len(ordered_members) > 0:
         loyal_members = ordered_members[0]
@@ -181,17 +188,13 @@ def order_sailors_by_loyalty(sailors):
             del loyal_non_members[loyal_non_member_number]
         del ordered_non_members[0]
 
-    for i in range(len(ordered_sailors)):
-        print(ordered_sailors[i])
-    print()
-
     return ordered_sailors
 
 
 def order_boats_by_loyalty(boats):
 
-    # create a list that orders boats by their loyalty band.
-    # the order of boats in the same loyalty band is randomized.
+    # Create a list that orders boats by their loyalty band.
+    # The order of boats in the same loyalty band is randomized.
 
     ordered_boats = []
     banded_boats = []
@@ -199,7 +202,7 @@ def order_boats_by_loyalty(boats):
     i = len(boats)
     loyalty = 0
     while i > 0:
-        loyal_boats = [] # list of boats in the same loyalty band
+        loyal_boats = [] # list of boats in the same loyalty band.
         for boat in boats:
             if int(boat["loyalty"]) == loyalty:
                 loyal_boats.append(boat)
@@ -222,9 +225,9 @@ def order_boats_by_loyalty(boats):
 
 def order_boats_by_headroom(boats):
 
-    # create a list that orders boats by their headroom band.
-    # a boat's headroom is the difference between its max_occupancy and its assigned occupancy.
-    # the order of boats in the same headroom band is randomized.
+    # Create a list that orders boats by their headroom band.
+    # A boat's headroom is the difference between its max_occupancy and its assigned occupancy.
+    # The order of boats in the same headroom band is randomized.
 
     ordered_boats = []
     banded_boats = []
@@ -232,7 +235,7 @@ def order_boats_by_headroom(boats):
     i = len(boats)
     headroom = 0
     while i > 0:
-        headroom_boats = [] # list of boats in the same headroom band
+        headroom_boats = [] # list of boats in the same headroom band.
         for boat in boats:
             if int(boat["max_occupancy"]) - int(boat["occupancy"]) == headroom:
                 headroom_boats.append(boat)

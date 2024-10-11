@@ -1,25 +1,34 @@
-Order sailors by loyalty band and randomize.
-Order boats by loyalty band and randomize.
-Calculate overall_min and overall_max.
-Switch:
-	1. sailors < overall_min
-	2. sailors > overall_max
-	3. the rest
-Case 1: 
-	remove boats by order
-	until sailors >= overall_min (assume <= overall_max)
-	case 3
-Case 2:
-	occupancy = occupancy_max
-	reduce sailors by order
-	until sailors <= overall_max
-	case 3
-Case 3:
-	occupancy = occupancy_min
-	while sailors > overall_occupancy
-		order boats by headroom and randomize
-		increment first boat occupancy by 1
-for boats in loyalty order
-	for sailors in loyalty order
-		assign sailors to boats up to occupancy
-		check compliance
+Non-compliance score.
+
+Form the sum of the non-compliance values for each crew.
+Scale 0-99, where 99 is the highest possible non-compliance value.
+
+Crew score
+
+Form the weighted sum of the non-compliance values each of the rules.
+
+1. Whitelist
+
+Set non-conformance to 0.
+For each sailor in the crew, if the boat is not in the sailor's white-list,
+then increment non-conformance.
+
+2. Partners
+
+For each sailor and for each other sailor, if the first sailor's partner matches
+the other sailor's name, set non-compliance to 1. Otherwise set it to 0.
+
+3. Assist
+
+If the boat's assist value is true, set non-compliance equal to the difference between the
+highest available skill band and the highet skill band of the crew with the highest skill band.
+
+4. Skill
+
+Set the crew non-compliance value to the difference between the highest and lowest skill
+bands in the crew.
+
+5. Repeats
+
+For each sailor, set non-compliance to the sum of the number of times the boat appears in their history.
+

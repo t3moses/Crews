@@ -2,6 +2,7 @@
 
 import csv
 import assign
+import non_compliance
 
 print()
 event_date = input("Enter date (MM-DD):")
@@ -44,6 +45,9 @@ with open(sailors_data_filename) as sailors_data_file:
     for sailor in csv.DictReader(sailors_data_file):
         sailors_data.append(sailor)
 
+for sailor in sailors_data:
+    whitelist = list(sailor["whitelist"].split(";"))
+
 sailors_availability = [] # list of sailor availability dictionaries.
 with open(sailors_availability_filename) as sailors_availabliity_file:
     for sailor in csv.DictReader(sailors_availabliity_file):
@@ -73,7 +77,9 @@ except FileNotFoundError:
 
 # Populate the sailor_histories list from the sailor_histories_file.
 
-sailor_histories = [] # list of dictionaries containing the history of boats to which each sailor
+sailor_histories = []
+
+# list of dictionaries containing the history of boats to which each sailor
 # has been assigned in previous events.
 
 for sailor_history in csv.DictReader(sailor_histories_file):
@@ -81,7 +87,7 @@ for sailor_history in csv.DictReader(sailor_histories_file):
 
 sailor_histories_file.close()
 
-# For each available sailor and boat, calculate their loyalty level, and add it to their data.
+# For each available sailor and boat, calculate their loyalty band, and add it to their data.
 
 for i in range(len(sailor_histories)):
     sailor_history = sailor_histories[i]
@@ -104,3 +110,8 @@ for i in range(len(boats_availability)):
     boats_data[i]["loyalty"] = str(loyalty)
 
 crews = assign.assign(available_boats, available_sailors)
+
+score = non_compliance.non_compliance(crews, sailor_histories, event_date)
+
+for crew in crews:
+    print(crew)
