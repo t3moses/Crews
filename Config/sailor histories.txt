@@ -23,7 +23,7 @@ Colin,,,,,,,,,,,,,,,,Shawanaga,
 Corneliu,,,,,,,,,,,,,Triton,Beluga V,,Xantippe,Shawanaga
 Craig,Veleda III,Princess Fe,,,,,,Princess Fe,Cariad,,,,,,,,Shawanaga
 Denis,,,,Xantippe,,,,,,,,,,,,,
-Dominque,Shawanaga,,Brisa,,Cariad,,,Tropical Quest,,,Triton,Kookaburra,,Xel Ha,,Beluga V,
+Dominique,Shawanaga,,Brisa,,Cariad,,,Tropical Quest,,,Triton,Kookaburra,,Xel Ha,,Beluga V,
 Don M,,,Valkyrie,,,,,,,,,,,,,,
 Don P,,,,,,,,,,Fixen,,,,,,,
 Doug,,,,,,,Brisa,,,,,,,,,,

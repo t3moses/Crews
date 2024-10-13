@@ -1,8 +1,8 @@
 #!.venv/bin/python3.12
 
 import csv
-import assign
-import non_compliance
+import mandatory
+import discretionary
 
 print()
 event_date = input("Enter date (MM-DD):")
@@ -109,9 +109,13 @@ for i in range(len(boats_availability)):
             loyalty += 1
     boats_data[i]["loyalty"] = str(loyalty)
 
-crews = assign.assign(available_boats, available_sailors)
+# Form crews by applying the mandatory and discretionary rules.
 
-score = non_compliance.non_compliance(crews, sailor_histories, event_date)
+crews = mandatory.mandatory(available_boats, available_sailors)
+
+crews = discretionary.discretionary(crews, sailor_histories, event_date)
+
+crews = discretionary.order_crews_by_score(crews)
 
 for crew in crews:
     print(crew)

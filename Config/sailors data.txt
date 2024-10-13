@@ -23,7 +23,7 @@ Colin,,True,1,Brisa;Beluga V;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Spa
 Corneliu,Loredana,True,2,Brisa;Beluga V;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
 Craig,,True,1,Brisa;Beluga V;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
 Denis,,False,0,Brisa;Beluga V;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
-Dominque,Al,True,1,Astraeus;Brisa;Beluga V;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Dominique,Al,True,1,Astraeus;Brisa;Beluga V;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
 Don M,,True,2,Brisa;Beluga V;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
 Don P,,True,1,Brisa;Beluga V;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
 Doug,,False,0,Brisa;Beluga V;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha

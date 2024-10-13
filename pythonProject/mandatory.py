@@ -1,15 +1,13 @@
 import random
 import datetime
 
-def assign(available_boats, available_sailors):
+def mandatory(available_boats, available_sailors):
 
     random.seed(42)
     # random.seed(str(datetime.datetime.now))
 
     ordered_sailors = order_sailors_by_loyalty(available_sailors)
     ordered_boats = order_boats_by_loyalty(available_boats)
-
-#    crews = [] # list of crew, crew is a list of exactly one boat and one or more sailors.
 
     min_occupancy = 0
     max_occupancy = 0
@@ -95,25 +93,25 @@ def case_3(boats, sailors):
         boats[-1]["occupancy"] = str(int(boats[-1]["occupancy"]) + 1)
         overall_occupancy += 1
 
-    crews = allocate(boats, sailors)
+    crews = assign(boats, sailors)
 
     return crews
 
-def allocate(boats, sailors):
+def assign(boats, sailors):
 
-    # Allocate individual sailors to individual boats in loyalty order of both sailors and boats.
+    # assign individual sailors to individual boats in loyalty order of both sailors and boats.
 
-    crews = []
-    sailor_number = 0
+    crews = [] # list of crews.
+    initial = 0
 
     boats = order_boats_by_loyalty(boats)
 
     for boat in boats:
-        crew = []
-        crew.append(boat)
-        for _ in range(int(boat["occupancy"])):
-            crew.append(sailors[sailor_number])
-            sailor_number += 1
+        crew = {}
+        crew["boat"] = boat
+        final = initial + int(boat["occupancy"])
+        crew["sailors"] = sailors[initial : final]
+        initial = final
         crews.append(crew)
 
     return crews
