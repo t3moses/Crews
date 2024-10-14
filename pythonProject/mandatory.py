@@ -3,8 +3,8 @@ import datetime
 
 def mandatory(available_boats, available_sailors):
 
-    random.seed(42)
-    # random.seed(str(datetime.datetime.now))
+    # random.seed(42)
+    random.seed(str(datetime.datetime.now))
 
     ordered_sailors = order_sailors_by_loyalty(available_sailors)
     ordered_boats = order_boats_by_loyalty(available_boats)

@@ -23,7 +23,7 @@ Colin,,,,,,,,,,,,,,,,Y,
 Corneliu,,,,,,,,,,,,,Y,Y,,Y,Y
 Craig,Y,Y,,,,,,Y,Y,,,,,,,,Y
 Denis,,,,Y,,,,,,,,,,,,,
-Dominque,Y,,Y,,Y,,,Y,,,Y,Y,,Y,,Y,
+Dominique,Y,,Y,,Y,,,Y,,,Y,Y,,Y,,Y,
 Don M,,,,,,,,,,,,,,,,,
 Don P,,,Y,,,,,,Y,,,,,,,,
 Doug,,,,,,,Y,,,,,,,,,,
@@ -42,7 +42,7 @@ Gretta,,,,,,,,,,,,,,,Y,,
 Heather,Y,Y,,,,,,,,,Y,,,Y,,Y,Y
 James,,,,,Y,,,,,,,,,,,,
 Janet,,Y,Y,,Y,,,Y,,Y,,Y,Y,,Y,Y,Y
-Jean_M,,,Y,,,,,,,,,,,,,,
+Jean M,,,Y,,,,,,,,,,,,,,
 Jean-Paul,,,Y,Y,Y,Y,,,,,,,,,,,
 Joachim,,,,,,,,,,,,,,,Y,Y,Y
 John B,,Y,,Y,,Y,,,Y,Y,Y,Y,,Y,Y,Y,Y
