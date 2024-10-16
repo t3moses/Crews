@@ -1,4 +1,4 @@
-assign.py assigns available sailors to available boats.
+main.py assigns available sailors to available boats.
 
 There are two classes of assignment rules: mandatory rules and discretionary rules.
 
@@ -8,8 +8,7 @@ Discretionary rules determine which boat a particular sailor will be assigned to
 
 Mandatory rules are executed procedurally and they are fully enforced.
 
-Discretionary rules calculate a non-compliance score, which can be used to select a satisfactory assignment.
-So, they are applied with best effort.
+Discretionary rules calculate a loss, which can be used to select a satisfactory assignment.  So, they are applied with best effort.  The gradient-descent algorithm finds a local minimum for loss.  A solution with lower loss may exist globally.
 
 Mandatory requirements:
 
@@ -30,11 +29,10 @@ Discretionary requirements:
 
 Machine-learning
 
-Once the mandatory rules have been applied, crews are ordered by non-compliance score.
+Once the mandatory rules have been applied, crews are ordered by their loss.
 
-The two crews with the highest non-compliance scores are selected, every possible swap of crew
-is made and a crew score recalculated for each swap.  The swap with the lowest non-compliance
-score is retained.  Then the process is repeated a set number of times.
+The two crews with the highest loss are selected, every possible swap of crew
+is made and the loss recalculated for each swap.  The swap with the lowest loss is retained.  Then the process is repeated a set number of times.
 
 Input files
 
@@ -42,26 +40,26 @@ Inputs are taken from the following files.
 
 boats data.txt
 sailors data.txt
-boats availability.txt
-sailors availability.txt
+boats available.txt
+sailors available.txt
 sailor histories.txt
 
 Each of these files is formatted as CSV.  The first row contains the field names, as follows:
 
 boats data.txt: name,owner,slip,min_occupancy,max_occupancy,assist
 sailors data.txt: name,partner,member,skill,whitelist
-boats availability.txt: name,06-06,06-13,06-20,06-28,07-04,07-11,07-19,07-25,08-01,08-09,08-15,08-22,08-30,09-05
-sailors availability.txt: name,06-06,06-13,06-20,06-28,07-04,07-11,07-19,07-25,08-01,08-09,08-15,08-22,08-30,09-05
+boats available.txt: name,06-06,06-13,06-20,06-28,07-04,07-11,07-19,07-25,08-01,08-09,08-15,08-22,08-30,09-05
+sailors available.txt: name,06-06,06-13,06-20,06-28,07-04,07-11,07-19,07-25,08-01,08-09,08-15,08-22,08-30,09-05
 sailor histories.txt: name,06-06,06-13,06-20,06-28,07-04,07-11,07-19,07-25,08-01,08-09,08-15,08-22,08-30,09-05
 
-The authoritative list of event dates is taken from the boats availability.txt file.
+The authoritative list of event dates is taken from the boats available.txt file.
 
 The boats ... files contain a row for each boat.
 The sailors ... files contain a row for each sailor.
-In the ... availability files, a non-empty field indicates the dates on which the subject is available.
+In the ... available files, a non-empty field indicates the dates on which the subject is available.
 
 The assist field contains True or False according to whether the skipper requires assistance or not.
-The member field contains True or False according to whether the sailor is a member or not.
+The member field contains True or False according to whether the sailor is an NSC member or not.
 The skill field contains integer values 0 .. 2.  0 for novice, 1 for basic qualified, 2 for experienced.
 The whitelist field contains a list of boats in the subject's whitelist.  Boats in the list must be separated by ;.
 
@@ -69,42 +67,39 @@ Set-up
 
 Use a text editor or spreadsheet program to create the following files:
 
-boats data.txt // This is the authoritative source of boat data.
-sailors data.txt // This is the authoritative source of sailor data.
-boats availability.txt // This is the authoritative source of event dates.
-sailors availability.txt
-sailor histories.txt
+boats data.txt // This is the authoritative source of boat data, including names.
+sailors data.txt // This is the authoritative source of sailor data, including names.
+boats available.txt // This is the authoritative source of event dates.
+sailors available.txt
 
-The program checks the consistency of the boat data, sailor data and event dates amongst these files.  It raises an exception if an inconsistency is encountered.
+The program checks the consistency of the boat names, sailor names and event dates amongst these files.  It raises an exception if an inconsistency is encountered.
 
-Boats availability and sailors availability must be entered manually into boats availability.txt and sailors availability.txt.
+Boats' availability and sailors' availability must be entered manually into boats available.txt and sailors available.txt.
 
-The program will write assignments into the sailor histories.txt file.
+The program will write assignments into the sailor histories.txt file.  If this file does not exist, it will be created.
 
-Output
+In-season changes
 
-for crew in crews:
-	for sailor in crew:
-		sailor_histories["name" : sailor["name"]][event_date] = crew["boat"]["name"]
+In case boats or sailors drop out during the season, no action is required.
 
+In case boats join during the season, their details must be added manually to boats data.txt and boats available.txt.
 
-with open(Working_directory+"config.txt", "r") as f_config:
-    ...
-    s_line_5 = f_config.readline() # sailors history
+In case sailors join during the season, their details must be added manually to sailors data.txt, sailors available.txt and sailor histories.txt.
 
-sailor_histories_filename = Working_directory+s_line_5.split(': ')[1].split(' //')[0]
+The program will detect inconsistencies and throw an exception if any are discovered.
 
-update sailor_history in sailor_histories
+Operating environment
 
-sailor_histories_file = open(sailor_histories_filename, 'w', newline='')
+Install Python Launcher.
 
-csv_writer = csv.DictWriter(sailor_histories_file, fieldnames=event_dates)
-make header row from "name" and event dates
-writer.writeheader()
-for sailor_history in sailor_histories:
-    make sailor row from history and crew
-    csv_writer.writerow( dict ) # sailor row
-sailor_histories_file.close()
+Set the default application for all files with the .py extension to Python Launcher.
 
+Configure Python Launcher to 
 
+	✓  Allow override with #! in script
+	✓  Run in a terminal window
+
+Copy the Python and config files to a folder.
+
+Double-click main.py.
 

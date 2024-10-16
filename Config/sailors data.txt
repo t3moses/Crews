@@ -62,7 +62,7 @@ Marie-Louise,,False,0,Astraeus;Brisa;Beluga V;Cariad;Fixen;Kaleidoscope;Kookabur
 Mike C,Olena,False,0,Brisa;Beluga V;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
 Mike S,Emily,False,1,Brisa;Beluga V;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
 Mike T,,False,1,Brisa;Beluga V;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
-Milan,,True,2,Beluga V;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xel Ha
+Milan,,True,2,Beluga V;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
 Nancy,,True,1,Astraeus;Brisa;Beluga V;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
 Nathalie D,,False,0,Astraeus;Brisa;Beluga V;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
 Nathalie S,,True,0,Astraeus;Brisa;Beluga V;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha

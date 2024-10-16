@@ -54,7 +54,7 @@ def case_2(boats, sailors):
     for boat in boats:
         max_overall += int(boat["max_occupancy"])
 
-    crews = case_3(boats, sailors[0, max_overall])
+    crews = case_3(boats, sailors[0 : max_overall])
 
     return crews
 

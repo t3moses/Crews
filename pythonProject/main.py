@@ -49,31 +49,41 @@ with open(sailors_availability_filename) as sailors_availabliity_file:
 
 # Confirm that boat names are consistent between the boat_availability and boat_data files.
 
-list1 = []
+available_boats = []
 for boat in boats_availability:
-    list1.append(boat["name"])
-list2 = []
+    available_boats.append(boat["name"])
+boat_names = []
 for boat in boats_data:
-    list2.append(boat["name"])
-if bool(set(list1) - set(list2)):
+    boat_names.append(boat["name"])
+if bool(set(available_boats) - set(boat_names)):
     raise Exception("Boat availability is inconsistent with boat data.")
 
 # Confirm that sailor names are consistent between the sailor_availability and sailor_data files.
 
-list1 = []
+available_sailors = []
 for sailor in sailors_availability:
-    list1.append(sailor["name"])
-list2 = []
+    available_sailors.append(sailor["name"])
+sailor_names = []
 for sailor in sailors_data:
-    list2.append(sailor["name"])
-if bool(set(list1) - set(list2)):
+    sailor_names.append(sailor["name"])
+if bool(set(available_sailors) - set(sailor_names)):
     raise Exception("Sailor availability is inconsistent with sailor data.")
+
+# Confirm that sailor whitelists are consistent with boats_sata.
+
+boat_names = []
+for boat in boats_data:
+    boat_names.append(boat["name"])
+for sailor in sailors_data:
+    sailor_whitelist = list(sailor["whitelist"].split(";"))
+    if not bool(set(sailor_whitelist) <= set(boat_names)):
+        raise Exception("Sailor whitelist is inconsistent with boat data.")
 
 # Take the event dates from boats_availability.
 # Get the event date from the user and check that it is in the set of event dates.
 
-event_dates = list(boats_availability[1].keys())
-event_dates.remove('name')
+header_row = list(boats_availability[1].keys())
+event_dates = (header_row.copy())[1:]
 
 print()
 event_date = input("Enter date (MM-DD):")
@@ -86,32 +96,35 @@ if event_dates.count(event_date) == 0:
 
 sailor_dates = list(sailors_availability[1].keys())
 sailor_dates.remove('name')
-set1 = set(sailor_dates)
-set2 = set(event_dates)
-if bool(set1 - set2):
+sailor_dates_set = set(sailor_dates)
+event_dates_set = set(event_dates)
+if bool(sailor_dates_set - event_dates_set):
     raise Exception("Sailor availability is inconsistent with boat availability.")
 
 # Open the sailor histories file.  If it doesn't yet exist, create it and write a list of dictionaries
 # containing the name of each sailor from the sailor_data.
 
 try:
-    sailor_histories_file = open(sailor_histories_filename, 'r+', newline='')
+    sailor_histories_file = open(sailor_histories_filename, 'r', newline='')
 except FileNotFoundError:
+    print("Creating sailor histories file.")
     sailor_histories_file = open(sailor_histories_filename, 'w+', newline='')
-    writer = csv.DictWriter(sailor_histories_file, fieldnames=event_dates)
+    writer = csv.DictWriter(sailor_histories_file, fieldnames=header_row)
     writer.writeheader()
     for sailor in sailors_data:
         writer.writerow({"name": sailor["name"]})
+sailor_histories_file.close()
 
 # list of dictionaries containing the history of boats to which each sailor
 # has been assigned in previous events.
 # Populate the sailor_histories list from the sailor_histories_file.
 
 sailor_histories = []
-for sailor_history in csv.DictReader(sailor_histories_file):
-    sailor_histories.append(sailor_history)
-
-sailor_histories_file.close()
+with open(sailor_histories_filename, mode ='r') as sailor_histories_file:
+    reader = csv.DictReader(sailor_histories_file)
+    for sailor_history in reader:
+        sailor_histories.append(sailor_history)
+        print(sailor_history)
 
 # List the boats and sailors available on the event date.
 
@@ -130,26 +143,29 @@ for available_sailor in sailors_availability:
                 available_sailors.append(sailor)
 
 # For each available sailor and boat, calculate their loyalty band, and add it to their data.
+# Sailor loyalty is derived from sailor_history, whereas boat_loyalty is derived from boat_availability.
 
-for i in range(len(sailor_histories)):
-    sailor_history = sailor_histories[i]
-    loyalty = 0
-    for date in event_dates:
-        if date == event_date:
-           break
-        if not sailor_history[date] == '':
-            loyalty += 1
-    sailors_data[i]["loyalty"] = str(loyalty)
+for available_sailor in available_sailors:
+    for sailor_history in sailor_histories:
+        loyalty = 0
+        if available_sailor["name"] == sailor_history["name"]:
+            for date in event_dates:
+                if date == event_date:
+                    break
+                if not sailor_history[date] == '':
+                    loyalty += 1
+            available_sailor["loyalty"] = [str(loyalty) for sailor in available_sailors if sailor["name"] == available_sailor["name"]][0]
 
-for i in range(len(boats_availability)):
-    boat_availability = boats_availability[i]
-    loyalty = 0
-    for date in event_dates:
-        if date == event_date:
-           break
-        if not boat_availability[date] == '':
-            loyalty += 1
-    boats_data[i]["loyalty"] = str(loyalty)
+for available_boat in available_boats:
+    for boat_availability in boats_availability:
+        if boat_availability["name"] == available_boat["name"]:
+            loyalty = 0
+            for date in event_dates:
+                if date == event_date:
+                    break
+                if not boat_availability[date] == '':
+                    loyalty += 1
+            available_boat["loyalty"] = loyalty
 
 # Form crews by applying the mandatory and discretionary rules.
 
@@ -164,7 +180,13 @@ for crew in crews:
         for history in range(len(sailor_histories)):
             if sailor_histories[history]["name"] == sailor["name"]:
                 sailor_histories[history][event_date] = crew["boat"]["name"]
-for history in range(len(sailor_histories)):
-    print(sailor_histories[history])
 
 # Write sailor_histories to file.
+
+sailor_histories_file = open(sailor_histories_filename, 'w', newline='')
+
+writer = csv.DictWriter(sailor_histories_file, fieldnames=header_row)
+writer.writeheader()
+for sailor_history in sailor_histories:
+    writer.writerow( sailor_history )
+sailor_histories_file.close()
