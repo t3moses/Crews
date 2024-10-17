@@ -19,28 +19,28 @@ boats_availability_filename = Working_directory+s_line_3.split(': ')[1].split(' 
 sailors_availability_filename = Working_directory+s_line_4.split(': ')[1].split(' //')[0]
 sailor_histories_filename = Working_directory+s_line_5.split(': ')[1].split(' //')[0]
 
-# Get boats_data, the list of boat data dictionaries, as this is the authoritative source of boat names.
+# Get boats_data (the list of boat data dictionaries), as this is the authoritative source of boat names.
 
 boats_data = []
 with open(boats_data_filename) as boats_data_file:
     for boat in csv.DictReader(boats_data_file):
         boats_data.append(boat)
 
-# Get sailors_data, the list of sailor data dictionaries, as this is the authoritative source of sailor names.
+# Get sailors_data (the list of sailor data dictionaries), as this is the authoritative source of sailor names.
 
 sailors_data = []  # list of sailor data dictionaries.
 with open(sailors_data_filename) as sailors_data_file:
     for sailor in csv.DictReader(sailors_data_file):
         sailors_data.append(sailor)
 
-# Get boats_availability, the list of boat availability dictionaries, as this is the authoritative source of event dates.
+# Get boats_availability (the list of boat availability dictionaries), as this is the authoritative source of event dates.
 
 boats_availability = []
 with open(boats_availability_filename) as boats_availability_file:
     for boat in csv.DictReader(boats_availability_file):
         boats_availability.append(boat)
 
-# Get sailors_availability, the list of sailor availability dictionaries.
+# Get sailors_availability (the list of sailor availability dictionaries).
 
 sailors_availability = []
 with open(sailors_availability_filename) as sailors_availabliity_file:
@@ -49,41 +49,41 @@ with open(sailors_availability_filename) as sailors_availabliity_file:
 
 # Confirm that boat names are consistent between the boat_availability and boat_data files.
 
-available_boats = []
+boats_from_availability = []
 for boat in boats_availability:
-    available_boats.append(boat["name"])
-boat_names = []
+    boats_from_availability.append(boat["name"])
+boats_from_data = []
 for boat in boats_data:
-    boat_names.append(boat["name"])
-if bool(set(available_boats) - set(boat_names)):
+    boats_from_data.append(boat["name"])
+if bool(set(boats_from_availability) ^ set(boats_from_data)):
     raise Exception("Boat availability is inconsistent with boat data.")
 
 # Confirm that sailor names are consistent between the sailor_availability and sailor_data files.
 
-available_sailors = []
+sailors_from_availability = []
 for sailor in sailors_availability:
-    available_sailors.append(sailor["name"])
-sailor_names = []
+    sailors_from_availability.append(sailor["name"])
+sailors_from_data = []
 for sailor in sailors_data:
-    sailor_names.append(sailor["name"])
-if bool(set(available_sailors) - set(sailor_names)):
+    sailors_from_data.append(sailor["name"])
+if bool(set(sailors_from_availability) ^ set(sailors_from_data)):
     raise Exception("Sailor availability is inconsistent with sailor data.")
 
 # Confirm that sailor whitelists are consistent with boats_sata.
 
-boat_names = []
+boats_from_data = []
 for boat in boats_data:
-    boat_names.append(boat["name"])
+    boats_from_data.append(boat["name"])
 for sailor in sailors_data:
     sailor_whitelist = list(sailor["whitelist"].split(";"))
-    if not bool(set(sailor_whitelist) <= set(boat_names)):
+    if not bool(set(sailor_whitelist) <= set(boats_from_data)):
         raise Exception("Sailor whitelist is inconsistent with boat data.")
 
 # Take the event dates from boats_availability.
 # Get the event date from the user and check that it is in the set of event dates.
 
 header_row = list(boats_availability[1].keys())
-event_dates = (header_row.copy())[1:]
+event_dates = (header_row.copy())[1:] # omit the first element, as it contains the boat name.
 
 print()
 event_date = input("Enter date (MM-DD):")
@@ -96,9 +96,7 @@ if event_dates.count(event_date) == 0:
 
 sailor_dates = list(sailors_availability[1].keys())
 sailor_dates.remove('name')
-sailor_dates_set = set(sailor_dates)
-event_dates_set = set(event_dates)
-if bool(sailor_dates_set - event_dates_set):
+if bool(set(sailor_dates) ^ set(event_dates)):
     raise Exception("Sailor availability is inconsistent with boat availability.")
 
 # Open the sailor histories file.  If it doesn't yet exist, create it and write a list of dictionaries
@@ -113,10 +111,9 @@ except FileNotFoundError:
     writer.writeheader()
     for sailor in sailors_data:
         writer.writerow({"name": sailor["name"]})
+
 sailor_histories_file.close()
 
-# list of dictionaries containing the history of boats to which each sailor
-# has been assigned in previous events.
 # Populate the sailor_histories list from the sailor_histories_file.
 
 sailor_histories = []
@@ -124,7 +121,6 @@ with open(sailor_histories_filename, mode ='r') as sailor_histories_file:
     reader = csv.DictReader(sailor_histories_file)
     for sailor_history in reader:
         sailor_histories.append(sailor_history)
-        print(sailor_history)
 
 # List the boats and sailors available on the event date.
 
@@ -173,7 +169,7 @@ crews = mandatory.mandatory(available_boats, available_sailors)
 
 crews = discretionary.discretionary(crews, sailor_histories, event_date)
 
-# Update sailor_histories with the crew assignments.
+# Update the sailor_histories file with the crew assignments for the event date.
 
 for crew in crews:
     for sailor in crew["sailors"]:
@@ -189,4 +185,5 @@ writer = csv.DictWriter(sailor_histories_file, fieldnames=header_row)
 writer.writeheader()
 for sailor_history in sailor_histories:
     writer.writerow( sailor_history )
+
 sailor_histories_file.close()

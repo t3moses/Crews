@@ -151,12 +151,12 @@ def order_crews_by_score(crews):
     while len(banded_crews) > 0:
         while len(banded_crews[0]) > 0: # There are one or more sailors in the crew.
             if len(banded_crews[0]) > 1:
-                banded_boat_number = random.randint(0, len(banded_crews[0]) - 1)
+                boat_number = random.randint(0, len(banded_crews[0]) - 1)
             else:
-                banded_boat_number = 0
-            ordered_crews.append(banded_crews[0][banded_boat_number])
-            del banded_crews[0][banded_boat_number]
-        del banded_crews[0]
+                boat_number = 0
+            ordered_crews.append(banded_crews[0][boat_number])
+            banded_crews[0].pop(boat_number)
+        banded_crews.pop(0)
 
     return ordered_crews
 
