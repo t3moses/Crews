@@ -1,10 +1,6 @@
 import random
-import datetime
 
 def mandatory(available_boats, available_sailors):
-
-    # random.seed(42)
-    random.seed(str(datetime.datetime.now))
 
     ordered_sailors = order_sailors_by_loyalty(available_sailors)
     ordered_boats = order_boats_by_loyalty(available_boats)
@@ -39,6 +35,7 @@ def case_1(boats, sailors):
         min_overall -= int(boats[-1]["min_occupancy"])
         boats.pop() # Remove the last boat in the boats list.
 
+    wait_list = []
     crews = case_3(boats, sailors)
         
     return crews
@@ -48,13 +45,14 @@ def case_2(boats, sailors):
     # The number of sailors is greater than the maximum number of spaces available.
 
     # Remove sailors until the number of sailors is equal to the maximum number of spaces available.
-    # Then apply case 3.
+    # Then apply case 3.  Excess sailors are assigned to the wait list.
 
     max_overall = 0
     for boat in boats:
         max_overall += int(boat["max_occupancy"])
 
-    crews = case_3(boats, sailors[0 : max_overall])
+    wait_list = sailors[max_overall : ]
+    crews = case_3(boats, sailors[ : max_overall])
 
     return crews
 
@@ -91,6 +89,7 @@ def case_3(boats, sailors):
         boats[-1]["occupancy"] = str(int(boats[-1]["occupancy"]) + 1)
         overall_occupancy += 1
 
+    wait_list = []
     crews = assign(boats, sailors)
 
     return crews

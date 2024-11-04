@@ -1,4 +1,4 @@
-main.py assigns available sailors to available boats.
+assignment.py assigns available sailors to available boats.
 
 There are two classes of assignment rules: mandatory rules and discretionary rules.
 
@@ -8,7 +8,8 @@ Discretionary rules determine which boat a particular sailor will be assigned to
 
 Mandatory rules are executed procedurally and they are fully enforced.
 
-Discretionary rules calculate a loss, which can be used to select a satisfactory assignment.  So, they are applied with best effort.  The gradient-descent algorithm finds a local minimum for loss.  A solution with lower loss may exist globally.
+Discretionary rules calculate a loss, which can be used to select a satisfactory assignment.  So, they are applied with best effort.  
+The gradient-descent algorithm finds a local loss minimum.  A solution with lower loss may exist globally.
 
 Mandatory requirements:
 
@@ -31,8 +32,9 @@ Machine-learning
 
 Once the mandatory rules have been applied, crews are ordered by their loss.
 
-The two crews with the highest loss are selected, every possible swap of crew
-is made and the loss recalculated for each swap.  The swap with the lowest loss is retained.  Then the process is repeated a set number of times.
+The two crews with the highest loss are selected, every possible swap of sailors
+is made and the loss recalculated for each swap.  The swap with the lowest loss is retained.
+Then the process is repeated a set number of times.
 
 Input files
 
@@ -52,7 +54,7 @@ boats available.txt: name,06-06,06-13,06-20,06-28,07-04,07-11,07-19,07-25,08-01,
 sailors available.txt: name,06-06,06-13,06-20,06-28,07-04,07-11,07-19,07-25,08-01,08-09,08-15,08-22,08-30,09-05
 sailor histories.txt: name,06-06,06-13,06-20,06-28,07-04,07-11,07-19,07-25,08-01,08-09,08-15,08-22,08-30,09-05
 
-The authoritative list of event dates is taken from the boats available.txt file.
+The list of event dates is a constant.
 
 The boats ... files contain a row for each boat.
 The sailors ... files contain a row for each sailor.
@@ -63,12 +65,22 @@ The member field contains True or False according to whether the sailor is an NS
 The skill field contains integer values 0 .. 2.  0 for novice, 1 for basic qualified, 2 for experienced.
 The whitelist field contains a list of boats in the subject's whitelist.  Boats in the list must be separated by ;.
 
+Outputs
+
+A graph of loss against iteration is displayed.
+
+The final crew is displayed as an HTML table.  This can be cut-and-pasted into a Web page iFrame.
+
 Set-up
 
 Use a text editor or spreadsheet program to create the following files:
 
 boats data.txt // This is the authoritative source of boat data, including names.
 sailors data.txt // This is the authoritative source of sailor data, including names.
+
+The following files may be created using a text editor or spreadsheet.  In case they don't exist, they will be created when the program runs.
+However, files created in this way will contain no availability data.
+
 boats available.txt // This is the authoritative source of event dates.
 sailors available.txt
 
@@ -86,7 +98,7 @@ In case boats join during the season, their details must be added manually to bo
 
 In case sailors join during the season, their details must be added manually to sailors data.txt, sailors available.txt and sailor histories.txt.
 
-The program will detect inconsistencies and throw an exception if any are discovered.
+The program will detect inconsistencies and raise an exception if any are discovered.
 
 Operating environment
 
@@ -101,5 +113,11 @@ Configure Python Launcher to
 
 Copy the Python and config files to a folder.
 
-Double-click main.py.
+Double-click assignment.py.
+
+Run
+
+The user is asked to input an event id.  This should be in the format date.version.  The date is checked against the set of event dates.
+In case it is not a member of the set, an exception will be raised.  The event id seeds the random number generator.  In this way,
+re-using an event id generates the same output.  But, different outputs result for the same date if the version is changed.
 

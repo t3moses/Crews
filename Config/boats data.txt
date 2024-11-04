@@ -1,1 +1,17 @@
 name,owner,slip,min_occupancy,max_occupancy,assist
+Astraeus,Linda,b-79,2,2,False
+Beluga V,Geoff K,w-33,1,3,False
+Brisa,Scott,c-29,1,3,False
+Cariad,Tim,b-16,1,3,False
+Fixen,Paul,e-54,1,2,False
+Kaleidoscope,John R,d-32,1,2,False
+Kookaburra,Sylvie,e-76,1,2,False
+Princess Fe,Don,a-14,2,3,True
+Shawanaga,Ted,c-80,1,3,False
+Sparrow,Robert,d-27,2,2,False
+Triton,Tom,d-73,1,2,True
+Tropical Quest,Stephen,w-20,1,4,False
+Valkyrie,Floyd,a-43,1,4,False
+Veleda III,John M,w-15,2,2,False
+Xantippe,Geoff D,b-17,1,3,False
+Xel Ha,George,a-29,1,4,False

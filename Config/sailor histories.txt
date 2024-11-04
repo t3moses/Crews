@@ -1,1 +1,86 @@
 name,06-06,06-13,06-20,06-28,07-04,07-11,07-19,07-25,08-01,08-09,08-15,08-22,08-30,09-05,09-12,09-19,09-26
+Adam,,,,,,,,,,,,,,,,Xel Ha,
+Al,Shawanaga,,Valkyrie,,Sparrow,,,Xel Ha,,,Princess Fe,Xantippe,,Brisa,,Tropical Quest,
+Andrew,,,,Xantippe,,,,,,,,,,,,,
+Angelle,,,,,,,,,,,Tropical Quest,,,,,,
+Angus,,Valkyrie,Veleda III,,Sparrow,Xel Ha,,Princess Fe,,Kaleidoscope,Fixen,Cariad,Princess Fe,Shawanaga,Valkyrie,Xantippe,Xantippe
+Anik,,,,,,Beluga V,,Valkyrie,Princess Fe,,Cariad,Veleda III,,,Xantippe,Shawanaga,Cariad
+Ann,,,,,,,,,,,,,,,,Xel Ha,
+Anne L,Xantippe,Xantippe,,,,,,,,,,,,,,,
+Anne S,Tropical Quest,Xantippe,,,,,,,,,,,,,,,
+Ben,,,,,,,,,,,,,Cariad,,,,
+Brenda,,,,,,,,Tropical Quest,,,Princess Fe,,,,,Fixen,Fixen
+Brian,Veleda III,Shawanaga,Cariad,,Princess Fe,,,Triton,,,Brisa,,,,,,
+Cara,,Sparrow,,,Beluga V,Veleda III,,Shawanaga,,,Cariad,Princess Fe,,Xel Ha,Xantippe,Fixen,Tropical Quest
+Carla,,,Brisa,,Princess Fe,,,Sparrow,,,,,,Kookaburra,Shawanaga,,Cariad
+Carlos,,,,,,,,,,,,,,Tropical Quest,Shawanaga,Cariad,Xel Ha
+Caroline,Cariad,Shawanaga,Tropical Quest,,Valkyrie,Shawanaga,,Tropical Quest,Astraeus,,Xantippe,Princess Fe,,Cariad,Kookaburra,Xantippe,Xel Ha
+Charles,,,,,,,,,,,Tropical Quest,,,,,,
+Christine,Beluga V,,Triton,,,,,,,Xel Ha,,Veleda III,,,,,Astraeus
+Claire,,,,,,,,Valkyrie,,,,Shawanaga,,,Kookaburra,,
+Clara,,,,,,,,,,,,,,,,,
+Colin,,,,,,,,,,,,,,,,Veleda III,
+Corneliu,,,,,,,,,,,,,Triton,Beluga V,,Princess Fe,Xantippe
+Craig,Shawanaga,Beluga V,,,,,,Princess Fe,Cariad,,,,,,,,Shawanaga
+Denis,,,,Veleda III,,,,,,,,,,,,,
+Dominique,Xantippe,,Veleda III,,Cariad,,,Tropical Quest,,,Triton,Kookaburra,,Xel Ha,,Veleda III,
+Don M,,,Valkyrie,,,,,,,,,,,,,,
+Don P,,,Brisa,,,,,,,Fixen,,,,,,,
+Doug,,,,,,,Brisa,,,,,,,,,,
+Elaine,,,,,,,Xantippe,,,,,,,,,,
+Eliza,,,,Xantippe,,,,,,,,,,,,,
+Elizabeth,,,,,Tropical Quest,,,,,,,Xantippe,,Cariad,,,Tropical Quest
+Emily,,,,,,,Cariad,,,Xel Ha,,,,,,,
+Eric,Tropical Quest,,Valkyrie,,,,,,,Xantippe,,,Veleda III,,,,Tropical Quest
+Fiona,,,Tropical Quest,Cariad,Tropical Quest,Astraeus,Xantippe,,,,Shawanaga,Brisa,,Triton,,Princess Fe,Princess Fe
+Gary,Tropical Quest,,,,,Triton,Fixen,,Xantippe,Triton,,,,Beluga V,,Xel Ha,
+Geoff,,Valkyrie,,Beluga V,Shawanaga,Sparrow,,Xel Ha,Beluga V,Kaleidoscope,Princess Fe,,,,,,
+Gillian,,,,,,,,,,,,Beluga V,,,,,
+Gina,,,,,,,,,,Cariad,,,Brisa,,,,
+Glenn,Shawanaga,Tropical Quest,Triton,Shawanaga,Shawanaga,Xel Ha,Princess Fe,,Princess Fe,Xantippe,Triton,Cariad,Cariad,Brisa,Valkyrie,Beluga V,Beluga V
+Gretta,,,,,,,,,,,,,,,Xel Ha,,
+Heather,Tropical Quest,Beluga V,,,,,,,,,Beluga V,,,Beluga V,,Xel Ha,Tropical Quest
+James,,,,,Fixen,,,,,,,,,,,,
+Janet,,Sparrow,Valkyrie,,Cariad,,,Shawanaga,,Cariad,,Beluga V,Veleda III,,Xel Ha,Kookaburra,Veleda III
+Jean M,,,Xantippe,,,,,,,,,,,,,,
+Jean-Paul,,,Tropical Quest,Cariad,Xantippe,Brisa,,,,,,,,,,,
+Joachim,,,,,,,,,,,,,,,Cariad,Princess Fe,Xel Ha
+John B,,Valkyrie,,Beluga V,,Princess Fe,,,Beluga V,Xantippe,Tropical Quest,Fixen,,Triton,Veleda III,Beluga V,Beluga V
+John L,,,,Triton,,,Princess Fe,,,Shawanaga,,,Fixen,,,,
+Katrina,,,,,,,,,,,,Shawanaga,,,,,
+Kelly,,,,,,,,,,Cariad,,,,,,,
+Kimberley,,,,Astraeus,,,,,,,,,,,,,
+Laura,,,,Triton,,,Xantippe,,,Triton,,,Triton,,,,
+Leonore,,,,,,,,,,,,,Xantippe,,,,
+Linda,Xantippe,Xantippe,Xantippe,,Beluga V,,Brisa,Xantippe,,,Xantippe,Brisa,,Cariad,,,
+Lois,,,,,,,,,,,,,Cariad,,,,
+Loredana,,,,,,,,,,,,,Xantippe,Veleda III,,Tropical Quest,Xel Ha
+Luise,,,,,,,,,,,,,Xantippe,,,,
+Malcolm,,,,,,,,,Beluga V,,,Brisa,,Fixen,,,
+Marc,,Cariad,,,,,,,,,,,,,,,
+Marie-Louise,,,,,Valkyrie,,,,,,,,,,,,
+Mike C,,,,,,,,,,,,,,Tropical Quest,,,
+Mike S,,Cariad,,,,,,Fixen,,,,,,,,,
+Mike T,,Xantippe,,,,,,,,Shawanaga,Xantippe,,,,,,
+Milan,Beluga V,Tropical Quest,,,Veleda III,Princess Fe,,Brisa,,,Shawanaga,Fixen,,Tropical Quest,Veleda III,Cariad,Shawanaga
+Nancy,Veleda III,,,,,Veleda III,,Xantippe,Astraeus,Xel Ha,,,,Brisa,Xantippe,Shawanaga,Veleda III
+Nathalie D,,,,,,,,,,,,,,,,,
+Nathalie S,,,,,,,,,,,Cariad,Shawanaga,Princess Fe,Veleda III,,,
+Nawar,,,Valkyrie,,,,,,,,,,,,,,
+Nicole,,Cariad,,,,,,,,,,,,,,,
+Olena,,,,,,,,,,,,,,Shawanaga,,,
+Pat,Fixen,Tropical Quest,Cariad,,,Beluga V,,Veleda III,Cariad,,Beluga V,Triton,,Xel Ha,Princess Fe,,Shawanaga
+Paul B,,,,Veleda III,,,,,,,,,,,Princess Fe,,
+Paul T,,,,Veleda III,,Brisa,,,,,,,,,,,
+Paul V,,,,,,Shawanaga,Cariad,Brisa,,,Beluga V,Princess Fe,,Tropical Quest,,,
+Peter,,,,,Xantippe,Sparrow,Princess Fe,Veleda III,,,,Xantippe,,,,,
+Rob,,,,,,,,Sparrow,,,Brisa,Cariad,,Fixen,,,Princess Fe
+Ruth,Cariad,Fixen,Fixen,Astraeus,,,,,,,Shawanaga,Triton,Cariad,Kookaburra,Cariad,Beluga V,Xantippe
+Sandra,,,,,,,Brisa,,,,,,,,,,
+Steve C,,,,,,,,,,,,,,,,,
+Steve K,,Valkyrie,,,,Triton,,Fixen,,,,,,,,,
+Sylvie,,Princess Fe,Tropical Quest,,,Astraeus,,Triton,,,,,,,,,
+Tom,,Princess Fe,,,Veleda III,,,,,Cariad,,,,,Shawanaga,,Princess Fe
+Tracy,,,,,,,,,,Shawanaga,,Beluga V,,,,,
+Wendy,,,,,,,,,,,,,,,Xel Ha,Tropical Quest,Astraeus
+Wynet,,,,,,,Cariad,,Xantippe,,Tropical Quest,,,Shawanaga,,,Fixen
