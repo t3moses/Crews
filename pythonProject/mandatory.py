@@ -35,10 +35,9 @@ def case_1(boats, sailors):
         min_overall -= int(boats[-1]["min_occupancy"])
         boats.pop() # Remove the last boat in the boats list.
 
-    wait_list = []
-    crews = case_3(boats, sailors)
-        
-    return crews
+    assignments = case_3(boats, sailors)
+
+    return assignments
 
 def case_2(boats, sailors):
 
@@ -51,10 +50,10 @@ def case_2(boats, sailors):
     for boat in boats:
         max_overall += int(boat["max_occupancy"])
 
-    wait_list = sailors[max_overall : ]
-    crews = case_3(boats, sailors[ : max_overall])
+    assignments = case_3(boats, sailors[ : max_overall])
+    assignments["wait_list"] = sailors[max_overall : ]
 
-    return crews
+    return assignments
 
 def case_3(boats, sailors):
 
@@ -89,10 +88,11 @@ def case_3(boats, sailors):
         boats[-1]["occupancy"] = str(int(boats[-1]["occupancy"]) + 1)
         overall_occupancy += 1
 
-    wait_list = []
-    crews = assign(boats, sailors)
+    assignments = {}
+    assignments["crews"] = assign(boats, sailors)
+    assignments["wait_list"] = []
 
-    return crews
+    return assignments
 
 def assign(boats, sailors):
 

@@ -17,16 +17,19 @@ Mandatory requirements:
 - All boats shall have at least their minimum occupancy.
 - All boats shall have no more than their maximum occupancy.
 - Sailors shall be distributed evenly across all boats, taking accont of their maximum occupancies.
-- Sailors who have sailed fewer times in the current season of the program shall take priority over those who have sailed more times;
+- Sailors who have sailed fewer times in the current season of the program shall take priority over those who have sailed more times.
 - Boats that have sailed fewer times in the current season of the program shall take priority over those that have sailed more times.
 
 Discretionary requirements:
 
 - Sailors should only be assigned to boats on their white-list.
-- Partners should not be assigned to the same boat;
 - Skippers requiring assistance should be assigned at least one sailor from the highest skill band;
 - The skill-spread on a boat should be as small as possible;
 - Sailors should be assigned to the same boat as few times as possible throughout the season.
+
+Members of a partnership are treated as independent, so that they MAY be assigned to the same boat,
+but this is no more or less likely than their being assigned to the same boat as a sailor who is not
+their partner.
 
 Machine-learning
 
@@ -34,7 +37,7 @@ Once the mandatory rules have been applied, crews are ordered by their loss.
 
 The two crews with the highest loss are selected, every possible swap of sailors
 is made and the loss recalculated for each swap.  The swap with the lowest loss is retained.
-Then the process is repeated a set number of times.
+Then the process is repeated over a set number of epochs.
 
 Input files
 
@@ -48,11 +51,11 @@ sailor histories.txt
 
 Each of these files is formatted as CSV.  The first row contains the field names, as follows:
 
-boats data.txt: name,owner,slip,min_occupancy,max_occupancy,assist
-sailors data.txt: name,partner,member,skill,whitelist
-boats available.txt: name,06-06,06-13,06-20,06-28,07-04,07-11,07-19,07-25,08-01,08-09,08-15,08-22,08-30,09-05
-sailors available.txt: name,06-06,06-13,06-20,06-28,07-04,07-11,07-19,07-25,08-01,08-09,08-15,08-22,08-30,09-05
-sailor histories.txt: name,06-06,06-13,06-20,06-28,07-04,07-11,07-19,07-25,08-01,08-09,08-15,08-22,08-30,09-05
+boats data.txt: boat name,owner email address,min_occupancy,max_occupancy,assistance request
+sailors data.txt: first name,last name,email address,uid,display name,member,skill,whitelist
+boats available.txt: boat name,Fri Jun 6,Fri Jun 13,Fri Jun 20,Sat Jun 28,Fri Jul 4,Fri Jul 11,Sat Jul 19,Fri Jul 25,Fri Aug 1,Sat Aug 9,Fri Aug 15,Fri Aug 22,Sat Aug 30,Fri Sep 5,Fri Sep 12,Fri Sep 19,Fri Sep 26
+sailors available.txt: uid,Fri Jun 6,Fri Jun 13,Fri Jun 20,Sat Jun 28,Fri Jul 4,Fri Jul 11,Sat Jul 19,Fri Jul 25,Fri Aug 1,Sat Aug 9,Fri Aug 15,Fri Aug 22,Sat Aug 30,Fri Sep 5,Fri Sep 12,Fri Sep 19,Fri Sep 26
+sailor histories.txt: uid,Fri Jun 6,Fri Jun 13,Fri Jun 20,Sat Jun 28,Fri Jul 4,Fri Jul 11,Sat Jul 19,Fri Jul 25,Fri Aug 1,Sat Aug 9,Fri Aug 15,Fri Aug 22,Sat Aug 30,Fri Sep 5,Fri Sep 12,Fri Sep 19,Fri Sep 26
 
 The list of event dates is a constant.
 
@@ -65,11 +68,18 @@ The member field contains True or False according to whether the sailor is an NS
 The skill field contains integer values 0 .. 2.  0 for novice, 1 for basic qualified, 2 for experienced.
 The whitelist field contains a list of boats in the subject's whitelist.  Boats in the list must be separated by ;.
 
+The sailor display name is unique.  It is formed from the first name and the initial letter of the last name.  The first letter of the first name and the initial of the last name are uppercase
+All other letters are lower case.  In case of a clash, an exception is raised.
+
+The sailor uid is unique.  It is formed from the initial letter of the first name and the first three letters of the last name.
+All letters are lower case.  And any whitespace is deleted.
+
 Outputs
 
 A graph of loss against iteration is displayed.
 
-The final crew is displayed as an HTML table.  This can be cut-and-pasted into a Web page iFrame.
+The final crew is saved as an HTML table.  (This can be cut-and-pasted into a Web page iFrame.)
+In case the number of sailors is greater than the available spaces, then the wait list is included in the output table.
 
 Set-up
 
@@ -81,7 +91,7 @@ sailors data.txt // This is the authoritative source of sailor data, including n
 The following files may be created using a text editor or spreadsheet.  In case they don't exist, they will be created when the program runs.
 However, files created in this way will contain no availability data.
 
-boats available.txt // This is the authoritative source of event dates.
+boats available.txt
 sailors available.txt
 
 The program checks the consistency of the boat names, sailor names and event dates amongst these files.  It raises an exception if an inconsistency is encountered.

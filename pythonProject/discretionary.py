@@ -19,7 +19,7 @@ def discretionary(crews, sailor_histories, event_date):
         crew["score"] = crew_score(crew, sailor_histories, event_date)
     crews = order_crews_by_score(crews)
 
-    for _ in range(11):
+    for _ in range(constants.epochs + 1):
 
         overall_score = 0
         for crew in crews:
@@ -44,12 +44,11 @@ def crew_score(crew, sailor_histories, event_date):
     # Calculate the non-compliance score for one crew.
 
     whitelist_score = constants.whitelist_weight * whitelist(crew)
-    partner_score = constants.partner_weight * partner(crew)
     assist_score = constants.assist_weight * assist(crew)
     skill_score = constants.skill_weight * skill(crew)
     repeat_score = constants.repeat_weight * repeat(crew, sailor_histories, event_date)
 
-    score = whitelist_score + partner_score + assist_score + skill_score + repeat_score
+    score = whitelist_score + assist_score + skill_score + repeat_score
 
     return score
 
@@ -64,19 +63,6 @@ def whitelist(crew):
         whitelist = crew["sailors"][i]["whitelist"]
         if whitelist.count(boat_name) == 0:
             score += 1
-
-    return score
-
-def partner(crew):
-
-    # Count the number of times a sailor is sailing with their partner.
-
-    score = 0
-
-    for i in range(0, len(crew["sailors"]) - 1):
-        for j in range(i, len(crew["sailors"])):
-            if crew["sailors"][i]["partner"] == crew["sailors"][j]["name"]:
-                score += 1
 
     return score
 
