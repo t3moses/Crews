@@ -10,12 +10,12 @@ import crew_html
 Working_directory = "/Users/timmoses/Documents/Tech/Projects/Version_controlled/Assignment/"
 
 with open(Working_directory + "Config/" + "config.txt", "r") as f_config:
-    s_line_1 = f_config.readline() # boats data
-    s_line_2 = f_config.readline() # sailors data
-    s_line_3 = f_config.readline() # boats availability
-    s_line_4 = f_config.readline() # sailors availability
-    s_line_5 = f_config.readline() # sailors history
-    s_line_6 = f_config.readline() # events path
+    s_line_1 = f_config.readline()  # boats data
+    s_line_2 = f_config.readline()  # sailors data
+    s_line_3 = f_config.readline()  # boats availability
+    s_line_4 = f_config.readline()  # sailors availability
+    s_line_5 = f_config.readline()  # sailors history
+    s_line_6 = f_config.readline()  # events path
 
 boats_data_filename = Working_directory+s_line_1.split(': ')[1].split(' //')[0]
 sailors_data_filename = Working_directory+s_line_2.split(': ')[1].split(' //')[0]
@@ -40,7 +40,8 @@ with open(sailors_data_filename) as sailors_data_file:
 
 # Create the header row of the CSV files.
 
-header_row = ["name"] + constants.event_dates
+boat_header_row = ["boat name"] + constants.event_dates
+sailor_header_row = ["display name"] + constants.event_dates
 
 # Open the boat availability file.  If it doesn't yet exist, create it.
 # Then write a list of dictionaries containing the name of each boat from the boat_data.
@@ -50,17 +51,17 @@ try:
 except FileNotFoundError:
     print("Creating boats availability file.")
     boats_availability_file = open(boats_availability_filename, 'w+', newline='')
-    writer = csv.DictWriter(boats_availability_file, fieldnames=header_row)
+    writer = csv.DictWriter(boats_availability_file, fieldnames=boat_header_row)
     writer.writeheader()
     for boat in boats_data:
-        writer.writerow({"name": boat["name"]})
+        writer.writerow({"boat name": boat["boat name"]})
 boats_availability_file.close()
 
 # Create boats_availability (the list of boat availability dictionaries) from file.
 
 boats_availability = []
-with open(boats_availability_filename) as boats_availabliity_file:
-    reader = csv.DictReader(boats_availabliity_file)
+with open(boats_availability_filename) as boats_availability_file:
+    reader = csv.DictReader(boats_availability_file)
     for boat in reader:
         boats_availability.append(boat)
 
@@ -68,10 +69,11 @@ with open(boats_availability_filename) as boats_availabliity_file:
 
 boats_from_availability = []
 for boat in boats_availability:
-    boats_from_availability.append(boat["name"])
+    boats_from_availability.append(boat["boat name"])
 boats_from_data = []
 for boat in boats_data:
-    boats_from_data.append(boat["name"])
+    # boats_from_data.append(boat["boat name"])
+    boats_from_data.append(boat[0])
 if bool(set(boats_from_availability) ^ set(boats_from_data)):
     raise Exception("Boat availability is inconsistent with boat data.")
 
@@ -83,17 +85,18 @@ try:
 except FileNotFoundError:
     print("Creating sailors availability file.")
     sailors_availability_file = open(sailors_availability_filename, 'w+', newline='')
-    writer = csv.DictWriter(sailors_availability_file, fieldnames=header_row)
+    writer = csv.DictWriter(sailors_availability_file, fieldnames=sailor_header_row)
     writer.writeheader()
     for sailor in sailors_data:
-        writer.writerow({"name": sailor["name"]})
+        # writer.writerow({"display name": sailor["display name"]})
+        writer.writerow({"display name": sailor[0]})
 sailors_availability_file.close()
 
 # Create sailors_availability (the list of sailor availability dictionaries) from file.
 
 sailors_availability = []
-with open(sailors_availability_filename) as sailors_availabliity_file:
-    reader = csv.DictReader(sailors_availabliity_file)
+with open(sailors_availability_filename) as sailors_availability_file:
+    reader = csv.DictReader(sailors_availability_file)
     for sailor in reader:
         sailors_availability.append(sailor)
 
@@ -101,10 +104,12 @@ with open(sailors_availability_filename) as sailors_availabliity_file:
 
 sailors_from_availability = []
 for sailor in sailors_availability:
-    sailors_from_availability.append(sailor["name"])
+    # sailors_from_availability.append(sailor["display name"])
+    sailors_from_availability.append(sailor[0])
 sailors_from_data = []
 for sailor in sailors_data:
-    sailors_from_data.append(sailor["name"])
+    # sailors_from_data.append(sailor["display name"])
+    sailors_from_data.append(sailor[0])
 if bool(set(sailors_from_availability) ^ set(sailors_from_data)):
     raise Exception("Sailor availability is inconsistent with sailor data.")
 
@@ -112,7 +117,8 @@ if bool(set(sailors_from_availability) ^ set(sailors_from_data)):
 
 boats_from_data = []
 for boat in boats_data:
-    boats_from_data.append(boat["name"])
+    # boats_from_data.append(boat["boat name"])
+    boats_from_data.append(boat[0])
 for sailor in sailors_data:
     sailor_whitelist = list(sailor["whitelist"].split(";"))
     if not bool(set(sailor_whitelist) <= set(boats_from_data)):
@@ -121,7 +127,7 @@ for sailor in sailors_data:
 # Check that event dates from boat_availability and sailor_availability are consistent.
 
 sailor_dates = list(sailors_availability[1].keys())
-sailor_dates.remove('name')
+sailor_dates.remove('display name')
 if bool(set(sailor_dates) ^ set(constants.event_dates)):
     raise Exception("Sailor availability is inconsistent with boat availability.")
 
@@ -133,17 +139,17 @@ try:
 except FileNotFoundError:
     print("Creating sailor histories file.")
     sailor_histories_file = open(sailor_histories_filename, 'w+', newline='')
-    writer = csv.DictWriter(sailor_histories_file, fieldnames=header_row)
+    writer = csv.DictWriter(sailor_histories_file, fieldnames=sailor_header_row)
     writer.writeheader()
     for sailor in sailors_data:
-        writer.writerow({"name": sailor["name"]})
+        writer.writerow({"display name": sailor["display name"]})
 
 sailor_histories_file.close()
 
 # Create sailor_histories (the list of sailor history dictionaries) from file.
 
 sailor_histories = []
-with open(sailor_histories_filename, mode ='r') as sailor_histories_file:
+with open(sailor_histories_filename, mode='r') as sailor_histories_file:
     reader = csv.DictReader(sailor_histories_file)
     for sailor_history in reader:
         sailor_histories.append(sailor_history)
@@ -162,18 +168,18 @@ if constants.event_dates.count(event_date) == 0:
 
 # List the boats and sailors available on the event date.
 
-available_boats = [] # list of dictionaries for boats available on the event date.
+available_boats = []  # list of dictionaries for boats available on the event date.
 for available_boat in boats_availability:
     if not available_boat[event_date] == '':
         for boat in boats_data:
-            if boat["name"] == available_boat["name"]:
+            if boat["boat name"] == available_boat["boat name"]:
                 available_boats.append(boat)
 
-available_sailors = [] # list of dictionaries for sailors available on the given date.
+available_sailors = []  # list of dictionaries for sailors available on the given date.
 for available_sailor in sailors_availability:
     if not available_sailor[event_date] == '':
         for sailor in sailors_data:
-            if sailor["name"] == available_sailor["name"]:
+            if sailor["display name"] == available_sailor["display name"]:
                 available_sailors.append(sailor)
 
 # For each available sailor and boat, calculate their loyalty band, and add it to their data.
@@ -182,17 +188,17 @@ for available_sailor in sailors_availability:
 for available_sailor in available_sailors:
     for sailor_history in sailor_histories:
         loyalty = 0
-        if available_sailor["name"] == sailor_history["name"]:
+        if available_sailor["display name"] == sailor_history["display name"]:
             for date in constants.event_dates:
                 if date == event_date:
                     break
                 if not sailor_history[date] == '':
                     loyalty += 1
-            available_sailor["loyalty"] = [str(loyalty) for sailor in available_sailors if sailor["name"] == available_sailor["name"]][0]
+            available_sailor["loyalty"] = [str(loyalty) for sailor in available_sailors if sailor["display name"] == available_sailor["display name"]][0]
 
 for available_boat in available_boats:
     for boat_availability in boats_availability:
-        if boat_availability["name"] == available_boat["name"]:
+        if boat_availability["boat name"] == available_boat["boat name"]:
             loyalty = 0
             for date in constants.event_dates:
                 if date == event_date:
@@ -215,17 +221,17 @@ if len(crews) >= 2:
 for crew in crews:
     for sailor in crew["sailors"]:
         for history in range(len(sailor_histories)):
-            if sailor_histories[history]["name"] == sailor["name"]:
-                sailor_histories[history][event_date] = crew["boat"]["name"]
+            if sailor_histories[history]["display name"] == sailor["display name"]:
+                sailor_histories[history][event_date] = crew["boat"]["boat name"]
 
 # Write sailor_histories to file.
 
 sailor_histories_file = open(sailor_histories_filename, 'w', newline='')
 
-writer = csv.DictWriter(sailor_histories_file, fieldnames=header_row)
+writer = csv.DictWriter(sailor_histories_file, fieldnames=sailor_header_row)
 writer.writeheader()
 for sailor_history in sailor_histories:
-    writer.writerow( sailor_history )
+    writer.writerow(sailor_history)
 
 sailor_histories_file.close()
 
@@ -233,6 +239,6 @@ sailor_histories_file.close()
 
 html = crew_html.html(crews, wait_list, event_date)
 
-events_file = open( Working_directory + "html/" + event_date + ".html", 'w+', newline='')
-events_file.write( html )
+events_file = open(Working_directory + "html/" + event_date + ".html", 'w+', newline='')
+events_file.write(html)
 events_file.close()

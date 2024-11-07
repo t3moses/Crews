@@ -15,9 +15,9 @@ def html(crews, wait_list, event_date):
     tail = "</table></body></html>"
     contents = ""
     for crew in crews:
-        contents += "<tr><td>" + crew["boat"]["name"] + "</td>"
+        contents += "<tr><td>" + crew["boat"]["boat name"] + "</td>"
         for sailor in crew["sailors"]:
-            contents += "<td>" + sailor["name"] + "</td>"
+            contents += "<td>" + sailor["display name"] + "</td>"
         empty_cells = max_crew_size - len(crew["sailors"])
         for _ in range( empty_cells ):
             contents += "<td>" + "" + "</td>"

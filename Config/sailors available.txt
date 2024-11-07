@@ -1,86 +1,79 @@
-name,Fri Jun 6,Fri Jun 13,Fri Jun 20,Sat Jun 28,Fri Jul 4,Fri Jul 11,Sat Jul 19,Fri Jul 25,Fri Aug 1,Sat Aug 9,Fri Aug 15,Fri Aug 22,Sat Aug 30,Fri Sep 5,Fri Sep 12,Fri Sep 19,Fri Sep 26
-Adam,,,,,,,,,,,,,,,,Y,
-Al,Y,,Y,,Y,,,Y,,,Y,Y,,Y,,Y,
-Andrew,,,,Y,,,,,,,,,,,,,
-Angelle,,,,,,,,,,,Y,,,,,,
-Angus,,Y,Y,,Y,Y,,Y,,Y,,Y,Y,Y,Y,Y,Y
-Anik,,,,,,Y,,Y,Y,,Y,Y,,,Y,Y,Y
-Ann,,,,,,,,,,,,,,,,Y,
-Anne L,Y,Y,,,,,,,,,,,,,,,
-Anne S,,Y,,,,,,,,,,,,,,,
-Ben,,,,,,,,,,,,,Y,,,,
-Brenda,,,,,,,,Y,,,Y,,,,,Y,Y
-Brian,Y,Y,Y,,Y,,,Y,,,Y,,,,,,,
-Cara,,Y,,,Y,Y,,Y,,,Y,Y,,Y,Y,Y,Y
-Carla,,,Y,,Y,,,Y,,,,,,Y,Y,,Y
-Carlos,,,,,,,,,,,,,,Y,Y,Y,Y
-Caroline,Y,Y,Y,,Y,Y,,Y,Y,,Y,Y,,Y,Y,Y,Y
-Charles,,,,,,,,,,,Y,,,,,,
-Christine,Y,,Y,,,,,,,Y,,Y,,,,,Y
-Claire,,,,,,,,Y,,,,Y,,,Y,,
-Clara,,,,,,,,,,,,,,Y,,,
-Colin,,,,,,,,,,,,,,,,Y,
-Corneliu,,,,,,,,,,,,,Y,Y,,Y,Y
-Craig,Y,Y,,,,,,Y,Y,,,,,,,,Y
-Denis,,,,Y,,,,,,,,,,,,,
-Dominique,Y,,Y,,Y,,,Y,,,Y,Y,,Y,,Y,
-Don M,,,,,,,,,,,,,,,,,
-Don P,,,Y,,,,,,Y,,,,,,,,
-Doug,,,,,,,Y,,,,,,,,,,
-Elaine,,,,,,,Y,,,,,,,,,,
-Eliza,,,,Y,,,,,,,,,,,,,
-Elizabeth,,,,,Y,,,,,,,Y,,Y,,,Y
-Emily,,,,,,,Y,,,Y,,,,,,,
-Eric,Y,,Y,,,,,,,Y,,,Y,,,,Y
-Fiona,,,Y,Y,Y,Y,Y,,,Y,Y,Y,,Y,,Y,Y
-Gary,Y,,,,,Y,Y,,Y,Y,,,,Y,,,
-Geoff,,Y,,Y,Y,Y,,Y,Y,Y,Y,,,,,,
-Gillian,,,,,,,,,,Y,,Y,,,,,
-Gina,,,,,,,,,,Y,,,Y,,,,
-Glenn,Y,Y,Y,Y,Y,Y,Y,,Y,Y,Y,Y,Y,Y,Y,Y,Y
-Gretta,,,,,,,,,,,,,,,Y,,
-Heather,Y,Y,,,,,,,,,Y,,,Y,,Y,Y
-James,,,,,Y,,,,,,,,,,,,
-Janet,,Y,Y,,Y,,,Y,,Y,,Y,Y,,Y,Y,Y
-Jean M,,,Y,,,,,,,,,,,,,,
-Jean-Paul,,,Y,Y,Y,Y,,,,,,,,,,,
-Joachim,,,,,,,,,,,,,,,Y,Y,Y
-John B,,Y,,Y,,Y,,,Y,Y,Y,Y,,Y,Y,Y,Y
-John L,,,,,,,Y,,,Y,,,Y,,,,
-Katrina,,,,,,,,,,,,Y,,,,,
-Kelly,,,,,,,,,,Y,,,,,,,
-Kimberley,,,,Y,,,,,,,,,,,,,
-Laura,,,,Y,,,Y,,,Y,,,Y,,,,
-Leonore,,,,,,,,,,,,,Y,,,,
-Linda,Y,Y,Y,,Y,,Y,Y,,Y,Y,Y,,Y,,,
-Lois,,,,,,,,,,,,,Y,,,,
-Loredana,,,,,,,,,,,,,Y,Y,,Y,Y
-Luise,,,,,,,,,,,,,Y,,,,
-Malcolm,,,,,,,,,Y,,,Y,,Y,,,
-Marc,,Y,,,,,,,,,,,,,,,
-Marie-Louise,,,,,Y,,,,,,,,,,,,
-Mike C,,,,,,,,,,,,,,,Y,,
-Mike S,,Y,,,,,Y,,,Y,,,,,,,
-Mike T,,,,,,,,,,,Y,,,,,,
-Milan,Y,Y,,,Y,Y,,Y,,,Y,Y,,Y,Y,Y,Y
-Nancy,Y,,,,,Y,,Y,Y,,,,,Y,Y,Y,Y
-Nathalie D,,,,,,,,,,,,,,,,,
-Nathalie S,,,,,,,,,,,Y,Y,Y,Y,,,
-Nawar,,,Y,,,,,,,,,,,,,,
-Nicole,,Y,,,,,,,,,,,,,,,
-Olena,,,,,,,,,,,,,,Y,,,
-Pat,Y,Y,Y,,,Y,,Y,Y,,Y,Y,,Y,Y,,Y
-Paul B,,,,,,,,,,,,,,,Y,,
-Paul T,,,,Y,,Y,,,,,,,,,,,
-Paul V,,,,,,Y,Y,Y,,,Y,Y,,Y,,,
-Peter,,,,,Y,Y,Y,Y,,,,Y,,,,,
-Rob,,,,,,,,Y,,,Y,Y,,Y,,,Y
-Ruth,Y,Y,Y,Y,,,,,,,Y,Y,Y,Y,Y,Y,Y
-Sandra,,,,,,,Y,,,,,,,,,,
-Steve C,,,,,,Y,,,,,,,,,,,
-Steve K,,Y,,,,,,Y,,,,,,,,,
-Sylvie,,Y,Y,,,Y,,Y,,,,,,,,,
-Tom,,Y,,,Y,,,,Y,,,,,,Y,,Y
-Tracy,,,,,,,,,,Y,,Y,,,,,
-Wendy,,,,,,,,,,,,,,,Y,Y,Y
-Wynet,,,,,,,Y,,Y,,Y,,,Y,,,Y
+display name,Fri Jun 6,Fri Jun 13,Fri Jun 20,Sat Jun 28,Fri Jul 4,Fri Jul 11,Sat Jul 19,Fri Jul 25,Fri Aug 1,Sat Aug 9,Fri Aug 15,Fri Aug 22,Sat Aug 30,Fri Sep 5,Fri Sep 12,Fri Sep 19,Fri Sep 26
+AdamK,,,,,,,,,,,,,,,,Y,
+AlB,Y,,Y,,Y,,,Y,,,Y,Y,,Y,,Y,
+AndrewO,,,,Y,,,,,,,,,,,,,
+AngelleB,,,,,,,,,,,Y,,,,,,
+AngusM,,Y,Y,,Y,Y,,Y,,Y,,Y,Y,Y,Y,Y,Y
+AnikL,,,,,,Y,,Y,Y,,Y,Y,,,Y,Y,Y
+AnneH,,,,,,,,,,,,,,,,Y,
+AnneL,Y,Y,,,,,,,,,,,,,,,
+BrendaB,,,,,,,,Y,,,Y,,,,,Y,Y
+BrianC,Y,Y,Y,,Y,,,Y,,,Y,,,,,,,
+CaraR,,Y,,,Y,Y,,Y,,,Y,Y,,Y,Y,Y,Y
+CarlaM,,,Y,,Y,,,Y,,,,,,Y,Y,,Y
+CarlosF,,,,,,,,,,,,,,Y,Y,Y,Y
+CarolineS,Y,Y,Y,,Y,Y,,Y,Y,,Y,Y,,Y,Y,Y,Y
+CharlesB,,,,,,,,,,,Y,,,,,,
+ChristineT,Y,,Y,,,,,,,Y,,Y,,,,,Y
+ClaireB,,,,,,,,Y,,,,Y,,,Y,,
+ClaraW,,,,,,,,,,,,,,Y,,,
+ColinZ,,,,,,,,,,,,,,,,Y,
+CorneliuN,,,,,,,,,,,,,Y,Y,,Y,Y
+CraigD,Y,Y,,,,,,Y,Y,,,,,,,,Y
+DenisG,,,,Y,,,,,,,,,,,,,
+DominiqueB,Y,,Y,,Y,,,Y,,,Y,Y,,Y,,Y,
+DonM,,,,,,,,,,,,,,,,,
+DonP,,,Y,,,,,,Y,,,,,,,,
+DougM,,,,,,,Y,,,,,,,,,,
+ElaineM,,,,,,,Y,,,,,,,,,,
+ElizabethL,,,,,Y,,,,,,,Y,,Y,,,Y
+EmilyS,,,,,,,Y,,,Y,,,,,,,
+EricT,Y,,Y,,,,,,,Y,,,Y,,,,Y
+FionaK,,,Y,Y,Y,Y,Y,,,Y,Y,Y,,Y,,Y,Y
+GaryW,Y,,,,,Y,Y,,Y,Y,,,,Y,,,
+GeoffD,,Y,,Y,Y,Y,,Y,Y,Y,Y,,,,,,
+GillianL,,,,,,,,,,Y,,Y,,,,,
+GinaB,,,,,,,,,,Y,,,Y,,,,
+GlennM,Y,Y,Y,Y,Y,Y,Y,,Y,Y,Y,Y,Y,Y,Y,Y,Y
+GrettaB,,,,,,,,,,,,,,,Y,,
+HeatherK,Y,Y,,,,,,,,,Y,,,Y,,Y,Y
+JamesG,,,,,Y,,,,,,,,,,,,
+JanetM,,Y,Y,,Y,,,Y,,Y,,Y,Y,,Y,Y,Y
+JeanM,,,Y,,,,,,,,,,,,,,
+Jean-paulL,,,Y,Y,Y,Y,,,,,,,,,,,
+JoachimM,,,,,,,,,,,,,,,Y,Y,Y
+JohnB,,Y,,Y,,Y,,,Y,Y,Y,Y,,Y,Y,Y,Y
+JohnL,,,,,,,Y,,,Y,,,Y,,,,
+KatrinaG,,,,,,,,,,,,Y,,,,,
+KellyB,,,,,,,,,,Y,,,,,,,
+KimberleyD,,,,Y,,,,,,,,,,,,,
+LauraL,,,,Y,,,Y,,,Y,,,Y,,,,
+LeonoreE,,,,,,,,,,,,,Y,,,,
+LindaH,Y,Y,Y,,Y,,Y,Y,,Y,Y,Y,,Y,,,
+LoredanaN,,,,,,,,,,,,,Y,Y,,Y,Y
+LuiseV,,,,,,,,,,,,,Y,,,,
+MalcolmB,,,,,,,,,Y,,,Y,,Y,,,
+MarcB,,Y,,,,,,,,,,,,,,,
+Marie-louiseG,,,,,Y,,,,,,,,,,,,
+MikeC,,,,,,,,,,,,,,,Y,,
+MikeS,,Y,,,,,Y,,,Y,,,,,,,
+MikeT,,,,,,,,,,,Y,,,,,,
+MilanJ,Y,Y,,,Y,Y,,Y,,,Y,Y,,Y,Y,Y,Y
+NancyR,Y,,,,,Y,,Y,Y,,,,,Y,Y,Y,Y
+NathalieD,,,,,,,,,,,,,,,,,
+NathalieS,,,,,,,,,,,Y,Y,Y,Y,,,
+NawarJ,,,Y,,,,,,,,,,,,,,
+OlenaC,,,,,,,,,,,,,,Y,,,
+PatT,Y,Y,Y,,,Y,,Y,Y,,Y,Y,,Y,Y,,Y
+PaulB,,,,,,,,,,,,,,,Y,,
+PaulV,,,,,,Y,Y,Y,,,Y,Y,,Y,,,
+PeterM,,,,,Y,Y,Y,Y,,,,Y,,,,,
+RobJ,,,,,,,,Y,,,Y,Y,,Y,,,Y
+RuthM,Y,Y,Y,Y,,,,,,,Y,Y,Y,Y,Y,Y,Y
+SandraM,,,,,,,Y,,,,,,,,,,
+SteveC,,,,,,Y,,,,,,,,,,,
+SylvieS,,Y,Y,,,Y,,Y,,,,,,,,,
+TomK,,Y,,,Y,,,,Y,,,,,,Y,,Y
+TracyS,,,,,,,,,,Y,,Y,,,,,
+WendyM,,,,,,,,,,,,,,,Y,Y,Y
+WynetS,,,,,,,Y,,Y,,Y,,,Y,,,Y

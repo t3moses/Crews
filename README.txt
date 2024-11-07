@@ -72,7 +72,7 @@ The sailor display name is unique.  It is formed from the first name and the ini
 All other letters are lower case.  In case of a clash, an exception is raised.
 
 The sailor uid is unique.  It is formed from the initial letter of the first name and the first three letters of the last name.
-All letters are lower case.  And any whitespace is deleted.
+All letters are lower case.  And any non-alphabet character is deleted.
 
 Outputs
 

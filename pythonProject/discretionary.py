@@ -58,7 +58,7 @@ def whitelist(crew):
 
     score = 0
 
-    boat_name = crew["boat"]["name"]
+    boat_name = crew["boat"]["boat name"]
     for i in range(0, len(crew["sailors"])):
         whitelist = crew["sailors"][i]["whitelist"]
         if whitelist.count(boat_name) == 0:
@@ -106,11 +106,11 @@ def repeat(crew, sailor_histories, event_date):
     score = 0
     for i in range(0, len(crew["sailors"])):
         for sailor_history in sailor_histories:
-            if sailor_history["name"] == crew["sailors"][i]["name"]:
+            if sailor_history["display name"] == crew["sailors"][i]["display name"]:
                 history_keys = list(sailor_history.keys())
                 event_index = history_keys.index(event_date)
                 history_list = list(sailor_history.values())[1 : event_index]
-                score += int(pow(history_list.count(crew["boat"]["name"]), constants.repeat_exponent))
+                score += int(pow(history_list.count(crew["boat"]["boat name"]), constants.repeat_exponent))
 
     return score
 
@@ -157,7 +157,7 @@ def swaps(crews, sailor_histories, event_date):
 def swap(crews, sailor_histories, event_date):
 
     # The received crews list contains a list of crews in increasing non-compliance order.
-    # Hence the last two entries have the highest non-compliance scores.
+    # Hence, the last two entries have the highest non-compliance scores.
     # Calculate the initial non-compliance score for the flotilla.
     # From crews, select the two crews with the highest non-compliance scores.
     # Swap a pair of sailors between these two crews.
