@@ -15,14 +15,16 @@ with open(Working_directory + "Config/" + "config.txt", "r") as f_config:
     s_line_3 = f_config.readline()  # boats availability
     s_line_4 = f_config.readline()  # sailors availability
     s_line_5 = f_config.readline()  # sailors history
-    s_line_6 = f_config.readline()  # events path
+    s_line_6 = f_config.readline()  # user input form
+    s_line_7 = f_config.readline()  # events path
 
 boats_data_filename = Working_directory+s_line_1.split(': ')[1].split(' //')[0]
 sailors_data_filename = Working_directory+s_line_2.split(': ')[1].split(' //')[0]
 boats_availability_filename = Working_directory+s_line_3.split(': ')[1].split(' //')[0]
 sailors_availability_filename = Working_directory+s_line_4.split(': ')[1].split(' //')[0]
 sailor_histories_filename = Working_directory+s_line_5.split(': ')[1].split(' //')[0]
-events_path = s_line_6.split(': ')[1].split(' //')[0]
+user_input_form_filename = s_line_6.split(': ')[1].split(' //')[0]
+events_path = s_line_7.split(': ')[1].split(' //')[0]
 
 # Get boats_data (the list of boat data dictionaries), as this is the authoritative source of boat names.
 
@@ -72,8 +74,7 @@ for boat in boats_availability:
     boats_from_availability.append(boat["boat name"])
 boats_from_data = []
 for boat in boats_data:
-    # boats_from_data.append(boat["boat name"])
-    boats_from_data.append(boat[0])
+    boats_from_data.append(boat["boat name"])
 if bool(set(boats_from_availability) ^ set(boats_from_data)):
     raise Exception("Boat availability is inconsistent with boat data.")
 
@@ -104,12 +105,10 @@ with open(sailors_availability_filename) as sailors_availability_file:
 
 sailors_from_availability = []
 for sailor in sailors_availability:
-    # sailors_from_availability.append(sailor["display name"])
-    sailors_from_availability.append(sailor[0])
+    sailors_from_availability.append(sailor["display name"])
 sailors_from_data = []
 for sailor in sailors_data:
-    # sailors_from_data.append(sailor["display name"])
-    sailors_from_data.append(sailor[0])
+    sailors_from_data.append(sailor["display name"])
 if bool(set(sailors_from_availability) ^ set(sailors_from_data)):
     raise Exception("Sailor availability is inconsistent with sailor data.")
 
@@ -117,10 +116,11 @@ if bool(set(sailors_from_availability) ^ set(sailors_from_data)):
 
 boats_from_data = []
 for boat in boats_data:
-    # boats_from_data.append(boat["boat name"])
-    boats_from_data.append(boat[0])
+    boats_from_data.append(boat["boat name"])
 for sailor in sailors_data:
-    sailor_whitelist = list(sailor["whitelist"].split(";"))
+    sailor_whitelist = sailor["whitelist"].split(";")
+
+
     if not bool(set(sailor_whitelist) <= set(boats_from_data)):
         raise Exception("Sailor whitelist is inconsistent with boat data.")
 
@@ -158,10 +158,10 @@ with open(sailor_histories_filename, mode='r') as sailor_histories_file:
 # event_id has the form date.version.  It is used as the RNG seed.
 
 print()
-event_id = input("Enter event id (date.version): ")
+event_id = input("Enter event id (date'v'version): ")
 print("Event id: ", event_id)
 random.seed(event_id)
-event_date = event_id.split('.')[0]
+event_date = event_id.split('v')[0]
 
 if constants.event_dates.count(event_date) == 0:
     raise Exception("Invalid event date")
@@ -239,6 +239,6 @@ sailor_histories_file.close()
 
 html = crew_html.html(crews, wait_list, event_date)
 
-events_file = open(Working_directory + "html/" + event_date + ".html", 'w+', newline='')
+events_file = open(Working_directory + "html/" + event_id + ".html", 'w+', newline='')
 events_file.write(html)
 events_file.close()

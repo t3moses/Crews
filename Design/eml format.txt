@@ -1,0 +1,31 @@
+
+>Owner's fi=
+rst name:</span> <span class=3D"text light" style=3D"white-space: pre-wrap;=
+ font-family: HelveticaNeue-Light, HelveticaNeue, Helvetica, Arial, sans-se=
+rif; font-size: 16px; line-height: 32px; color: #474747;">Tim<
+
+>Owner's last name:</span> <span class=3D"text light" style=3D"white-s=
+pace: pre-wrap; font-family: HelveticaNeue-Light, HelveticaNeue, Helvetica,=
+ Arial, sans-serif; font-size: 16px; line-height: 32px; color: #474747;">Mo=
+ses<
+
+>Owner's email address:</span> <span class=3D"text light" style=3D"whit=
+e-space: pre-wrap; font-family: HelveticaNeue-Light, HelveticaNeue, Helveti=
+ca, Arial, sans-serif; font-size: 16px; line-height: 32px; color: #474747;"=
+>t3moses@icloud.com<
+
+>Minimum number of crew:</span> <span class=3D"tex=
+t light" style=3D"white-space: pre-wrap; font-family: HelveticaNeue-Light, =
+HelveticaNeue, Helvetica, Arial, sans-serif; font-size: 16px; line-height: =
+32px; color: #474747;">1<
+
+>Maximum number of crew:</span> <span class=3D"te=
+xt light" style=3D"white-space: pre-wrap; font-family: HelveticaNeue-Light,=
+ HelveticaNeue, Helvetica, Arial, sans-serif; font-size: 16px; line-height:=
+ 32px; color: #474747;">3<
+
+>Include an experienced sailor in the crew.:</span> <s=
+pan class=3D"text light" style=3D"white-space: pre-wrap; font-family: Helve=
+ticaNeue-Light, HelveticaNeue, Helvetica, Arial, sans-serif; font-size: 16p=
+x; line-height: 32px; color: #474747;">Checked<
+

@@ -1,0 +1,33 @@
+From: no-reply@crm.wix.com
+Subject: You have received a new notification from NSC-SDC-TEST
+Date: November 10, 2024 at 9:10:28 AM EST
+To: t3moses@icloud.com
+
+ 
+ 
+User input
+Enrol a sailor
+ 
+Notification Summary:
+Form name: Enrol sailor
+Contact updated date: 2024-11-09T18:32:52.635Z
+Submission date and time: 2024-11-10T14:10:25.415Z
+NSC membership number: 123
+Contact email: t3moses@icloud.com
+Submission ID: 1dd5d104-6fd3-4848-8ba6-0990586fce0f
+Contact created date: 2023-07-29T18:52:22.620Z
+Last name: Moses
+Email: t3moses@icloud.com
+Contact ID: c096225c-4108-44cd-9ce7-22c5cd422cdf
+Submissions Link: https://manage.wix.app/forms/submissions/8886ad6c-2582-4500-94a8-fa62afcd0d2a/613ad958-d893-4d8d-a2b9-4c9c6575511b?d=https%3A%2F%2Fmanage.wix.com%2Fdashboard%2F8886ad6c-2582-4500-94a8-fa62afcd0d2a%2Fwix-forms%2Fform%2F613ad958-d893-4d8d-a2b9-4c9c6575511b%2Fsubmissions&s=true
+First name: Tim
+Background: I am an experienced sailor
+Form ID: 613ad958-d893-4d8d-a2b9-4c9c6575511b
+ 
+
+ 
+NSC-SDC-TEST
+Notification sent via Wix Automations
+ 
+ 
+ 

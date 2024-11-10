@@ -24,7 +24,7 @@ def html(crews, wait_list, event_date):
         contents += "</tr>"
     contents += "<tr><td>" + "Wait list" + "</td>"
     for sailor in wait_list:
-        contents += "<td>" + sailor["name"] + "</td>"
+        contents += "<td>" + sailor["display name"] + "</td>"
     empty_cells = max_crew_size - len(wait_list)
     for _ in range( empty_cells ):
         contents += "<td>" + "" + "</td>"

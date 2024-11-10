@@ -70,7 +70,7 @@ def assist(crew):
 
     # Identify if a boat requiring assistance does not have a sailor with skill level 2.
 
-    if crew["boat"]["assist"] == "True":
+    if crew["boat"]["request assist"] == "True":
         score = 1
 
         for i in range(0, len(crew["sailors"])):
