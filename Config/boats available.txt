@@ -2,7 +2,6 @@ boat name,Fri Jun 6,Fri Jun 13,Fri Jun 20,Sat Jun 28,Fri Jul 4,Fri Jul 11,Sat Ju
 Astraeus,,,,Y,,Y,,,Y,,,,,,,,Y
 Beluga V,Y,Y,,Y,Y,Y,,Y,,Y,Y,,,Y,,Y,Y
 Brisa,,,Y,,,Y,Y,Y,,,Y,Y,Y,Y,,,
-Cariad,,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
 Fixen,Y,Y,Y,,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
 Kaleidoscope,,,,,,,,,,Y,,,,,,,
 Kookaburra,,,,,,,,,,,,Y,,Y,Y,Y,
@@ -15,3 +14,4 @@ Valkyrie,,Y,Y,,Y,,,Y,,,,,,Y,,,
 Veleda III,Y,,Y,Y,Y,Y,,Y,,,,Y,,Y,Y,Y,Y
 Xantippe,Y,Y,Y,Y,Y,,Y,Y,Y,Y,Y,Y,Y,,Y,Y,Y
 Xel Ha,,,,,,Y,,Y,,Y,,,,Y,Y,Y,Y
+Cariad,,,,,,,,,,,,,,,,,

@@ -1,80 +1,79 @@
-display name,email address,member,skill,experience,request female,whitelist
-Adam K,statscancancancan@gmail.com,,1,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Al B,al.bellehumeur@outlook.com,True,1,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Andrew O,andrewott@rogers.com,,0,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Angelle B,cha.blouin@gmail.com,True,1,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Angus M,angus134@gmail.com,True,2,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Anik L,anikstravel@gmail.com,,0,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Anne H,annhardie2@gmail.com,,0,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Anne L,alannelalonde@gmail.com,,0,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Brenda B,brendabradley@rogers.com,,0,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Brian C,brian.travelnetwork@gmail.com,True,1,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Cara R,richardsonc275@gmail.com,True,0,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Carla M,cjmillar3@gmail.com,,1,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Carlos F,cfagetti@gmail.com,True,1,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Caroline S,caroalsmith@gmail.com,True,2,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Charles B,cha.blouin@gmail.com,True,1,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Christine T,gcthomas2015@gmail.com,True,1,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Claire B,cbuske46@gmail.com,,0,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Clara W,patthornton5744@gmail.com,,0,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Colin Z,c.zeidler.wc@gmail.com,,1,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Corneliu N,corneliu_nitu@yahoo.com,True,2,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Craig D,craigdsocial@gmail.com,True,1,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Denis G,grounin.denis@gmail.com,,0,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Dominique B,do.bellehumeur@outlook.com,True,1,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Don M,don121@hotmail.com,True,2,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Don P,donald1001@gmail.com,True,1,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Doug M,dougm13@gmail.com,,0,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Elaine M,dougm13@gmail.com,,0,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Elizabeth L,elizabethalees4735@gmail.com,,0,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Emily S,mikec@broderelectric.ca,,0,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Eric T,gcthomas2015@gmail.com,,0,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Fiona K,afk_26@hotmail.com,,2,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Gary W,garida@rogers.com,,1,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Geoff D,gajdelaunay@gmail.com,True,1,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Gillian L,gillian27lam@gmail.com,,0,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Gina B,ginabies@gmail.com,,0,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Glenn M,glenn.bev.macintosh@sympatico.ca,True,2,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Gretta B,glbradley@icloud.com,True,2,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Heather K,hfakidd@gmail.com,True,0,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-James G,jamesgmgraham@yahoo.com,,0,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Janet M,macfamily134@hotmail.com,True,0,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Jean M,jean.mullan1@gmail.com,,0,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Jean-paul L,jplarochette@gmail.com,,1,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Joachim M,jmfischmeister@gmail.com,True,2,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-John B,jbedard7@outlook.com,True,2,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-John L,lunnjohn1947@gmail.com,True,2,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Katrina G,katrina_geary@yahoo.co.uk,,0,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Kelly B,kelly.butler@hotmail.com,,0,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Kimberley D,delaunay1000@gmail.com,True,0,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Laura L,llunn613@gmail.com,True,2,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Leonore E,leonoreevans1@gmail.com,True,2,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Linda H,linda.hardinge@gmail.com,,0,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Loredana N,loredana_nitu@yahoo.com,True,1,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Luise V,lvonflotow@gmail.com,,1,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Malcolm B,mbdroid69@gmail.com,True,1,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Marc B,mbillard@outlook.com,,0,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Marie-louise G,mlgidaro@icloud.com,,0,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Mike C,mcoolin@techie.com,,0,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Mike S,mikec@broderelectric.ca,,1,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Mike T,miketibben@gmail.com,,1,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Milan J,milan.javor@gmail.com,True,2,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Nancy R,nancyfoxtrotango@gmail.com,True,1,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Nathalie D,driver707nathalie@gmail.com,,0,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Nathalie S,natschryer@yahoo.ca,True,0,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Nawar J,nawar.jabi@gmail.com,,0,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Olena C,mcoolin@techie.com,,0,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Pat T,patthornton5744@gmail.com,True,2,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Paul B,whatmlc@gmail.com,True,2,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Paul V,22025.pv@gmail.com,,0,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Peter M,pmacdowall@icloud.com,True,2,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Rob J,nsc.mxq9z@ncf.ca,True,1,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Ruth M,drass613@rogers.com,True,2,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Sandra M,pmacdowall@icloud.com,True,0,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Steve C,challinor.sd@gmail.com,True,0,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Sylvie S,ssottawa@outlook.com,True,2,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Tom K,tomkelly@tomkellyphoto.ca,True,2,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Tracy S,detailedsummary@gmail.com,,1,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Wendy M,moenigw@icloud.com,True,2,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Wynet S,wynetsmith@gmail.com,,1,,,Astraeus; Beluga V; Brisa; Cariad; Fixen; Kaleidoscope; Kookaburra; Princess Fe; Shawanaga; Sparrow; Triton; Tropical Quest; Valkyrie; Veleda III; Xantippe; Xel Ha
-Tim M,t3moses@icloud.com,True,2,From: no-reply@crm.wix.com,False,"['Beluga V;', 'Brisa', 'Fixen;', 'Kaleidoscope;', 'Kookaburra;', 'Princess Fe;', 'Shawanaga;', 'Sparrow;', 'Triton;', 'Tropical Quest;', 'Valkyrie;', 'Veleda III;', 'Xantippe;', 'Xel Ha', 'Cariad;', 'Astraeus;', 'Fac et Spera']"
+display name,partner,email address,member,skill,experience,request female,whitelist
+Adam K,,statscancancancan@gmail.com,,1,,False,Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Al B,,al.bellehumeur@outlook.com,True,1,,False,Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Andrew O,,andrewott@rogers.com,,0,,False,Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Angelle B,,cha.blouin@gmail.com,True,1,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Angus M,,angus134@gmail.com,True,2,,False,Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Anik L,,anikstravel@gmail.com,,0,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Anne H,,annhardie2@gmail.com,,0,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Anne L,,alannelalonde@gmail.com,,0,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Brenda B,,brendabradley@rogers.com,,0,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Brian C,,brian.travelnetwork@gmail.com,True,1,,False,Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Cara R,,richardsonc275@gmail.com,True,0,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Carla M,,cjmillar3@gmail.com,,1,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Carlos F,,cfagetti@gmail.com,True,1,,False,Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Caroline S,,caroalsmith@gmail.com,True,2,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Charles B,Angelle B,cha.blouin@gmail.com,False,1,,True,Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Christine T,,gcthomas2015@gmail.com,True,1,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Claire B,,cbuske46@gmail.com,,0,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Haf
+Clara W,,patthornton5744@gmail.com,,0,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Colin Z,,c.zeidler.wc@gmail.com,,1,,False,Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Corneliu N,,corneliu_nitu@yahoo.com,True,2,,False,Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Craig D,,craigdsocial@gmail.com,True,1,,False,Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Denis G,,grounin.denis@gmail.com,,0,,False,Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Dominique B,Al B,do.bellehumeur@outlook.com,True,1,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Don M,,don121@hotmail.com,True,2,,False,Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Don P,,donald1001@gmail.com,True,1,,False,Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Doug M,,dougm13@gmail.com,,0,,False,Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Elaine M,,dougm13@gmail.com,,0,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Elizabeth L,,elizabethalees4735@gmail.com,,0,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Emily S,,mikec@broderelectric.ca,,0,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Eric T,Christine T,gcthomas2015@gmail.com,,0,,False,Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Fiona K,,afk_26@hotmail.com,,2,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Gary W,,garida@rogers.com,,1,,False,Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Geoff D,,gajdelaunay@gmail.com,True,1,,False,Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Gillian L,,gillian27lam@gmail.com,,0,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Gina B,,ginabies@gmail.com,,0,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Glenn M,,glenn.bev.macintosh@sympatico.ca,True,2,,False,Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Gretta B,,glbradley@icloud.com,True,2,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Heather K,,hfakidd@gmail.com,True,0,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+James G,,jamesgmgraham@yahoo.com,,0,,False,Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Janet M,Angus M,macfamily134@hotmail.com,True,0,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Jean M,,jean.mullan1@gmail.com,,0,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Jean-paul L,,jplarochette@gmail.com,,1,,False,Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Joachim M,,jmfischmeister@gmail.com,True,2,,False,Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+John B,,jbedard7@outlook.com,True,2,,False,Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+John L,,lunnjohn1947@gmail.com,True,2,,False,Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Katrina G,,katrina_geary@yahoo.co.uk,,0,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Kelly B,,kelly.butler@hotmail.com,,0,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Kimberley D,Geoff D,delaunay1000@gmail.com,True,0,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Laura L,John L,llunn613@gmail.com,True,2,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Leonore E,,leonoreevans1@gmail.com,True,2,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Linda H,,linda.hardinge@gmail.com,,0,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Loredana N,Corneliu N,loredana_nitu@yahoo.com,True,1,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Luise V,,lvonflotow@gmail.com,,1,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Malcolm B,,mbdroid69@gmail.com,True,1,,False,Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Marc B,,mbillard@outlook.com,,0,,True,Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Marie-louise G,,mlgidaro@icloud.com,,0,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Mike C,,mcoolin@techie.com,,0,,False,Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Mike S,Emily S,mikec@broderelectric.ca,,1,,False,Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Mike T,,miketibben@gmail.com,,1,,False,Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Milan J,,milan.javor@gmail.com,True,2,,False,Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Nancy R,,nancyfoxtrotango@gmail.com,True,1,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Nathalie D,,driver707nathalie@gmail.com,,0,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Nathalie S,,natschryer@yahoo.ca,True,0,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Nawar J,,nawar.jabi@gmail.com,,0,,False,Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Olena C,Mike C,mcoolin@techie.com,,0,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Pat T,,patthornton5744@gmail.com,True,2,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Paul B,,whatmlc@gmail.com,True,2,,False,Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Paul V,,22025.pv@gmail.com,,0,,False,Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Peter M,,pmacdowall@icloud.com,True,2,,False,Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Rob J,,nsc.mxq9z@ncf.ca,True,1,,False,Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Ruth M,,drass613@rogers.com,True,2,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Sandra M,Peter M,pmacdowall@icloud.com,True,0,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Steve C,,challinor.sd@gmail.com,True,0,,False,Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Sylvie S,Steve C,ssottawa@outlook.com,True,2,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Tom K,,tomkelly@tomkellyphoto.ca,True,2,,False,Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Tracy S,,detailedsummary@gmail.com,,1,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Wendy M,Joachim M,moenigw@icloud.com,True,2,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha
+Wynet S,,wynetsmith@gmail.com,,1,,True,Astraeus;Beluga V;Brisa;Cariad;Fixen;Kaleidoscope;Kookaburra;Princess Fe;Shawanaga;Sparrow;Triton;Tropical Quest;Valkyrie;Veleda III;Xantippe;Xel Ha

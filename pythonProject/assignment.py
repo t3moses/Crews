@@ -120,7 +120,6 @@ for boat in boats_data:
 for sailor in sailors_data:
     sailor_whitelist = sailor["whitelist"].split(";")
 
-
     if not bool(set(sailor_whitelist) <= set(boats_from_data)):
         raise Exception("Sailor whitelist is inconsistent with boat data.")
 
@@ -214,7 +213,7 @@ crews = assignments["crews"]
 wait_list = assignments["wait_list"]
 
 if len(crews) >= 2:
-    crews = discretionary.discretionary(crews, sailor_histories, event_date)
+    scored_crews = discretionary.discretionary(crews, sailor_histories, event_date)
 
 # Update the sailor_histories file with the crew assignments for the event date.
 
@@ -237,7 +236,7 @@ sailor_histories_file.close()
 
 # Output a string containing the html for the crews.
 
-html = crew_html.html(crews, wait_list, event_date)
+html = crew_html.html(scored_crews, wait_list, event_date)
 
 events_file = open(Working_directory + "html/" + event_id + ".html", 'w+', newline='')
 events_file.write(html)
