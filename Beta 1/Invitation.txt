@@ -1,0 +1,37 @@
+Hello Stephen, Paul, Ruth and Glenn.
+
+We are ready for the first round of beta testing of the Social Day-cruising self-service interface.  And I'm recruiting testers.  I hope you will agree to participate.
+
+Beta 1 is very limited in scope, containing just two boats and two sailors.
+
+Beta 1 testing is focused on gross functionality, including:
+
+Enrolling boats in the program
+Enrolling sailors in the program
+Registering boats for events
+Registering sailors for events
+Modifying boat information and availability
+Modifying sailor information and availability
+
+Design and wording will be a focus in a later test cycle.
+
+You'll find the interface here ...
+
+	https://t3moses.wixstudio.io/nsc-sdc-test
+
+I hope you will explore it thotoughly.
+
+I'm not going to explain how to operate it.  Generally, users are not going to read the manual; they will expect the interface to be intuitive.  So, if it turns out to be ambiguous or confusing, then now's the time to find out.
+
+The database has been initialized with boats and sailors.  But, Tropical Quest, Fixen, Glenn and Ruth have been omitted.
+
+Bear in mind that, every time you click "Submit", I will receive an email that I will have to action.  So, if there is a delay, it's  because I'm busy doing something else.
+
+Beta 1 should run from Nov 18 to 22 inclusive.  Afterwards, I'll review your input and schedule Beta 2 with a larger scope and expanded objectives.
+
+Thanks so much for helping with this.
+
+By way of explanation, our largest flotilla in 2024 involved 27 sailors and 11 boats.  We attempt to enforce 11 elements of policy.  And, the task has become too difficult for human intelligence (at least it has for mine).  So, I need to call on machine assistance.  I also (Pilate-like) want to deflect the blame for assignments that someone might object to.
+
+All the best.  Tim.
+

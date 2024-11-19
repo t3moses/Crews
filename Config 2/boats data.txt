@@ -1,0 +1,15 @@
+boat name,owner email address,mobile,female,min_occupancy,max_occupancy,request assist
+Beluga V,geoffkelland9@gmail.com,,False,1,3,False
+Brisa,scott.alexander.mcdougall@gmail.com,,False,1,3,False
+Kaleidoscope,john@rakos.com,,False,1,2,False
+Kookaburra,SSOttawa@outlook.com,,True,1,2,False
+Princess Fe,don121@hotmail.com,,False,2,3,True
+Shawanaga,tceelen@thc-technology.com,,False,1,3,False
+Sparrow,robertvalois@yahoo.ca,,False,2,2,False
+Triton,tomkelly@tomkellyphoto.ca,,False,1,2,True
+Valkyrie,pushelberg@rogers.com,,False,1,4,False
+Veleda III,jsmoss@hotmail.ca,,False,2,2,False
+Xantippe,gumdobbs@gmail.com,,False,1,3,False
+Xel Ha,gac23@live.ca,,False,1,4,False
+Astraeus,linda.c.cunningham@gmail.com,,True,1,2,False
+Cariad,t3moses@icloud.com,+1 613-325-4291,False,,,False

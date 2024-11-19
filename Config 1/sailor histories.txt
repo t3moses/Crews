@@ -69,6 +69,7 @@ Paul B,,,,Veleda III,,,,,,,,,,,Xel Ha,,
 Paul V,,,,,,Fixen,Fixen,Fixen,,,Xantippe,Shawanaga,,Shawanaga,,,
 Peter M,,,,,Sparrow,Brisa,Xantippe,Valkyrie,,,,Cariad,,,,,
 Rob J,,,,,,,,Xel Ha,,,Princess Fe,Brisa,,Xel Ha,,,Tropical Quest
+Ruth M,Veleda III,Fixen,Cariad,Triton,,,,,,,Triton,Princess Fe,Fixen,Tropical Quest,Veleda III,Shawanaga,Beluga V
 Sandra M,,,,,,,Brisa,,,,,,,,,,
 Steve C,,,,,,Xel Ha,,,,,,,,,,,
 Sylvie S,,Princess Fe,Valkyrie,,,Brisa,,Triton,,,,,,,,,
@@ -76,4 +77,3 @@ Tom K,,Princess Fe,,,Sparrow,,,,Princess Fe,Cariad,,,,,Xel Ha,,Princess Fe
 Tracy S,,,,,,,,,,Xantippe,,Xantippe,,,,,
 Wendy M,,,,,,,,,,,,,,,Kookaburra,Xel Ha,Astraeus
 Wynet S,,,,,,,Xantippe,,Fixen,,Cariad,,,Beluga V,,,Fixen
-Ruth M,,,,,,,,,,,,,,,,,

@@ -18,6 +18,8 @@ def html(scored_crews, wait_list, event_date):
     table_width = str(int(100 * number_of_columns / max_number_of_columns))
     column_width = str(int(100 / number_of_columns))
 
+    event_version = "0"
+
     top = ""
     top += "<!DOCTYPE html><html><head><style>"
     top += "table {font-family: arial, sans-serif;border-collapse: collapse;width: " + table_width + "%;}"
@@ -25,13 +27,15 @@ def html(scored_crews, wait_list, event_date):
     top += "tr:nth-child(even) {background-color: #dddddd;}"
     top += "</style></head><body>"
     top += "<h2>Event date: " + event_date + "</h2>"
-    top += "<h2>Non-compliance: " + loss + "</h2>"
     top += "<table><th><tr style=""height: 1px;"">"
     for _ in range(number_of_columns):
         top += "<td></td>"
     top += "</tr></th>"
 
-    tail = "</table></body></html>"
+    tail = "</table>"
+    tail += "<h2>Version: " + event_version + "</h2>"
+    tail += "<h2>Non-compliance: " + loss + "</h2>"
+    tail += "</body></html>"
 
     contents = ""
     for crew in crews:

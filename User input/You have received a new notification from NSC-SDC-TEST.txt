@@ -1,28 +1,71 @@
 From: no-reply@crm.wix.com
 Subject: You have received a new notification from NSC-SDC-TEST
-Date: November 16, 2024 at 10:28:45 AM EST
+Date: November 17, 2024 at 10:36:55 PM EST
 To: t3moses@icloud.com
 
  
  
-NSC-SDC enrol boat
+NSC-SDC enrol sailor
 
  
 Notification Summary:
-Form name: Enrol boat
-Contact updated date: 2024-11-16T13:36:15.294Z
-Maximum number of sailors assigned by the program: 3
-Submission date and time: 2024-11-16T15:28:41.613Z
-Boat name: Cariad
-Contact email: t3moses@icloud.com
-Submission ID: fba00a28-2a6d-4bef-bf29-66822e1151c8
-Email: t3moses@icloud.com
-Mobile number: +1 613-325-4291
-Contact created date: 2023-07-29T18:52:22.620Z
-Contact ID: c096225c-4108-44cd-9ce7-22c5cd422cdf
-Submissions Link: https://manage.wix.app/forms/submissions/8886ad6c-2582-4500-94a8-fa62afcd0d2a/730d1817-a3ea-43f6-9845-4f4149eec8cc?d=https%3A%2F%2Fmanage.wix.com%2Fdashboard%2F8886ad6c-2582-4500-94a8-fa62afcd0d2a%2Fwix-forms%2Fform%2F730d1817-a3ea-43f6-9845-4f4149eec8cc%2Fsubmissions&s=true
-Minimum number of sailors assigned by the program: 1
-Form ID: 730d1817-a3ea-43f6-9845-4f4149eec8cc
+Form name: Enrol sailor
+Contact updated date: 2024-11-18T03:36:53.158Z
+Submission date and time: 2024-11-18T03:36:51.811Z
+Contact last name: Mack
+NSC membership number: 613812168
+(Women only) I would like to sail with a female captain when space allows: Checked
+Contact first name: Ruth
+Contact email: drass613@rogers.com
+Submission ID: 53b91abe-d692-4171-90b2-ccc3ca3f6583
+Contact created date: 2024-11-18T03:27:39.687Z
+Last name: Mack
+Email: drass613@rogers.com
+Contact ID: cf6b7eea-4e16-4ca0-b006-66e3e8a8a686
+Submissions Link: https://manage.wix.app/forms/submissions/8886ad6c-2582-4500-94a8-fa62afcd0d2a/613ad958-d893-4d8d-a2b9-4c9c6575511b?d=https%3A%2F%2Fmanage.wix.com%2Fdashboard%2F8886ad6c-2582-4500-94a8-fa62afcd0d2a%2Fwix-forms%2Fform%2F613ad958-d893-4d8d-a2b9-4c9c6575511b%2Fsubmissions&s=true
+Tell us about your sailing qualifications and experience: Sailing Education
+2024 - present Advantage Boating
+			Coastal Navigation BASIC – Sail Canada
+			Ottawa, Ontario, Canada
+
+2024	Capt. Mac’s School of Seamanship
+		Mileage Builder and Coastal Navigation practical
+		New Westminster, British Columbia, Canada
+
+2023	Ontario Sailing 
+                Assistant Race Officer Certification
+                Hamilton, Ontario, Canada
+
+2022	Advantage Boating
+		VHF-ROC(M) Certification # 8026770
+		Ottawa, Ontario, Canada
+
+2021	Advantage Boating
+		Basic Cruising Standard - Skipper
+		Ottawa, Ontario, Canada
+
+2021	Advantage Boating
+		Basic Cruising Standard - Crew
+		Ottawa, Ontario, Canada
+
+2016	Boater Exam Transport Canada
+		Pleasure Craft Operator Card (PCOC) # 306049242
+		Ottawa, Ontario, Canada
+
+Sailing Experience				effective to 07Sep2024
+•	On water course work	102 hours
+•	Recreational		348 hours
+•	Total			450 hours
+
+Relevant Licenses and Certifications	
+•	Registered Nurse (RN) Ontario (current) [Nebraska, US Virgin Islands lapsed]
+•	Certified Clinical Research Professional (CCRP)
+•	Heart and Stroke Foundation CPR “C” – HCP
+•	St John’s Ambulance Standard First Aid with CPR “C”
+First name: Ruth
+Background: I have a basic qualification
+Contact language: en
+Form ID: 613ad958-d893-4d8d-a2b9-4c9c6575511b
  
 
  

@@ -69,6 +69,7 @@ Paul B,,,,,,,,,,,,,,,Y,,
 Paul V,,,,,,Y,Y,Y,,,Y,Y,,Y,,,
 Peter M,,,,,Y,Y,Y,Y,,,,Y,,,,,
 Rob J,,,,,,,,Y,,,Y,Y,,Y,,,Y
+Ruth M,Y,Y,Y,Y,,,,,,,Y,Y,Y,Y,Y,Y,Y
 Sandra M,,,,,,,Y,,,,,,,,,,
 Steve C,,,,,,Y,,,,,,,,,,,
 Sylvie S,,Y,Y,,,Y,,Y,,,,,,,,,
@@ -76,4 +77,3 @@ Tom K,,Y,,,Y,,,,Y,,,,,,Y,,Y
 Tracy S,,,,,,,,,,Y,,Y,,,,,
 Wendy M,,,,,,,,,,,,,,,Y,Y,Y
 Wynet S,,,,,,,Y,,Y,,Y,,,Y,,,Y
-Ruth M,,,,,,,,,,,,,,,,,
