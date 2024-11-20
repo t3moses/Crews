@@ -14,4 +14,4 @@ Valkyrie,,Y,Y,,Y,,,Y,,,,,,Y,,,
 Veleda III,Y,,Y,Y,Y,Y,,Y,,,,Y,,Y,Y,Y,Y
 Xantippe,Y,Y,Y,Y,Y,,Y,Y,Y,Y,Y,Y,Y,,Y,Y,Y
 Xel Ha,,,,,,Y,,Y,,Y,,,,Y,Y,Y,Y
-Cariad,,,,,,,,,,,,,,,,,
+Cariad,,,,,,,Y,,,,,,,,,,

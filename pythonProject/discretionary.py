@@ -18,22 +18,13 @@ def discretionary(crews, sailor_histories, event_date):
         crew["score"] = crew_score(crew, sailor_histories, event_date)
     crews = order_crews_by_score(crews)
 
-    for _ in range(constants.epochs + 1):
+    for _ in range(constants.inner_epochs):
         overall_score = 0
         for crew in crews:
             overall_score += crew["score"]
-        score_list.append(overall_score)
+        # score_list.append(overall_score)
 
         crews = swap(crews, sailor_histories, event_date)
-
-    overall_score = 0
-    for crew in crews:
-        overall_score += crew["score"]
-    score_list.append(overall_score)
-
-    plt.plot(np.array(score_list))
-    plt.ylabel("Loss")
-    plt.show()
 
     scored_crews = {}
 

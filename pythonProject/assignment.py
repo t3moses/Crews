@@ -2,10 +2,13 @@
 
 import csv
 import random
+import datetime
 import constants
 import mandatory
 import discretionary
 import crew_html
+
+crew_html.begin()
 
 Working_directory = "/Users/timmoses/Documents/Tech/Projects/Version_controlled/Assignment/"
 
@@ -153,91 +156,106 @@ with open(sailor_histories_filename, mode='r') as sailor_histories_file:
     for sailor_history in reader:
         sailor_histories.append(sailor_history)
 
-# Get the current event date from the user and check that it is in the set of event dates.
-# event_id has the form date.version.  It is used as the RNG seed.
+
+# Get the current date from the user.
+#
 
 print()
-event_id = input("Enter event id (date'v'version): ")
-print("Event id: ", event_id)
-random.seed(event_id)
-event_date = event_id.split('v')[0]
+current_date = input("Enter current date (mmm dd): ")
+print("Current date: ", current_date)
+format = '%b %d'
+current_datetime = datetime.datetime.strptime(current_date, format)
 
-if constants.event_dates.count(event_date) == 0:
-    raise Exception("Invalid event date")
+for event_date in constants.event_dates:
 
-# List the boats and sailors available on the event date.
+    format = '%a %b %d'
+    event_datetime = datetime.datetime.strptime(event_date, format)
 
-available_boats = []  # list of dictionaries for boats available on the event date.
-for available_boat in boats_availability:
-    if not available_boat[event_date] == '':
-        for boat in boats_data:
-            if boat["boat name"] == available_boat["boat name"]:
-                available_boats.append(boat)
+    if current_datetime <= event_datetime:
 
-available_sailors = []  # list of dictionaries for sailors available on the given date.
-for available_sailor in sailors_availability:
-    if not available_sailor[event_date] == '':
-        for sailor in sailors_data:
-            if sailor["display name"] == available_sailor["display name"]:
-                available_sailors.append(sailor)
+        # List the boats and sailors available on the event date.
 
-# For each available sailor and boat, calculate their loyalty band, and add it to their data.
-# Sailor loyalty is derived from sailor_history, whereas boat_loyalty is derived from boat_availability.
+        available_boats = []  # list of dictionaries for boats available on the event date.
+        for available_boat in boats_availability:
+            if not available_boat[event_date] == '':
+                for boat in boats_data:
+                    if boat["boat name"] == available_boat["boat name"]:
+                        available_boats.append(boat)
 
-for available_sailor in available_sailors:
-    for sailor_history in sailor_histories:
-        loyalty = 0
-        if available_sailor["display name"] == sailor_history["display name"]:
-            for date in constants.event_dates:
-                if date == event_date:
-                    break
-                if not sailor_history[date] == '':
-                    loyalty += 1
-            available_sailor["loyalty"] = [str(loyalty) for sailor in available_sailors if sailor["display name"] == available_sailor["display name"]][0]
+        available_sailors = []  # list of dictionaries for sailors available on the given date.
+        for available_sailor in sailors_availability:
+            if not available_sailor[event_date] == '':
+                for sailor in sailors_data:
+                    if sailor["display name"] == available_sailor["display name"]:
+                        available_sailors.append(sailor)
 
-for available_boat in available_boats:
-    for boat_availability in boats_availability:
-        if boat_availability["boat name"] == available_boat["boat name"]:
-            loyalty = 0
-            for date in constants.event_dates:
-                if date == event_date:
-                    break
-                if not boat_availability[date] == '':
-                    loyalty += 1
-            available_boat["loyalty"] = loyalty
+        # For each available sailor and boat, calculate their loyalty band, and add it to their data.
+        # Sailor loyalty is derived from sailor_history, whereas boat_loyalty is derived from boat_availability.
 
-# Form crews by applying the mandatory and discretionary rules.
+        for available_sailor in available_sailors:
+            for sailor_history in sailor_histories:
+                loyalty = 0
+                if available_sailor["display name"] == sailor_history["display name"]:
+                    for date in constants.event_dates:
+                        if date == event_date:
+                            break
+                        if not sailor_history[date] == '':
+                            loyalty += 1
+                    available_sailor["loyalty"] = [str(loyalty) for sailor in available_sailors if sailor["display name"] == available_sailor["display name"]][0]
 
-assignments = mandatory.mandatory(available_boats, available_sailors)
-crews = assignments["crews"]
-wait_list = assignments["wait_list"]
+        for available_boat in available_boats:
+            for boat_availability in boats_availability:
+                if boat_availability["boat name"] == available_boat["boat name"]:
+                    loyalty = 0
+                    for date in constants.event_dates:
+                        if date == event_date:
+                            break
+                        if not boat_availability[date] == '':
+                            loyalty += 1
+                    available_boat["loyalty"] = loyalty
 
-if len(crews) >= 2:
-    scored_crews = discretionary.discretionary(crews, sailor_histories, event_date)
+        for iteration in range(constants.outer_epochs):
 
-# Update the sailor_histories file with the crew assignments for the event date.
+            random.seed(event_date + "v" + str(iteration))
 
-for crew in crews:
-    for sailor in crew["sailors"]:
-        for history in range(len(sailor_histories)):
-            if sailor_histories[history]["display name"] == sailor["display name"]:
-                sailor_histories[history][event_date] = crew["boat"]["boat name"]
+            # Form crews by applying the mandatory and discretionary rules.
 
-# Write sailor_histories to file.
+            assignments = mandatory.mandatory(available_boats, available_sailors)
+            crews = assignments["crews"]
+            wait_list = assignments["wait_list"]
 
-sailor_histories_file = open(sailor_histories_filename, 'w', newline='')
+            if len(crews) >= 2:
+                scored_crews = discretionary.discretionary(crews, sailor_histories, event_date)
 
-writer = csv.DictWriter(sailor_histories_file, fieldnames=sailor_header_row)
-writer.writeheader()
-for sailor_history in sailor_histories:
-    writer.writerow(sailor_history)
+            loss = scored_crews["loss"]
 
-sailor_histories_file.close()
+            if int(loss) <= constants.loss_threshold:
 
-# Output a string containing the html for the crews.
+                # Update the sailor_histories file with the crew assignments for the event date.
 
-html = crew_html.html(scored_crews, wait_list, event_date)
+                for crew in crews:
+                    for sailor in crew["sailors"]:
+                        for history in range(len(sailor_histories)):
+                            if sailor_histories[history]["display name"] == sailor["display name"]:
+                                sailor_histories[history][event_date] = crew["boat"]["boat name"]
 
-events_file = open(Working_directory + "html/" + event_id + ".html", 'w+', newline='')
+                # Write sailor_histories to file.
+
+                sailor_histories_file = open(sailor_histories_filename, 'w', newline='')
+
+                writer = csv.DictWriter(sailor_histories_file, fieldnames=sailor_header_row)
+                writer.writeheader()
+                for sailor_history in sailor_histories:
+                    writer.writerow(sailor_history)
+
+                sailor_histories_file.close()
+
+                break
+
+    # Output a string containing the html for the crews.
+
+        html = crew_html.html(scored_crews, wait_list, event_date, iteration)
+
+events_file = open(Working_directory + "html/assignments.html", 'w+', newline='')
 events_file.write(html)
 events_file.close()
