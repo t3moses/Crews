@@ -76,4 +76,4 @@ Tom K,,Y,,,Y,,,,Y,,,,,,Y,,Y
 Tracy S,,,,,,,,,,Y,,Y,,,,,
 Wendy M,,,,,,,,,,,,,,,Y,Y,Y
 Wynet S,,,,,,,Y,,Y,,Y,,,Y,,,Y
-Ruth M,,,,,,,,Y,,,,,,,,,
+Ruth M,Y,Y,Y,Y,,Y,,,Y,,,,Y,Y,Y,Y,Y

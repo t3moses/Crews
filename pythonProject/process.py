@@ -1,5 +1,6 @@
 #!.venv/bin/python3.12
 
+import assignment
 import csv
 import constants
 
@@ -522,7 +523,9 @@ elif form_name == "Enrol sailor":
     enrol_sailor(form)
 elif form_name == "Register boat":
     register_boat(form)
+    assignment.assignment()
 elif form_name == "Register sailor":
     register_sailor(form)
+    assignment.assignment()
 else:
     raise Exception("Unrecognised form.")

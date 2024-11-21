@@ -9,7 +9,7 @@ Princess Fe,,Y,,,Y,,,Y,Y,,Y,Y,Y,,Y,Y,Y
 Shawanaga,Y,Y,,Y,Y,Y,,Y,,Y,Y,Y,,Y,Y,Y,Y
 Sparrow,,Y,,,Y,,,,,,,,,,,,
 Triton,,,Y,Y,,Y,,Y,,Y,Y,Y,,Y,,,
-Tropical Quest,Y,Y,Y,,Y,,,Y,,,Y,,,Y,,Y,Y
+Tropical Quest,Y,Y,Y,,Y,,,Y,Y,,Y,,,Y,,Y,Y
 Valkyrie,,Y,Y,,Y,,,Y,,,,,,Y,,,
 Veleda III,Y,,Y,Y,Y,Y,,Y,,,,Y,,Y,Y,Y,Y
 Xantippe,Y,Y,Y,Y,Y,,Y,Y,Y,Y,Y,Y,Y,,Y,Y,Y

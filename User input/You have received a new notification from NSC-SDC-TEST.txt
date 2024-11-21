@@ -1,71 +1,37 @@
 From: no-reply@crm.wix.com
 Subject: You have received a new notification from NSC-SDC-TEST
-Date: November 17, 2024 at 10:36:55 PM EST
+Date: November 21, 2024 at 9:35:41 AM EST
 To: t3moses@icloud.com
 
  
  
-NSC-SDC enrol sailor
+NSC-SDC register boat
 
  
 Notification Summary:
-Form name: Enrol sailor
-Contact updated date: 2024-11-18T03:36:53.158Z
-Submission date and time: 2024-11-18T03:36:51.811Z
-Contact last name: Mack
-NSC membership number: 613812168
-(Women only) I would like to sail with a female captain when space allows: Checked
-Contact first name: Ruth
-Contact email: drass613@rogers.com
-Submission ID: 53b91abe-d692-4171-90b2-ccc3ca3f6583
-Contact created date: 2024-11-18T03:27:39.687Z
-Last name: Mack
-Email: drass613@rogers.com
-Contact ID: cf6b7eea-4e16-4ca0-b006-66e3e8a8a686
-Submissions Link: https://manage.wix.app/forms/submissions/8886ad6c-2582-4500-94a8-fa62afcd0d2a/613ad958-d893-4d8d-a2b9-4c9c6575511b?d=https%3A%2F%2Fmanage.wix.com%2Fdashboard%2F8886ad6c-2582-4500-94a8-fa62afcd0d2a%2Fwix-forms%2Fform%2F613ad958-d893-4d8d-a2b9-4c9c6575511b%2Fsubmissions&s=true
-Tell us about your sailing qualifications and experience: Sailing Education
-2024 - present Advantage Boating
-			Coastal Navigation BASIC – Sail Canada
-			Ottawa, Ontario, Canada
-
-2024	Capt. Mac’s School of Seamanship
-		Mileage Builder and Coastal Navigation practical
-		New Westminster, British Columbia, Canada
-
-2023	Ontario Sailing 
-                Assistant Race Officer Certification
-                Hamilton, Ontario, Canada
-
-2022	Advantage Boating
-		VHF-ROC(M) Certification # 8026770
-		Ottawa, Ontario, Canada
-
-2021	Advantage Boating
-		Basic Cruising Standard - Skipper
-		Ottawa, Ontario, Canada
-
-2021	Advantage Boating
-		Basic Cruising Standard - Crew
-		Ottawa, Ontario, Canada
-
-2016	Boater Exam Transport Canada
-		Pleasure Craft Operator Card (PCOC) # 306049242
-		Ottawa, Ontario, Canada
-
-Sailing Experience				effective to 07Sep2024
-•	On water course work	102 hours
-•	Recreational		348 hours
-•	Total			450 hours
-
-Relevant Licenses and Certifications	
-•	Registered Nurse (RN) Ontario (current) [Nebraska, US Virgin Islands lapsed]
-•	Certified Clinical Research Professional (CCRP)
-•	Heart and Stroke Foundation CPR “C” – HCP
-•	St John’s Ambulance Standard First Aid with CPR “C”
-First name: Ruth
-Background: I have a basic qualification
-Contact language: en
-Form ID: 613ad958-d893-4d8d-a2b9-4c9c6575511b
+Form name: Register boat
+Fri Jul 4: No change
+Fri Sep 12: No change
+Submission date and time: 2024-11-21T14:34:09.834Z
+Fri Aug 1: Register
+Sat Aug 30: No change
+Sat Jun 28: No change
+Fri Sep 5: No change
+Fri Sep 19: No change
+Boat name: Tropical Quest
+Fri Aug 15: No change
+Sat Aug 9: No change
+Fri Jun 13: No change
+Submission ID: b0d96dc4-cd6f-4367-ac89-cffc036af92e
+Fri Sep 26: No change
+Fri Jun 6: No change
+Sat Jul 19: No change
+Fri Jul 25: No change
+Fri Jul 11: No change
+Submissions Link: https://manage.wix.app/forms/submissions/8886ad6c-2582-4500-94a8-fa62afcd0d2a/3527105f-d237-4c85-bbab-78237b8114b3?d=https%3A%2F%2Fmanage.wix.com%2Fdashboard%2F8886ad6c-2582-4500-94a8-fa62afcd0d2a%2Fwix-forms%2Fform%2F3527105f-d237-4c85-bbab-78237b8114b3%2Fsubmissions&s=true
+Fri Jun 20: No change
+Fri Aug 22: No change
+Form ID: 3527105f-d237-4c85-bbab-78237b8114b3
  
 
  
