@@ -156,20 +156,18 @@ with open(sailor_histories_filename, mode='r') as sailor_histories_file:
     for sailor_history in reader:
         sailor_histories.append(sailor_history)
 
+# Set current_datetime no later than the last event date.
 
-# Get the current date from the user.
-#
-
-print()
-current_date = input("Enter current date (mmm dd): ")
-print("Current date: ", current_date)
-format = '%b %d'
-current_datetime = datetime.datetime.strptime(current_date, format)
+date_format = '%a %b %d'
+current_datetime = datetime.datetime.now()
+first_date = datetime.datetime.strptime(constants.event_dates[0], date_format)
+last_date = datetime.datetime.strptime(constants.event_dates[-1], date_format)
+if current_datetime > last_date:
+    current_datetime = first_date
 
 for event_date in constants.event_dates:
 
-    format = '%a %b %d'
-    event_datetime = datetime.datetime.strptime(event_date, format)
+    event_datetime = datetime.datetime.strptime(event_date, date_format)
 
     if current_datetime <= event_datetime:
 
@@ -225,36 +223,40 @@ for event_date in constants.event_dates:
             wait_list = assignments["wait_list"]
 
             if len(crews) >= 2:
-                scored_crews = discretionary.discretionary(crews, sailor_histories, event_date)
+                crews = discretionary.discretionary(crews, sailor_histories, event_date)
 
-            loss = scored_crews["loss"]
+            if iteration == 0:
+                best_crews = crews
+                best_score = int(crews["crews score"])
+                trial = 0
+            elif int(crews["crews score"]) < best_score:
+                best_crews = crews
+                best_score = int(crews["crews score"])
+                trial = iteration
+            else: pass
 
-            if int(loss) <= constants.loss_threshold:
+        # Update the sailor_histories file with the crew assignments for the event date.
 
-                # Update the sailor_histories file with the crew assignments for the event date.
-
-                for crew in crews:
-                    for sailor in crew["sailors"]:
-                        for history in range(len(sailor_histories)):
-                            if sailor_histories[history]["display name"] == sailor["display name"]:
-                                sailor_histories[history][event_date] = crew["boat"]["boat name"]
-
-                # Write sailor_histories to file.
-
-                sailor_histories_file = open(sailor_histories_filename, 'w', newline='')
-
-                writer = csv.DictWriter(sailor_histories_file, fieldnames=sailor_header_row)
-                writer.writeheader()
+        for crew in best_crews["crews"]:
+            for sailor in crew["sailors"]:
                 for sailor_history in sailor_histories:
-                    writer.writerow(sailor_history)
+                    if sailor_history["display name"] == sailor["display name"]:
+                        sailor_history[event_date] = crew["boat"]["boat name"]
 
-                sailor_histories_file.close()
+        # Write sailor_histories to file.
 
-                break
+        sailor_histories_file = open(sailor_histories_filename, 'w', newline='')
+
+        writer = csv.DictWriter(sailor_histories_file, fieldnames=sailor_header_row)
+        writer.writeheader()
+        for sailor_history in sailor_histories:
+            writer.writerow(sailor_history)
+
+        sailor_histories_file.close()
 
     # Output a string containing the html for the crews.
 
-        html = crew_html.html(scored_crews, wait_list, event_date, iteration)
+    html = crew_html.html(best_crews, wait_list, event_date)
 
 events_file = open(Working_directory + "html/assignments.html", 'w+', newline='')
 events_file.write(html)

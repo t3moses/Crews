@@ -18,10 +18,10 @@ def begin():
 
     return
 
-def html(scored_crews, wait_list, event_date, iteration):
+def html(scored_crews, wait_list, event_date):
 
     crews = scored_crews["crews"]
-    loss = scored_crews["loss"]
+    loss = scored_crews["crews score"]
 
     max_crew_size = 0
     for crew in crews:
@@ -68,7 +68,7 @@ def html(scored_crews, wait_list, event_date, iteration):
     for _ in range( empty_cells ):
         contents += "<td>" + "" + "</td>"
     contents += "</tr></table>"
-    contents += "<h3>Trial no: " + str(iteration) + ",  " + "Non-compliance: " + loss + "</h3>"
+    contents += "<h3>Non-compliance: " + loss + "</h3>"
     contents += "<hr>"
 
     html = top + contents + tail

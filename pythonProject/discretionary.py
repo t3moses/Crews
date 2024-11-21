@@ -1,8 +1,6 @@
 
 import random
 import copy
-import numpy as np
-import matplotlib.pyplot as plt
 import constants
 
 def discretionary(crews, sailor_histories, event_date):
@@ -12,24 +10,23 @@ def discretionary(crews, sailor_histories, event_date):
     # Order the crews by increasing non-compliance score and call swap.
     # Repeat multiple times and calculate the resulting overall score.
 
-    score_list = []
-
     for crew in crews:
-        crew["score"] = crew_score(crew, sailor_histories, event_date)
+        crew["crew score"] = crew_score(crew, sailor_histories, event_date)
+
     crews = order_crews_by_score(crews)
 
-    for _ in range(constants.inner_epochs):
-        overall_score = 0
-        for crew in crews:
-            overall_score += crew["score"]
-        # score_list.append(overall_score)
+    best_crews = []
 
-        crews = swap(crews, sailor_histories, event_date)
+    for _ in range(constants.inner_epochs):
+        crews_score = 0
+        for crew in crews:
+            crews_score += int(crew["crew score"])
+
+        best_crews = swap(crews, sailor_histories, event_date)
 
     scored_crews = {}
-
-    scored_crews["crews"] = crews
-    scored_crews["loss"] = str(overall_score)
+    scored_crews["crews"] = best_crews
+    scored_crews["crews score"] = str(crews_score)
 
     return scored_crews
 
@@ -43,51 +40,51 @@ def crew_score(crew, sailor_histories, event_date):
     skill_score = constants.skill_weight * skill(crew)
     repeat_score = constants.repeat_weight * repeat(crew, sailor_histories, event_date)
 
-    score = whitelist_score + partner_score + assist_score + skill_score + repeat_score
+    crew_score = whitelist_score + partner_score + assist_score + skill_score + repeat_score
 
-    return score
+    return crew_score
 
 def whitelist(crew):
 
     # Count the number of times the boat is not on a sailor's whitelist.
 
-    score = 0
+    crew_score = 0
 
     boat_name = crew["boat"]["boat name"]
     for sailor in crew["sailors"]:
         whitelist = sailor["whitelist"]
         if whitelist.count(boat_name) == 0:
-            score += 1
+            crew_score += 1
 
-    return score
+    return crew_score
 
 def partner(crew):
 
     # Count the number of times a sailor is sailing with their partner.
 
-    score = 0
+    crew_score = 0
 
     for sailor_1 in crew["sailors"]:
         for sailor_2 in crew["sailors"]:
             if sailor_1["partner"] == sailor_2["display name"]:
-                score += 1
+                crew_score += 1
 
-    return score
+    return crew_score
 
 def assist(crew):
 
     # Identify if a boat requiring assistance does not have a sailor with skill level 2.
 
     if crew["boat"]["request assist"] == "True":
-        score = 1
+        crew_score = 1
 
         for sailor in crew["sailors"]:
             if int(sailor["skill"]) == 2:
-                score = 0
+                crew_score = 0
     else:
-        score = 0
+        crew_score = 0
 
-    return score
+    return crew_score
 
 def skill(crew):
 
@@ -101,17 +98,17 @@ def skill(crew):
         min_skill = min( int(sailor["skill"]), min_skill)
     spread = max_skill - min_skill
     if spread > 1:
-        score = 1
+        crew_score = 1
     else:
-        score = 0
+        crew_score = 0
 
-    return score
+    return crew_score
 
 def repeat(crew, sailor_histories, event_date):
 
     # Calculate a score based on  how recently each sailor has sailed on the current boat.
 
-    score = 0
+    crew_score = 0
     for sailor in crew["sailors"]:
         for sailor_history in sailor_histories:
             if sailor_history["display name"] == sailor["display name"]:
@@ -121,8 +118,8 @@ def repeat(crew, sailor_histories, event_date):
                     else:
                         if sailor_history[date] == crew["boat"]["boat name"]:
                             contribution = pow(constants.event_dates.index(event_date) - constants.event_dates.index(date), constants.repeat_exponent)
-                            score += contribution
-    return int(score)
+                            crew_score += contribution
+    return int(crew_score)
 
 
 def order_crews_by_score(crews):
@@ -134,14 +131,14 @@ def order_crews_by_score(crews):
     banded_crews = []
 
     i = len(crews)
-    score = 0
+    crew_score = 0
     while i > 0:
         equal_crews = [] # list of boats in the same score band.
         for crew in crews:
-            if int(crew["score"]) == score:
+            if int(crew["crew score"]) == crew_score:
                 equal_crews.append(crew)
                 i -= 1
-        score += 1
+        crew_score += 1
         banded_crews.append(equal_crews)
 
     while len(banded_crews) > 0:
@@ -178,7 +175,7 @@ def swap(crews, sailor_histories, event_date):
     global best_i, best_j
     initial_score = 0
     for crew in crews:
-        initial_score += crew["score"]
+        initial_score += crew["crew score"]
     best_score = initial_score
 
     for i in range (len(crews[-2]["sailors"])):
@@ -207,7 +204,7 @@ def swap(crews, sailor_histories, event_date):
         crews[-1]["sailors"].insert(best_j, parked_sailor)
 
         for crew in crews:
-            crew["score"] = crew_score(crew, sailor_histories, event_date)
+            crew["crew score"] = crew_score(crew, sailor_histories, event_date)
 
     crews = order_crews_by_score(crews)
 
