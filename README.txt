@@ -168,5 +168,13 @@ The event calendar contains the assignments for the season, based on the current
 The calendar also shows the non-conformance score (or loss).  Single-digit scores are generally acceptable.  But, double-digit scores should prompt a rerun with a different event_id.
 
 
+To dos
 
+1. Allow both upper- and lower-case Y when responding to Yes/No question.  Say that Y and N are the right responses.  Tick
+
+2. Check that the membership entry comprises only number.  Tick
+
+3. Prevent name clashes when first name and first letter of last name are the same. Tick
+
+4. Allow registering before enrolling.
 

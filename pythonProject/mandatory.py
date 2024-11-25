@@ -1,3 +1,4 @@
+
 import random
 
 def mandatory(available_boats, available_sailors):
@@ -8,8 +9,8 @@ def mandatory(available_boats, available_sailors):
     min_occupancy = 0
     max_occupancy = 0
     for boat in available_boats:
-        min_occupancy += int(boat['min_occupancy'])
-        max_occupancy += int(boat['max_occupancy'])
+        min_occupancy += int(boat['min occupancy'])
+        max_occupancy += int(boat['max occupancy'])
 
     if len(ordered_sailors) < min_occupancy:
         crews = case_1(ordered_boats, ordered_sailors)
@@ -29,10 +30,10 @@ def case_1(boats, sailors):
 
     min_overall = 0
     for boat in boats:
-        min_overall += int(boat["min_occupancy"])
+        min_overall += int(boat["min occupancy"])
 
     while len(sailors) < min_overall:
-        min_overall -= int(boats[-1]["min_occupancy"])
+        min_overall -= int(boats[-1]["min occupancy"])
         boats.pop() # Remove the last boat in the boats list.
 
     assignments = case_3(boats, sailors)
@@ -48,10 +49,10 @@ def case_2(boats, sailors):
 
     max_overall = 0
     for boat in boats:
-        max_overall += int(boat["max_occupancy"])
+        max_overall += int(boat["max occupancy"])
 
     assignments = case_3(boats, sailors[ : max_overall])
-    assignments["wait_list"] = sailors[max_overall : ]
+    assignments["wait list"] = sailors[max_overall : ]
 
     return assignments
 
@@ -68,9 +69,9 @@ def case_3(boats, sailors):
     min_overall = 0
     max_overall = 0
     for boat in boats:
-        boat["occupancy"] = boat["min_occupancy"]
-        min_overall += int(boat["min_occupancy"])
-        max_overall += int(boat["max_occupancy"])
+        boat["occupancy"] = boat["min occupancy"]
+        min_overall += int(boat["min occupancy"])
+        max_overall += int(boat["max occupancy"])
 
     if not ( len(sailors) >= min_overall ):
         raise Exception("Number of sailors is less than min_occupancy.")
@@ -90,7 +91,7 @@ def case_3(boats, sailors):
 
     assignments = {}
     assignments["crews"] = assign(boats, sailors)
-    assignments["wait_list"] = []
+    assignments["wait list"] = []
 
     return assignments
 
@@ -249,7 +250,7 @@ def order_boats_by_headroom(boats):
     while i > 0:
         headroom_boats = [] # list of boats in the same headroom band.
         for boat in boats:
-            if int(boat["max_occupancy"]) - int(boat["occupancy"]) == headroom:
+            if int(boat["max occupancy"]) - int(boat["occupancy"]) == headroom:
                 headroom_boats.append(boat)
                 i -= 1
         headroom += 1

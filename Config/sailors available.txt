@@ -34,7 +34,6 @@ Gary W,Y,,,,,Y,Y,,Y,Y,,,,Y,,,
 Geoff D,,Y,,Y,Y,Y,,Y,Y,Y,Y,,,,,,
 Gillian L,,,,,,,,,,Y,,Y,,,,,
 Gina B,,,,,,,,,,Y,,,Y,,,,
-Glenn M,Y,Y,Y,Y,Y,Y,Y,,Y,Y,Y,Y,Y,Y,Y,Y,Y
 Gretta B,,,,,,,,,,,,,,,Y,,
 Heather K,Y,Y,,,,,,,,,Y,,,Y,,Y,Y
 James G,,,,,Y,,,,,,,,,,,,
@@ -65,7 +64,6 @@ Nathalie S,,,,,,,,,,,Y,Y,Y,Y,,,
 Nawar J,,,Y,,,,,,,,,,,,,,
 Olena C,,,,,,,,,,,,,,Y,,,
 Pat T,Y,Y,Y,,,Y,,Y,Y,,Y,Y,,Y,Y,,Y
-Paul B,,,,,,,,,,,,,,,Y,,
 Paul V,,,,,,Y,Y,Y,,,Y,Y,,Y,,,
 Peter M,,,,,Y,Y,Y,Y,,,,Y,,,,,
 Rob J,,,,,,,,Y,,,Y,Y,,Y,,,Y
@@ -76,4 +74,8 @@ Tom K,,Y,,,Y,,,,Y,,,,,,Y,,Y
 Tracy S,,,,,,,,,,Y,,Y,,,,,
 Wendy M,,,,,,,,,,,,,,,Y,Y,Y
 Wynet S,,,,,,,Y,,Y,,Y,,,Y,,,Y
-Ruth M,Y,Y,Y,Y,,Y,,,Y,,,,Y,Y,Y,Y,Y
+Elizabeth S,Y,,Y,,Y,,Y,,Y,,Y,,Y,,Y,,Y
+Patsy S,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+Edina M,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+Heather M,,,Y,,,,,,,,,Y,,,,,
+Ruth M,Y,Y,Y,Y,Y,Y,,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y

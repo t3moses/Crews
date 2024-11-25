@@ -46,7 +46,7 @@ def crew_score(crew, sailor_histories, event_date):
 
 def whitelist(crew):
 
-    # Count the number of times the boat is not on a sailor's whitelist.
+    # Count the number of times the boat is not on one of its crew's whitelist.
 
     crew_score = 0
 
@@ -106,7 +106,7 @@ def skill(crew):
 
 def repeat(crew, sailor_histories, event_date):
 
-    # Calculate a score based on  how recently each sailor has sailed on the current boat.
+    # Calculate a score based on how recently each sailor has sailed on the current boat.
 
     crew_score = 0
     for sailor in crew["sailors"]:
@@ -119,7 +119,7 @@ def repeat(crew, sailor_histories, event_date):
                         if sailor_history[date] == crew["boat"]["boat name"]:
                             contribution = pow(constants.event_dates.index(event_date) - constants.event_dates.index(date), constants.repeat_exponent)
                             crew_score += contribution
-    return int(crew_score)
+    return int(crew_score) # The above calculation results in a float.
 
 
 def order_crews_by_score(crews):
