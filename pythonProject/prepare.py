@@ -14,8 +14,8 @@ def multi_line_from_form(form, field_name):
 
     # Return the value of the named field from the form.
     # If the named field is not present in the form, return an empty string.
-    # Otherwise, return the contents of the form between the field name and the first : character.
-    # Delete the portion from the last new line (inclusive) to the end.
+    # Otherwise, return the contents of the form between the field name and the first : character,
+    # except for the portion from the last new line (inclusive) to the end.
 
     if not form.find(field_name) == -1:
         new_field = form.rpartition(field_name)[2].rsplit(":")[0]
@@ -60,19 +60,19 @@ def canonicalize(string):
 
 def standard(name):
 
-    # Remove leading and trailing spaces.
+    # Remove spaces and hyphens and leading and trailing spaces.
     # Convert the input to lower case.
 
-    standardd_name = ""
+    standard_name = ""
     for i in range(len(name)):
         if name[i] == " " or name[i] == "-":
             pass
         else:
-            standardd_name += name[i]
+            standard_name += name[i]
 
-    standardd_name = standardd_name.strip().casefold()
+    standard_name = standard_name.strip().casefold()
 
-    return standardd_name
+    return standard_name
 
 def number_from( input ):
 
@@ -87,14 +87,15 @@ def number_from( input ):
     return number
 
 
-def unique_from( first, last, sailors_data ):
+def form_unique_from( first, last, sailors_data ):
 
-    # Returns a unique display name.
+    # Returns a name, derived from the first and last names, that does not already exist in the sailors data file.
 
     first_strip = first.strip().capitalize()
     last_strip = last.strip().capitalize()
     full = first_strip + " " + last_strip
     new_display_name = first_strip + " " + last_strip[0]
+
     full_len = len(full)
     for sailor in sailors_data:
         unique_len = len(new_display_name)
@@ -103,3 +104,27 @@ def unique_from( first, last, sailors_data ):
                 new_display_name += full[i]
             else: break
     return new_display_name
+
+def match_unique_from( first, last, sailors_data ):
+
+    # Returns a display name, derived from the first and last names, that either matches
+    # the most specific name in the sailors data file, or was not found in the file.
+
+    first_strip = first.strip().capitalize()
+    last_strip = last.strip().capitalize()
+    full = first_strip + " " + last_strip
+    match_display_name = full
+    full_len = len( full )
+    unique_len = len(first_strip + " " + last_strip[0])
+
+    match_found = True
+    for i in range(full_len, unique_len, -1):
+        for sailor in sailors_data:
+            if match_display_name == sailor["display name"]:
+                match_found = True
+                break
+            else:
+                match_found = False
+        if match_found: break
+        match_display_name = full[ :  -(full_len - i + 1 )]
+    return match_display_name

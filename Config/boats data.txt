@@ -15,3 +15,5 @@ Astraeus,,linda.c.cunningham@gmail.com,,True,1,2,False
 Black Pearl,,t3moses@icloud.com,,True,1,2,False
 Fish And Ships,,t3moses@icloud.com,,True,1,2,False
 Hot Toddy,,t3moses@icloud.com,,True,1,2,False
+Tropical Quest,Stephen K,Sbkidd001@Gmail.Com,6136009619,False,2,5,False
+Fixen,Paul B,Whatmlc@Gmail.Com,6138286363,False,1,2,False

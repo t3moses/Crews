@@ -1,81 +1,83 @@
 display name,Fri Jun 6,Fri Jun 13,Fri Jun 20,Sat Jun 28,Fri Jul 4,Fri Jul 11,Sat Jul 19,Fri Jul 25,Fri Aug 1,Sat Aug 9,Fri Aug 15,Fri Aug 22,Sat Aug 30,Fri Sep 5,Fri Sep 12,Fri Sep 19,Fri Sep 26
-Adam K,,,,,,,,,,,,,,,,Shawanaga,
-Al B,Black Pearl,,Brisa,,Valkyrie,,,Xel Ha,,,Princess Fe,Brisa,,Valkyrie,,Xel Ha,
-Andrew O,,,,Veleda III,,,,,,,,,,,,,
-Angelle B,,,,,,,,,,,Brisa,,,,,,
-Angus M,,Princess Fe,Hot Toddy,,Valkyrie,Fish And Ships,,Valkyrie,,Xel Ha,,Veleda III,Brisa,Triton,Hot Toddy,Beluga V,Veleda III
-Anik L,,,,,,Shawanaga,,Veleda III,Xantippe,,Shawanaga,,,,Xantippe,Xantippe,Xantippe
-Anne H,,,,,,,,,,,,,,,,Shawanaga,
-Anne L,Black Pearl,Beluga V,,,,,,,,,,,,,,,
-Brenda B,,,,,,,,Veleda III,,,Shawanaga,,,,,Xantippe,Shawanaga
-Brian C,Veleda III,Xantippe,Valkyrie,,Hot Toddy,,,Valkyrie,,,Xantippe,,,,,,
-Cara R,,Sparrow,,,Sparrow,Xel Ha,,Brisa,,,Princess Fe,Brisa,,Valkyrie,Black Pearl,Princess Fe,Black Pearl
-Carla M,,,Veleda III,,Veleda III,,,Xantippe,,,,,,Shawanaga,Xantippe,,Xantippe
-Carlos F,,,,,,,,,,,,,,Brisa,Xel Ha,Xel Ha,Xel Ha
-Caroline S,Xantippe,Fish And Ships,Valkyrie,,Hot Toddy,Triton,,Shawanaga,Black Pearl,,Triton,Shawanaga,,Kookaburra,Hot Toddy,Beluga V,Veleda III
-Charles B,,,,,,,,,,,Beluga V,,,,,,
-Christine T,Veleda III,,Brisa,,,,,,,Kaleidoscope,,Princess Fe,,,,,Hot Toddy
-Claire B,,,,,,,,Beluga V,,,,Xantippe,,,Shawanaga,,
+Adam K,,,,,,,,,,,,,,,,Tropical Quest,
+Al B,Tropical Quest,,Triton,,Sparrow,,,Princess Fe,,,Brisa,Princess Fe,,Valkyrie,,Princess Fe,
+Andrew O,,,,Tropical Quest,,,,,,,,,,,,,
+Angelle B,,,,,,,,,,,Princess Fe,,,,,,
+Angus M,,Valkyrie,Triton,,Valkyrie,Veleda III,,Shawanaga,,Triton,,Veleda III,Tropical Quest,Brisa,Veleda III,Shawanaga,Beluga V
+Anik L,,,,,,Tropical Quest,,Tropical Quest,,,Tropical Quest,Xantippe,,,Xantippe,Xantippe,Xantippe
+Anne H,,,,,,,,,,,,,,,,Tropical Quest,
+Anne L,Xantippe,Shawanaga,,,,,,,,,,,,,,,
+Brenda B,,,,,,,,Tropical Quest,,,Tropical Quest,,,,,Xantippe,Tropical Quest
+Brian C,Tropical Quest,Valkyrie,Veleda III,,Veleda III,,,Shawanaga,,,Triton,,,,,,
+Cara R,,Sparrow,,,Princess Fe,Astraeus,,Brisa,,,Brisa,Fish And Ships,,Valkyrie,Hot Toddy,Veleda III,Veleda III
+Carla M,,,Tropical Quest,,Shawanaga,,,Xantippe,,,,,,Shawanaga,Xantippe,,Xantippe
+Carlos F,,,,,,,,,,,,,,Kookaburra,Xel Ha,Tropical Quest,Xel Ha
+Caroline S,Beluga V,Fixen,Valkyrie,,Black Pearl,Veleda III,,Beluga V,Xantippe,,Shawanaga,Kookaburra,,Veleda III,Shawanaga,Shawanaga,Shawanaga
+Charles B,,,,,,,,,,,Tropical Quest,,,,,,
+Christine T,Shawanaga,,Brisa,,,,,,,Xel Ha,,Brisa,,,,,Hot Toddy
+Claire B,,,,,,,,Tropical Quest,,,,Tropical Quest,,,Xantippe,,
 Clara W,,,,,,,,,,,,,,Beluga V,,,
-Colin Z,,,,,,,,,,,,,,,,Xantippe,
-Corneliu N,,,,,,,,,,,,,Hot Toddy,Brisa,,Fish And Ships,Xel Ha
-Craig D,Xantippe,Shawanaga,,,,,,Xel Ha,Princess Fe,,,,,,,,Xel Ha
-Denis G,,,,Shawanaga,,,,,,,,,,,,,
-Dominique B,Beluga V,,Hot Toddy,,Black Pearl,,,Brisa,,,Black Pearl,Fish And Ships,,Fish And Ships,,Princess Fe,
+Colin Z,,,,,,,,,,,,,,,,Xel Ha,
+Corneliu N,,,,,,,,,,,,,Tropical Quest,Xel Ha,,Xel Ha,Xel Ha
+Craig D,Hot Toddy,Tropical Quest,,,,,,Xel Ha,Princess Fe,,,,,,,,Hot Toddy
+Denis G,,,,Tropical Quest,,,,,,,,,,,,,
+Dominique B,Black Pearl,,Black Pearl,,Hot Toddy,,,Brisa,,,Hot Toddy,Princess Fe,,Fish And Ships,,Princess Fe,
 Don M,,,,,,,,,,,,,,,,,
-Don P,,,Triton,,,,,,Princess Fe,,,,,,,,
-Doug M,,,,,,,Black Pearl,,,,,,,,,,
-Elaine M,,,,,,,Hot Toddy,,,,,,,,,,
-Elizabeth L,,,,,Shawanaga,,,,,,,,,Beluga V,,,Beluga V
-Emily S,,,,,,,Hot Toddy,,,Shawanaga,,,,,,,
-Eric T,Black Pearl,,Xantippe,,,,,,,Shawanaga,,,Xantippe,,,,Shawanaga
-Fiona K,,,Valkyrie,Xantippe,Xantippe,Beluga V,,,,Xantippe,Black Pearl,,,,,,Xantippe
-Gary W,Hot Toddy,,,,,Shawanaga,Xantippe,,Xantippe,Xantippe,,,,Shawanaga,,,
-Geoff D,,Valkyrie,,Beluga V,Black Pearl,Brisa,,Triton,Black Pearl,Xel Ha,Hot Toddy,,,,,,
-Gillian L,,,,,,,,,,Beluga V,,,,,,,
-Gina B,,,,,,,,,,Beluga V,,,Xantippe,,,,
+Don P,,,Brisa,,,,,,Princess Fe,,,,,,,,
+Doug M,,,,,,,Tropical Quest,,,,,,,,,,
+Elaine M,,,,,,,Tropical Quest,,,,,,,,,,
+Elizabeth L,,,,,Shawanaga,,,,,,,Tropical Quest,,Shawanaga,,,Tropical Quest
+Emily S,,,,,,,Tropical Quest,,,Fish And Ships,,,,,,,
+Eric T,Xantippe,,Tropical Quest,,,,,,,Tropical Quest,,,Xantippe,,,,Tropical Quest
+Fiona K,,,Xantippe,Fish And Ships,Xantippe,Beluga V,,,,Xantippe,Black Pearl,,,,,Xantippe,Astraeus
+Gary W,Veleda III,,,,,Tropical Quest,Xantippe,,,Tropical Quest,,,,Shawanaga,,,
+Geoff D,,Sparrow,,Veleda III,Valkyrie,Xel Ha,,Valkyrie,Xantippe,Triton,Shawanaga,,,,,,
+Gillian L,,,,,,,,,,Beluga V,,Xantippe,,,,,
+Gina B,,,,,,,,,,Shawanaga,,,Xantippe,,,,
 Gretta B,,,,,,,,,,,,,,,Kookaburra,,
-Heather K,Shawanaga,Valkyrie,,,,,,,,,Princess Fe,,,Valkyrie,,Xel Ha,Black Pearl
-James G,,,,,Beluga V,,,,,,,,,,,,
-Janet M,,Valkyrie,Black Pearl,,Black Pearl,,,Xantippe,,Fish And Ships,,Fish And Ships,Black Pearl,,Black Pearl,Princess Fe,Black Pearl
-Jean M,,,Valkyrie,,,,,,,,,,,,,,
-Jean-paul L,,,Veleda III,Shawanaga,Veleda III,Beluga V,,,,,,,,,,,
-Joachim M,,,,,,,,,,,,,,,Xel Ha,Kookaburra,Astraeus
-John B,,Sparrow,,Triton,,Astraeus,,,Hot Toddy,Xel Ha,Black Pearl,Triton,,Fish And Ships,Black Pearl,Veleda III,Princess Fe
+Heather K,Tropical Quest,Fish And Ships,,,,,,,,,Brisa,,,Valkyrie,,Fish And Ships,Black Pearl
+James G,,,,,Shawanaga,,,,,,,,,,,,
+Janet M,,Tropical Quest,Hot Toddy,,Hot Toddy,,,Fish And Ships,,Xel Ha,,Fish And Ships,Hot Toddy,,Princess Fe,Veleda III,Princess Fe
+Jean M,,,Fixen,,,,,,,,,,,,,,
+Jean-paul L,,,Tropical Quest,Tropical Quest,Xantippe,Beluga V,,,,,,,,,,,
+Joachim M,,,,,,,,,,,,,,,Xel Ha,Tropical Quest,Xantippe
+John B,,Tropical Quest,,Veleda III,,Brisa,,,Black Pearl,Xel Ha,Triton,Triton,,Fish And Ships,Veleda III,Beluga V,Veleda III
 John L,,,,,,,Brisa,,,Kaleidoscope,,,Princess Fe,,,,
-Katrina G,,,,,,,,,,,,Xantippe,,,,,
-Kelly B,,,,,,,,,,Triton,,,,,,,
+Katrina G,,,,,,,,,,,,Tropical Quest,,,,,
+Kelly B,,,,,,,,,,Beluga V,,,,,,,
 Kimberley D,,,,Astraeus,,,,,,,,,,,,,
-Laura L,,,,Fish And Ships,,,Black Pearl,,,Fish And Ships,,,Princess Fe,,,,
-Leonore E,,,,,,,,,,,,,Hot Toddy,,,,
-Linda H,Black Pearl,Beluga V,Xantippe,,Xantippe,,,Xantippe,,Xantippe,Black Pearl,,,,,,
-Loredana N,,,,,,,,,,,,,Black Pearl,Xel Ha,,Xel Ha,Hot Toddy
+Laura L,,,,Triton,,,Brisa,,,Xel Ha,,,Brisa,,,,
+Leonore E,,,,,,,,,,,,,Princess Fe,,,,
+Linda H,Xantippe,Shawanaga,Tropical Quest,,Xantippe,,Xantippe,Tropical Quest,,Xantippe,Black Pearl,,,,,,
+Loredana N,,,,,,,,,,,,,Black Pearl,Kookaburra,,Tropical Quest,Xel Ha
 Luise V,,,,,,,,,,,,,Xantippe,,,,
-Malcolm B,,,,,,,,,Astraeus,,,Kookaburra,,Xel Ha,,,
-Marc B,,Shawanaga,,,,,,,,,,,,,,,
+Malcolm B,,,,,,,,,Astraeus,,,Shawanaga,,Xel Ha,,,
+Marc B,,Xantippe,,,,,,,,,,,,,,,
 Marie-louise G,,,,,Beluga V,,,,,,,,,,,,
-Mike C,,,,,,,,,,,,,,,Shawanaga,,
-Mike S,,Beluga V,,,,,Xantippe,,,Shawanaga,,,,,,,
-Mike T,,,,,,,,,,,Beluga V,,,,,,
-Milan J,Xantippe,Shawanaga,,,Sparrow,Brisa,,Valkyrie,,,Black Pearl,Triton,,Triton,Princess Fe,Veleda III,Princess Fe
-Nancy R,Beluga V,,,,,Xel Ha,,Xel Ha,Hot Toddy,,,,,Valkyrie,Black Pearl,Fish And Ships,Black Pearl
+Mike C,,,,,,,,,,,,,,,Tropical Quest,,
+Mike S,,Xantippe,,,,,Xantippe,,,Tropical Quest,,,,,,,
+Mike T,,,,,,,,,,,Tropical Quest,,,,,,
+Milan J,Beluga V,Beluga V,,,Valkyrie,Triton,,Triton,,,Xantippe,Veleda III,,Brisa,Princess Fe,Beluga V,Beluga V
+Nancy R,Veleda III,,,,,Fish And Ships,,Xel Ha,Black Pearl,,,,,Valkyrie,Black Pearl,Princess Fe,Princess Fe
 Nathalie D,,,,,,,,,,,,,,,,,
-Nathalie S,,,,,,,,,,,Brisa,Kookaburra,Black Pearl,Xel Ha,,,
+Nathalie S,,,,,,,,,,,Princess Fe,Kookaburra,Brisa,Xel Ha,,,
 Nawar J,,,Xantippe,,,,,,,,,,,,,,
-Olena C,,,,,,,,,,,,,,Veleda III,,,
-Pat T,Hot Toddy,Fish And Ships,Black Pearl,,,Fish And Ships,,Triton,Black Pearl,,Hot Toddy,Veleda III,,Kookaburra,Princess Fe,,Princess Fe
-Paul V,,,,,,Shawanaga,Xantippe,Princess Fe,,,Xantippe,,,Shawanaga,,,
-Peter M,,,,,Princess Fe,Xel Ha,Brisa,Princess Fe,,,,Brisa,,,,,
-Rob J,,,,,,,,Xel Ha,,,Brisa,Princess Fe,,Xel Ha,,,Xel Ha
-Sandra M,,,,,,,Black Pearl,,,,,,,,,,
+Olena C,,,,,,,,,,,,,,Beluga V,,,
+Pat T,Tropical Quest,Valkyrie,Veleda III,,,Fish And Ships,,Valkyrie,Astraeus,,Shawanaga,Triton,,Brisa,Shawanaga,,Beluga V
+Paul V,,,,,,Tropical Quest,Tropical Quest,Xantippe,,,Xantippe,Xantippe,,,,,
+Peter M,,,,,Princess Fe,Xel Ha,Black Pearl,Princess Fe,,,,Princess Fe,,,,,
+Rob J,,,,,,,,Xel Ha,,,Princess Fe,Brisa,,Xel Ha,,,Xel Ha
+Sandra M,,,,,,,Brisa,,,,,,,,,,
 Steve C,,,,,,Xel Ha,,,,,,,,,,,
-Sylvie S,,Princess Fe,Hot Toddy,,,Astraeus,,Fish And Ships,,,,,,,,,
-Tom K,,Princess Fe,,,Princess Fe,,,,Princess Fe,,,,,,Xel Ha,,Hot Toddy
-Tracy S,,,,,,,,,,Beluga V,,Xantippe,,,,,
-Wendy M,,,,,,,,,,,,,,,Xel Ha,Kookaburra,Astraeus
-Wynet S,,,,,,,Hot Toddy,,Xantippe,,Shawanaga,,,Beluga V,,,Shawanaga
-Elizabeth S,Beluga V,,Brisa,,Valkyrie,,Black Pearl,,Black Pearl,,Xantippe,,Black Pearl,,Veleda III,,Black Pearl
-Patsy S,Shawanaga,Valkyrie,Black Pearl,Veleda III,Black Pearl,Veleda III,Black Pearl,Beluga V,Black Pearl,Xel Ha,Beluga V,Shawanaga,Brisa,Brisa,Veleda III,Shawanaga,Beluga V
-Edina M,Shawanaga,Xantippe,Black Pearl,Beluga V,Shawanaga,Veleda III,Brisa,Shawanaga,Hot Toddy,Triton,Triton,Shawanaga,Brisa,Veleda III,Black Pearl,Beluga V,Beluga V
-Heather M,,,Triton,,,,,,,,,Princess Fe,,,,,
-Ruth M,,,,,,,,,,,,,,,,,
+Sylvie S,,Princess Fe,Valkyrie,,,Brisa,,Valkyrie,,,,,,,,,
+Tom K,,Princess Fe,,,Princess Fe,,,,Princess Fe,,,,,,Xel Ha,,Black Pearl
+Tracy S,,,,,,,,,,Shawanaga,,Tropical Quest,,,,,
+Wendy M,,,,,,,,,,,,,,,Kookaburra,Kookaburra,Astraeus
+Wynet S,,,,,,,Tropical Quest,,,,Tropical Quest,,,Beluga V,,,Tropical Quest
+Elizabeth S,Tropical Quest,,Hot Toddy,,Valkyrie,,Hot Toddy,,Hot Toddy,,Xantippe,,Brisa,,Princess Fe,,Princess Fe
+Patsy S,Fixen,Tropical Quest,Fixen,Shawanaga,Beluga V,Shawanaga,Hot Toddy,Veleda III,,Shawanaga,Beluga V,Shawanaga,Tropical Quest,Triton,Tropical Quest,Shawanaga,Tropical Quest
+Edina M,Shawanaga,Beluga V,Valkyrie,Beluga V,Veleda III,Tropical Quest,Black Pearl,Veleda III,,Tropical Quest,Beluga V,Shawanaga,Tropical Quest,Triton,Tropical Quest,Xel Ha,Shawanaga
+Heather M,,,Brisa,,,,,,Hot Toddy,,,Brisa,,,,,
+Ruth M,Fixen,Fish And Ships,Valkyrie,Shawanaga,Beluga V,Shawanaga,,Beluga V,Xantippe,Fish And Ships,Beluga V,Tropical Quest,Black Pearl,Veleda III,Tropical Quest,Xel Ha,Shawanaga
+Paul B,,,,,,,,,,,,,,,,,
+Paul Br,,,,Xantippe,Sparrow,Brisa,,,,,,,,,,,

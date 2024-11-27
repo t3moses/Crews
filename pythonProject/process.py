@@ -152,7 +152,7 @@ def enrol_sailor(form):
     background = prepare.single_line_from_form(form, "Background: ")
     experience = prepare.no_comma(prepare.no_new_line(prepare.multi_line_from_form(form, "experience: ")))
 
-    display_name = prepare.unique_from(first_name, last_name, database.sailors_data)
+    display_name = prepare.form_unique_from(first_name, last_name, database.sailors_data)
 
     if membership_number == "":
         member = "False"
@@ -276,8 +276,9 @@ def register_sailor(form):
 
     first_name = prepare.canonicalize(prepare.single_line_from_form(form, "First name: "))
     last_name = prepare.canonicalize(prepare.single_line_from_form(form, "Last name: "))
-    display_name = prepare.unique_from(first_name, last_name, database.sailors_data)
+    display_name = prepare.match_unique_from(first_name, last_name, database.sailors_data)
 
+    print(display_name)
     for sailor in database.sailors_availability:
         if sailor["display name"] == display_name:
             for event_date in constants.event_dates:

@@ -170,11 +170,5 @@ The calendar also shows the non-conformance score (or loss).  Single-digit score
 
 To dos
 
-1. Allow both upper- and lower-case Y when responding to Yes/No question.  Say that Y and N are the right responses.  Tick
-
-2. Check that the membership entry comprises only number.  Tick
-
-3. Prevent name clashes when first name and first letter of last name are the same. Tick
-
-4. Allow registering before enrolling.
+1. Use "reject" and "accept" for registering.
 

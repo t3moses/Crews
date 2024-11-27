@@ -15,3 +15,5 @@ Xel Ha,,,,,,Y,,Y,,Y,,,,Y,Y,Y,Y
 Black Pearl,Y,,Y,,Y,,Y,,Y,,Y,,Y,,Y,,Y
 Fish And Ships,,Y,,Y,,Y,,Y,,Y,,Y,,Y,,Y,
 Hot Toddy,Y,,Y,,Y,,Y,,Y,,Y,,Y,,Y,,Y
+Tropical Quest,Y,Y,Y,Y,,Y,Y,Y,,Y,Y,Y,Y,,Y,Y,Y
+Fixen,Y,Y,Y,,,,,,,,,,,,,,
