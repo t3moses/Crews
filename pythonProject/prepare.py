@@ -58,21 +58,24 @@ def canonicalize(string):
 
     return new_string
 
-def standard(name):
+def standard(first, last):
 
-    # Remove spaces and hyphens and leading and trailing spaces.
-    # Convert the input to lower case.
+    # Remove non-alpha characters and leading and trailing spaces.
+    # Convert to lower case and concatenate first and last.
 
-    standard_name = ""
-    for i in range(len(name)):
-        if name[i] == " " or name[i] == "-":
-            pass
-        else:
-            standard_name += name[i]
+    standard_first = ""
+    for char in first:
+        if char.isalpha():
+            standard_first += char
+    standard_first = standard_first.strip().casefold()
 
-    standard_name = standard_name.strip().casefold()
+    standard_last = ""
+    for char in last:
+        if char.isalpha():
+            standard_last += char
+    standard_last = standard_last.strip().casefold()
 
-    return standard_name
+    return standard_first + standard_last
 
 def number_from( input ):
 
@@ -128,3 +131,30 @@ def match_unique_from( first, last, sailors_data ):
         if match_found: break
         match_display_name = full[ :  -(full_len - i + 1 )]
     return match_display_name
+
+def sailor_account_exists_for(first, last, sailors_data):
+
+    # If a sailor with the supplied name already has an account, return True.
+    # Otherwise, return False.
+
+    standard_name = standard(first, last)
+    for sailor in sailors_data:
+        if standard_name == sailor["standard_name"]:
+            return True
+    return False
+
+
+def boat_account_exists_for(boat_name, boats_data):
+
+    # If a boat with the supplied name already has an account, return True.
+    # Otherwise, return False.
+
+    for boat in boats_data:
+        if boat_name == boat["boat_name"]:
+            return True
+    return False
+
+
+def unique_display_name_from(full_name, sailors_data):
+    
+    return
