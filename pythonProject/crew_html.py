@@ -53,7 +53,7 @@ def html(scored_crews, wait_list, event_date):
         contents += "<td width = " + str(column_width) + "%></td>"
     contents += "</tr></th>"
     for crew in crews:
-        contents += "<tr><td>" + crew["boat"]["boat name"] + "</td>"
+        contents += "<tr><td>" + crew["boat"]["display name"] + "</td>"
         for sailor in crew["sailors"]:
             contents += "<td>" + sailor["display name"] + "</td>"
         empty_cells = max_crew_size - len(crew["sailors"])

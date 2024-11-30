@@ -1,12 +1,12 @@
-From: NSC-SDC admin <t3moses@wix-forms.com>
-Subject: NSC-SDC NSC-SDC sailor enter availabilitysubmission
-Date: November 27, 2024 at 6:46:53 PM EST
-To: t3moses@icloud.com
-Reply-To: NSC-SDC admin <t3moses@icloud.com>
+From: "NSC-SDC admin" <t3moses@wix-forms.com>
+Subject: NSC-SDC form
+Date: November 30, 2024 at 10:58:21 AM EST
+To: "t3moses" <t3moses@icloud.com>
+Reply-To: t3moses@icloud.com
 
 Can't see this message? View in a browser
  
-NSC-SDC NSC-SDC sailor enter availability submission
+NSC-SDC NSC-SDC enter sailor availability
 
 Submission summary:
 First name:
@@ -20,35 +20,35 @@ I am available  
 Fri Jun 20:
 I am not available  
 Sat Jun 28:
-I am not available  
+I am available  
 Fri Jul 4:
 I am not available  
 Fri Jul 11:
-I am not available  
+I am available  
 Sat Jul 19:
 I am not available  
 Fri Jul 25:
-I am not available  
+I am available  
 Fri Aug 1:
 I am not available  
 Sat Aug 9:
-I am not available  
+I am available  
 Fri Aug 15:
 I am not available  
 Fri Aug 22:
-I am not available  
+I am available  
 Sat Aug 30:
 I am not available  
 Fri Sep 5:
-I am not available  
+I am available  
 Fri Sep 12:
 I am not available  
 Fri Sep 19:
-I am not available  
+I am available  
 Fri Sep 26:
 I am not available  
 
 This email was created with Wix.‌ Discover More
  
-This email was sent from this site.
-If you no longer wish to receive this email, change your email preferences here.
+This email was sent as a notification from this site.
+  

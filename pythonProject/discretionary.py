@@ -50,7 +50,7 @@ def whitelist(crew):
 
     crew_score = 0
 
-    boat_name = crew["boat"]["boat name"]
+    boat_name = crew["boat"]["key"]
     for sailor in crew["sailors"]:
         whitelist = sailor["whitelist"]
         if whitelist.count(boat_name) == 0:
@@ -66,7 +66,7 @@ def partner(crew):
 
     for sailor_1 in crew["sailors"]:
         for sailor_2 in crew["sailors"]:
-            if sailor_1["partner"] == sailor_2["display name"]:
+            if sailor_1["partner key"] == sailor_2["key"]:
                 crew_score += 1
 
     return crew_score
@@ -75,7 +75,7 @@ def assist(crew):
 
     # Identify if a boat requiring assistance does not have a sailor with skill level 2.
 
-    if crew["boat"]["request assist"] == "True":
+    if crew["boat"]["assistance"] == "True":
         crew_score = 1
 
         for sailor in crew["sailors"]:
@@ -111,12 +111,12 @@ def repeat(crew, sailor_histories, event_date):
     crew_score = 0
     for sailor in crew["sailors"]:
         for sailor_history in sailor_histories:
-            if sailor_history["display name"] == sailor["display name"]:
+            if sailor_history["key"] == sailor["key"]:
                 for date in constants.event_dates:
                     if date == event_date:
                         break
                     else:
-                        if sailor_history[date] == crew["boat"]["boat name"]:
+                        if sailor_history[date] == crew["boat"]["key"]:
                             contribution = pow(constants.event_dates.index(event_date) - constants.event_dates.index(date), constants.repeat_exponent)
                             crew_score += contribution
     return int(crew_score) # The above calculation results in a float.

@@ -1,0 +1,44 @@
+
+sailor open account
+  process form
+  unique name from first and last
+  account doesn't exist (based on unique name)
+    form unique display name
+  account does exist (based on unique name)
+    retrieve display name
+    remove account
+  add account
+
+sailor enter availability
+  process form
+  unique name from first and last
+  account doesn't exist (based on unique name)
+    form unique display name
+    set sailor data (unique name, display name, member, skill, experience, female skipper)
+    add account
+  account does exist (based on unique name)
+    retrieve display name
+  update availability using unique name
+
+boat open account
+  process form
+  unique name from boat name
+  account doesn't exist (based on unique name)
+    form unique display name
+  account does exist (based on unique name)
+    retrieve display name
+    remove entry
+  add account
+
+boat enter availability
+  process form
+  unique name from boat name
+  account doesn't exist (based on unique name)
+    set boat data (unique name, display name, min, max, assist)
+    add account
+  update availability
+
+
+
+
+  

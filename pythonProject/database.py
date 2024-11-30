@@ -20,14 +20,7 @@ enrolments_pending = [] # list of enrolments that are pending.
 
 form = "" # contents of the user input form.
 html = "" # contents of the event calendar out[ut html.
-"""
-boat_header_row = []
-sailor_header_row = []
-boat_availability_header_row = []
-sailor_availability_header_row = []
-sailor_histories_header_row = []
-enrolments_pending_header_row = []
-"""
+
 upper_crew_size = 0 # Used to calculate html column width.
 
 def begin():
@@ -48,14 +41,6 @@ def begin():
     global sailors_availability
     global sailor_histories
     global enrolments_pending
-    """
-    global boat_header_row
-    global sailor_header_row
-    global boat_availability_header_row
-    global sailor_availability_header_row
-    global sailor_histories_header_row
-    global enrolments_pending_header_row
-    """
     global form
     global upper_crew_size
 
@@ -116,7 +101,7 @@ def begin():
         boats_availability_file = open(boats_availability_filename, 'r', newline='')
     except FileNotFoundError:
         print("Creating boats availability file.")
-        boat_availability_header_row = ["boat name"] + constants.event_dates
+        boat_availability_header_row = ["key"] + constants.event_dates
         boats_availability_file = open(boats_availability_filename, 'w+', newline='')
         writer = csv.DictWriter(boats_availability_file, fieldnames=boat_availability_header_row)
         writer.writeheader()
@@ -130,7 +115,7 @@ def begin():
         sailors_availability_file = open(sailors_availability_filename, 'r', newline='')
     except FileNotFoundError:
         print("Creating sailors availability file.")
-        sailor_availability_header_row = ["display name"] + constants.event_dates
+        sailor_availability_header_row = ["key"] + constants.event_dates
         sailors_availability_file = open(sailors_availability_filename, 'w+', newline='')
         writer = csv.DictWriter(sailors_availability_file, fieldnames=sailor_availability_header_row)
         writer.writeheader()
@@ -144,36 +129,22 @@ def begin():
         sailor_histories_file = open(sailor_histories_filename, 'r', newline='')
     except FileNotFoundError:
         print("Creating sailor histories file.")
-        sailor_histories_header_row = ["display name"] + constants.event_dates
+        sailor_histories_header_row = ["key"] + constants.event_dates
         sailor_histories_file = open(sailor_histories_filename, 'w+', newline='')
-        writer = csv.DictWriter(sailor_histories_file, fieldnames=sailor_header_row)
+        writer = csv.DictWriter(sailor_histories_file, fieldnames=sailor_histories_header_row)
         writer.writeheader()
     for sailor in csv.DictReader(sailor_histories_file):
         sailor_histories.append(sailor)
     sailor_histories_file.close()
 
-    # Open the sailor enrolment pending file.  If it doesn't yet exist, create it.
-
-    try:
-        enrolments_pending_file = open(enrolments_pending_filename, 'r', newline='')
-    except FileNotFoundError:
-        print("Creating enrolments pending file.")
-        enrolments_pending_header_row = ["display name"] + constants.event_dates
-        enrolments_pending_file = open(enrolments_pending_filename, 'w+', newline='')
-        writer = csv.DictWriter(enrolments_pending_file, fieldnames=enrolments_pending_header_row)
-        writer.writeheader()
-    for sailor in csv.DictReader(enrolments_pending_file):
-        enrolments_pending.append(sailor)
-    enrolments_pending_file.close()
-
     # Confirm that boat names are consistent between the boats_availability and boat_data files.
 
     boats_from_availability = []
     for boat in boats_availability:
-        boats_from_availability.append(boat["boat name"])
+        boats_from_availability.append(boat["key"])
     boats_from_data = []
     for boat in boats_data:
-        boats_from_data.append(boat["boat name"])
+        boats_from_data.append(boat["key"])
     if bool(set(boats_from_availability) ^ set(boats_from_data)): # difference
         raise Exception("Boat availability is inconsistent with boat data.")
 
@@ -181,10 +152,10 @@ def begin():
 
     sailors_from_availability = []
     for sailor in sailors_availability:
-        sailors_from_availability.append(sailor["display name"])
+        sailors_from_availability.append(sailor["key"])
     sailors_from_data = []
     for sailor in sailors_data:
-        sailors_from_data.append(sailor["display name"])
+        sailors_from_data.append(sailor["key"])
     if bool(set(sailors_from_availability) ^ set(sailors_from_data)):
         raise Exception("Sailor availability is inconsistent with sailor data.")
 
@@ -192,7 +163,7 @@ def begin():
 
     boats_from_data = []
     for boat in boats_data:
-        boats_from_data.append(boat["boat name"])
+        boats_from_data.append(boat["key"])
     for sailor in sailors_data:
         sailor_whitelist = sailor["whitelist"].split(";")
 
@@ -202,7 +173,7 @@ def begin():
     # Confirm that event dates from boat_availability and sailor_availability are consistent.
 
     sailor_dates = list(sailors_availability[1].keys())
-    sailor_dates.remove('display name')
+    sailor_dates.remove('key')
     if bool(set(sailor_dates) ^ set(constants.event_dates)):
         raise Exception("Sailor availability is inconsistent with boat availability.")
 
@@ -237,14 +208,6 @@ def end():
     global sailors_availability
     global sailor_histories
     global enrolments_pending
-    """
-    global boat_header_row
-    global sailor_header_row
-    global boat_availability_header_row
-    global sailor_availability_header_row
-    global sailor_histories_header_row
-    global enrolments_pending_header_row
-    """
     global html
 
     boats_data_file = open(boats_data_filename, 'w', newline='')
@@ -265,7 +228,7 @@ def end():
 
     # Update the boats availability file.
 
-    boat_availability_header_row = ["boat name"] + constants.event_dates
+    boat_availability_header_row = ["key"] + constants.event_dates
     boats_availability_file = open(boats_availability_filename, 'w', newline='')
     writer = csv.DictWriter(boats_availability_file, fieldnames=boat_availability_header_row)
     writer.writeheader()
@@ -275,7 +238,7 @@ def end():
 
     # Update the sailors availability file.
 
-    sailor_availability_header_row = ["display name"] + constants.event_dates
+    sailor_availability_header_row = ["key"] + constants.event_dates
     sailors_availability_file = open(sailors_availability_filename, 'w', newline='')
     writer = csv.DictWriter(sailors_availability_file, fieldnames=sailor_availability_header_row)
     writer.writeheader()
@@ -285,23 +248,13 @@ def end():
 
     # Update the sailor histories file.
 
-    sailor_histories_header_row = ["display name"] + constants.event_dates
+    sailor_histories_header_row = ["key"] + constants.event_dates
     sailor_histories_file = open(sailor_histories_filename, 'w', newline='')
     writer = csv.DictWriter(sailor_histories_file, fieldnames=sailor_histories_header_row)
     writer.writeheader()
     for sailor_history in sailor_histories:
         writer.writerow(sailor_history)
     sailor_histories_file.close()
-
-    # Update the enrolment pending file.
-
-    enrolments_pending_header_row = ["display name"] + constants.event_dates
-    enrolments_pending_file = open(enrolments_pending_filename, 'w', newline='')
-    writer = csv.DictWriter(enrolments_pending_file, fieldnames=enrolments_pending_header_row)
-    writer.writeheader()
-    for enrolment_pending in enrolments_pending:
-        writer.writerow(enrolment_pending)
-    enrolments_pending_file.close()
 
     assignments_file = open(assignments_file_name, 'w', newline='')
     assignments_file.write(html)

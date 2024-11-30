@@ -31,14 +31,14 @@ def assignment():
             for available_boat in database.boats_availability:
                 if not available_boat[event_date] == "":
                     for boat in database.boats_data:
-                        if boat["boat name"] == available_boat["boat name"]:
+                        if boat["key"] == available_boat["key"]:
                             available_boats.append(boat.copy())
 
             available_sailors = []  # list of dictionaries for sailors available on the given date.
             for available_sailor in database.sailors_availability:
                 if not available_sailor[event_date] == '':
                     for sailor in database.sailors_data:
-                        if sailor["display name"] == available_sailor["display name"]:
+                        if sailor["key"] == available_sailor["key"]:
                             available_sailors.append(sailor.copy())
 
             # For each available sailor and boat, calculate their loyalty band, and add it to their data.
@@ -47,7 +47,7 @@ def assignment():
             for available_sailor in available_sailors:
                 for sailor_history in database.sailor_histories:
                     loyalty = 0
-                    if available_sailor["display name"] == sailor_history["display name"]:
+                    if available_sailor["key"] == sailor_history["key"]:
                         for date in constants.event_dates:
                             if date == event_date:
                                 break
@@ -55,9 +55,12 @@ def assignment():
                                 loyalty += 1
                         available_sailor["loyalty"] = str(loyalty)
 
+            for available_sailor in available_sailors:
+                print(available_sailor["key"], available_sailor["loyalty"])
+
             for available_boat in available_boats:
                 for boat_availability in database.boats_availability:
-                    if boat_availability["boat name"] == available_boat["boat name"]:
+                    if boat_availability["key"] == available_boat["key"]:
                         loyalty = 0
                         for date in constants.event_dates:
                             if date == event_date:
@@ -92,8 +95,8 @@ def assignment():
             for crew in best_crews["crews"]:
                 for sailor in crew["sailors"]:
                     for sailor_history in database.sailor_histories:
-                        if sailor_history["display name"] == sailor["display name"]:
-                            sailor_history[event_date] = crew["boat"]["boat name"]
+                        if sailor_history["key"] == sailor["key"]:
+                            sailor_history[event_date] = crew["boat"]["key"]
 
             database.html = crew_html.html(best_crews, wait_list, event_date)
 
