@@ -13,13 +13,13 @@ def mandatory(available_boats, available_sailors):
         max_occupancy += int(boat['max occupancy'])
 
     if len(ordered_sailors) < min_occupancy:
-        crews = case_1(ordered_boats, ordered_sailors)
+        flotilla = case_1(ordered_boats, ordered_sailors)
     elif len(ordered_sailors) > max_occupancy:
-        crews = case_2(ordered_boats, ordered_sailors)
+        flotilla = case_2(ordered_boats, ordered_sailors)
     else: # len(ordered_sailors) >= min_occupancy AND len(ordered_sailors) <= max_occupancy
-        crews = case_3(ordered_boats, ordered_sailors)
+        flotilla = case_3(ordered_boats, ordered_sailors)
 
-    return crews
+    return flotilla
 
 def case_1(boats, sailors):
 
@@ -90,7 +90,7 @@ def case_3(boats, sailors):
         overall_occupancy += 1
 
     assignments = {}
-    assignments["crews"] = assign(boats, sailors)
+    assignments["flotilla"] = assign(boats, sailors)
     assignments["wait list"] = []
 
     return assignments
@@ -99,12 +99,12 @@ def assign(boats, sailors):
 
     # assign individual sailors to individual boats.
 
-    # Reorder boats by loyalty, then assign boats and sailors to crews by loyalty
+    # Reorder boats by loyalty, then assign boats and sailors to flotilla by loyalty
     # until the number of sailors assigned to each boat is equal to its occupancy.
     # initial and final are the indices in sailors list of the first and last
     # sailors assigned to a boat.
 
-    crews = [] # list of crews.
+    flotilla = [] # list of flotilla.
     initial = 0
 
     boats = order_boats_by_loyalty(boats)
@@ -115,9 +115,9 @@ def assign(boats, sailors):
         final = initial + int(boat["occupancy"])
         crew["sailors"] = sailors[initial : final]
         initial = final
-        crews.append(crew)
+        flotilla.append(crew)
 
-    return crews
+    return flotilla
 
 def order_sailors_by_loyalty(sailors):
 

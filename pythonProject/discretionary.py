@@ -3,32 +3,33 @@ import random
 import copy
 import constants
 
-def discretionary(crews, sailor_histories, event_date):
+def discretionary(flotilla, sailor_histories, event_date):
 
     # Add the crew non-compliance score for each crew to its dictionary.
     # Calculate the overall non-compliance score for the flotilla.
-    # Order the crews by increasing non-compliance score and call swap.
+    # Order the flotilla by increasing non-compliance score and call swap.
     # Repeat multiple times and calculate the resulting overall score.
 
-    for crew in crews:
+    for crew in flotilla:
+
         crew["crew score"] = crew_score(crew, sailor_histories, event_date)
 
-    crews = order_crews_by_score(crews)
+    flotilla = order_flotilla_by_score(flotilla)
 
-    best_crews = []
+    best_flotilla = []
 
     for _ in range(constants.inner_epochs):
-        crews_score = 0
-        for crew in crews:
-            crews_score += int(crew["crew score"])
+        flotilla_score = 0
+        for crew in flotilla:
+            flotilla_score += int(crew["crew score"])
 
-        best_crews = swap(crews, sailor_histories, event_date)
+        best_flotilla = swap(flotilla, sailor_histories, event_date)
 
-    scored_crews = {}
-    scored_crews["crews"] = best_crews
-    scored_crews["crews score"] = str(crews_score)
+    scored_flotilla = {}
+    scored_flotilla["flotilla"] = best_flotilla
+    scored_flotilla["flotilla score"] = str(flotilla_score)
 
-    return scored_crews
+    return scored_flotilla
 
 def crew_score(crew, sailor_histories, event_date):
 
@@ -50,10 +51,10 @@ def whitelist(crew):
 
     crew_score = 0
 
-    boat_name = crew["boat"]["key"]
+    boat_key = crew["boat"]["key"]
     for sailor in crew["sailors"]:
         whitelist = sailor["whitelist"]
-        if whitelist.count(boat_name) == 0:
+        if whitelist.count(boat_key) == 0:
             crew_score += 1
 
     return crew_score
@@ -122,65 +123,65 @@ def repeat(crew, sailor_histories, event_date):
     return int(crew_score) # The above calculation results in a float.
 
 
-def order_crews_by_score(crews):
+def order_flotilla_by_score(flotilla):
 
-    # Create a list that orders crews by their non-compliance score.
-    # The order of crews in the same score band is randomized.
+    # Create a list that orders flotilla by their non-compliance score.
+    # The order of flotilla in the same score band is randomized.
 
-    ordered_crews = []
-    banded_crews = []
+    ordered_flotilla = []
+    banded_flotilla = []
 
-    i = len(crews)
+    i = len(flotilla)
     crew_score = 0
     while i > 0:
-        equal_crews = [] # list of boats in the same score band.
-        for crew in crews:
+        equal_flotilla = [] # list of boats in the same score band.
+        for crew in flotilla:
             if int(crew["crew score"]) == crew_score:
-                equal_crews.append(crew)
+                equal_flotilla.append(crew)
                 i -= 1
         crew_score += 1
-        banded_crews.append(equal_crews)
+        banded_flotilla.append(equal_flotilla)
 
-    while len(banded_crews) > 0:
-        while len(banded_crews[0]) > 0: # There are one or more sailors in the crew.
-            if len(banded_crews[0]) > 1:
-                boat_number = random.randint(0, len(banded_crews[0]) - 1)
+    while len(banded_flotilla) > 0:
+        while len(banded_flotilla[0]) > 0: # There are one or more sailors in the crew.
+            if len(banded_flotilla[0]) > 1:
+                boat_number = random.randint(0, len(banded_flotilla[0]) - 1)
             else:
                 boat_number = 0
-            ordered_crews.append(banded_crews[0][boat_number])
-            banded_crews[0].pop(boat_number)
-        banded_crews.pop(0)
+            ordered_flotilla.append(banded_flotilla[0][boat_number])
+            banded_flotilla[0].pop(boat_number)
+        banded_flotilla.pop(0)
 
-    return ordered_crews
+    return ordered_flotilla
 
-def swaps(crews, sailor_histories, event_date):
+def swaps(flotilla, sailor_histories, event_date):
 
     for _ in range(5):
 
-        crews = swap(crews, sailor_histories, event_date)
+        flotilla = swap(flotilla, sailor_histories, event_date)
 
-    return crews
+    return flotilla
 
-def swap(crews, sailor_histories, event_date):
+def swap(flotilla, sailor_histories, event_date):
 
-    # The received crews list contains a list of crews in increasing non-compliance order.
+    # The received flotilla list contains a list of flotilla in increasing non-compliance order.
     # Hence, the last two entries have the highest non-compliance scores.
     # Calculate the initial non-compliance score for the flotilla.
-    # From crews, select the two crews with the highest non-compliance scores.
-    # Swap a pair of sailors between these two crews.
+    # From flotilla, select the two flotilla with the highest non-compliance scores.
+    # Swap a pair of sailors between these two flotilla.
     # Calculate the new non-compliance score.
     # Repeat for each pair of sailors, recording the resulting non-compliance scores.
-    # If the best swap is not worse than the original, update crews.
+    # If the best swap is not worse than the original, update flotilla.
 
     global best_i, best_j
     initial_score = 0
-    for crew in crews:
+    for crew in flotilla:
         initial_score += crew["crew score"]
     best_score = initial_score
 
-    for i in range (len(crews[-2]["sailors"])):
-        for j in range (len(crews[-1]["sailors"])):
-            candidates = copy.deepcopy(crews)
+    for i in range (len(flotilla[-2]["sailors"])):
+        for j in range (len(flotilla[-1]["sailors"])):
+            candidates = copy.deepcopy(flotilla)
             parked_sailor = candidates[-2]["sailors"][i].copy()
 
             candidates[-2]["sailors"].pop(i)
@@ -197,15 +198,15 @@ def swap(crews, sailor_histories, event_date):
 
     if best_score < initial_score:
 
-        parked_sailor = crews[-2]["sailors"][best_i].copy()
-        crews[-2]["sailors"].pop(best_i)
-        crews[-2]["sailors"].insert(best_i, crews[-1]["sailors"][best_j])
-        crews[-1]["sailors"].pop(best_j)
-        crews[-1]["sailors"].insert(best_j, parked_sailor)
+        parked_sailor = flotilla[-2]["sailors"][best_i].copy()
+        flotilla[-2]["sailors"].pop(best_i)
+        flotilla[-2]["sailors"].insert(best_i, flotilla[-1]["sailors"][best_j])
+        flotilla[-1]["sailors"].pop(best_j)
+        flotilla[-1]["sailors"].insert(best_j, parked_sailor)
 
-        for crew in crews:
+        for crew in flotilla:
             crew["crew score"] = crew_score(crew, sailor_histories, event_date)
 
-    crews = order_crews_by_score(crews)
+    flotilla = order_flotilla_by_score(flotilla)
 
-    return crews
+    return flotilla

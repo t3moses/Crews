@@ -1,0 +1,29 @@
+Start with an empty folder.  All the files should be created and initialized.
+
+Add two boats with male skippers.  Check that all affected files are correct.  Check html.
+
+Add some member sailors.  Check that all affected files are correct.  Check html.
+
+Enter availability for all sailors. Check html.
+
+Add more sailors to exceed capacity.  Check html.
+
+Enter availability for all boats. Check html.
+
+Enrol the owner of a boat as a sailor.  Set conflicting availability.  Check html.
+
+Modify the availability of one boat.  Check html.
+
+Modfy the availability of one sailor.  Check html.
+
+Add a sailor with a conflicting name.  Check html.
+
+Add a boat with a female skipper.  Check html.
+
+Add a female sailor.  Check html.
+
+Add a partner for a sailor.  Check html.
+
+For a boat, set up availability before opening an account.  Then open an account.
+
+For a sailor, set up availability before opening an account.  Then open an account.

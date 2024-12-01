@@ -51,7 +51,7 @@ def key_from_string(name):
 
     key = ""
     for char in name:
-        if char.isalpha():
+        if char.isalpha() or char.isdigit():
             key += char
     return key.casefold()
 
@@ -76,6 +76,13 @@ def number_from( input ):
         else: pass
     return number
 
+def display_name_from_string( name, database ):
+
+    # Returns a display name, derived from the supplied name,
+    # that does not already exist in the database.
+
+    display_name = name
+    return display_name
 
 def display_name_from_strings( first, last, database ):
 

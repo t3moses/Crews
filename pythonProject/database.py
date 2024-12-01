@@ -40,7 +40,6 @@ def begin():
     global boats_availability
     global sailors_availability
     global sailor_histories
-    global enrolments_pending
     global form
     global upper_crew_size
 
@@ -161,21 +160,13 @@ def begin():
 
     # Confirm that sailor whitelists are consistent with boats_sata.
 
-    boats_from_data = []
+    boats_from_data = [""]
     for boat in boats_data:
         boats_from_data.append(boat["key"])
     for sailor in sailors_data:
         sailor_whitelist = sailor["whitelist"].split(";")
-
         if not bool(set(sailor_whitelist) <= set(boats_from_data)):
             raise Exception("Sailor whitelist is inconsistent with boat data.")
-
-    # Confirm that event dates from boat_availability and sailor_availability are consistent.
-
-    sailor_dates = list(sailors_availability[1].keys())
-    sailor_dates.remove('key')
-    if bool(set(sailor_dates) ^ set(constants.event_dates)):
-        raise Exception("Sailor availability is inconsistent with boat availability.")
 
     # Import the user input form.
 
@@ -185,7 +176,7 @@ def begin():
 
     # calculate the upper bound on the crew size.
 
-    upper_crew_size = 0
+    upper_crew_size = 1
     for boat in boats_data:
         upper_crew_size = max(upper_crew_size, int(boat["max occupancy"]))
 

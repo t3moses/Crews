@@ -115,14 +115,27 @@ def enrol_boat(form):
     owner_key = strings.key_from_strings(owner_first_name, owner_last_name)
 
     # If the boat account already exists, get the display name from the account.
-    # Then remove the account from the boats database and delete the boat from each sailor's whitelist.
+    # Then remove the account from the boats database.
     # If the boat account does not exist, create the display name from the supplied boat name.
 
     if strings.key_exists(boat_key, database.boats_data):
-        display_name = strings.display_name_from_strings(boat_key, database.boats_data)
-        database.boats_data.remove(boat for boat in database.boats_data if boat["display name"] == display_name )
+
+        boats_data_copy = []
+        for boat in database.boats_data:
+            if boat["key"] == boat_key:
+                display_name = boat["display name"]
+            else:
+                boats_data_copy.append(boat)
+        database.boats_data = boats_data_copy
+
+        boats_availability_copy = []
+        for boat in database.boats_availability:
+            if not boat["key"] == boat_key:
+                boats_availability_copy.append(boat)
+        database.boats_availability = boats_availability_copy
+
     else:
-        display_name = boat_name.strip()
+        display_name = strings.display_name_from_string(boat_name, database.boats_data)
 
     if strings.single_line_from(form, "experienced sailor in the crew:") == "Checked":
         assistance = "True"

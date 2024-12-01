@@ -18,6 +18,9 @@ def assignment():
 
     for event_date in constants.event_dates:
 
+        print(event_date)
+        print()
+
         event_datetime = datetime.datetime.strptime(event_date, date_format)
 
         if current_datetime <= event_datetime:
@@ -55,9 +58,6 @@ def assignment():
                                 loyalty += 1
                         available_sailor["loyalty"] = str(loyalty)
 
-            for available_sailor in available_sailors:
-                print(available_sailor["key"], available_sailor["loyalty"])
-
             for available_boat in available_boats:
                 for boat_availability in database.boats_availability:
                     if boat_availability["key"] == available_boat["key"]:
@@ -69,35 +69,43 @@ def assignment():
                                 loyalty += 1
                         available_boat["loyalty"] = str(loyalty)
 
+            # Form flotilla by applying the mandatory and discretionary rules.
+
+            assignments = mandatory.mandatory(available_boats, available_sailors)
+            flotilla = assignments["flotilla"]
+            wait_list = assignments["wait list"]
+
             for iteration in range(constants.outer_epochs):
+
+                print(assignments)
+                print(assignments["flotilla"])
+                print()
 
                 random.seed(event_date + "v" + str(iteration))
 
-                # Form crews by applying the mandatory and discretionary rules.
-
-                assignments = mandatory.mandatory(available_boats, available_sailors)
-                crews = assignments["crews"]
-                wait_list = assignments["wait list"]
-
-                if len(crews) >= 2:
-                    crews = discretionary.discretionary(crews, database.sailor_histories, event_date)
+                if len(flotilla) >= 2:
+                    flotilla = discretionary.discretionary(flotilla, database.sailor_histories, event_date)
+                else:
+                    flotilla["flotilla score"] = "0"
 
                 if iteration == 0:
-                    best_crews = crews
-                    best_score = int(crews["crews score"])
-                elif int(crews["crews score"]) < best_score:
-                    best_crews = crews
-                    best_score = int(crews["crews score"])
+                    best_flotilla = flotilla
+                    best_score = int(flotilla["flotilla score"])
+                elif int(flotilla["flotilla score"]) < best_score:
+                    best_flotilla = flotilla
+                    best_score = int(flotilla["flotilla score"])
                 else: pass
 
             # Update the sailor_histories file with the crew assignments for the event date.
 
-            for crew in best_crews["crews"]:
+            for crew in best_flotilla["flotilla"]:
                 for sailor in crew["sailors"]:
                     for sailor_history in database.sailor_histories:
                         if sailor_history["key"] == sailor["key"]:
                             sailor_history[event_date] = crew["boat"]["key"]
 
-            database.html = crew_html.html(best_crews, wait_list, event_date)
+            # Add to the html file for all FUTURE event dates.
+
+            database.html = crew_html.html(best_flotilla, wait_list, event_date)
 
     return
