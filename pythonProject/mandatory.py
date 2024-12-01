@@ -36,9 +36,9 @@ def case_1(boats, sailors):
         min_overall -= int(boats[-1]["min occupancy"])
         boats.pop() # Remove the last boat in the boats list.
 
-    assignments = case_3(boats, sailors)
+    flotilla = case_3(boats, sailors)
 
-    return assignments
+    return flotilla
 
 def case_2(boats, sailors):
 
@@ -51,10 +51,10 @@ def case_2(boats, sailors):
     for boat in boats:
         max_overall += int(boat["max occupancy"])
 
-    assignments = case_3(boats, sailors[ : max_overall])
-    assignments["wait list"] = sailors[max_overall : ]
+    flotilla = case_3(boats, sailors[ : max_overall])
+    flotilla["wait list"] = sailors[max_overall : ]
 
-    return assignments
+    return flotilla
 
 def case_3(boats, sailors):
 
@@ -89,22 +89,23 @@ def case_3(boats, sailors):
         boats[-1]["occupancy"] = str(int(boats[-1]["occupancy"]) + 1)
         overall_occupancy += 1
 
-    assignments = {}
-    assignments["flotilla"] = assign(boats, sailors)
-    assignments["wait list"] = []
+    flotilla = {}
+    flotilla["crews"] = assign(boats, sailors)
+    flotilla["wait list"] = []
+    flotilla["score"] = "0"
 
-    return assignments
+    return flotilla
 
 def assign(boats, sailors):
 
-    # assign individual sailors to individual boats.
+    # Return crews, which is a list of crew by assigning sailors to boats.
 
-    # Reorder boats by loyalty, then assign boats and sailors to flotilla by loyalty
+    # Reorder boats by boat loyalty, then assign boats and sailors to crews
     # until the number of sailors assigned to each boat is equal to its occupancy.
     # initial and final are the indices in sailors list of the first and last
     # sailors assigned to a boat.
 
-    flotilla = [] # list of flotilla.
+    crews = []
     initial = 0
 
     boats = order_boats_by_loyalty(boats)
@@ -115,9 +116,10 @@ def assign(boats, sailors):
         final = initial + int(boat["occupancy"])
         crew["sailors"] = sailors[initial : final]
         initial = final
-        flotilla.append(crew)
+        crew["score"] = "0"
+        crews.append(crew)
 
-    return flotilla
+    return crews
 
 def order_sailors_by_loyalty(sailors):
 

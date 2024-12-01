@@ -1,8 +1,8 @@
 key,Fri Jun 6,Fri Jun 13,Fri Jun 20,Sat Jun 28,Fri Jul 4,Fri Jul 11,Sat Jul 19,Fri Jul 25,Fri Aug 1,Sat Aug 9,Fri Aug 15,Fri Aug 22,Sat Aug 30,Fri Sep 5,Fri Sep 12,Fri Sep 19,Fri Sep 26
-timmoses,,boat4,boat4,boat4,,boat4,boat4,boat4,boat1,boat4,boat1,boat3,boat4,boat4,boat1,boat3,boat4
+timmoses,boat4,boat4,boat1,boat4,,boat4,boat1,boat4,boat1,boat4,boat3,boat3,boat4,boat3,boat3,boat2,boat4
 timmorris,boat4,boat4,boat4,boat4,boat4,boat2,boat4,boat2,,,,,,,,,
-timmorton,boat1,boat2,boat1,boat2,boat4,boat4,boat4,boat4,,,,,,,,,
+timmorton,boat4,boat2,boat4,boat2,boat4,boat4,boat4,boat3,,,,,,,,,
 timmaxwell,,,,,,,,,,,,,,,,,
-timmartin,boat4,boat4,,,,boat4,,,boat3,boat2,,,boat1,boat2,,,boat3
-annmartin,boat4,boat2,,boat2,boat1,,boat1,boat3,,boat3,boat3,,boat3,boat3,,boat2,boat1
+timmartin,,boat4,,,,boat4,,,boat3,boat2,,,boat1,boat4,,,boat3
+annmartin,boat1,boat2,,boat4,boat1,,boat4,boat3,,boat3,boat1,,boat3,boat2,,boat3,boat1
 annmorris,,,,,boat4,,,,,,,,,,,,

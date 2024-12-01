@@ -71,14 +71,11 @@ def assignment():
 
             # Form flotilla by applying the mandatory and discretionary rules.
 
-            assignments = mandatory.mandatory(available_boats, available_sailors)
-            flotilla = assignments["flotilla"]
-            wait_list = assignments["wait list"]
+            flotilla = mandatory.mandatory(available_boats, available_sailors)
 
             for iteration in range(constants.outer_epochs):
 
-                print(assignments)
-                print(assignments["flotilla"])
+                print(flotilla)
                 print()
 
                 random.seed(event_date + "v" + str(iteration))
@@ -86,19 +83,19 @@ def assignment():
                 if len(flotilla) >= 2:
                     flotilla = discretionary.discretionary(flotilla, database.sailor_histories, event_date)
                 else:
-                    flotilla["flotilla score"] = "0"
+                    flotilla["score"] = "0"
 
                 if iteration == 0:
                     best_flotilla = flotilla
-                    best_score = int(flotilla["flotilla score"])
-                elif int(flotilla["flotilla score"]) < best_score:
+                    best_score = int(flotilla["score"])
+                elif int(flotilla["score"]) < best_score:
                     best_flotilla = flotilla
-                    best_score = int(flotilla["flotilla score"])
+                    best_score = int(flotilla["score"])
                 else: pass
 
             # Update the sailor_histories file with the crew assignments for the event date.
 
-            for crew in best_flotilla["flotilla"]:
+            for crew in best_flotilla["crews"]:
                 for sailor in crew["sailors"]:
                     for sailor_history in database.sailor_histories:
                         if sailor_history["key"] == sailor["key"]:
@@ -106,6 +103,6 @@ def assignment():
 
             # Add to the html file for all FUTURE event dates.
 
-            database.html = crew_html.html(best_flotilla, wait_list, event_date)
+            database.html = crew_html.html(best_flotilla, event_date)
 
     return

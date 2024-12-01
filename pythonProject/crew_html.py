@@ -26,21 +26,18 @@ def begin():
 
     return
 
-def html(scored_flotilla, wait_list, event_date):
+def html(flotilla, event_date):
 
     global column_width
 
     # Add the html table for one event to the document.
 
-    flotilla = scored_flotilla["flotilla"]
-    flotilla_score = scored_flotilla["flotilla score"]
-
     max_crew_size = 0
-    for crew in flotilla:
+    for crew in flotilla["crews"]:
         crew_size = len(crew["sailors"])
         if crew_size > max_crew_size:
             max_crew_size = crew_size
-    crew_size = len(wait_list)
+    crew_size = len(flotilla["wait list"])
     if crew_size > max_crew_size:
         max_crew_size = crew_size
 
@@ -52,7 +49,7 @@ def html(scored_flotilla, wait_list, event_date):
     for _ in range(max_crew_size + 1):
         contents += "<td width = " + str(column_width) + "%></td>"
     contents += "</tr></th>"
-    for crew in flotilla:
+    for crew in flotilla["crews"]:
         contents += "<tr><td>" + crew["boat"]["display name"] + "</td>"
         for sailor in crew["sailors"]:
             contents += "<td>" + sailor["display name"] + "</td>"
@@ -61,13 +58,13 @@ def html(scored_flotilla, wait_list, event_date):
             contents += "<td>" + "" + "</td>"
         contents += "</tr>"
     contents += "<tr><td>" + "Wait list" + "</td>"
-    for sailor in wait_list:
+    for sailor in flotilla["wait list"]:
         contents += "<td>" + sailor["display name"] + "</td>"
-    empty_cells = max_crew_size - len(wait_list)
+    empty_cells = max_crew_size - len(flotilla["wait list"])
     for _ in range( empty_cells ):
         contents += "<td>" + "" + "</td>"
     contents += "</tr></table>"
-    contents += "<h3>Non-compliance: " + flotilla_score + "</h3>"
+    contents += "<h3>Non-compliance: " + flotilla["score"] + "</h3>"
     contents += "<hr>"
 
     html = top + contents + tail

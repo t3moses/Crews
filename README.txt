@@ -167,8 +167,25 @@ The event calendar contains the assignments for the season, based on the current
 
 The calendar also shows the non-conformance score (or loss).  Single-digit scores are generally acceptable.  But, double-digit scores should prompt a rerun with a different event_id.
 
+Data structures
 
-To dos
+The main data structure is:
 
-1. Use "reject" and "accept" for registering.
+flotilla {
+  crews [
+    (crew) {
+      boat
+      sailors [
+        (sailor) {}
+      ]
+      score
+    }
+  ]
+  wait list [
+    (sailor) {}
+  ]
+  score
+}
+
+To dos ...
 
