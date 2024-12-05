@@ -1,4 +1,5 @@
 
+import copy
 import database
 import random
 import datetime
@@ -18,8 +19,7 @@ def assignment():
 
     for event_date in constants.event_dates:
 
-        print(event_date)
-        print()
+        database.debug += event_date + "\n\n"
 
         event_datetime = datetime.datetime.strptime(event_date, date_format)
 
@@ -69,29 +69,31 @@ def assignment():
                                 loyalty += 1
                         available_boat["loyalty"] = str(loyalty)
 
-            # Form flotilla by applying the mandatory and discretionary rules.
-
-            flotilla = mandatory.mandatory(available_boats, available_sailors)
-
             for iteration in range(constants.outer_epochs):
-
-                print(flotilla)
-                print()
 
                 random.seed(event_date + "v" + str(iteration))
 
-                if len(flotilla) >= 2:
-                    flotilla = discretionary.discretionary(flotilla, database.sailor_histories, event_date)
-                else:
-                    flotilla["score"] = "0"
+                # Form a new flotilla by applying the mandatory rules using the updated random seed.
+
+                flotilla = mandatory.mandatory(available_boats, available_sailors)
+
+                if len(flotilla["crews"]) < 2:
+                    best_flotilla = copy.deepcopy(flotilla)
+                    break
+
+                # Modify the flotilla by applying the discretionary rules.
+
+                flotilla = discretionary.discretionary(flotilla, event_date)
+
+                # Else ...
 
                 if iteration == 0:
-                    best_flotilla = flotilla
+                    best_flotilla = copy.deepcopy(flotilla)
                     best_score = int(flotilla["score"])
-                elif int(flotilla["score"]) < best_score:
-                    best_flotilla = flotilla
-                    best_score = int(flotilla["score"])
-                else: pass
+                else:
+                    if int(flotilla["score"]) < best_score:
+                        best_flotilla = copy.deepcopy(flotilla)
+                        best_score = int(flotilla["score"])
 
             # Update the sailor_histories file with the crew assignments for the event date.
 

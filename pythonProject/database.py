@@ -7,19 +7,19 @@ sailors_data_filename = ""
 boats_availability_filename = ""
 sailors_availability_filename = ""
 sailor_histories_filename = ""
-enrolments_pending_filename = ""
 user_input_form_filename = ""
 assignments_file_name = ""
+debug_file_name = ""
 
 boats_data = [] # list of boat data dictionaries.
 sailors_data = [] # list of sailor data dictionaries.
 boats_availability = [] # list of boats availability dictionaries.
 sailors_availability = [] # list of sailors availability dictionaries.
 sailor_histories = [] # list of sailor histories dictionaries.
-enrolments_pending = [] # list of enrolments that are pending.
 
 form = "" # contents of the user input form.
-html = "" # contents of the event calendar out[ut html.
+html = "" # contents of the event calendar output html.
+debug = "" # contents of the debug file.
 
 upper_crew_size = 0 # Used to calculate html column width.
 
@@ -32,9 +32,9 @@ def begin():
     global boats_availability_filename
     global sailors_availability_filename
     global sailor_histories_filename
-    global enrolments_pending_filename
     global user_input_form_filename
     global assignments_file_name
+    global debug_file_name
     global boats_data
     global sailors_data
     global boats_availability
@@ -51,18 +51,18 @@ def begin():
         s_line_3 = f_config.readline()  # boats availability
         s_line_4 = f_config.readline()  # sailors availability
         s_line_5 = f_config.readline()  # sailors history
-        s_line_6 = f_config.readline()  # enrolments pending
-        s_line_7 = f_config.readline()  # user input form
-        s_line_8 = f_config.readline()  # events path
+        s_line_6 = f_config.readline()  # user input form
+        s_line_7 = f_config.readline()  # events path
+        s_line_8 = f_config.readline()  # debug file
 
     boats_data_filename += Working_directory+s_line_1.split(': ')[1].split(' //')[0]
     sailors_data_filename = Working_directory+s_line_2.split(': ')[1].split(' //')[0]
     boats_availability_filename = Working_directory+s_line_3.split(': ')[1].split(' //')[0]
     sailors_availability_filename = Working_directory+s_line_4.split(': ')[1].split(' //')[0]
     sailor_histories_filename = Working_directory+s_line_5.split(': ')[1].split(' //')[0]
-    enrolments_pending_filename = Working_directory+s_line_6.split(': ')[1].split(' //')[0]
-    user_input_form_filename = Working_directory+s_line_7.split(': ')[1].split(' //')[0]
-    assignments_file_name = Working_directory+s_line_8.split(': ')[1].split(' //')[0]
+    user_input_form_filename = Working_directory+s_line_6.split(': ')[1].split(' //')[0]
+    assignments_file_name = Working_directory+s_line_7.split(': ')[1].split(' //')[0]
+    debug_file_name = Working_directory+s_line_8.split(': ')[1].split(' //')[0]
 
     # Open the boat data file.  If it doesn't yet exist, create it.
     # Import boats data.
@@ -191,15 +191,15 @@ def end():
     global boats_availability_filename
     global sailors_availability_filename
     global sailor_histories_filename
-    global enrolments_pending_filename
+    global debug_filename
     global assignments_file_name
     global boats_data
     global sailors_data
     global boats_availability
     global sailors_availability
     global sailor_histories
-    global enrolments_pending
     global html
+    global debug
 
     boats_data_file = open(boats_data_filename, 'w', newline='')
     writer = csv.DictWriter(boats_data_file, fieldnames=constants.boat_header_row)
@@ -250,5 +250,9 @@ def end():
     assignments_file = open(assignments_file_name, 'w', newline='')
     assignments_file.write(html)
     assignments_file.close()
+
+    debug_file = open(debug_file_name, 'w', newline='')
+    debug_file.write(debug)
+    debug_file.close()
 
     return

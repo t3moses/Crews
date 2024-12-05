@@ -23,7 +23,7 @@ def remove_dict(list, key, value):
 def sailor_unavailable(boat_key, event_date):
 
     # If the owner of the boat is scheduled to be a sailor on the event date, then
-    # sailing registration is cancelled.
+    # their availability for sailing is cancelled.
 
     for boat in database.boats_data:
         if boat["key"] == boat_key:
@@ -32,7 +32,6 @@ def sailor_unavailable(boat_key, event_date):
                     sailor_availability[event_date] = ""
                     break
             break
-
     return
 
 def sailor_availability(sailor_key, event_date):

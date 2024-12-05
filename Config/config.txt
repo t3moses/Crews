@@ -3,6 +3,6 @@ sailors data file: Config/sailors data.txt // file of sailors data.
 boats available file: Config/boats available.txt // file of boats availability.
 sailors available file: Config/sailors available.txt // file of sailors availability.
 sailor histories file: Config/sailor histories.txt // file of sailor histories.
-enrolments pending file: Config/enrolments pending.txt // file of pending enrolments.
-user input file file: User input/NSC-SDC form.txt // file containing a user input form.
-Assignments file name: html/assignments.html // html files for the events.
+user input file file: user input/NSC-SDC form.txt // file containing a user input form.
+assignments file name: html/assignments.html // html files for the events.
+debug file name: debug/debug.txt // file containing debug output.

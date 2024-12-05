@@ -92,7 +92,7 @@ def case_3(boats, sailors):
     flotilla = {}
     flotilla["crews"] = assign(boats, sailors)
     flotilla["wait list"] = []
-    flotilla["score"] = "0"
+    flotilla["score"] = "None"
 
     return flotilla
 
