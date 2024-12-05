@@ -66,6 +66,9 @@ def case_3(boats, sailors):
     # the occupancy by 1.  Repeat ordering and incrementing until overall_occupancy
     # is equal to the number of sailors.
 
+    global event_boats
+    global event_sailors
+
     min_overall = 0
     max_overall = 0
     for boat in boats:
@@ -100,12 +103,21 @@ def assign(boats, sailors):
 
     # Return crews, which is a list of crew by assigning sailors to boats.
 
-    # Reorder boats by boat loyalty, then assign boats and sailors to crews
+    # Reorder boats by boat loyalty,
+    # Randomize the sailors list before.
+    # Then assign boats and sailors to crews
     # until the number of sailors assigned to each boat is equal to its occupancy.
     # initial and final are the indices in sailors list of the first and last
     # sailors assigned to a boat.
 
     crews = []
+
+    shuffled_sailors = []
+    while len(sailors) > 0:
+        sailor = sailors[random.randint(0, len(sailors) - 1)]
+        sailors.remove(sailor)
+        shuffled_sailors.append(sailor)
+
     initial = 0
 
     boats = order_boats_by_loyalty(boats)
@@ -114,12 +126,30 @@ def assign(boats, sailors):
         crew = {}
         crew["boat"] = boat
         final = initial + int(boat["occupancy"])
-        crew["sailors"] = sailors[initial : final]
+        crew["sailors"] = shuffled_sailors[initial : final]
         initial = final
         crew["score"] = "0"
         crews.append(crew)
 
     return crews
+
+def reassign(flotilla):
+
+    # Extract the sailor list from the flotilla.
+    # Randomize the list and get them reassigned.
+
+    boats = []
+    sailors = []
+
+    for crew in flotilla["crews"]:
+        boats.append(crew["boat"])
+        for sailor in crew["sailors"]:
+            sailors.append(sailor)
+
+    crews = assign(boats, sailors)
+    flotilla["crews"] = crews
+
+    return flotilla
 
 def order_sailors_by_loyalty(sailors):
 

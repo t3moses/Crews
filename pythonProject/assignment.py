@@ -17,11 +17,15 @@ def assignment():
     if current_datetime > last_date:
         current_datetime = first_date
 
+    random.seed(None)
+
     for event_date in constants.event_dates:
 
         database.debug += event_date + "\n\n"
 
         event_datetime = datetime.datetime.strptime(event_date, date_format)
+
+        random.seed(event_date)
 
         if current_datetime <= event_datetime:
 
@@ -69,23 +73,24 @@ def assignment():
                                 loyalty += 1
                         available_boat["loyalty"] = str(loyalty)
 
+            # Form a new flotilla by applying the mandatory rules using the updated random seed.
+
+            flotilla = mandatory.mandatory(available_boats, available_sailors)
+
             for iteration in range(constants.outer_epochs):
 
                 random.seed(event_date + "v" + str(iteration))
 
-                # Form a new flotilla by applying the mandatory rules using the updated random seed.
-
-                flotilla = mandatory.mandatory(available_boats, available_sailors)
+                flotilla = mandatory.reassign(flotilla)
 
                 if len(flotilla["crews"]) < 2:
                     best_flotilla = copy.deepcopy(flotilla)
                     break
 
                 # Modify the flotilla by applying the discretionary rules.
+                # The resulting flotilla includes its score.
 
                 flotilla = discretionary.discretionary(flotilla, event_date)
-
-                # Else ...
 
                 if iteration == 0:
                     best_flotilla = copy.deepcopy(flotilla)

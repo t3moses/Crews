@@ -6,7 +6,7 @@ import constants
 
 def discretionary(flotilla, event_date):
 
-    # Mandatory policy enforcement does not supply a non-compliance score.  So, add one here.
+    # Mandatory policy enforcement does not supply a flotilla non-compliance score.  So, add one here.
     # Order the flotilla crews by increasing non-compliance score and call swap.
     # Repeat multiple times starting each pass with the best result from the previous pass.
 
@@ -210,10 +210,9 @@ def swap(flotilla, event_date):
             candidate_flotilla["crews"][-1]["sailors"][j] = flotilla["crews"][-2]["sailors"][i]
 
             candidate_flotilla = add_score_to_flotilla(candidate_flotilla, event_date)
+            debug_from_flotilla(candidate_flotilla)
             if int(candidate_flotilla["score"]) <= int(best_flotilla["score"]):
                 best_flotilla = copy.deepcopy(candidate_flotilla)
-                best_flotilla = add_score_to_flotilla(best_flotilla)
-
-            debug_from_flotilla(best_flotilla)
+                # best_flotilla = add_score_to_flotilla(best_flotilla)
 
     return best_flotilla

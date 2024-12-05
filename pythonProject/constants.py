@@ -5,7 +5,6 @@ default_boat = { "key" : "", "owner key" : "", "display name" : "", "email addre
 default_sailor = { "key" : "", "display name" : "", "partner key" : "", "email address" : "", "member" : "False", "skill" : "0", "experience" : "", "request female" : "N","whitelist" : ""}
 inner_epochs = 6 # Gradient descent iterations to find 'local' minimum.
 outer_epochs = 3 # Iterations to find 'global' minimum.
-loss_threshold = 4
 whitelist_weight = 10
 partner_weight = 8
 assist_weight = 8
