@@ -1,6 +1,7 @@
 
 import copy
 import database
+import addresses
 import random
 import datetime
 import constants
@@ -17,11 +18,14 @@ def assignment():
     if current_datetime > last_date:
         current_datetime = first_date
 
+    addresses.begin()
+
     random.seed(None)
 
     for event_date in constants.event_dates:
 
         database.debug += event_date + "\n\n"
+        addresses.add_date(event_date)
 
         event_datetime = datetime.datetime.strptime(event_date, date_format)
 
@@ -76,6 +80,9 @@ def assignment():
             # Form a new flotilla by applying the mandatory rules using the updated random seed.
 
             flotilla = mandatory.mandatory(available_boats, available_sailors)
+
+            addresses.add_boats(flotilla)
+            addresses.add_sailors(flotilla)
 
             for iteration in range(constants.outer_epochs):
 

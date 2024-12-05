@@ -10,6 +10,7 @@ sailor_histories_filename = ""
 user_input_form_filename = ""
 assignments_file_name = ""
 debug_file_name = ""
+addresses_file_name = ""
 
 boats_data = [] # list of boat data dictionaries.
 sailors_data = [] # list of sailor data dictionaries.
@@ -20,6 +21,7 @@ sailor_histories = [] # list of sailor histories dictionaries.
 form = "" # contents of the user input form.
 html = "" # contents of the event calendar output html.
 debug = "" # contents of the debug file.
+addresses = "" # contents of the addresses file.
 
 upper_crew_size = 0 # Used to calculate html column width.
 
@@ -35,6 +37,7 @@ def begin():
     global user_input_form_filename
     global assignments_file_name
     global debug_file_name
+    global addresses_file_name
     global boats_data
     global sailors_data
     global boats_availability
@@ -43,7 +46,8 @@ def begin():
     global form
     global upper_crew_size
 
-    Working_directory = "/Users/timmoses/Documents/Tech/Projects/Version_controlled/Assignment/"
+    # Working_directory = "/Users/timmoses/Documents/Tech/Projects/Version_controlled/Assignment/"
+    Working_directory = constants.working_directory
 
     with open(Working_directory + "Config/" + "config.txt", "r") as f_config:
         s_line_1 = f_config.readline()  # boats data
@@ -54,6 +58,7 @@ def begin():
         s_line_6 = f_config.readline()  # user input form
         s_line_7 = f_config.readline()  # events path
         s_line_8 = f_config.readline()  # debug file
+        s_line_9 = f_config.readline()  # addresses file
 
     boats_data_filename += Working_directory+s_line_1.split(': ')[1].split(' //')[0]
     sailors_data_filename = Working_directory+s_line_2.split(': ')[1].split(' //')[0]
@@ -63,6 +68,7 @@ def begin():
     user_input_form_filename = Working_directory+s_line_6.split(': ')[1].split(' //')[0]
     assignments_file_name = Working_directory+s_line_7.split(': ')[1].split(' //')[0]
     debug_file_name = Working_directory+s_line_8.split(': ')[1].split(' //')[0]
+    addresses_file_name = Working_directory+s_line_9.split(': ')[1].split(' //')[0]
 
     # Open the boat data file.  If it doesn't yet exist, create it.
     # Import boats data.
@@ -254,5 +260,9 @@ def end():
     debug_file = open(debug_file_name, 'w', newline='')
     debug_file.write(debug)
     debug_file.close()
+
+    addresses_file = open(addresses_file_name, 'w', newline='')
+    addresses_file.write(addresses)
+    addresses_file.close()
 
     return
