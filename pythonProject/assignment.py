@@ -2,6 +2,7 @@
 import copy
 import database
 import addresses
+import crew_info
 import random
 import datetime
 import constants
@@ -19,6 +20,7 @@ def assignment():
         current_datetime = first_date
 
     addresses.begin()
+    crew_info.begin()
 
     random.seed(None)
 
@@ -83,6 +85,8 @@ def assignment():
 
             addresses.add_boats(flotilla)
             addresses.add_sailors(flotilla)
+
+            crew_info.add_info(flotilla, event_date)
 
             for iteration in range(constants.outer_epochs):
 

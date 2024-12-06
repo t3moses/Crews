@@ -11,6 +11,7 @@ user_input_form_filename = ""
 assignments_file_name = ""
 debug_file_name = ""
 addresses_file_name = ""
+crew_info_file_name = ""
 
 boats_data = [] # list of boat data dictionaries.
 sailors_data = [] # list of sailor data dictionaries.
@@ -22,6 +23,7 @@ form = "" # contents of the user input form.
 html = "" # contents of the event calendar output html.
 debug = "" # contents of the debug file.
 addresses = "" # contents of the addresses file.
+crew_info = "" # contents of the addresses file.
 
 upper_crew_size = 0 # Used to calculate html column width.
 
@@ -38,6 +40,7 @@ def begin():
     global assignments_file_name
     global debug_file_name
     global addresses_file_name
+    global crew_info_file_name
     global boats_data
     global sailors_data
     global boats_availability
@@ -46,7 +49,6 @@ def begin():
     global form
     global upper_crew_size
 
-    # Working_directory = "/Users/timmoses/Documents/Tech/Projects/Version_controlled/Assignment/"
     Working_directory = constants.working_directory
 
     with open(Working_directory + "Config/" + "config.txt", "r") as f_config:
@@ -59,6 +61,7 @@ def begin():
         s_line_7 = f_config.readline()  # events path
         s_line_8 = f_config.readline()  # debug file
         s_line_9 = f_config.readline()  # addresses file
+        s_line_10 = f_config.readline()  # crew info file
 
     boats_data_filename += Working_directory+s_line_1.split(': ')[1].split(' //')[0]
     sailors_data_filename = Working_directory+s_line_2.split(': ')[1].split(' //')[0]
@@ -69,6 +72,7 @@ def begin():
     assignments_file_name = Working_directory+s_line_7.split(': ')[1].split(' //')[0]
     debug_file_name = Working_directory+s_line_8.split(': ')[1].split(' //')[0]
     addresses_file_name = Working_directory+s_line_9.split(': ')[1].split(' //')[0]
+    crew_info_file_name = Working_directory+s_line_10.split(': ')[1].split(' //')[0]
 
     # Open the boat data file.  If it doesn't yet exist, create it.
     # Import boats data.
@@ -264,5 +268,9 @@ def end():
     addresses_file = open(addresses_file_name, 'w', newline='')
     addresses_file.write(addresses)
     addresses_file.close()
+
+    crew_info_file = open(crew_info_file_name, 'w', newline='')
+    crew_info_file.write(crew_info)
+    crew_info_file.close()
 
     return

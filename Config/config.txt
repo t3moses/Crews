@@ -7,3 +7,4 @@ user input file file: user input/NSC-SDC form.txt // file containing a user inpu
 assignments file name: html/assignments.html // html files for the events.
 debug file name: debug/debug.txt // file containing debug output.
 addresses file name: addresses/addresses.txt // file containing email addresses of sailors and owners by event date.
+crew info file name: crew info/crew info.txt // file containing information about the sailors in the upcoming event.
