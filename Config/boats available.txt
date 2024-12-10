@@ -15,3 +15,4 @@ xelha,,,,,,Y,,Y,,Y,,,,Y,Y,Y,Y
 blackpearl,Y,,Y,,Y,,Y,,Y,,Y,,Y,,Y,,Y
 tropicalquest,Y,Y,Y,Y,,Y,Y,Y,,Y,Y,Y,Y,,Y,Y,Y
 fixen,Y,Y,Y,,,,,,,,,,,,,,
+cariad,Y,Y,,,,,,,,,,,,,,,

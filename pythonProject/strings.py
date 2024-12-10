@@ -20,7 +20,7 @@ def multi_line_from(form, field_name):
     if form.find(field_name) == -1:
         return ""
     else:
-        new_field = form.rpartition(field_name + "\n")[2].rpartition(":")[0]
+        new_field = form.rpartition(field_name + "\n")[2].rpartition("Jun 6")[0]
         new_field = new_field.rpartition("\n")[0]
         return new_field
 

@@ -12,6 +12,8 @@ import crew_html
 
 def assignment():
 
+    # This function assigns sailors to boats using the mandatory and discretionary policies.
+
     date_format = '%a %b %d'
     current_datetime = datetime.datetime.now()
     first_date = datetime.datetime.strptime(constants.event_dates[0], date_format)
@@ -55,7 +57,8 @@ def assignment():
                             available_sailors.append(sailor.copy())
 
             # For each available sailor and boat, calculate their loyalty band, and add it to their data.
-            # Sailor loyalty is derived from sailor_history, whereas boat_loyalty is derived from boat_availability.
+            # Sailor loyalty is the number of times they have sailed this season, according to sailor_history,
+            # Boat_loyalty is the number of times they have sailed this season, according to boat_availability.
 
             for available_sailor in available_sailors:
                 for sailor_history in database.sailor_histories:
@@ -79,7 +82,7 @@ def assignment():
                                 loyalty += 1
                         available_boat["loyalty"] = str(loyalty)
 
-            # Form a new flotilla by applying the mandatory rules using the updated random seed.
+            # Form a new flotilla by applying the mandatory rules using a different random seed for each pass.
 
             flotilla = mandatory.mandatory(available_boats, available_sailors)
 
@@ -99,7 +102,7 @@ def assignment():
                     break
 
                 # Modify the flotilla by applying the discretionary rules.
-                # The resulting flotilla includes its score.
+                # The resulting flotilla includes its non-compliance score.
 
                 flotilla = discretionary.discretionary(flotilla, event_date)
 

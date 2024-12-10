@@ -14,4 +14,5 @@ xelha,georgechaudron,Xel Ha,gac23@live.ca,,False,1,4,False
 astraeus,lindacunningham,Astraeus,linda.c.cunningham@gmail.com,,True,1,2,False
 blackpearl,ruthmack,Black Pearl,t3moses@icloud.com,,True,1,2,False
 tropicalquest,stephenkidd,Tropical Quest,Sbkidd001@Gmail.Com,6136009619,False,2,5,False
-fixen,paulbrown,Fixen,Whatmlc@Gmail.Com,6138286363,False,1,2,False
+fixen,paulbrown,Fixen,Whatmic@Gmail.Com,6138286363,False,1,2,False
+cariad,timmoses,Cariad,t3moses@icloud.com,613 325 4291,False,1,3,False

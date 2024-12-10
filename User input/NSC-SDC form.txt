@@ -1,52 +1,58 @@
 From: "NSC-SDC admin" <t3moses@wix-forms.com>
 Subject: NSC-SDC form
-Date: December 1, 2024 at 6:09:21 AM EST
+Date: December 9, 2024 at 11:42:28 AM EST
 To: "t3moses" <t3moses@icloud.com>
 Reply-To: t3moses@icloud.com
 
 Can't see this message? View in a browser
  
-NSC-SDC NSC-SDC enter sailor availability
+NSC-SDC NSC-SDC open sailor account
 
 Submission summary:
 First name:
-Ann  
+Genghis  
 Last name:
-Morris  
+Kahn  
+Email address:
+gk@mongo.com  
+Background:
+I am new to sailing  
+Qualifications and experience:
+Strictly land travel.  
 Fri Jun 6:
-I am not available  
+Available  
 Fri Jun 13:
-I am not available  
+Not available  
 Fri Jun 20:
-I am not available  
+Not available  
 Sat Jun 28:
-I am not available  
+Not available  
 Fri Jul 4:
-I am available  
+Not available  
 Fri Jul 11:
-I am not available  
-Sat Jul 19:
-I am not available  
+Not available  
+Sat Jun 19:
+Not available  
 Fri Jul 25:
-I am not available  
+Not available  
 Fri Aug 1:
-I am not available  
+Not available  
 Sat Aug 9:
-I am not available  
+Not available  
 Fri Aug 15:
-I am not available  
+Not available  
 Fri Aug 22:
-I am not available  
-Sat Aug 30:
-I am not available  
+Not available  
+Fri Aug 30:
+Not available  
 Fri Sep 5:
-I am not available  
+Not available  
 Fri Sep 12:
-I am not available  
+Not available  
 Fri Sep 19:
-I am not available  
+Not available  
 Fri Sep 26:
-I am not available  
+Not available  
 
 This email was created with Wix.‌ Discover More
  

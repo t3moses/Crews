@@ -38,13 +38,14 @@ def add_info(flotilla, event_date):
 
     if event_date == next_event_date:
         for crew in flotilla["crews"]:
-            database.crew_info += crew["boat"]["display name"] + "\n"
+            database.crew_info += crew["boat"]["display name"] + " "
+            database.crew_info += crew["boat"]["mobile"] + "\n"
             for sailor in crew["sailors"]:
                 database.crew_info += " " + sailor["display name"] + "\n"
                 for database_sailor in database.sailors_data:
                     if database_sailor["key"] == sailor["key"]:
                         experience = database_sailor["experience"]
                         experience = experience.replace("&#44;", ",")
-                        experience = experience.replace("&#10;", ",\n")
+                        experience = experience.replace("&#10;", "\n")
                 database.crew_info += experience + "\n"
     return

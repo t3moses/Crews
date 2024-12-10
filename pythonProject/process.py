@@ -165,6 +165,18 @@ def enrol_boat(form):
 
     database_from_boat(new_boat, database.boats_data, database.boats_availability, database.sailors_data)
 
+    # Add the new boat availability to the boats availability database.
+    # Make the owner unavailable as a sailor on those dates.
+
+    for boat in database.boats_availability:
+        if boat["key"] == boat_key:
+            for event_date in constants.event_dates:
+                if strings.single_line_from(form, event_date + ":") == "Available":
+                    boat[event_date] = "Y"
+                else:
+                    boat[event_date] = ""
+                sailor_unavailable(boat_key, event_date)
+
     return
 
 
@@ -234,10 +246,12 @@ def enrol_sailor(form):
     print()
     partner_display_name = input("Enter " + display_name + "'s partner display name:")
 
+    new_sailor["partner key"] = ""
     for sailor in database.sailors_data:
         if sailor["display name"] == partner_display_name:
             new_sailor["partner key"] = sailor["key"]
             break
+
 
     # If the sailor prefers a female skipper, add ALL boats to their whitelist.
     # Else only add boats whose skipper is not female.
@@ -268,11 +282,36 @@ def enrol_sailor(form):
 
     database.sailors_data.append(new_sailor)
 
+    # Add the new sailor availability to the sailors availability database,
+    # unless the sailor is available as an owner on those dates.
+
     available_sailor = {}
     available_sailor["key"] = key
     for event_date in constants.event_dates:
-        available_sailor[event_date] = ""
+        if strings.single_line_from(form, event_date + ":") == "Available":
+            if sailor_availability(display_name, event_date):
+                available_sailor[event_date] = "Y"
+            else:  # The sailor is scheduled as a boat owner.
+                available_sailor[event_date] = ""
+        else:
+            available_sailor[event_date] = ""
     database.sailors_availability.append(available_sailor)
+
+    """
+    for sailor in database.sailors_availability:
+        if sailor["key"] == key:
+            for event_date in constants.event_dates:
+                if strings.single_line_from(form, event_date + ":") == "I am available":
+                    if sailor_availability(display_name, event_date):
+                        sailor[event_date] = "Y"
+                    else:  # The sailor is scheduled as a boat owner.
+                        sailor[event_date] = ""
+                else:
+                    sailor[event_date] = ""
+            return
+        else:
+            pass
+    """
 
     # If the sailor is already in the histories database, delete future event entries.
     # Otherwise, add the sailor to the histories database and set all events to empty.
@@ -323,6 +362,7 @@ def register_boat(form):
                     boat[event_date] = "Y"
                 sailor_unavailable(key, event_date)
             return
+
     return
 
 
@@ -373,11 +413,11 @@ elif form_text.count("open sailor account"):
     enrol_sailor(form_text)
 elif form_text.count("enter boat availability"):
     register_boat(form_text)
-    assignment.assignment()
 elif form_text.count("enter sailor availability"):
     register_sailor(form_text)
-    assignment.assignment()
 else:
     raise Exception("Unrecognised form.")
+
+assignment.assignment()
 
 database.end()
