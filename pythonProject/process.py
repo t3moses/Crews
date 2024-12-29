@@ -1,5 +1,6 @@
 #!.venv/bin/python3.12
 
+import sys
 import database
 import assignment
 import strings
@@ -95,48 +96,110 @@ def database_from_boat(new_boat, boats_data, boats_availability, sailors_data):
             sailor["whitelist"] += new_boat["key"]
     return
 
-def enrol_boat(form):
+def user_input_from_form(form):
+
+    boundary = {}  # dictionary containing the start and end indices of one field.
+    boundaries = []  # list of boundaries.
+    form_len = len(form)
+    form_name_start = int
+    form_name_end = int
+    sequence = "0ae2808a0a"
+    seq_len = 3
+    state = 0
+    for i in range(form_len):
+        match state:
+            case 0:
+                if i + seq_len > form_len:
+                    state = 4  # reached end of form.
+                elif form[i:i + seq_len].encode().hex() == sequence: # Start of form name.
+                    form_name_start = i + seq_len
+                    sequence = "0a0a"
+                    seq_len = 2
+                    state = 1
+                else:
+                    state = 0  # no state change.
+            case 1:
+                if i + seq_len > form_len:
+                    state = 4  # reached end of form.
+                elif form[i:i + seq_len].encode().hex() == sequence: # End of form name.
+                    form_name_end = i
+                    sequence = "3a0a"
+                    seq_len = 2
+                    state = 2
+                else:
+                    state = 1  # no state change.
+            case 2:
+                if i + seq_len > form_len:
+                    state = 4  # reached end of form.
+                elif form[i:i + seq_len].encode().hex() == sequence:
+                    boundary["start"] = i + seq_len # Start of first field.
+                    sequence = "c2a0c2a00a"
+                    seq_len = 3
+                    state = 3
+                else: state = 2  # no state change.
+            case 3:
+                if i + seq_len > form_len:
+                    state = 4  # reached end of form.
+                elif form[i:i + seq_len].encode().hex() == sequence:
+                    boundary["end"] = i # End of field.
+                    boundaries.append(boundary.copy())
+                    boundary["start"] = i + seq_len # Start of next field.
+                    state = 3  # no state change.
+                else:
+                    state = 3  # no state change.
+            case _:
+                continue
+
+    # Make the user input dictionary.
+
+    user_input = {}
+    key = "Form name"
+    value = strings.csv_safe(form[form_name_start: form_name_end])
+    user_input.update({key: value})
+
+    for boundary in boundaries:
+        key_value = form[boundary["start"] : boundary["end"]].partition(":\n")
+        key = key_value[0]
+        value = strings.csv_safe(key_value[2])
+        user_input.update({key: value})
+
+    return user_input
+
+def enrol_boat(user_input):
 
     # Add the boat described by the form to the boats data file, the boats available file
     # and the sailor whitelists.
 
     # Process new boat data from the form.
 
-    boat_name = strings.single_line_from(form, "Boat name:")
-    owner_first_name = strings.single_line_from(form, "Owner's first name:")
-    owner_last_name = strings.single_line_from(form, "Owner's last name:")
-    email_address = strings.single_line_from(form, "Owner's email address:")
-    mobile_number = strings.single_line_from(form, "Owner's mobile number:")
-    min_occupancy = strings.single_line_from(form, "Minimum number of sailors assigned by the program:")
-    max_occupancy = strings.single_line_from(form, "Maximum number of sailors assigned by the program:")
+    boat_name = user_input.get("Boat name")
+    owner_first_name = user_input.get("Owner's first name")
+    owner_last_name = user_input.get("Owner's last name")
+    email_address = user_input.get("Owner's email address")
+    mobile_number = user_input.get("Owner's mobile number")
+    min_occupancy = user_input.get("Minimum number of sailors assigned by the program")
+    max_occupancy = user_input.get("Maximum number of sailors assigned by the program")
 
     boat_key = strings.key_from_string(boat_name)
     owner_key = strings.key_from_strings(owner_first_name, owner_last_name)
 
     # If the boat account already exists, get the display name from the account.
-    # Then remove the account from the boats database.
+    # Then remove the account from the boats database and from the sailor whitelists..
     # If the boat account does not exist, create the display name from the supplied boat name.
 
     if strings.key_exists(boat_key, database.boats_data):
 
-        boats_data_copy = []
+        # boats_data_copy = []
         for boat in database.boats_data:
             if boat["key"] == boat_key:
                 display_name = boat["display name"]
-            else:
-                boats_data_copy.append(boat)
-        database.boats_data = boats_data_copy
 
-        boats_availability_copy = []
-        for boat in database.boats_availability:
-            if not boat["key"] == boat_key:
-                boats_availability_copy.append(boat)
-        database.boats_availability = boats_availability_copy
+        remove_duplicate_boats(boat_key, database.boats_data, database.boats_availability, database.sailors_data)
 
     else:
-        display_name = strings.display_name_from_string(boat_name, database.boats_data)
+        display_name = strings.display_name_from_string(boat_name)
 
-    if strings.single_line_from(form, "experienced sailor in the crew:") == "Checked":
+    if user_input.get("Include an experienced sailor in the crew") == "Checked":
         assistance = "True"
     else:
         assistance = "False"
@@ -146,8 +209,8 @@ def enrol_boat(form):
     # Ask the operator if the boat's skipper is female.  Then make a list of the new boat data.
 
     print()
-    user_input = input("Does " + boat_name + " have a female skipper? (Y/N):")
-    if user_input == "Y" or user_input == "y":
+    response = input("Does " + boat_name + " have a female skipper? (Y/N):")
+    if response == "Y" or response == "y":
         new_boat["female"] = "True"
     else:
         new_boat["female"] = "False"
@@ -171,7 +234,7 @@ def enrol_boat(form):
     for boat in database.boats_availability:
         if boat["key"] == boat_key:
             for event_date in constants.event_dates:
-                if strings.single_line_from(form, event_date + ":") == "Available":
+                if user_input.get(event_date) == "Available":
                     boat[event_date] = "Y"
                 else:
                     boat[event_date] = ""
@@ -180,19 +243,19 @@ def enrol_boat(form):
     return
 
 
-def enrol_sailor(form):
+def enrol_sailor(user_input):
 
     display_name = ""
 
     # Add the sailor described by the form to the sailors data file, the sailors available file
     # and the sailor histories.
 
-    first_name = strings.single_line_from(form, "First name:")
-    last_name = strings.single_line_from(form, "Last name:")
-    email_address = strings.single_line_from(form, "Email address:")
-    membership_number = strings.number_from(strings.single_line_from(form, "NSC membership number:"))
-    background = strings.single_line_from(form, "Background:")
-    experience = strings.csv_safe(strings.multi_line_from(form, "Qualifications and experience:"))
+    first_name = user_input.get("First name")
+    last_name = user_input.get("Last name")
+    email_address = user_input.get("Email address")
+    membership_number = user_input.get("NSC membership number")
+    background = user_input.get("Background")
+    experience = user_input.get("Qualifications and experience")
 
     key = strings.key_from_strings(first_name, last_name)
 
@@ -201,7 +264,7 @@ def enrol_sailor(form):
     else:
         member = "True"
 
-    if strings.single_line_from(form, "space allows:") == "Checked":
+    if user_input.get("(Women only) I would like to sail with a female captain when space allows") == "Checked":
         request_female = "True"
     else:
         request_female = "False"
@@ -288,7 +351,7 @@ def enrol_sailor(form):
     available_sailor = {}
     available_sailor["key"] = key
     for event_date in constants.event_dates:
-        if strings.single_line_from(form, event_date + ":") == "Available":
+        if user_input.get(event_date) == "Available":
             if sailor_availability(display_name, event_date):
                 available_sailor[event_date] = "Y"
             else:  # The sailor is scheduled as a boat owner.
@@ -296,22 +359,6 @@ def enrol_sailor(form):
         else:
             available_sailor[event_date] = ""
     database.sailors_availability.append(available_sailor)
-
-    """
-    for sailor in database.sailors_availability:
-        if sailor["key"] == key:
-            for event_date in constants.event_dates:
-                if strings.single_line_from(form, event_date + ":") == "I am available":
-                    if sailor_availability(display_name, event_date):
-                        sailor[event_date] = "Y"
-                    else:  # The sailor is scheduled as a boat owner.
-                        sailor[event_date] = ""
-                else:
-                    sailor[event_date] = ""
-            return
-        else:
-            pass
-    """
 
     # If the sailor is already in the histories database, delete future event entries.
     # Otherwise, add the sailor to the histories database and set all events to empty.
@@ -334,11 +381,11 @@ def enrol_sailor(form):
     return
 
 
-def register_boat(form):
+def register_boat(user_input):
 
     # Update the boats availability file with the information in the form.
 
-    boat_name = strings.single_line_from(form, "Boat name:")
+    boat_name = user_input.get("Boat name")
     key = strings.key_from_string(boat_name)
 
     # If the boat account does not exist, use the default boat to create a new account.
@@ -358,7 +405,7 @@ def register_boat(form):
     for boat in database.boats_availability:
         if boat["key"] == key:
             for event_date in constants.event_dates:
-                if strings.single_line_from(form, event_date + ":") == "Available":
+                if user_input.get(event_date) == "Available":
                     boat[event_date] = "Y"
                 sailor_unavailable(key, event_date)
             return
@@ -366,7 +413,7 @@ def register_boat(form):
     return
 
 
-def register_sailor(form):
+def register_sailor(user_input):
 
     # Check if the sailor is already enrolled, based on entries in the sailors data file.
     # If not, enrol the default sailor augmented with the name from the form.
@@ -375,8 +422,8 @@ def register_sailor(form):
     # Check if the sailor is also a boat owner who is registered for any of the dates.
     # Prioritize the boat owner role over the sailor role.
 
-    first_name = strings.single_line_from(form, "First name:")
-    last_name = strings.single_line_from(form, "Last name:")
+    first_name = user_input.get("First name")
+    last_name = user_input.get("Last name")
     key = strings.key_from_strings(first_name, last_name)
     display_name = strings.display_name_from_strings(first_name, last_name, database.sailors_data)
 
@@ -389,7 +436,7 @@ def register_sailor(form):
     for sailor in database.sailors_availability:
         if sailor["key"] == key:
             for event_date in constants.event_dates:
-                if strings.single_line_from(form, event_date + ":") == "I am available":
+                if user_input.get(event_date) == "I am available":
                     if sailor_availability(display_name, event_date):
                         sailor[event_date] = "Y"
                     else: # The sailor is scheduled as a boat owner.
@@ -405,18 +452,19 @@ def register_sailor(form):
 database.begin()
 crew_html.begin()
 
-form_text = strings.text_from_string(database.form)
+# Convert the form to a dictionary of boat data.
 
-if form_text.count("open boat account"):
-    enrol_boat(form_text)
-elif form_text.count("open sailor account"):
-    enrol_sailor(form_text)
-elif form_text.count("enter boat availability"):
-    register_boat(form_text)
-elif form_text.count("enter sailor availability"):
-    register_sailor(form_text)
+user_input = user_input_from_form(database.form)
+
+print(user_input)
+
+if user_input.get("Form name") == "Open boat account": enrol_boat(user_input)
+elif user_input.get("Form name") == "Open sailor account": enrol_sailor(user_input)
+elif user_input.get("Form name") == "Enter boat availability": register_boat(user_input)
+elif user_input.get("Form name") == "Enter sailor availability": register_sailor(user_input)
 else:
-    raise Exception("Unrecognised form.")
+    print("Unrecognised form.")
+    sys.exit(1)
 
 assignment.assignment()
 

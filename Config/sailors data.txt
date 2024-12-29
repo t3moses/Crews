@@ -1,0 +1,7 @@
+key,display name,partner key,email address,member,skill,experience,request female,whitelist
+williambligh,WilliamB,,t3moses@icloud.com,True,0,I have sailed to Tahiti,False,nina;saogabriel;cariad
+joshuaslocum,JoshuaS,,t3moses@icloud.com,True,1,I have sailed to Australia,False,nina;saogabriel;cariad
+deecaffari,DeeC,,tfw006@gmail.con,True,1,I have circumnavigated the globe backwards&#10;(Women only) I would like to sail with a female captain when space allows:&#10;Checked,True,nina;saogabriel;victoria;cariad
+elizabethcook,ElizabethC,,agenttsat@gmail.com,True,0,Absolutely none&#10;(Women only) I would like to sail with a female captain when space allows:&#10;Checked,True,nina;saogabriel;victoria;cariad
+sarabramall,SaraB,,sarabramall@hotmail.com,True,0,I have won the Americas Cup,False,nina;saogabriel;cariad
+timmoses,TimM,,t3moses@icloud.com,True,0,Whatever+u002C+u2028+u2028,True,nina;saogabriel;victoria;cariad

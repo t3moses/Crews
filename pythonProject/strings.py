@@ -27,23 +27,17 @@ def multi_line_from(form, field_name):
 
 def csv_safe( string ):
 
+    nl_seq = "e280a8"
     safe_string = ""
+
     for char in string:
         if char == ",":
-            safe_string += "&#44;"
-        elif ord(char) == 10: # new line.
-            safe_string += "&#10;"
+            safe_string += "+u002C"
+        elif char.encode().hex() == nl_seq:
+            safe_string += "+u2028"
         else:
             safe_string += char
     return safe_string
-
-def text_from_string(string):
-
-    text_string = ""
-    for char in string:
-        if (char.isascii() and char.isprintable()) or char == "\n":
-            text_string += char
-    return text_string
 
 def key_from_string(name):
 
@@ -76,12 +70,12 @@ def number_from( input ):
         else: pass
     return number
 
-def display_name_from_string( name, database ):
+def display_name_from_string( name ):
 
     # Returns a display name, derived from the supplied name,
-    # that does not already exist in the database.
+    # even though that name does not already exist in the database.
 
-    display_name = name
+    display_name = name.strip().capitalize()
     return display_name
 
 def display_name_from_strings( first, last, database ):
@@ -89,8 +83,8 @@ def display_name_from_strings( first, last, database ):
     # Returns a display name, derived from the supplied first and last names,
     # that does not already exist in the database.
 
-    display_name = first.capitalize()
-    last = last.capitalize()
+    display_name = first.strip().capitalize()
+    last = last.strip().capitalize()
 
     for i in range(len(last)):
         display_name += last[i]

@@ -1,0 +1,3375 @@
+Fri Jun 6
+
+Cariad DeeC 8
+Sao gabriel WilliamB 8
+Victoria JoshuaS SaraB 20
+flotilla score: 36
+
+initial flotilla score: 36
+
+
+Cariad DeeC 8
+Sao gabriel JoshuaS 8
+Victoria WilliamB SaraB 20
+flotilla score: 36
+
+Cariad DeeC 8
+Sao gabriel SaraB 8
+Victoria JoshuaS WilliamB 20
+flotilla score: 36
+
+best flotilla score: 36
+
+
+Cariad DeeC 8
+Sao gabriel JoshuaS 8
+Victoria WilliamB SaraB 20
+flotilla score: 36
+
+Cariad DeeC 8
+Sao gabriel SaraB 8
+Victoria JoshuaS WilliamB 20
+flotilla score: 36
+
+best flotilla score: 36
+
+
+Cariad DeeC 8
+Sao gabriel JoshuaS 8
+Victoria WilliamB SaraB 20
+flotilla score: 36
+
+Cariad DeeC 8
+Sao gabriel SaraB 8
+Victoria JoshuaS WilliamB 20
+flotilla score: 36
+
+best flotilla score: 36
+
+
+Sao gabriel WilliamB 8
+Cariad JoshuaS 8
+Victoria DeeC SaraB 10
+flotilla score: 26
+
+Sao gabriel WilliamB 8
+Cariad SaraB 8
+Victoria JoshuaS DeeC 10
+flotilla score: 26
+
+best flotilla score: 26
+
+
+Sao gabriel WilliamB 8
+Cariad JoshuaS 8
+Victoria SaraB DeeC 10
+flotilla score: 26
+
+Sao gabriel WilliamB 8
+Cariad DeeC 8
+Victoria JoshuaS SaraB 20
+flotilla score: 36
+
+best flotilla score: 26
+
+
+Sao gabriel WilliamB 8
+Cariad JoshuaS 8
+Victoria SaraB DeeC 10
+flotilla score: 26
+
+initial flotilla score: 26
+
+
+Cariad JoshuaS 8
+Sao gabriel SaraB 8
+Victoria WilliamB DeeC 10
+flotilla score: 26
+
+Cariad JoshuaS 8
+Sao gabriel DeeC 8
+Victoria SaraB WilliamB 20
+flotilla score: 36
+
+best flotilla score: 26
+
+
+Cariad JoshuaS 8
+Sao gabriel SaraB 8
+Victoria WilliamB DeeC 10
+flotilla score: 26
+
+Cariad JoshuaS 8
+Sao gabriel DeeC 8
+Victoria SaraB WilliamB 20
+flotilla score: 36
+
+best flotilla score: 26
+
+
+Cariad JoshuaS 8
+Sao gabriel SaraB 8
+Victoria WilliamB DeeC 10
+flotilla score: 26
+
+Cariad JoshuaS 8
+Sao gabriel DeeC 8
+Victoria SaraB WilliamB 20
+flotilla score: 36
+
+best flotilla score: 26
+
+
+Sao gabriel WilliamB 8
+Cariad SaraB 8
+Victoria JoshuaS DeeC 10
+flotilla score: 26
+
+Sao gabriel WilliamB 8
+Cariad DeeC 8
+Victoria SaraB JoshuaS 20
+flotilla score: 36
+
+best flotilla score: 26
+
+
+Sao gabriel WilliamB 8
+Cariad SaraB 8
+Victoria JoshuaS DeeC 10
+flotilla score: 26
+
+Sao gabriel WilliamB 8
+Cariad DeeC 8
+Victoria SaraB JoshuaS 20
+flotilla score: 36
+
+best flotilla score: 26
+
+
+Cariad JoshuaS 8
+Sao gabriel WilliamB 8
+Victoria SaraB DeeC 10
+flotilla score: 26
+
+initial flotilla score: 26
+
+
+Sao gabriel WilliamB 8
+Cariad SaraB 8
+Victoria JoshuaS DeeC 10
+flotilla score: 26
+
+Sao gabriel WilliamB 8
+Cariad DeeC 8
+Victoria SaraB JoshuaS 20
+flotilla score: 36
+
+best flotilla score: 26
+
+
+Sao gabriel WilliamB 8
+Cariad SaraB 8
+Victoria JoshuaS DeeC 10
+flotilla score: 26
+
+Sao gabriel WilliamB 8
+Cariad DeeC 8
+Victoria SaraB JoshuaS 20
+flotilla score: 36
+
+best flotilla score: 26
+
+
+Cariad JoshuaS 8
+Sao gabriel SaraB 8
+Victoria WilliamB DeeC 10
+flotilla score: 26
+
+Cariad JoshuaS 8
+Sao gabriel DeeC 8
+Victoria SaraB WilliamB 20
+flotilla score: 36
+
+best flotilla score: 26
+
+
+Sao gabriel WilliamB 8
+Cariad SaraB 8
+Victoria JoshuaS DeeC 10
+flotilla score: 26
+
+Sao gabriel WilliamB 8
+Cariad DeeC 8
+Victoria SaraB JoshuaS 20
+flotilla score: 36
+
+best flotilla score: 26
+
+
+Cariad JoshuaS 8
+Sao gabriel SaraB 8
+Victoria WilliamB DeeC 10
+flotilla score: 26
+
+Cariad JoshuaS 8
+Sao gabriel DeeC 8
+Victoria SaraB WilliamB 20
+flotilla score: 36
+
+best flotilla score: 26
+
+
+Fri Jun 13
+
+Nina DeeC 0
+Sao gabriel WilliamB 16
+Victoria SaraB JoshuaS 28
+flotilla score: 44
+
+initial flotilla score: 44
+
+
+Nina DeeC 0
+Sao gabriel SaraB 8
+Victoria WilliamB JoshuaS 28
+flotilla score: 36
+
+Nina DeeC 0
+Sao gabriel JoshuaS 8
+Victoria SaraB WilliamB 20
+flotilla score: 28
+
+best flotilla score: 28
+
+
+Nina DeeC 0
+Sao gabriel SaraB 8
+Victoria JoshuaS WilliamB 28
+flotilla score: 36
+
+Nina DeeC 0
+Sao gabriel WilliamB 16
+Victoria SaraB JoshuaS 28
+flotilla score: 44
+
+best flotilla score: 28
+
+
+Nina DeeC 0
+Sao gabriel SaraB 8
+Victoria JoshuaS WilliamB 28
+flotilla score: 36
+
+Nina DeeC 0
+Sao gabriel WilliamB 16
+Victoria SaraB JoshuaS 28
+flotilla score: 44
+
+best flotilla score: 28
+
+
+Nina DeeC 0
+Sao gabriel SaraB 8
+Victoria JoshuaS WilliamB 28
+flotilla score: 36
+
+Nina DeeC 0
+Sao gabriel WilliamB 16
+Victoria SaraB JoshuaS 28
+flotilla score: 44
+
+best flotilla score: 28
+
+
+Nina DeeC 0
+Sao gabriel SaraB 8
+Victoria JoshuaS WilliamB 28
+flotilla score: 36
+
+Nina DeeC 0
+Sao gabriel WilliamB 16
+Victoria SaraB JoshuaS 28
+flotilla score: 44
+
+best flotilla score: 28
+
+
+Nina DeeC 0
+Sao gabriel JoshuaS 8
+Victoria WilliamB SaraB 20
+flotilla score: 28
+
+initial flotilla score: 28
+
+
+Nina DeeC 0
+Sao gabriel WilliamB 16
+Victoria JoshuaS SaraB 28
+flotilla score: 44
+
+Nina DeeC 0
+Sao gabriel SaraB 8
+Victoria WilliamB JoshuaS 28
+flotilla score: 36
+
+best flotilla score: 28
+
+
+Nina DeeC 0
+Sao gabriel WilliamB 16
+Victoria JoshuaS SaraB 28
+flotilla score: 44
+
+Nina DeeC 0
+Sao gabriel SaraB 8
+Victoria WilliamB JoshuaS 28
+flotilla score: 36
+
+best flotilla score: 28
+
+
+Nina DeeC 0
+Sao gabriel WilliamB 16
+Victoria JoshuaS SaraB 28
+flotilla score: 44
+
+Nina DeeC 0
+Sao gabriel SaraB 8
+Victoria WilliamB JoshuaS 28
+flotilla score: 36
+
+best flotilla score: 28
+
+
+Nina DeeC 0
+Sao gabriel WilliamB 16
+Victoria JoshuaS SaraB 28
+flotilla score: 44
+
+Nina DeeC 0
+Sao gabriel SaraB 8
+Victoria WilliamB JoshuaS 28
+flotilla score: 36
+
+best flotilla score: 28
+
+
+Nina DeeC 0
+Sao gabriel WilliamB 16
+Victoria JoshuaS SaraB 28
+flotilla score: 44
+
+Nina DeeC 0
+Sao gabriel SaraB 8
+Victoria WilliamB JoshuaS 28
+flotilla score: 36
+
+best flotilla score: 28
+
+
+Nina WilliamB 0
+Sao gabriel JoshuaS 8
+Victoria DeeC SaraB 18
+flotilla score: 26
+
+initial flotilla score: 26
+
+
+Nina WilliamB 0
+Sao gabriel DeeC 8
+Victoria JoshuaS SaraB 28
+flotilla score: 36
+
+Nina WilliamB 0
+Sao gabriel SaraB 8
+Victoria DeeC JoshuaS 26
+flotilla score: 34
+
+best flotilla score: 26
+
+
+Nina WilliamB 0
+Sao gabriel DeeC 8
+Victoria JoshuaS SaraB 28
+flotilla score: 36
+
+Nina WilliamB 0
+Sao gabriel SaraB 8
+Victoria DeeC JoshuaS 26
+flotilla score: 34
+
+best flotilla score: 26
+
+
+Nina WilliamB 0
+Sao gabriel DeeC 8
+Victoria JoshuaS SaraB 28
+flotilla score: 36
+
+Nina WilliamB 0
+Sao gabriel SaraB 8
+Victoria DeeC JoshuaS 26
+flotilla score: 34
+
+best flotilla score: 26
+
+
+Nina WilliamB 0
+Sao gabriel DeeC 8
+Victoria JoshuaS SaraB 28
+flotilla score: 36
+
+Nina WilliamB 0
+Sao gabriel SaraB 8
+Victoria DeeC JoshuaS 26
+flotilla score: 34
+
+best flotilla score: 26
+
+
+Nina WilliamB 0
+Sao gabriel DeeC 8
+Victoria JoshuaS SaraB 28
+flotilla score: 36
+
+Nina WilliamB 0
+Sao gabriel SaraB 8
+Victoria DeeC JoshuaS 26
+flotilla score: 34
+
+best flotilla score: 26
+
+
+Fri Jun 20
+
+Nina SaraB 0
+Cariad DeeC 8
+Sao gabriel WilliamB JoshuaS 18
+flotilla score: 26
+
+initial flotilla score: 26
+
+
+Nina SaraB 0
+Cariad WilliamB 8
+Sao gabriel DeeC JoshuaS 16
+flotilla score: 24
+
+Nina SaraB 0
+Cariad JoshuaS 8
+Sao gabriel WilliamB DeeC 10
+flotilla score: 18
+
+best flotilla score: 18
+
+
+Nina SaraB 0
+Cariad WilliamB 8
+Sao gabriel JoshuaS DeeC 16
+flotilla score: 24
+
+Nina SaraB 0
+Cariad DeeC 8
+Sao gabriel WilliamB JoshuaS 18
+flotilla score: 26
+
+best flotilla score: 18
+
+
+Nina SaraB 0
+Cariad WilliamB 8
+Sao gabriel JoshuaS DeeC 16
+flotilla score: 24
+
+Nina SaraB 0
+Cariad DeeC 8
+Sao gabriel WilliamB JoshuaS 18
+flotilla score: 26
+
+best flotilla score: 18
+
+
+Nina SaraB 0
+Cariad WilliamB 8
+Sao gabriel JoshuaS DeeC 16
+flotilla score: 24
+
+Nina SaraB 0
+Cariad DeeC 8
+Sao gabriel WilliamB JoshuaS 18
+flotilla score: 26
+
+best flotilla score: 18
+
+
+Nina SaraB 0
+Cariad WilliamB 8
+Sao gabriel JoshuaS DeeC 16
+flotilla score: 24
+
+Nina SaraB 0
+Cariad DeeC 8
+Sao gabriel WilliamB JoshuaS 18
+flotilla score: 26
+
+best flotilla score: 18
+
+
+Cariad DeeC 8
+Nina WilliamB 8
+Sao gabriel SaraB JoshuaS 16
+flotilla score: 32
+
+initial flotilla score: 32
+
+
+Nina WilliamB 8
+Cariad SaraB 10
+Sao gabriel DeeC JoshuaS 16
+flotilla score: 34
+
+Nina WilliamB 8
+Cariad JoshuaS 8
+Sao gabriel SaraB DeeC 8
+flotilla score: 24
+
+best flotilla score: 24
+
+
+Sao gabriel SaraB DeeC 8
+Cariad WilliamB 8
+Nina JoshuaS 0
+flotilla score: 16
+
+best flotilla score: 16
+
+
+Nina JoshuaS 0
+Cariad SaraB 10
+Sao gabriel WilliamB DeeC 10
+flotilla score: 20
+
+Nina JoshuaS 0
+Cariad DeeC 8
+Sao gabriel SaraB WilliamB 10
+flotilla score: 18
+
+best flotilla score: 16
+
+
+Nina JoshuaS 0
+Cariad SaraB 10
+Sao gabriel WilliamB DeeC 10
+flotilla score: 20
+
+Nina JoshuaS 0
+Cariad DeeC 8
+Sao gabriel SaraB WilliamB 10
+flotilla score: 18
+
+best flotilla score: 16
+
+
+Nina JoshuaS 0
+Cariad SaraB 10
+Sao gabriel WilliamB DeeC 10
+flotilla score: 20
+
+Nina JoshuaS 0
+Cariad DeeC 8
+Sao gabriel SaraB WilliamB 10
+flotilla score: 18
+
+best flotilla score: 16
+
+
+Nina WilliamB 8
+Cariad SaraB 10
+Sao gabriel JoshuaS DeeC 16
+flotilla score: 34
+
+initial flotilla score: 34
+
+
+Nina WilliamB 8
+Cariad JoshuaS 8
+Sao gabriel SaraB DeeC 8
+flotilla score: 24
+
+Nina WilliamB 8
+Cariad DeeC 8
+Sao gabriel JoshuaS SaraB 16
+flotilla score: 32
+
+best flotilla score: 24
+
+
+Sao gabriel SaraB DeeC 8
+Nina JoshuaS 0
+Cariad WilliamB 8
+flotilla score: 16
+
+best flotilla score: 16
+
+
+Nina JoshuaS 0
+Sao gabriel WilliamB DeeC 10
+Cariad SaraB 10
+flotilla score: 20
+
+Nina JoshuaS 0
+Sao gabriel SaraB WilliamB 10
+Cariad DeeC 8
+flotilla score: 18
+
+best flotilla score: 16
+
+
+Nina JoshuaS 0
+Sao gabriel WilliamB DeeC 10
+Cariad SaraB 10
+flotilla score: 20
+
+Nina JoshuaS 0
+Sao gabriel SaraB WilliamB 10
+Cariad DeeC 8
+flotilla score: 18
+
+best flotilla score: 16
+
+
+Nina JoshuaS 0
+Cariad SaraB 10
+Sao gabriel WilliamB DeeC 10
+flotilla score: 20
+
+Nina JoshuaS 0
+Cariad DeeC 8
+Sao gabriel SaraB WilliamB 10
+flotilla score: 18
+
+best flotilla score: 16
+
+
+Sat Jun 28
+
+Cariad DeeC 8
+Sao gabriel SaraB 16
+Victoria WilliamB JoshuaS 21
+flotilla score: 45
+
+initial flotilla score: 45
+
+
+Cariad DeeC 8
+Sao gabriel WilliamB 9
+Victoria SaraB JoshuaS 24
+flotilla score: 41
+
+Cariad DeeC 8
+Sao gabriel JoshuaS 10
+Victoria WilliamB SaraB 22
+flotilla score: 40
+
+best flotilla score: 40
+
+
+Cariad DeeC 8
+Sao gabriel WilliamB 9
+Victoria JoshuaS SaraB 24
+flotilla score: 41
+
+Cariad DeeC 8
+Sao gabriel SaraB 16
+Victoria WilliamB JoshuaS 21
+flotilla score: 45
+
+best flotilla score: 40
+
+
+Cariad DeeC 8
+Sao gabriel WilliamB 9
+Victoria JoshuaS SaraB 24
+flotilla score: 41
+
+Cariad DeeC 8
+Sao gabriel SaraB 16
+Victoria WilliamB JoshuaS 21
+flotilla score: 45
+
+best flotilla score: 40
+
+
+Cariad DeeC 8
+Sao gabriel WilliamB 9
+Victoria JoshuaS SaraB 24
+flotilla score: 41
+
+Cariad DeeC 8
+Sao gabriel SaraB 16
+Victoria WilliamB JoshuaS 21
+flotilla score: 45
+
+best flotilla score: 40
+
+
+Cariad DeeC 8
+Sao gabriel WilliamB 9
+Victoria JoshuaS SaraB 24
+flotilla score: 41
+
+Cariad DeeC 8
+Sao gabriel SaraB 16
+Victoria WilliamB JoshuaS 21
+flotilla score: 45
+
+best flotilla score: 40
+
+
+Sao gabriel WilliamB 9
+Cariad SaraB 9
+Victoria DeeC JoshuaS 15
+flotilla score: 33
+
+initial flotilla score: 33
+
+
+Cariad SaraB 9
+Sao gabriel DeeC 16
+Victoria WilliamB JoshuaS 21
+flotilla score: 46
+
+Cariad SaraB 9
+Sao gabriel JoshuaS 10
+Victoria DeeC WilliamB 14
+flotilla score: 33
+
+best flotilla score: 33
+
+
+Cariad SaraB 9
+Sao gabriel DeeC 16
+Victoria WilliamB JoshuaS 21
+flotilla score: 46
+
+Cariad SaraB 9
+Sao gabriel JoshuaS 10
+Victoria DeeC WilliamB 14
+flotilla score: 33
+
+best flotilla score: 33
+
+
+Sao gabriel WilliamB 9
+Cariad DeeC 8
+Victoria SaraB JoshuaS 24
+flotilla score: 41
+
+Sao gabriel WilliamB 9
+Cariad JoshuaS 8
+Victoria DeeC SaraB 17
+flotilla score: 34
+
+best flotilla score: 33
+
+
+Cariad SaraB 9
+Sao gabriel DeeC 16
+Victoria WilliamB JoshuaS 21
+flotilla score: 46
+
+Cariad SaraB 9
+Sao gabriel JoshuaS 10
+Victoria DeeC WilliamB 14
+flotilla score: 33
+
+best flotilla score: 33
+
+
+Sao gabriel WilliamB 9
+Cariad DeeC 8
+Victoria SaraB JoshuaS 24
+flotilla score: 41
+
+Sao gabriel WilliamB 9
+Cariad JoshuaS 8
+Victoria DeeC SaraB 17
+flotilla score: 34
+
+best flotilla score: 33
+
+
+Cariad DeeC 8
+Sao gabriel SaraB 16
+Victoria WilliamB JoshuaS 21
+flotilla score: 45
+
+initial flotilla score: 45
+
+
+Cariad DeeC 8
+Sao gabriel WilliamB 9
+Victoria SaraB JoshuaS 24
+flotilla score: 41
+
+Cariad DeeC 8
+Sao gabriel JoshuaS 10
+Victoria WilliamB SaraB 22
+flotilla score: 40
+
+best flotilla score: 40
+
+
+Cariad DeeC 8
+Sao gabriel WilliamB 9
+Victoria JoshuaS SaraB 24
+flotilla score: 41
+
+Cariad DeeC 8
+Sao gabriel SaraB 16
+Victoria WilliamB JoshuaS 21
+flotilla score: 45
+
+best flotilla score: 40
+
+
+Cariad DeeC 8
+Sao gabriel WilliamB 9
+Victoria JoshuaS SaraB 24
+flotilla score: 41
+
+Cariad DeeC 8
+Sao gabriel SaraB 16
+Victoria WilliamB JoshuaS 21
+flotilla score: 45
+
+best flotilla score: 40
+
+
+Cariad DeeC 8
+Sao gabriel WilliamB 9
+Victoria JoshuaS SaraB 24
+flotilla score: 41
+
+Cariad DeeC 8
+Sao gabriel SaraB 16
+Victoria WilliamB JoshuaS 21
+flotilla score: 45
+
+best flotilla score: 40
+
+
+Cariad DeeC 8
+Sao gabriel WilliamB 9
+Victoria JoshuaS SaraB 24
+flotilla score: 41
+
+Cariad DeeC 8
+Sao gabriel SaraB 16
+Victoria WilliamB JoshuaS 21
+flotilla score: 45
+
+best flotilla score: 40
+
+
+Fri Jul 4
+
+Cariad WilliamB 10
+Sao gabriel DeeC 10
+Victoria JoshuaS SaraB 30
+flotilla score: 50
+
+initial flotilla score: 50
+
+
+Cariad WilliamB 10
+Sao gabriel JoshuaS 9
+Victoria DeeC SaraB 22
+flotilla score: 41
+
+Cariad WilliamB 10
+Sao gabriel SaraB 10
+Victoria JoshuaS DeeC 29
+flotilla score: 49
+
+best flotilla score: 41
+
+
+Sao gabriel JoshuaS 9
+Cariad DeeC 8
+Victoria WilliamB SaraB 21
+flotilla score: 38
+
+Sao gabriel JoshuaS 9
+Cariad SaraB 17
+Victoria DeeC WilliamB 20
+flotilla score: 46
+
+best flotilla score: 38
+
+
+Cariad DeeC 8
+Sao gabriel WilliamB 17
+Victoria JoshuaS SaraB 30
+flotilla score: 55
+
+Cariad DeeC 8
+Sao gabriel SaraB 10
+Victoria WilliamB JoshuaS 29
+flotilla score: 47
+
+best flotilla score: 38
+
+
+Cariad DeeC 8
+Sao gabriel WilliamB 17
+Victoria JoshuaS SaraB 30
+flotilla score: 55
+
+Cariad DeeC 8
+Sao gabriel SaraB 10
+Victoria WilliamB JoshuaS 29
+flotilla score: 47
+
+best flotilla score: 38
+
+
+Cariad DeeC 8
+Sao gabriel WilliamB 17
+Victoria JoshuaS SaraB 30
+flotilla score: 55
+
+Cariad DeeC 8
+Sao gabriel SaraB 10
+Victoria WilliamB JoshuaS 29
+flotilla score: 47
+
+best flotilla score: 38
+
+
+Sao gabriel SaraB 10
+Cariad WilliamB 10
+Victoria JoshuaS DeeC 29
+flotilla score: 49
+
+initial flotilla score: 49
+
+
+Sao gabriel SaraB 10
+Cariad JoshuaS 8
+Victoria WilliamB DeeC 20
+flotilla score: 38
+
+Sao gabriel SaraB 10
+Cariad DeeC 8
+Victoria JoshuaS WilliamB 29
+flotilla score: 47
+
+best flotilla score: 38
+
+
+Cariad JoshuaS 8
+Sao gabriel WilliamB 17
+Victoria SaraB DeeC 22
+flotilla score: 47
+
+Cariad JoshuaS 8
+Sao gabriel DeeC 10
+Victoria WilliamB SaraB 21
+flotilla score: 39
+
+best flotilla score: 38
+
+
+Cariad JoshuaS 8
+Sao gabriel WilliamB 17
+Victoria SaraB DeeC 22
+flotilla score: 47
+
+Cariad JoshuaS 8
+Sao gabriel DeeC 10
+Victoria WilliamB SaraB 21
+flotilla score: 39
+
+best flotilla score: 38
+
+
+Cariad JoshuaS 8
+Sao gabriel WilliamB 17
+Victoria SaraB DeeC 22
+flotilla score: 47
+
+Cariad JoshuaS 8
+Sao gabriel DeeC 10
+Victoria WilliamB SaraB 21
+flotilla score: 39
+
+best flotilla score: 38
+
+
+Cariad JoshuaS 8
+Sao gabriel WilliamB 17
+Victoria SaraB DeeC 22
+flotilla score: 47
+
+Cariad JoshuaS 8
+Sao gabriel DeeC 10
+Victoria WilliamB SaraB 21
+flotilla score: 39
+
+best flotilla score: 38
+
+
+Cariad JoshuaS 8
+Sao gabriel DeeC 10
+Victoria WilliamB SaraB 21
+flotilla score: 39
+
+initial flotilla score: 39
+
+
+Cariad JoshuaS 8
+Sao gabriel WilliamB 17
+Victoria DeeC SaraB 22
+flotilla score: 47
+
+Cariad JoshuaS 8
+Sao gabriel SaraB 10
+Victoria WilliamB DeeC 20
+flotilla score: 38
+
+best flotilla score: 38
+
+
+Cariad JoshuaS 8
+Sao gabriel WilliamB 17
+Victoria SaraB DeeC 22
+flotilla score: 47
+
+Cariad JoshuaS 8
+Sao gabriel DeeC 10
+Victoria WilliamB SaraB 21
+flotilla score: 39
+
+best flotilla score: 38
+
+
+Cariad JoshuaS 8
+Sao gabriel WilliamB 17
+Victoria SaraB DeeC 22
+flotilla score: 47
+
+Cariad JoshuaS 8
+Sao gabriel DeeC 10
+Victoria WilliamB SaraB 21
+flotilla score: 39
+
+best flotilla score: 38
+
+
+Cariad JoshuaS 8
+Sao gabriel WilliamB 17
+Victoria SaraB DeeC 22
+flotilla score: 47
+
+Cariad JoshuaS 8
+Sao gabriel DeeC 10
+Victoria WilliamB SaraB 21
+flotilla score: 39
+
+best flotilla score: 38
+
+
+Cariad JoshuaS 8
+Sao gabriel WilliamB 17
+Victoria SaraB DeeC 22
+flotilla score: 47
+
+Cariad JoshuaS 8
+Sao gabriel DeeC 10
+Victoria WilliamB SaraB 21
+flotilla score: 39
+
+best flotilla score: 38
+
+
+Fri Jul 11
+
+Nina WilliamB 1
+Sao gabriel JoshuaS 17
+Victoria SaraB DeeC 23
+flotilla score: 41
+
+initial flotilla score: 41
+
+
+Nina WilliamB 1
+Sao gabriel SaraB 9
+Victoria JoshuaS DeeC 18
+flotilla score: 28
+
+Nina WilliamB 1
+Sao gabriel DeeC 9
+Victoria SaraB JoshuaS 32
+flotilla score: 42
+
+best flotilla score: 28
+
+
+Nina WilliamB 1
+Sao gabriel JoshuaS 17
+Victoria SaraB DeeC 23
+flotilla score: 41
+
+Nina WilliamB 1
+Sao gabriel DeeC 9
+Victoria JoshuaS SaraB 32
+flotilla score: 42
+
+best flotilla score: 28
+
+
+Nina WilliamB 1
+Sao gabriel JoshuaS 17
+Victoria SaraB DeeC 23
+flotilla score: 41
+
+Nina WilliamB 1
+Sao gabriel DeeC 9
+Victoria JoshuaS SaraB 32
+flotilla score: 42
+
+best flotilla score: 28
+
+
+Nina WilliamB 1
+Sao gabriel JoshuaS 17
+Victoria SaraB DeeC 23
+flotilla score: 41
+
+Nina WilliamB 1
+Sao gabriel DeeC 9
+Victoria JoshuaS SaraB 32
+flotilla score: 42
+
+best flotilla score: 28
+
+
+Nina WilliamB 1
+Sao gabriel JoshuaS 17
+Victoria SaraB DeeC 23
+flotilla score: 41
+
+Nina WilliamB 1
+Sao gabriel DeeC 9
+Victoria JoshuaS SaraB 32
+flotilla score: 42
+
+best flotilla score: 28
+
+
+Nina DeeC 0
+Sao gabriel SaraB 9
+Victoria WilliamB JoshuaS 31
+flotilla score: 40
+
+initial flotilla score: 40
+
+
+Nina DeeC 0
+Sao gabriel WilliamB 11
+Victoria SaraB JoshuaS 32
+flotilla score: 43
+
+Nina DeeC 0
+Sao gabriel JoshuaS 17
+Victoria WilliamB SaraB 37
+flotilla score: 54
+
+best flotilla score: 40
+
+
+Nina DeeC 0
+Sao gabriel WilliamB 11
+Victoria SaraB JoshuaS 32
+flotilla score: 43
+
+Nina DeeC 0
+Sao gabriel JoshuaS 17
+Victoria WilliamB SaraB 37
+flotilla score: 54
+
+best flotilla score: 40
+
+
+Nina DeeC 0
+Sao gabriel WilliamB 11
+Victoria SaraB JoshuaS 32
+flotilla score: 43
+
+Nina DeeC 0
+Sao gabriel JoshuaS 17
+Victoria WilliamB SaraB 37
+flotilla score: 54
+
+best flotilla score: 40
+
+
+Nina DeeC 0
+Sao gabriel WilliamB 11
+Victoria SaraB JoshuaS 32
+flotilla score: 43
+
+Nina DeeC 0
+Sao gabriel JoshuaS 17
+Victoria WilliamB SaraB 37
+flotilla score: 54
+
+best flotilla score: 40
+
+
+Nina DeeC 0
+Sao gabriel WilliamB 11
+Victoria SaraB JoshuaS 32
+flotilla score: 43
+
+Nina DeeC 0
+Sao gabriel JoshuaS 17
+Victoria WilliamB SaraB 37
+flotilla score: 54
+
+best flotilla score: 40
+
+
+Nina SaraB 0
+Sao gabriel DeeC 9
+Victoria JoshuaS WilliamB 31
+flotilla score: 40
+
+initial flotilla score: 40
+
+
+Nina SaraB 0
+Sao gabriel JoshuaS 17
+Victoria DeeC WilliamB 22
+flotilla score: 39
+
+Nina SaraB 0
+Sao gabriel WilliamB 11
+Victoria JoshuaS DeeC 18
+flotilla score: 29
+
+best flotilla score: 29
+
+
+Nina SaraB 0
+Sao gabriel JoshuaS 17
+Victoria WilliamB DeeC 22
+flotilla score: 39
+
+Nina SaraB 0
+Sao gabriel DeeC 9
+Victoria JoshuaS WilliamB 31
+flotilla score: 40
+
+best flotilla score: 29
+
+
+Nina SaraB 0
+Sao gabriel JoshuaS 17
+Victoria WilliamB DeeC 22
+flotilla score: 39
+
+Nina SaraB 0
+Sao gabriel DeeC 9
+Victoria JoshuaS WilliamB 31
+flotilla score: 40
+
+best flotilla score: 29
+
+
+Nina SaraB 0
+Sao gabriel JoshuaS 17
+Victoria WilliamB DeeC 22
+flotilla score: 39
+
+Nina SaraB 0
+Sao gabriel DeeC 9
+Victoria JoshuaS WilliamB 31
+flotilla score: 40
+
+best flotilla score: 29
+
+
+Nina SaraB 0
+Sao gabriel JoshuaS 17
+Victoria WilliamB DeeC 22
+flotilla score: 39
+
+Nina SaraB 0
+Sao gabriel DeeC 9
+Victoria JoshuaS WilliamB 31
+flotilla score: 40
+
+best flotilla score: 29
+
+
+Sat Jul 19
+
+Nina DeeC 0
+Cariad JoshuaS 8
+Victoria SaraB WilliamB 26
+flotilla score: 34
+
+initial flotilla score: 34
+
+
+Nina DeeC 0
+Cariad SaraB 10
+Victoria JoshuaS WilliamB 32
+flotilla score: 42
+
+Nina DeeC 0
+Cariad WilliamB 9
+Victoria SaraB JoshuaS 33
+flotilla score: 42
+
+best flotilla score: 34
+
+
+Nina DeeC 0
+Cariad SaraB 10
+Victoria JoshuaS WilliamB 32
+flotilla score: 42
+
+Nina DeeC 0
+Cariad WilliamB 9
+Victoria SaraB JoshuaS 33
+flotilla score: 42
+
+best flotilla score: 34
+
+
+Nina DeeC 0
+Cariad SaraB 10
+Victoria JoshuaS WilliamB 32
+flotilla score: 42
+
+Nina DeeC 0
+Cariad WilliamB 9
+Victoria SaraB JoshuaS 33
+flotilla score: 42
+
+best flotilla score: 34
+
+
+Nina DeeC 0
+Cariad SaraB 10
+Victoria JoshuaS WilliamB 32
+flotilla score: 42
+
+Nina DeeC 0
+Cariad WilliamB 9
+Victoria SaraB JoshuaS 33
+flotilla score: 42
+
+best flotilla score: 34
+
+
+Nina DeeC 0
+Cariad SaraB 10
+Victoria JoshuaS WilliamB 32
+flotilla score: 42
+
+Nina DeeC 0
+Cariad WilliamB 9
+Victoria SaraB JoshuaS 33
+flotilla score: 42
+
+best flotilla score: 34
+
+
+Nina WilliamB 8
+Cariad JoshuaS 8
+Victoria DeeC SaraB 24
+flotilla score: 40
+
+initial flotilla score: 40
+
+
+Cariad JoshuaS 8
+Nina DeeC 0
+Victoria WilliamB SaraB 26
+flotilla score: 34
+
+Cariad JoshuaS 8
+Nina SaraB 0
+Victoria DeeC WilliamB 23
+flotilla score: 31
+
+best flotilla score: 31
+
+
+Nina SaraB 0
+Cariad DeeC 10
+Victoria JoshuaS WilliamB 32
+flotilla score: 42
+
+Nina SaraB 0
+Cariad WilliamB 9
+Victoria DeeC JoshuaS 30
+flotilla score: 39
+
+best flotilla score: 31
+
+
+Nina SaraB 0
+Cariad DeeC 10
+Victoria JoshuaS WilliamB 32
+flotilla score: 42
+
+Nina SaraB 0
+Cariad WilliamB 9
+Victoria DeeC JoshuaS 30
+flotilla score: 39
+
+best flotilla score: 31
+
+
+Nina SaraB 0
+Cariad DeeC 10
+Victoria JoshuaS WilliamB 32
+flotilla score: 42
+
+Nina SaraB 0
+Cariad WilliamB 9
+Victoria DeeC JoshuaS 30
+flotilla score: 39
+
+best flotilla score: 31
+
+
+Nina SaraB 0
+Cariad DeeC 10
+Victoria JoshuaS WilliamB 32
+flotilla score: 42
+
+Nina SaraB 0
+Cariad WilliamB 9
+Victoria DeeC JoshuaS 30
+flotilla score: 39
+
+best flotilla score: 31
+
+
+Nina SaraB 0
+Cariad WilliamB 9
+Victoria JoshuaS DeeC 30
+flotilla score: 39
+
+initial flotilla score: 39
+
+
+Nina SaraB 0
+Cariad JoshuaS 8
+Victoria WilliamB DeeC 23
+flotilla score: 31
+
+Nina SaraB 0
+Cariad DeeC 10
+Victoria JoshuaS WilliamB 32
+flotilla score: 42
+
+best flotilla score: 31
+
+
+Nina SaraB 0
+Cariad WilliamB 9
+Victoria JoshuaS DeeC 30
+flotilla score: 39
+
+Nina SaraB 0
+Cariad DeeC 10
+Victoria WilliamB JoshuaS 32
+flotilla score: 42
+
+best flotilla score: 31
+
+
+Nina SaraB 0
+Cariad WilliamB 9
+Victoria JoshuaS DeeC 30
+flotilla score: 39
+
+Nina SaraB 0
+Cariad DeeC 10
+Victoria WilliamB JoshuaS 32
+flotilla score: 42
+
+best flotilla score: 31
+
+
+Nina SaraB 0
+Cariad WilliamB 9
+Victoria JoshuaS DeeC 30
+flotilla score: 39
+
+Nina SaraB 0
+Cariad DeeC 10
+Victoria WilliamB JoshuaS 32
+flotilla score: 42
+
+best flotilla score: 31
+
+
+Nina SaraB 0
+Cariad WilliamB 9
+Victoria JoshuaS DeeC 30
+flotilla score: 39
+
+Nina SaraB 0
+Cariad DeeC 10
+Victoria WilliamB JoshuaS 32
+flotilla score: 42
+
+best flotilla score: 31
+
+
+Fri Jul 25
+
+Cariad WilliamB 8
+Victoria JoshuaS DeeC 27
+flotilla score: 35
+
+initial flotilla score: 35
+
+
+Cariad JoshuaS 16
+Victoria WilliamB DeeC 32
+flotilla score: 48
+
+Cariad DeeC 9
+Victoria JoshuaS WilliamB 33
+flotilla score: 42
+
+best flotilla score: 35
+
+
+Cariad JoshuaS 16
+Victoria WilliamB DeeC 32
+flotilla score: 48
+
+Cariad DeeC 9
+Victoria JoshuaS WilliamB 33
+flotilla score: 42
+
+best flotilla score: 35
+
+
+Cariad JoshuaS 16
+Victoria WilliamB DeeC 32
+flotilla score: 48
+
+Cariad DeeC 9
+Victoria JoshuaS WilliamB 33
+flotilla score: 42
+
+best flotilla score: 35
+
+
+Cariad JoshuaS 16
+Victoria WilliamB DeeC 32
+flotilla score: 48
+
+Cariad DeeC 9
+Victoria JoshuaS WilliamB 33
+flotilla score: 42
+
+best flotilla score: 35
+
+
+Cariad JoshuaS 16
+Victoria WilliamB DeeC 32
+flotilla score: 48
+
+Cariad DeeC 9
+Victoria JoshuaS WilliamB 33
+flotilla score: 42
+
+best flotilla score: 35
+
+
+Cariad DeeC 9
+Victoria JoshuaS WilliamB 33
+flotilla score: 42
+
+initial flotilla score: 42
+
+
+Cariad JoshuaS 16
+Victoria DeeC WilliamB 32
+flotilla score: 48
+
+Cariad WilliamB 8
+Victoria JoshuaS DeeC 27
+flotilla score: 35
+
+best flotilla score: 35
+
+
+Cariad JoshuaS 16
+Victoria WilliamB DeeC 32
+flotilla score: 48
+
+Cariad DeeC 9
+Victoria JoshuaS WilliamB 33
+flotilla score: 42
+
+best flotilla score: 35
+
+
+Cariad JoshuaS 16
+Victoria WilliamB DeeC 32
+flotilla score: 48
+
+Cariad DeeC 9
+Victoria JoshuaS WilliamB 33
+flotilla score: 42
+
+best flotilla score: 35
+
+
+Cariad JoshuaS 16
+Victoria WilliamB DeeC 32
+flotilla score: 48
+
+Cariad DeeC 9
+Victoria JoshuaS WilliamB 33
+flotilla score: 42
+
+best flotilla score: 35
+
+
+Cariad JoshuaS 16
+Victoria WilliamB DeeC 32
+flotilla score: 48
+
+Cariad DeeC 9
+Victoria JoshuaS WilliamB 33
+flotilla score: 42
+
+best flotilla score: 35
+
+
+Cariad WilliamB 8
+Victoria JoshuaS DeeC 27
+flotilla score: 35
+
+initial flotilla score: 35
+
+
+Cariad JoshuaS 16
+Victoria WilliamB DeeC 32
+flotilla score: 48
+
+Cariad DeeC 9
+Victoria JoshuaS WilliamB 33
+flotilla score: 42
+
+best flotilla score: 35
+
+
+Cariad JoshuaS 16
+Victoria WilliamB DeeC 32
+flotilla score: 48
+
+Cariad DeeC 9
+Victoria JoshuaS WilliamB 33
+flotilla score: 42
+
+best flotilla score: 35
+
+
+Cariad JoshuaS 16
+Victoria WilliamB DeeC 32
+flotilla score: 48
+
+Cariad DeeC 9
+Victoria JoshuaS WilliamB 33
+flotilla score: 42
+
+best flotilla score: 35
+
+
+Cariad JoshuaS 16
+Victoria WilliamB DeeC 32
+flotilla score: 48
+
+Cariad DeeC 9
+Victoria JoshuaS WilliamB 33
+flotilla score: 42
+
+best flotilla score: 35
+
+
+Cariad JoshuaS 16
+Victoria WilliamB DeeC 32
+flotilla score: 48
+
+Cariad DeeC 9
+Victoria JoshuaS WilliamB 33
+flotilla score: 42
+
+best flotilla score: 35
+
+
+Fri Aug 1
+
+Cariad WilliamB 16
+Victoria JoshuaS DeeC 34
+flotilla score: 50
+
+initial flotilla score: 50
+
+
+Cariad JoshuaS 10
+Victoria WilliamB DeeC 27
+flotilla score: 37
+
+Cariad DeeC 9
+Victoria JoshuaS WilliamB 34
+flotilla score: 43
+
+best flotilla score: 37
+
+
+Cariad WilliamB 16
+Victoria JoshuaS DeeC 34
+flotilla score: 50
+
+Cariad DeeC 9
+Victoria WilliamB JoshuaS 34
+flotilla score: 43
+
+best flotilla score: 37
+
+
+Cariad WilliamB 16
+Victoria JoshuaS DeeC 34
+flotilla score: 50
+
+Cariad DeeC 9
+Victoria WilliamB JoshuaS 34
+flotilla score: 43
+
+best flotilla score: 37
+
+
+Cariad WilliamB 16
+Victoria JoshuaS DeeC 34
+flotilla score: 50
+
+Cariad DeeC 9
+Victoria WilliamB JoshuaS 34
+flotilla score: 43
+
+best flotilla score: 37
+
+
+Cariad WilliamB 16
+Victoria JoshuaS DeeC 34
+flotilla score: 50
+
+Cariad DeeC 9
+Victoria WilliamB JoshuaS 34
+flotilla score: 43
+
+best flotilla score: 37
+
+
+Cariad JoshuaS 10
+Victoria DeeC WilliamB 27
+flotilla score: 37
+
+initial flotilla score: 37
+
+
+Cariad DeeC 9
+Victoria JoshuaS WilliamB 34
+flotilla score: 43
+
+Cariad WilliamB 16
+Victoria DeeC JoshuaS 34
+flotilla score: 50
+
+best flotilla score: 37
+
+
+Cariad DeeC 9
+Victoria JoshuaS WilliamB 34
+flotilla score: 43
+
+Cariad WilliamB 16
+Victoria DeeC JoshuaS 34
+flotilla score: 50
+
+best flotilla score: 37
+
+
+Cariad DeeC 9
+Victoria JoshuaS WilliamB 34
+flotilla score: 43
+
+Cariad WilliamB 16
+Victoria DeeC JoshuaS 34
+flotilla score: 50
+
+best flotilla score: 37
+
+
+Cariad DeeC 9
+Victoria JoshuaS WilliamB 34
+flotilla score: 43
+
+Cariad WilliamB 16
+Victoria DeeC JoshuaS 34
+flotilla score: 50
+
+best flotilla score: 37
+
+
+Cariad DeeC 9
+Victoria JoshuaS WilliamB 34
+flotilla score: 43
+
+Cariad WilliamB 16
+Victoria DeeC JoshuaS 34
+flotilla score: 50
+
+best flotilla score: 37
+
+
+Cariad JoshuaS 10
+Victoria WilliamB DeeC 27
+flotilla score: 37
+
+initial flotilla score: 37
+
+
+Cariad WilliamB 16
+Victoria JoshuaS DeeC 34
+flotilla score: 50
+
+Cariad DeeC 9
+Victoria WilliamB JoshuaS 34
+flotilla score: 43
+
+best flotilla score: 37
+
+
+Cariad WilliamB 16
+Victoria JoshuaS DeeC 34
+flotilla score: 50
+
+Cariad DeeC 9
+Victoria WilliamB JoshuaS 34
+flotilla score: 43
+
+best flotilla score: 37
+
+
+Cariad WilliamB 16
+Victoria JoshuaS DeeC 34
+flotilla score: 50
+
+Cariad DeeC 9
+Victoria WilliamB JoshuaS 34
+flotilla score: 43
+
+best flotilla score: 37
+
+
+Cariad WilliamB 16
+Victoria JoshuaS DeeC 34
+flotilla score: 50
+
+Cariad DeeC 9
+Victoria WilliamB JoshuaS 34
+flotilla score: 43
+
+best flotilla score: 37
+
+
+Cariad WilliamB 16
+Victoria JoshuaS DeeC 34
+flotilla score: 50
+
+Cariad DeeC 9
+Victoria WilliamB JoshuaS 34
+flotilla score: 43
+
+best flotilla score: 37
+
+
+Sat Aug 9
+
+Sao gabriel DeeC 8
+Victoria WilliamB JoshuaS 34
+flotilla score: 42
+
+initial flotilla score: 42
+
+
+Sao gabriel WilliamB 8
+Victoria DeeC JoshuaS 29
+flotilla score: 37
+
+Sao gabriel JoshuaS 9
+Victoria WilliamB DeeC 34
+flotilla score: 43
+
+best flotilla score: 37
+
+
+Sao gabriel DeeC 8
+Victoria WilliamB JoshuaS 34
+flotilla score: 42
+
+Sao gabriel JoshuaS 9
+Victoria DeeC WilliamB 34
+flotilla score: 43
+
+best flotilla score: 37
+
+
+Sao gabriel DeeC 8
+Victoria WilliamB JoshuaS 34
+flotilla score: 42
+
+Sao gabriel JoshuaS 9
+Victoria DeeC WilliamB 34
+flotilla score: 43
+
+best flotilla score: 37
+
+
+Sao gabriel DeeC 8
+Victoria WilliamB JoshuaS 34
+flotilla score: 42
+
+Sao gabriel JoshuaS 9
+Victoria DeeC WilliamB 34
+flotilla score: 43
+
+best flotilla score: 37
+
+
+Sao gabriel DeeC 8
+Victoria WilliamB JoshuaS 34
+flotilla score: 42
+
+Sao gabriel JoshuaS 9
+Victoria DeeC WilliamB 34
+flotilla score: 43
+
+best flotilla score: 37
+
+
+Sao gabriel DeeC 8
+Victoria JoshuaS WilliamB 34
+flotilla score: 42
+
+initial flotilla score: 42
+
+
+Sao gabriel JoshuaS 9
+Victoria DeeC WilliamB 34
+flotilla score: 43
+
+Sao gabriel WilliamB 8
+Victoria JoshuaS DeeC 29
+flotilla score: 37
+
+best flotilla score: 37
+
+
+Sao gabriel JoshuaS 9
+Victoria WilliamB DeeC 34
+flotilla score: 43
+
+Sao gabriel DeeC 8
+Victoria JoshuaS WilliamB 34
+flotilla score: 42
+
+best flotilla score: 37
+
+
+Sao gabriel JoshuaS 9
+Victoria WilliamB DeeC 34
+flotilla score: 43
+
+Sao gabriel DeeC 8
+Victoria JoshuaS WilliamB 34
+flotilla score: 42
+
+best flotilla score: 37
+
+
+Sao gabriel JoshuaS 9
+Victoria WilliamB DeeC 34
+flotilla score: 43
+
+Sao gabriel DeeC 8
+Victoria JoshuaS WilliamB 34
+flotilla score: 42
+
+best flotilla score: 37
+
+
+Sao gabriel JoshuaS 9
+Victoria WilliamB DeeC 34
+flotilla score: 43
+
+Sao gabriel DeeC 8
+Victoria JoshuaS WilliamB 34
+flotilla score: 42
+
+best flotilla score: 37
+
+
+Sao gabriel DeeC 8
+Victoria WilliamB JoshuaS 34
+flotilla score: 42
+
+initial flotilla score: 42
+
+
+Sao gabriel WilliamB 8
+Victoria DeeC JoshuaS 29
+flotilla score: 37
+
+Sao gabriel JoshuaS 9
+Victoria WilliamB DeeC 34
+flotilla score: 43
+
+best flotilla score: 37
+
+
+Sao gabriel DeeC 8
+Victoria WilliamB JoshuaS 34
+flotilla score: 42
+
+Sao gabriel JoshuaS 9
+Victoria DeeC WilliamB 34
+flotilla score: 43
+
+best flotilla score: 37
+
+
+Sao gabriel DeeC 8
+Victoria WilliamB JoshuaS 34
+flotilla score: 42
+
+Sao gabriel JoshuaS 9
+Victoria DeeC WilliamB 34
+flotilla score: 43
+
+best flotilla score: 37
+
+
+Sao gabriel DeeC 8
+Victoria WilliamB JoshuaS 34
+flotilla score: 42
+
+Sao gabriel JoshuaS 9
+Victoria DeeC WilliamB 34
+flotilla score: 43
+
+best flotilla score: 37
+
+
+Sao gabriel DeeC 8
+Victoria WilliamB JoshuaS 34
+flotilla score: 42
+
+Sao gabriel JoshuaS 9
+Victoria DeeC WilliamB 34
+flotilla score: 43
+
+best flotilla score: 37
+
+
+Fri Aug 15
+
+Nina JoshuaS 0
+Victoria DeeC WilliamB 29
+flotilla score: 29
+
+initial flotilla score: 29
+
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 35
+flotilla score: 35
+
+Nina WilliamB 1
+Victoria DeeC JoshuaS 36
+flotilla score: 37
+
+best flotilla score: 29
+
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 35
+flotilla score: 35
+
+Nina WilliamB 1
+Victoria DeeC JoshuaS 36
+flotilla score: 37
+
+best flotilla score: 29
+
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 35
+flotilla score: 35
+
+Nina WilliamB 1
+Victoria DeeC JoshuaS 36
+flotilla score: 37
+
+best flotilla score: 29
+
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 35
+flotilla score: 35
+
+Nina WilliamB 1
+Victoria DeeC JoshuaS 36
+flotilla score: 37
+
+best flotilla score: 29
+
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 35
+flotilla score: 35
+
+Nina WilliamB 1
+Victoria DeeC JoshuaS 36
+flotilla score: 37
+
+best flotilla score: 29
+
+
+Nina WilliamB 1
+Victoria DeeC JoshuaS 36
+flotilla score: 37
+
+initial flotilla score: 37
+
+
+Nina DeeC 0
+Victoria WilliamB JoshuaS 35
+flotilla score: 35
+
+Nina JoshuaS 0
+Victoria DeeC WilliamB 29
+flotilla score: 29
+
+best flotilla score: 29
+
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 35
+flotilla score: 35
+
+Nina WilliamB 1
+Victoria DeeC JoshuaS 36
+flotilla score: 37
+
+best flotilla score: 29
+
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 35
+flotilla score: 35
+
+Nina WilliamB 1
+Victoria DeeC JoshuaS 36
+flotilla score: 37
+
+best flotilla score: 29
+
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 35
+flotilla score: 35
+
+Nina WilliamB 1
+Victoria DeeC JoshuaS 36
+flotilla score: 37
+
+best flotilla score: 29
+
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 35
+flotilla score: 35
+
+Nina WilliamB 1
+Victoria DeeC JoshuaS 36
+flotilla score: 37
+
+best flotilla score: 29
+
+
+Nina WilliamB 1
+Victoria JoshuaS DeeC 36
+flotilla score: 37
+
+initial flotilla score: 37
+
+
+Nina JoshuaS 0
+Victoria WilliamB DeeC 29
+flotilla score: 29
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 35
+flotilla score: 35
+
+best flotilla score: 29
+
+
+Nina WilliamB 1
+Victoria JoshuaS DeeC 36
+flotilla score: 37
+
+Nina DeeC 0
+Victoria WilliamB JoshuaS 35
+flotilla score: 35
+
+best flotilla score: 29
+
+
+Nina WilliamB 1
+Victoria JoshuaS DeeC 36
+flotilla score: 37
+
+Nina DeeC 0
+Victoria WilliamB JoshuaS 35
+flotilla score: 35
+
+best flotilla score: 29
+
+
+Nina WilliamB 1
+Victoria JoshuaS DeeC 36
+flotilla score: 37
+
+Nina DeeC 0
+Victoria WilliamB JoshuaS 35
+flotilla score: 35
+
+best flotilla score: 29
+
+
+Nina WilliamB 1
+Victoria JoshuaS DeeC 36
+flotilla score: 37
+
+Nina DeeC 0
+Victoria WilliamB JoshuaS 35
+flotilla score: 35
+
+best flotilla score: 29
+
+
+Fri Aug 22
+
+Nina WilliamB 0
+Victoria JoshuaS DeeC 30
+flotilla score: 30
+
+initial flotilla score: 30
+
+
+Nina JoshuaS 8
+Victoria WilliamB DeeC 36
+flotilla score: 44
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 35
+flotilla score: 35
+
+best flotilla score: 30
+
+
+Nina JoshuaS 8
+Victoria WilliamB DeeC 36
+flotilla score: 44
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 35
+flotilla score: 35
+
+best flotilla score: 30
+
+
+Nina JoshuaS 8
+Victoria WilliamB DeeC 36
+flotilla score: 44
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 35
+flotilla score: 35
+
+best flotilla score: 30
+
+
+Nina JoshuaS 8
+Victoria WilliamB DeeC 36
+flotilla score: 44
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 35
+flotilla score: 35
+
+best flotilla score: 30
+
+
+Nina JoshuaS 8
+Victoria WilliamB DeeC 36
+flotilla score: 44
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 35
+flotilla score: 35
+
+best flotilla score: 30
+
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 35
+flotilla score: 35
+
+initial flotilla score: 35
+
+
+Nina JoshuaS 8
+Victoria DeeC WilliamB 36
+flotilla score: 44
+
+Nina WilliamB 0
+Victoria JoshuaS DeeC 30
+flotilla score: 30
+
+best flotilla score: 30
+
+
+Nina JoshuaS 8
+Victoria WilliamB DeeC 36
+flotilla score: 44
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 35
+flotilla score: 35
+
+best flotilla score: 30
+
+
+Nina JoshuaS 8
+Victoria WilliamB DeeC 36
+flotilla score: 44
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 35
+flotilla score: 35
+
+best flotilla score: 30
+
+
+Nina JoshuaS 8
+Victoria WilliamB DeeC 36
+flotilla score: 44
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 35
+flotilla score: 35
+
+best flotilla score: 30
+
+
+Nina JoshuaS 8
+Victoria WilliamB DeeC 36
+flotilla score: 44
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 35
+flotilla score: 35
+
+best flotilla score: 30
+
+
+Nina JoshuaS 8
+Victoria WilliamB DeeC 36
+flotilla score: 44
+
+initial flotilla score: 44
+
+
+Nina WilliamB 0
+Victoria JoshuaS DeeC 30
+flotilla score: 30
+
+Nina DeeC 0
+Victoria WilliamB JoshuaS 35
+flotilla score: 35
+
+best flotilla score: 30
+
+
+Nina JoshuaS 8
+Victoria WilliamB DeeC 36
+flotilla score: 44
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 35
+flotilla score: 35
+
+best flotilla score: 30
+
+
+Nina JoshuaS 8
+Victoria WilliamB DeeC 36
+flotilla score: 44
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 35
+flotilla score: 35
+
+best flotilla score: 30
+
+
+Nina JoshuaS 8
+Victoria WilliamB DeeC 36
+flotilla score: 44
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 35
+flotilla score: 35
+
+best flotilla score: 30
+
+
+Nina JoshuaS 8
+Victoria WilliamB DeeC 36
+flotilla score: 44
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 35
+flotilla score: 35
+
+best flotilla score: 30
+
+
+Sat Aug 30
+
+Nina DeeC 0
+Victoria WilliamB JoshuaS 35
+flotilla score: 35
+
+initial flotilla score: 35
+
+
+Nina WilliamB 8
+Victoria DeeC JoshuaS 36
+flotilla score: 44
+
+Nina JoshuaS 3
+Victoria WilliamB DeeC 30
+flotilla score: 33
+
+best flotilla score: 33
+
+
+Nina WilliamB 8
+Victoria JoshuaS DeeC 36
+flotilla score: 44
+
+Nina DeeC 0
+Victoria WilliamB JoshuaS 35
+flotilla score: 35
+
+best flotilla score: 33
+
+
+Nina WilliamB 8
+Victoria JoshuaS DeeC 36
+flotilla score: 44
+
+Nina DeeC 0
+Victoria WilliamB JoshuaS 35
+flotilla score: 35
+
+best flotilla score: 33
+
+
+Nina WilliamB 8
+Victoria JoshuaS DeeC 36
+flotilla score: 44
+
+Nina DeeC 0
+Victoria WilliamB JoshuaS 35
+flotilla score: 35
+
+best flotilla score: 33
+
+
+Nina WilliamB 8
+Victoria JoshuaS DeeC 36
+flotilla score: 44
+
+Nina DeeC 0
+Victoria WilliamB JoshuaS 35
+flotilla score: 35
+
+best flotilla score: 33
+
+
+Nina DeeC 0
+Victoria WilliamB JoshuaS 35
+flotilla score: 35
+
+initial flotilla score: 35
+
+
+Nina WilliamB 8
+Victoria DeeC JoshuaS 36
+flotilla score: 44
+
+Nina JoshuaS 3
+Victoria WilliamB DeeC 30
+flotilla score: 33
+
+best flotilla score: 33
+
+
+Nina WilliamB 8
+Victoria JoshuaS DeeC 36
+flotilla score: 44
+
+Nina DeeC 0
+Victoria WilliamB JoshuaS 35
+flotilla score: 35
+
+best flotilla score: 33
+
+
+Nina WilliamB 8
+Victoria JoshuaS DeeC 36
+flotilla score: 44
+
+Nina DeeC 0
+Victoria WilliamB JoshuaS 35
+flotilla score: 35
+
+best flotilla score: 33
+
+
+Nina WilliamB 8
+Victoria JoshuaS DeeC 36
+flotilla score: 44
+
+Nina DeeC 0
+Victoria WilliamB JoshuaS 35
+flotilla score: 35
+
+best flotilla score: 33
+
+
+Nina WilliamB 8
+Victoria JoshuaS DeeC 36
+flotilla score: 44
+
+Nina DeeC 0
+Victoria WilliamB JoshuaS 35
+flotilla score: 35
+
+best flotilla score: 33
+
+
+Nina JoshuaS 3
+Victoria DeeC WilliamB 30
+flotilla score: 33
+
+initial flotilla score: 33
+
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 35
+flotilla score: 35
+
+Nina WilliamB 8
+Victoria DeeC JoshuaS 36
+flotilla score: 44
+
+best flotilla score: 33
+
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 35
+flotilla score: 35
+
+Nina WilliamB 8
+Victoria DeeC JoshuaS 36
+flotilla score: 44
+
+best flotilla score: 33
+
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 35
+flotilla score: 35
+
+Nina WilliamB 8
+Victoria DeeC JoshuaS 36
+flotilla score: 44
+
+best flotilla score: 33
+
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 35
+flotilla score: 35
+
+Nina WilliamB 8
+Victoria DeeC JoshuaS 36
+flotilla score: 44
+
+best flotilla score: 33
+
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 35
+flotilla score: 35
+
+Nina WilliamB 8
+Victoria DeeC JoshuaS 36
+flotilla score: 44
+
+best flotilla score: 33
+
+
+Fri Sep 5
+
+Nina WilliamB 3
+Victoria JoshuaS DeeC 31
+flotilla score: 34
+
+initial flotilla score: 34
+
+
+Nina JoshuaS 9
+Victoria WilliamB DeeC 37
+flotilla score: 46
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 36
+flotilla score: 36
+
+best flotilla score: 34
+
+
+Nina JoshuaS 9
+Victoria WilliamB DeeC 37
+flotilla score: 46
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 36
+flotilla score: 36
+
+best flotilla score: 34
+
+
+Nina JoshuaS 9
+Victoria WilliamB DeeC 37
+flotilla score: 46
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 36
+flotilla score: 36
+
+best flotilla score: 34
+
+
+Nina JoshuaS 9
+Victoria WilliamB DeeC 37
+flotilla score: 46
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 36
+flotilla score: 36
+
+best flotilla score: 34
+
+
+Nina JoshuaS 9
+Victoria WilliamB DeeC 37
+flotilla score: 46
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 36
+flotilla score: 36
+
+best flotilla score: 34
+
+
+Nina WilliamB 3
+Victoria DeeC JoshuaS 31
+flotilla score: 34
+
+initial flotilla score: 34
+
+
+Nina DeeC 0
+Victoria WilliamB JoshuaS 36
+flotilla score: 36
+
+Nina JoshuaS 9
+Victoria DeeC WilliamB 37
+flotilla score: 46
+
+best flotilla score: 34
+
+
+Nina DeeC 0
+Victoria WilliamB JoshuaS 36
+flotilla score: 36
+
+Nina JoshuaS 9
+Victoria DeeC WilliamB 37
+flotilla score: 46
+
+best flotilla score: 34
+
+
+Nina DeeC 0
+Victoria WilliamB JoshuaS 36
+flotilla score: 36
+
+Nina JoshuaS 9
+Victoria DeeC WilliamB 37
+flotilla score: 46
+
+best flotilla score: 34
+
+
+Nina DeeC 0
+Victoria WilliamB JoshuaS 36
+flotilla score: 36
+
+Nina JoshuaS 9
+Victoria DeeC WilliamB 37
+flotilla score: 46
+
+best flotilla score: 34
+
+
+Nina DeeC 0
+Victoria WilliamB JoshuaS 36
+flotilla score: 36
+
+Nina JoshuaS 9
+Victoria DeeC WilliamB 37
+flotilla score: 46
+
+best flotilla score: 34
+
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 36
+flotilla score: 36
+
+initial flotilla score: 36
+
+
+Nina JoshuaS 9
+Victoria DeeC WilliamB 37
+flotilla score: 46
+
+Nina WilliamB 3
+Victoria JoshuaS DeeC 31
+flotilla score: 34
+
+best flotilla score: 34
+
+
+Nina JoshuaS 9
+Victoria WilliamB DeeC 37
+flotilla score: 46
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 36
+flotilla score: 36
+
+best flotilla score: 34
+
+
+Nina JoshuaS 9
+Victoria WilliamB DeeC 37
+flotilla score: 46
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 36
+flotilla score: 36
+
+best flotilla score: 34
+
+
+Nina JoshuaS 9
+Victoria WilliamB DeeC 37
+flotilla score: 46
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 36
+flotilla score: 36
+
+best flotilla score: 34
+
+
+Nina JoshuaS 9
+Victoria WilliamB DeeC 37
+flotilla score: 46
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 36
+flotilla score: 36
+
+best flotilla score: 34
+
+
+Fri Sep 12
+
+Nina WilliamB 10
+Victoria JoshuaS DeeC 37
+flotilla score: 47
+
+initial flotilla score: 47
+
+
+Nina JoshuaS 4
+Victoria WilliamB DeeC 31
+flotilla score: 35
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 36
+flotilla score: 36
+
+best flotilla score: 35
+
+
+Nina WilliamB 10
+Victoria JoshuaS DeeC 37
+flotilla score: 47
+
+Nina DeeC 0
+Victoria WilliamB JoshuaS 36
+flotilla score: 36
+
+best flotilla score: 35
+
+
+Nina WilliamB 10
+Victoria JoshuaS DeeC 37
+flotilla score: 47
+
+Nina DeeC 0
+Victoria WilliamB JoshuaS 36
+flotilla score: 36
+
+best flotilla score: 35
+
+
+Nina WilliamB 10
+Victoria JoshuaS DeeC 37
+flotilla score: 47
+
+Nina DeeC 0
+Victoria WilliamB JoshuaS 36
+flotilla score: 36
+
+best flotilla score: 35
+
+
+Nina WilliamB 10
+Victoria JoshuaS DeeC 37
+flotilla score: 47
+
+Nina DeeC 0
+Victoria WilliamB JoshuaS 36
+flotilla score: 36
+
+best flotilla score: 35
+
+
+Nina JoshuaS 4
+Victoria WilliamB DeeC 31
+flotilla score: 35
+
+initial flotilla score: 35
+
+
+Nina WilliamB 10
+Victoria JoshuaS DeeC 37
+flotilla score: 47
+
+Nina DeeC 0
+Victoria WilliamB JoshuaS 36
+flotilla score: 36
+
+best flotilla score: 35
+
+
+Nina WilliamB 10
+Victoria JoshuaS DeeC 37
+flotilla score: 47
+
+Nina DeeC 0
+Victoria WilliamB JoshuaS 36
+flotilla score: 36
+
+best flotilla score: 35
+
+
+Nina WilliamB 10
+Victoria JoshuaS DeeC 37
+flotilla score: 47
+
+Nina DeeC 0
+Victoria WilliamB JoshuaS 36
+flotilla score: 36
+
+best flotilla score: 35
+
+
+Nina WilliamB 10
+Victoria JoshuaS DeeC 37
+flotilla score: 47
+
+Nina DeeC 0
+Victoria WilliamB JoshuaS 36
+flotilla score: 36
+
+best flotilla score: 35
+
+
+Nina WilliamB 10
+Victoria JoshuaS DeeC 37
+flotilla score: 47
+
+Nina DeeC 0
+Victoria WilliamB JoshuaS 36
+flotilla score: 36
+
+best flotilla score: 35
+
+
+Nina WilliamB 10
+Victoria JoshuaS DeeC 37
+flotilla score: 47
+
+initial flotilla score: 47
+
+
+Nina JoshuaS 4
+Victoria WilliamB DeeC 31
+flotilla score: 35
+
+Nina DeeC 0
+Victoria JoshuaS WilliamB 36
+flotilla score: 36
+
+best flotilla score: 35
+
+
+Nina WilliamB 10
+Victoria JoshuaS DeeC 37
+flotilla score: 47
+
+Nina DeeC 0
+Victoria WilliamB JoshuaS 36
+flotilla score: 36
+
+best flotilla score: 35
+
+
+Nina WilliamB 10
+Victoria JoshuaS DeeC 37
+flotilla score: 47
+
+Nina DeeC 0
+Victoria WilliamB JoshuaS 36
+flotilla score: 36
+
+best flotilla score: 35
+
+
+Nina WilliamB 10
+Victoria JoshuaS DeeC 37
+flotilla score: 47
+
+Nina DeeC 0
+Victoria WilliamB JoshuaS 36
+flotilla score: 36
+
+best flotilla score: 35
+
+
+Nina WilliamB 10
+Victoria JoshuaS DeeC 37
+flotilla score: 47
+
+Nina DeeC 0
+Victoria WilliamB JoshuaS 36
+flotilla score: 36
+
+best flotilla score: 35
+
+
+Fri Sep 19
+
+Sao gabriel WilliamB 8
+Cariad DeeC 8
+Nina JoshuaS 10
+flotilla score: 26
+
+initial flotilla score: 26
+
+
+Sao gabriel WilliamB 8
+Cariad JoshuaS 8
+Nina DeeC 0
+flotilla score: 16
+
+best flotilla score: 16
+
+
+Nina DeeC 0
+Sao gabriel JoshuaS 8
+Cariad WilliamB 8
+flotilla score: 16
+
+best flotilla score: 16
+
+
+Nina DeeC 0
+Sao gabriel JoshuaS 8
+Cariad WilliamB 8
+flotilla score: 16
+
+best flotilla score: 16
+
+
+Nina DeeC 0
+Cariad WilliamB 8
+Sao gabriel JoshuaS 8
+flotilla score: 16
+
+best flotilla score: 16
+
+
+Nina DeeC 0
+Cariad WilliamB 8
+Sao gabriel JoshuaS 8
+flotilla score: 16
+
+best flotilla score: 16
+
+
+Sao gabriel WilliamB 8
+Cariad DeeC 8
+Nina JoshuaS 10
+flotilla score: 26
+
+initial flotilla score: 26
+
+
+Cariad DeeC 8
+Sao gabriel JoshuaS 8
+Nina WilliamB 4
+flotilla score: 20
+
+best flotilla score: 20
+
+
+Nina WilliamB 4
+Cariad JoshuaS 8
+Sao gabriel DeeC 8
+flotilla score: 20
+
+best flotilla score: 20
+
+
+Nina WilliamB 4
+Cariad JoshuaS 8
+Sao gabriel DeeC 8
+flotilla score: 20
+
+best flotilla score: 20
+
+
+Nina WilliamB 4
+Sao gabriel DeeC 8
+Cariad JoshuaS 8
+flotilla score: 20
+
+best flotilla score: 20
+
+
+Nina WilliamB 4
+Cariad JoshuaS 8
+Sao gabriel DeeC 8
+flotilla score: 20
+
+best flotilla score: 20
+
+
+Nina WilliamB 4
+Sao gabriel DeeC 8
+Cariad JoshuaS 8
+flotilla score: 20
+
+initial flotilla score: 20
+
+
+Nina WilliamB 4
+Sao gabriel JoshuaS 8
+Cariad DeeC 8
+flotilla score: 20
+
+best flotilla score: 20
+
+
+Nina WilliamB 4
+Sao gabriel JoshuaS 8
+Cariad DeeC 8
+flotilla score: 20
+
+best flotilla score: 20
+
+
+Nina WilliamB 4
+Cariad DeeC 8
+Sao gabriel JoshuaS 8
+flotilla score: 20
+
+best flotilla score: 20
+
+
+Nina WilliamB 4
+Sao gabriel JoshuaS 8
+Cariad DeeC 8
+flotilla score: 20
+
+best flotilla score: 20
+
+
+Nina WilliamB 4
+Sao gabriel JoshuaS 8
+Cariad DeeC 8
+flotilla score: 20
+
+best flotilla score: 20
+
+
+Fri Sep 26
+
+Nina JoshuaS 4
+Victoria WilliamB DeeC 23
+flotilla score: 27
+
+initial flotilla score: 27
+
+
+Nina WilliamB 2
+Victoria JoshuaS DeeC 22
+flotilla score: 24
+
+Nina DeeC 8
+Victoria WilliamB JoshuaS 28
+flotilla score: 36
+
+best flotilla score: 24
+
+
+Nina JoshuaS 4
+Victoria WilliamB DeeC 23
+flotilla score: 27
+
+Nina DeeC 8
+Victoria JoshuaS WilliamB 28
+flotilla score: 36
+
+best flotilla score: 24
+
+
+Nina JoshuaS 4
+Victoria WilliamB DeeC 23
+flotilla score: 27
+
+Nina DeeC 8
+Victoria JoshuaS WilliamB 28
+flotilla score: 36
+
+best flotilla score: 24
+
+
+Nina JoshuaS 4
+Victoria WilliamB DeeC 23
+flotilla score: 27
+
+Nina DeeC 8
+Victoria JoshuaS WilliamB 28
+flotilla score: 36
+
+best flotilla score: 24
+
+
+Nina JoshuaS 4
+Victoria WilliamB DeeC 23
+flotilla score: 27
+
+Nina DeeC 8
+Victoria JoshuaS WilliamB 28
+flotilla score: 36
+
+best flotilla score: 24
+
+
+Nina WilliamB 2
+Victoria JoshuaS DeeC 22
+flotilla score: 24
+
+initial flotilla score: 24
+
+
+Nina JoshuaS 4
+Victoria WilliamB DeeC 23
+flotilla score: 27
+
+Nina DeeC 8
+Victoria JoshuaS WilliamB 28
+flotilla score: 36
+
+best flotilla score: 24
+
+
+Nina JoshuaS 4
+Victoria WilliamB DeeC 23
+flotilla score: 27
+
+Nina DeeC 8
+Victoria JoshuaS WilliamB 28
+flotilla score: 36
+
+best flotilla score: 24
+
+
+Nina JoshuaS 4
+Victoria WilliamB DeeC 23
+flotilla score: 27
+
+Nina DeeC 8
+Victoria JoshuaS WilliamB 28
+flotilla score: 36
+
+best flotilla score: 24
+
+
+Nina JoshuaS 4
+Victoria WilliamB DeeC 23
+flotilla score: 27
+
+Nina DeeC 8
+Victoria JoshuaS WilliamB 28
+flotilla score: 36
+
+best flotilla score: 24
+
+
+Nina JoshuaS 4
+Victoria WilliamB DeeC 23
+flotilla score: 27
+
+Nina DeeC 8
+Victoria JoshuaS WilliamB 28
+flotilla score: 36
+
+best flotilla score: 24
+
+
+Nina WilliamB 2
+Victoria JoshuaS DeeC 22
+flotilla score: 24
+
+initial flotilla score: 24
+
+
+Nina JoshuaS 4
+Victoria WilliamB DeeC 23
+flotilla score: 27
+
+Nina DeeC 8
+Victoria JoshuaS WilliamB 28
+flotilla score: 36
+
+best flotilla score: 24
+
+
+Nina JoshuaS 4
+Victoria WilliamB DeeC 23
+flotilla score: 27
+
+Nina DeeC 8
+Victoria JoshuaS WilliamB 28
+flotilla score: 36
+
+best flotilla score: 24
+
+
+Nina JoshuaS 4
+Victoria WilliamB DeeC 23
+flotilla score: 27
+
+Nina DeeC 8
+Victoria JoshuaS WilliamB 28
+flotilla score: 36
+
+best flotilla score: 24
+
+
+Nina JoshuaS 4
+Victoria WilliamB DeeC 23
+flotilla score: 27
+
+Nina DeeC 8
+Victoria JoshuaS WilliamB 28
+flotilla score: 36
+
+best flotilla score: 24
+
+
+Nina JoshuaS 4
+Victoria WilliamB DeeC 23
+flotilla score: 27
+
+Nina DeeC 8
+Victoria JoshuaS WilliamB 28
+flotilla score: 36
+
+best flotilla score: 24
+
+

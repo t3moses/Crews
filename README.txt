@@ -1,6 +1,6 @@
 Crew assignment
 
-assignment.py assigns available sailors to available boats for a specific event date.
+assignment.py assigns available sailors to available boats for future event dates.
 
 Assignment is governed by two classes of assignment rules: mandatory rules and discretionary rules.
 
@@ -10,7 +10,7 @@ Discretionary rules determine which boat a particular sailor will be assigned to
 
 Mandatory rules are executed procedurally, and so they are fully enforced.
 
-Discretionary rules produce a "non-compliance" score.  The score is used to select a suitably compliant assignment.  Discretionary rules are applied with best effort.  
+Discretionary rules calculate a "non-compliance" score.  The score is used to select a suitably compliant assignment.  Discretionary rules are applied with best effort.  
 A gradient-descent algorithm finds a local loss minimum.  But a solution with lower score may exist globally.
 
 Mandatory rules:
@@ -59,8 +59,8 @@ The boats ... files contain a row for each boat.
 The sailors ... files contain a row for each sailor.
 The ... available files contain the dates on which the subject (boat or sailor) is available.
 
-The sailor assistance field contains True or False according to whether the skipper requires assistance on board.
-The member field contains True or False according to whether the sailor is an NSC member.
+The boat assistance field contains True or False according to whether the skipper requires assistance on board.
+The sailor member field contains True or False according to whether the sailor is an NSC member.
 The skill field contains integer values 0 .. 2.  0 for novice, 1 for basic qualified, 2 for experienced.
 The whitelist field contains a list of boats in the subject's whitelist.  Boats in the list must be separated by ;.
 
@@ -77,11 +77,9 @@ The program description web page provides links to web forms for submitting:
 
 Boat information
 Sailor information
-Boat availability
-Sailor availability
 Event calendar
 
-The first four of these contain a "Submit" button.  Clicking this causes an email to be sent to the admin.
+The first two of these contain an "Update" button.  Clicking this causes an email to be sent to the admin.
 
 Set-up
 
@@ -112,21 +110,19 @@ Double-click the process.py file.
 
 Self-service web-site
 
-The application works in conjunction with a Wix web-site.  Boat owners and sailors provide information for the application using web forms.
+The application works in conjunction with a Wixstudio web-site.  Boat owners and sailors provide information for the application using web forms.
 
-The email must be saved in plain text to a specific folder.  Old files are deleted when a new one is processed.
+When the admin receives an email they must save it in plain text to a specific folder.  Old files are replaced when a new one is processed.
 
 Process
 
 process.py processes the contents of the email sent to the admin when a boat-owner or sailor submits a form.  It updates the database files described above.
 
-Four types of form are processed.
-
 Boat owners and sailors should open an account.  This allows them to enter information about themselves and their boat.
 
 In the event they don't open an account, they may continue as a guest, with default values.
 
-In a seprate step, they must enter information about their availability.
+They must also enter information about their availability.
 
 An individual may enrol as both a boat owner and a sailor.  In the event of an availability clash, their boat owner role takes precedence.
 
@@ -134,7 +130,11 @@ When a boat-owner enrols, the admin is asked if the owner is female.  This infor
 
 When a sailor enrols, the admin is asked for the display name of the sailor's partner.  This information is used in support of the policy that places partners on different boats.
 
-There is no connection between front and back end.  So user input is required to correlate account and availability information.  Correlation is based on first and last name.  Therefore, the spelling must be identical in each interaction.
+A sailor display name comprises their first name, capitalized, concatenated with the fewest number of character from their last name, again capitalized, to make the display name unique.
+
+There is no live connection between front and back end.  So user input is required to correlate account and availability information.  Correlation is based on a key.
+
+The key comprises the first and last names, concatenated and all lowercase.  Therefore, the spelling must be identical in each interaction.
 
 Event calendar
 
@@ -162,13 +162,12 @@ flotilla {
   score
 }
 
-To dos
+Reports
 
-- Randomize the list of boats and sailors between passes in the outler loop after it has been determined which boats and sailors will sail in a particular event.
-- Create reports, including:
-	owner email addresses for an event
-	sailor email addresses for an event
-	sailor resumes by boat for an event
-- Specify the Working directory in the constants.py file.
-	
+process.py creates reports:
 
+1. address.txt contains the email addresses of participants in all future events, separating boat owners from sailors.
+
+2. crew_info.txt contains the resumes of sailors in the next event organized by boat.
+
+The latter is intended to be provided to the boat owners taking part in the upcoming event.

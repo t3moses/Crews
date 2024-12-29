@@ -1,4 +1,5 @@
 
+import sys
 import random
 
 def mandatory(available_boats, available_sailors):
@@ -77,10 +78,12 @@ def case_3(boats, sailors):
         max_overall += int(boat["max occupancy"])
 
     if not ( len(sailors) >= min_overall ):
-        raise Exception("Number of sailors is less than min_occupancy.")
+        print("Number of sailors is less than min_occupancy.")
+        sys.exit(1)
 
     if not ( len(sailors) <= max_overall ):
-        raise Exception("Number of sailors is greater than max_occupancy.")
+        print("Number of sailors is greater than max_occupancy.")
+        sys.exit(1)
 
     overall_occupancy = min_overall
 

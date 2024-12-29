@@ -1,4 +1,5 @@
 
+import sys
 import constants
 import csv
 
@@ -155,7 +156,8 @@ def begin():
     for boat in boats_data:
         boats_from_data.append(boat["key"])
     if bool(set(boats_from_availability) ^ set(boats_from_data)): # difference
-        raise Exception("Boat availability is inconsistent with boat data.")
+        print("Boat availability is inconsistent with boat data.")
+        sys.exit(1)
 
     # Confirm that sailor names are consistent between the sailor_availability and sailor_data files.
 
@@ -166,7 +168,8 @@ def begin():
     for sailor in sailors_data:
         sailors_from_data.append(sailor["key"])
     if bool(set(sailors_from_availability) ^ set(sailors_from_data)):
-        raise Exception("Sailor availability is inconsistent with sailor data.")
+        print("Sailor availability is inconsistent with sailor data.")
+        sys.exit(1)
 
     # Confirm that sailor whitelists are consistent with boats_sata.
 
@@ -176,7 +179,8 @@ def begin():
     for sailor in sailors_data:
         sailor_whitelist = sailor["whitelist"].split(";")
         if not bool(set(sailor_whitelist) <= set(boats_from_data)):
-            raise Exception("Sailor whitelist is inconsistent with boat data.")
+            print("Sailor whitelist is inconsistent with boat data.")
+            sys.exit(1)
 
     # Import the user input form.
 

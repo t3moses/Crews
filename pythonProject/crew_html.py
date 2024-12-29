@@ -45,9 +45,14 @@ def html(flotilla, event_date):
 
     global contents
     contents += "<h2>Event date: " + event_date + "</h2>"
-    contents += "<table width = " + str(table_width) + "%><th><tr style=height: 1px;>"
-    for _ in range(max_crew_size + 1):
-        contents += "<td width = " + str(column_width) + "%></td>"
+    contents += "<table width = " + str(table_width) + "%><th><tr>"
+    for column in range(max_crew_size + 1):
+        if column == 0:
+            contents += "<td width = " + str(column_width) + "%>Boat</td>"
+        elif column == 1:
+            contents += "<td width = " + str(column_width) + "%>Crew</td>"
+        else:
+            contents += "<td width = " + str(column_width) + "%></td>"
     contents += "</tr></th>"
     for crew in flotilla["crews"]:
         contents += "<tr><td>" + crew["boat"]["display name"] + "</td>"
@@ -64,8 +69,6 @@ def html(flotilla, event_date):
     for _ in range( empty_cells ):
         contents += "<td>" + "" + "</td>"
     contents += "</tr></table>"
-    contents += "<h3>Non-compliance: " + flotilla["score"] + "</h3>"
-    contents += "<hr>"
 
     html = top + contents + tail
 
