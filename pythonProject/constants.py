@@ -4,6 +4,7 @@ boat_header_row = ["key","owner key","display name","email address","mobile","fe
 sailor_header_row = ["key","display name","partner key","email address","member","skill","experience","request female","whitelist"]
 default_boat = { "key" : "", "owner key" : "", "display name" : "", "email address" : "","mobile" : "", "female" : "", "min occupancy" : "1", "max occupancy" : "1", "assistance" : "False" }
 default_sailor = { "key" : "", "display name" : "", "partner key" : "", "email address" : "", "member" : "False", "skill" : "0", "experience" : "", "request female" : "N","whitelist" : ""}
+rules = ["assist", "whitelist", "skill", "partner", "repeat"]
 inner_epochs = 6 # Gradient descent iterations to find 'local' minimum.
 outer_epochs = 3 # Iterations to find 'global' minimum.
 whitelist_weight = 10
