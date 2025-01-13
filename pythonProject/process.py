@@ -456,8 +456,6 @@ crew_html.begin()
 
 user_input = user_input_from_form(database.form)
 
-print(user_input)
-
 if user_input.get("Form name") == "Open boat account": enrol_boat(user_input)
 elif user_input.get("Form name") == "Open sailor account": enrol_sailor(user_input)
 elif user_input.get("Form name") == "Enter boat availability": register_boat(user_input)

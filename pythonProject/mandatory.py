@@ -1,4 +1,5 @@
 
+import database
 import sys
 import random
 
@@ -9,18 +10,18 @@ def mandatory(available_boats, available_sailors):
 
     min_occupancy = 0
     max_occupancy = 0
-    for boat in available_boats:
-        min_occupancy += int(boat['min occupancy'])
-        max_occupancy += int(boat['max occupancy'])
+    for available_boat in available_boats:
+        min_occupancy += [int(boat['min occupancy']) for boat in database.boats_data if boat["key"] == available_boat][0]
+        max_occupancy += [int(boat['max occupancy']) for boat in database.boats_data if boat["key"] == available_boat][0]
 
     if len(ordered_sailors) < min_occupancy:
-        flotilla = case_1(ordered_boats, ordered_sailors)
+        extended_flotilla = case_1(ordered_boats, ordered_sailors)
     elif len(ordered_sailors) > max_occupancy:
-        flotilla = case_2(ordered_boats, ordered_sailors)
+        extended_flotilla = case_2(ordered_boats, ordered_sailors)
     else: # len(ordered_sailors) >= min_occupancy AND len(ordered_sailors) <= max_occupancy
-        flotilla = case_3(ordered_boats, ordered_sailors)
+        extended_flotilla = case_3(ordered_boats, ordered_sailors)
 
-    return flotilla
+    return extended_flotilla
 
 def case_1(boats, sailors):
 
@@ -30,16 +31,17 @@ def case_1(boats, sailors):
     # Then apply case 3.
 
     min_overall = 0
-    for boat in boats:
-        min_overall += int(boat["min occupancy"])
+    for event_boat in boats:
+        min_overall += [int(boat["min occupancy"]) for boat in database.boats_data if boat["key"] == event_boat][0]
 
     while len(sailors) < min_overall:
-        min_overall -= int(boats[-1]["min occupancy"])
+        min_overall -= [int(boat["min occupancy"]) for boat in database.boats_data if boat["key"] == boats[-1]][0]
+        # min_overall -= int(boats[-1]["min occupancy"])
         boats.pop() # Remove the last boat in the boats list.
 
-    flotilla = case_3(boats, sailors)
+    extended_flotilla = case_3(boats, sailors)
 
-    return flotilla
+    return extended_flotilla
 
 def case_2(boats, sailors):
 
@@ -49,15 +51,15 @@ def case_2(boats, sailors):
     # Then apply case 3.  Excess sailors are assigned to the wait list.
 
     max_overall = 0
-    for boat in boats:
-        max_overall += int(boat["max occupancy"])
+    for available_boat in boats:
+        max_overall += [int(boat['max occupancy']) for boat in database.boats_data if boat["key"] == available_boat][0]
 
-    flotilla = case_3(boats, sailors[ : max_overall])
-    flotilla["wait list"] = sailors[max_overall : ]
+    extended_flotilla = case_3(boats, sailors[ : max_overall])
+    extended_flotilla["wait list"] = sailors[max_overall : ]
 
-    return flotilla
+    return extended_flotilla
 
-def case_3(boats, sailors):
+def case_3(event_boats, event_sailors):
 
     # The number of sailors is greater than or equal to minimum number required AND
     # The number of sailors is less than or equal to the number of spaces available.
@@ -67,21 +69,20 @@ def case_3(boats, sailors):
     # the occupancy by 1.  Repeat ordering and incrementing until overall_occupancy
     # is equal to the number of sailors.
 
-    global event_boats
-    global event_sailors
-
     min_overall = 0
     max_overall = 0
-    for boat in boats:
-        boat["occupancy"] = boat["min occupancy"]
-        min_overall += int(boat["min occupancy"])
-        max_overall += int(boat["max occupancy"])
+    for event_boat in event_boats:
+        for boat in database.boats_data:
+            if event_boat == boat["key"]:
+                boat["actual_occupancy"] = boat["min occupancy"]
+                min_overall += int(boat["min occupancy"])
+                max_overall += int(boat["max occupancy"])
 
-    if not ( len(sailors) >= min_overall ):
+    if not ( len(event_sailors) >= min_overall ):
         print("Number of sailors is less than min_occupancy.")
         sys.exit(1)
 
-    if not ( len(sailors) <= max_overall ):
+    if not ( len(event_sailors) <= max_overall ):
         print("Number of sailors is greater than max_occupancy.")
         sys.exit(1)
 
@@ -90,19 +91,20 @@ def case_3(boats, sailors):
     # Repeatedly add 1 to the occupancy of the boat with the greatest headroom,
     # until overall_occupancy is equal to the number of sailors.
 
-    while len(sailors) > overall_occupancy:
-        boats = order_boats_by_headroom(boats)
-        boats[-1]["occupancy"] = str(int(boats[-1]["occupancy"]) + 1)
-        overall_occupancy += 1
+    while len(event_sailors) > overall_occupancy:
+        event_boats = order_boats_by_headroom(event_boats)
+        for boat in database.boats_data:
+            if event_boats[-1] == boat["key"]:
+                boat["actual_occupancy"] = str(int(boat["actual_occupancy"]) + 1)
+                overall_occupancy += 1
 
-    flotilla = {}
-    flotilla["crews"] = assign(boats, sailors)
-    flotilla["wait list"] = []
-    flotilla["score"] = "None"
+    extended_flotilla = {}
+    extended_flotilla["flotilla"] = assign(event_boats, event_sailors)
+    extended_flotilla["wait list"] = []
 
-    return flotilla
+    return extended_flotilla
 
-def assign(boats, sailors):
+def assign(event_boats, event_sailors):
 
     # Return crews, which is a list of crew by assigning sailors to boats.
 
@@ -116,43 +118,25 @@ def assign(boats, sailors):
     crews = []
 
     shuffled_sailors = []
-    while len(sailors) > 0:
-        sailor = sailors[random.randint(0, len(sailors) - 1)]
-        sailors.remove(sailor)
+    while len(event_sailors) > 0:
+        sailor = event_sailors[random.randint(0, len(event_sailors) - 1)]
+        event_sailors.remove(sailor)
         shuffled_sailors.append(sailor)
 
     initial = 0
 
-    boats = order_boats_by_loyalty(boats)
+    boats = order_boats_by_loyalty(event_boats)
 
-    for boat in boats:
+    for event_boat in event_boats:
         crew = {}
-        crew["boat"] = boat
-        final = initial + int(boat["occupancy"])
+        crew["boat"] = event_boat
+        final = initial + [int(boat["actual_occupancy"]) for boat in database.boats_data if boat["key"] == event_boat][0]
         crew["sailors"] = shuffled_sailors[initial : final]
         initial = final
-        crew["score"] = "0"
         crews.append(crew)
 
     return crews
 
-def reassign(flotilla):
-
-    # Extract the sailor list from the flotilla.
-    # Randomize the list and get them reassigned.
-
-    boats = []
-    sailors = []
-
-    for crew in flotilla["crews"]:
-        boats.append(crew["boat"])
-        for sailor in crew["sailors"]:
-            sailors.append(sailor)
-
-    crews = assign(boats, sailors)
-    flotilla["crews"] = crews
-
-    return flotilla
 
 def order_sailors_by_loyalty(sailors):
 
@@ -167,11 +151,13 @@ def order_sailors_by_loyalty(sailors):
 
     # Divide sailors into members and non-members.
 
-    for sailor in sailors:
-        if sailor["member"] == "True":
-            members.append(sailor)
-        else:
-            non_members.append(sailor)
+    for event_sailor in sailors:
+        for sailor in database.sailors_data:
+            if event_sailor == sailor["key"]:
+                if sailor["member"] == "True":
+                    members.append(event_sailor)
+                else:
+                    non_members.append(event_sailor)
 
     # Order members and non-members into lists of sailors in the same loyalty band.
 
@@ -180,9 +166,11 @@ def order_sailors_by_loyalty(sailors):
     while i > 0:
         equal_loyalty_members = [] # list of members in the same loyalty band.
         for member in members:
-            if int(member["loyalty"]) == loyalty:
-                equal_loyalty_members.append(member)
-                i -= 1
+            for sailor in database.sailors_data:
+                if member == sailor["key"]:
+                    if int(sailor["loyalty"]) == loyalty:
+                        equal_loyalty_members.append(member)
+                        i -= 1
         loyalty += 1
         ordered_members.extend(equal_loyalty_members)
 
@@ -191,9 +179,11 @@ def order_sailors_by_loyalty(sailors):
     while i > 0:
         equal_loyalty_non_members = []
         for non_member in non_members:
-            if int(non_member["loyalty"]) == loyalty:
-                equal_loyalty_non_members.append(non_member)
-                i -= 1
+            for sailor in database.sailors_data:
+                if non_member == sailor["key"]:
+                    if int(sailor["loyalty"]) == loyalty:
+                        equal_loyalty_non_members.append(non_member)
+                        i -= 1
         loyalty += 1
         ordered_non_members.extend(equal_loyalty_non_members)
 
@@ -206,8 +196,9 @@ def order_sailors_by_loyalty(sailors):
     while len(ordered_members) > 0:
         equal_loyalty_members = []
         for member in ordered_members:
-            if int(member["loyalty"]) == loyalty:
-                equal_loyalty_members.append(member)
+            for sailor in database.sailors_data:
+                if member == sailor["key"]:
+                    equal_loyalty_members.append(member)
         while len(equal_loyalty_members) > 0:
             if len(equal_loyalty_members) > 1:
                 member_number = random.randint(0, len(equal_loyalty_members) - 1)
@@ -223,8 +214,10 @@ def order_sailors_by_loyalty(sailors):
     while len(ordered_non_members) > 0:
         equal_loyalty_non_members = []
         for non_member in ordered_non_members:
-            if int(non_member["loyalty"]) == loyalty:
-                equal_loyalty_non_members.append(non_member)
+            for sailor in database.sailors_data:
+                if non_member == sailor["key"]:
+                    if int(sailor["loyalty"]) == loyalty:
+                        equal_loyalty_non_members.append(non_member)
         while len(equal_loyalty_non_members) > 0:
             if len(equal_loyalty_non_members) > 1:
                 non_member_number = random.randint(0, len(equal_loyalty_non_members) - 1)
@@ -251,10 +244,12 @@ def order_boats_by_loyalty(boats):
     loyalty = 0
     while i > 0:
         equal_loyalty_boats = [] # list of boats in the same loyalty band.
-        for boat in boats:
-            if int(boat["loyalty"]) == loyalty:
-                equal_loyalty_boats.append(boat)
-                i -= 1
+        for event_boat in boats:
+            for boat in database.boats_data:
+                if event_boat == boat["key"]:
+                    if int(boat["loyalty"]) == loyalty:
+                        equal_loyalty_boats.append(event_boat)
+                        i -= 1
         loyalty += 1
         banded_boats.append(equal_loyalty_boats)
 
@@ -284,10 +279,12 @@ def order_boats_by_headroom(boats):
     headroom = 0
     while i > 0:
         headroom_boats = [] # list of boats in the same headroom band.
-        for boat in boats:
-            if int(boat["max occupancy"]) - int(boat["occupancy"]) == headroom:
-                headroom_boats.append(boat)
-                i -= 1
+        for event_boat in boats:
+            for boat in database.boats_data:
+                if event_boat == boat["key"]:
+                    if int(boat["max occupancy"]) - int(boat["actual_occupancy"]) == headroom:
+                        headroom_boats.append(event_boat)
+                        i -= 1
         headroom += 1
         banded_boats.append(headroom_boats)
 

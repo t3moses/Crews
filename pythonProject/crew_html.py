@@ -26,25 +26,25 @@ def begin():
 
     return
 
-def html(flotilla, event_date):
+def html(event):
 
     global column_width
 
     # Add the html table for one event to the document.
 
     max_crew_size = 0
-    for crew in flotilla["crews"]:
+    for crew in event["flotilla"]:
         crew_size = len(crew["sailors"])
         if crew_size > max_crew_size:
             max_crew_size = crew_size
-    crew_size = len(flotilla["wait list"])
+    crew_size = len(event["wait list"])
     if crew_size > max_crew_size:
         max_crew_size = crew_size
 
     table_width = ( max_crew_size + 1 ) * column_width
 
     global contents
-    contents += "<h2>Event date: " + event_date + "</h2>"
+    contents += "<h2>Event date: " + event["date"] + "</h2>"
     contents += "<table width = " + str(table_width) + "%><th><tr>"
     for column in range(max_crew_size + 1):
         if column == 0:
@@ -54,18 +54,24 @@ def html(flotilla, event_date):
         else:
             contents += "<td width = " + str(column_width) + "%></td>"
     contents += "</tr></th>"
-    for crew in flotilla["crews"]:
-        contents += "<tr><td>" + crew["boat"]["display name"] + "</td>"
-        for sailor in crew["sailors"]:
-            contents += "<td>" + sailor["display name"] + "</td>"
-        empty_cells = max_crew_size - len(crew["sailors"])
-        for _ in range( empty_cells ):
-            contents += "<td>" + "" + "</td>"
-        contents += "</tr>"
+    for crew in event["flotilla"]:
+        for boat in database.boats_data:
+            if crew["boat"] == boat["key"]:
+                contents += "<tr><td>" + boat["display name"] + "</td>"
+                for event_sailor in crew["sailors"]:
+                    for sailor in database.sailors_data:
+                        if event_sailor == sailor["key"]:
+                            contents += "<td>" + sailor["display name"] + "</td>"
+                empty_cells = max_crew_size - len(crew["sailors"])
+                for _ in range( empty_cells ):
+                    contents += "<td>" + "" + "</td>"
+                contents += "</tr>"
     contents += "<tr><td>" + "Wait list" + "</td>"
-    for sailor in flotilla["wait list"]:
-        contents += "<td>" + sailor["display name"] + "</td>"
-    empty_cells = max_crew_size - len(flotilla["wait list"])
+    for event_sailor in event["wait list"]:
+        for sailor in database.sailors_data:
+            if event_sailor == sailor["key"]:
+                contents += "<td>" + sailor["display name"] + "</td>"
+    empty_cells = max_crew_size - len(event["wait list"])
     for _ in range( empty_cells ):
         contents += "<td>" + "" + "</td>"
     contents += "</tr></table>"

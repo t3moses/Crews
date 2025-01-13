@@ -30,22 +30,24 @@ def begin():
 
     return
 
-def add_info(flotilla, event_date):
+def add_info(event):
 
     # Store details of the next event.
 
     global next_event_date
 
-    if event_date == next_event_date:
-        for crew in flotilla["crews"]:
-            database.crew_info += crew["boat"]["display name"] + " "
-            database.crew_info += crew["boat"]["mobile"] + "\n"
-            for sailor in crew["sailors"]:
-                database.crew_info += " " + sailor["display name"] + "\n"
-                for database_sailor in database.sailors_data:
-                    if database_sailor["key"] == sailor["key"]:
-                        experience = database_sailor["experience"]
-                        experience = experience.replace("&#44;", ",")
-                        experience = experience.replace("&#10;", "\n")
-                database.crew_info += experience + "\n"
+    if event["date"] == next_event_date:
+        for crew in event["flotilla"]:
+            boat_name = [boat["display name"] for boat in database.boats_data if boat["key"] == crew["boat"]][0]
+            database.crew_info += boat_name + " "
+            boat_mobile = [boat["mobile"] for boat in database.boats_data if boat["key"] == crew["boat"]][0]
+            database.crew_info += boat_mobile + "\n"
+            for event_sailor in crew["sailors"]:
+                for sailor in database.sailors_data:
+                    if event_sailor == sailor["key"]:
+                        database.crew_info += " " + sailor["display name"] + "\n"
+                        experience = sailor["experience"]
+                        experience = experience.replace("+u002C", ",")
+                        experience = experience.replace("+u2028", "\n")
+                        database.crew_info += experience + "\n"
     return

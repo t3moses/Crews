@@ -219,7 +219,10 @@ def end():
     writer = csv.DictWriter(boats_data_file, fieldnames=constants.boat_header_row)
     writer.writeheader()
     for boat in boats_data:
-        writer.writerow(boat)
+        row = {}
+        for column in constants.boat_header_row:
+            row[column] = boat[column]
+        writer.writerow(row)
     boats_data_file.close()
 
     # Update the sailors data file.
@@ -228,7 +231,10 @@ def end():
     writer = csv.DictWriter(sailors_data_file, fieldnames=constants.sailor_header_row)
     writer.writeheader()
     for sailor in sailors_data:
-        writer.writerow(sailor)
+        row = {}
+        for column in constants.sailor_header_row:
+            row[column] = sailor[column]
+        writer.writerow(row)
     sailors_data_file.close()
 
     # Update the boats availability file.

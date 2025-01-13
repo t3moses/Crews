@@ -13,16 +13,16 @@ def add_date( event_date ):
 
     return
 
-def add_boats( flotilla ):
+def add_boats( event ):
 
     addresses = ""
 
     database.addresses += "boats\n\n"
 
     index = 0
-    for crew in flotilla["crews"]:
+    for crew in event["flotilla"]:
         for boat in database.boats_data:
-            if crew["boat"]["key"] == boat["key"]:
+            if crew["boat"] == boat["key"]:
                 if not index == 0:
                     addresses += ", "
                 index += 1
@@ -32,17 +32,17 @@ def add_boats( flotilla ):
 
     return
 
-def add_sailors( flotilla ):
+def add_sailors( event ):
 
     addresses = ""
 
     database.addresses += "sailors\n\n"
 
     index = 0
-    for crew in flotilla["crews"]:
-        for flotilla_sailor in crew["sailors"]:
+    for crew in event["flotilla"]:
+        for event_sailor in crew["sailors"]:
             for sailor in database.sailors_data:
-                if sailor["key"] == flotilla_sailor["key"]:
+                if event_sailor == sailor["key"]:
                     if not index == 0:
                         addresses += ", "
                     index += 1

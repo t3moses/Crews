@@ -42,88 +42,77 @@ def assignment():
 
             # List the boats and sailors available on the event date.
 
-            available_boats = []  # list of dictionaries for boats available on the event date.
+            available_boats = []  # list of boats available on the event date.
             for available_boat in database.boats_availability:
                 if not available_boat[event_date] == "":
                     for boat in database.boats_data:
-                        if boat["key"] == available_boat["key"]:
-                            available_boats.append(boat.copy())
+                        if available_boat["key"] == boat["key"]:
+                            available_boats.append(boat["key"])
 
-            available_sailors = []  # list of dictionaries for sailors available on the given date.
+            available_sailors = []  # list of sailors available on the event date.
             for available_sailor in database.sailors_availability:
                 if not available_sailor[event_date] == '':
                     for sailor in database.sailors_data:
-                        if sailor["key"] == available_sailor["key"]:
-                            available_sailors.append(sailor.copy())
+                        if available_sailor["key"] == sailor["key"]:
+                            available_sailors.append(sailor["key"])
 
-            # For each available sailor and boat, calculate their loyalty band, and add it to their data.
-            # Sailor loyalty is the number of times they have sailed this season, according to sailor_history,
-            # Boat_loyalty is the number of times they have sailed this season, according to boat_availability.
-
-            for available_sailor in available_sailors:
-                for sailor_history in database.sailor_histories:
-                    loyalty = 0
-                    if available_sailor["key"] == sailor_history["key"]:
-                        for date in constants.event_dates:
-                            if date == event_date:
-                                break
-                            if not sailor_history[date] == '':
-                                loyalty += 1
-                        available_sailor["loyalty"] = str(loyalty)
+            # For each available boat and sailor, calculate their loyalty band, and add it to their data.
+            # Boat loyalty is the number of times they have sailed this season, according to boat availability.
+            # Sailor loyalty is the number of times they have sailed this season, according to sailor history,
 
             for available_boat in available_boats:
                 for boat_availability in database.boats_availability:
-                    if boat_availability["key"] == available_boat["key"]:
+                    if available_boat == boat_availability["key"]:
                         loyalty = 0
                         for date in constants.event_dates:
                             if date == event_date:
                                 break
                             if not boat_availability[date] == '':
                                 loyalty += 1
-                        available_boat["loyalty"] = str(loyalty)
+                        for i in range(len(database.boats_data)):
+                            if available_boat == database.boats_data[i]["key"]:
+                                database.boats_data[i]["loyalty"] = str(loyalty)
 
-            # Form a new flotilla by applying the mandatory rules using a different random seed for each pass.
+            for available_sailor in available_sailors:
+                for sailor_history in database.sailor_histories:
+                    loyalty = 0
+                    if available_sailor == sailor_history["key"]:
+                        for date in constants.event_dates:
+                            if date == event_date:
+                                break
+                            if not sailor_history[date] == '':
+                                loyalty += 1
+                        for i in range(len(database.sailors_data)):
+                            if available_sailor == database.sailors_data[i]["key"]:
+                                database.sailors_data[i]["loyalty"] = str(loyalty)
 
-            flotilla = mandatory.mandatory(available_boats, available_sailors)
+            # Form a new flotilla by applying the mandatory rules.
 
-            addresses.add_boats(flotilla)
-            addresses.add_sailors(flotilla)
+            extended_flotilla = mandatory.mandatory(available_boats, available_sailors)
 
-            crew_info.add_info(flotilla, event_date)
+            event = {}
+            event["date"] = event_date
+            event["flotilla"] = extended_flotilla["flotilla"]
+            event["wait list"] = extended_flotilla["wait list"]
 
-            for iteration in range(constants.outer_epochs):
+            addresses.add_boats(event)
+            addresses.add_sailors(event)
+            crew_info.add_info(event)
 
-                random.seed(event_date + "v" + str(iteration))
+            # Modify the flotilla by applying the discretionary rules.
 
-                flotilla = mandatory.reassign(flotilla)
-
-                if len(flotilla["crews"]) < 2:
-                    best_flotilla = copy.deepcopy(flotilla)
-                    break
-
-                # Modify the flotilla by applying the discretionary rules.
-                # The resulting flotilla includes its non-compliance score.
-
-                flotilla = discretionary.discretionary(flotilla, event_date)
-
-                if iteration == 0:
-                    best_flotilla = copy.deepcopy(flotilla)
-                    best_score = int(flotilla["score"])
-                else:
-                    if int(flotilla["score"]) < best_score:
-                        best_flotilla = copy.deepcopy(flotilla)
-                        best_score = int(flotilla["score"])
+            event = discretionary.discretionary(event)
 
             # Update the sailor_histories file with the crew assignments for the event date.
 
-            for crew in best_flotilla["crews"]:
+            for crew in event["flotilla"]:
                 for sailor in crew["sailors"]:
                     for sailor_history in database.sailor_histories:
-                        if sailor_history["key"] == sailor["key"]:
-                            sailor_history[event_date] = crew["boat"]["key"]
+                        if sailor_history["key"] == sailor:
+                            sailor_history[event_date] = crew["boat"]
 
             # Add to the html file for all FUTURE event dates.
 
-            database.html = crew_html.html(best_flotilla, event_date)
+            database.html = crew_html.html(event)
 
     return
