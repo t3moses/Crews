@@ -1,34 +1,114 @@
-Fri Jun 6
 
-Fri Jun 13
+Event date: Fri Jun 6
 
-Fri Jun 20
+swap: 8
+swap: 4
+swap: 0
 
-Sat Jun 28
+Event date: Fri Jun 13
 
-Fri Jul 4
+swap: 21
+swap: 9
+swap: 5
+swap: 4
+swap: 0
 
-Fri Jul 11
+Event date: Fri Jun 20
 
-Sat Jul 19
+swap: 7
+swap: 5
+swap: 4
+swap: 0
 
-Fri Jul 25
+Event date: Sat Jun 28
 
-Fri Aug 1
+swap: 8
+swap: 0
 
-Sat Aug 9
+Event date: Fri Jul 4
 
-Fri Aug 15
+swap: 12
+swap: 4
+swap: 0
 
-Fri Aug 22
+Event date: Fri Jul 11
 
-Sat Aug 30
+swap: 1
+swap: 0
 
-Fri Sep 5
+Event date: Sat Jul 19
 
-Fri Sep 12
+swap: 6
+swap: 2
 
-Fri Sep 19
+Event date: Fri Jul 25
 
-Fri Sep 26
+swap: 8
+swap: 4
+swap: 0
 
+Event date: Fri Aug 1
+
+swap: 0
+
+Event date: Sat Aug 9
+
+swap: 11
+swap: 9
+swap: 5
+swap: 4
+swap: 0
+
+Event date: Fri Aug 15
+
+swap: 24
+swap: 8
+swap: 4
+
+Event date: Fri Aug 22
+
+swap: 14
+swap: 13
+swap: 12
+swap: 9
+swap: 8
+swap: 5
+swap: 4
+
+Event date: Sat Aug 30
+
+swap: 15
+swap: 11
+swap: 8
+swap: 4
+
+Event date: Fri Sep 5
+
+swap: 8
+swap: 4
+swap: 0
+
+Event date: Fri Sep 12
+
+swap: 18
+swap: 17
+swap: 9
+swap: 5
+swap: 4
+swap: 0
+
+Event date: Fri Sep 19
+
+swap: 8
+swap: 4
+swap: 0
+
+Event date: Fri Sep 26
+
+swap: 15
+swap: 14
+swap: 10
+swap: 6
+swap: 2
+swap: 1
+swap: 0

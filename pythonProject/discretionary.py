@@ -1,21 +1,18 @@
 
 import constants
 import database
+import copy
 
 
-def swap_sailor(event, first_sailor, second_sailor):
+def swap_crews(crews, first_sailor, second_sailor):
 
     # identify the two crews that contain the first_sailor and second_sailor
     # return a list of the crews in which the first_sailor and second_sailor have been swapped
 
-    print(first_sailor, second_sailor)
-
     swapped_crews = []
 
-    first_crew = [crew for crew in event["flotilla"] if crew["sailors"].count(first_sailor) > 0][0]
-    second_crew = [crew for crew in event["flotilla"] if crew["sailors"].count(second_sailor) > 0][0]
-
-    print(first_crew, second_crew)
+    first_crew = [crew for crew in crews if crew["sailors"].count(first_sailor) > 0][0]
+    second_crew = [crew for crew in crews if crew["sailors"].count(second_sailor) > 0][0]
 
     index = first_crew["sailors"].index(first_sailor)
     first_crew["sailors"].pop(index)
@@ -31,49 +28,66 @@ def swap_sailor(event, first_sailor, second_sailor):
     return swapped_crews
 
 
-def replace_crew(event, first_crew, second_crew):
+def swap_events(event, first_sailor, second_sailor):
 
-    # return an event in which the first_crew has been replaced by the second_crew
+    # find first_crew, containing first_sailor and second_crew, containing second_sailor
+    # replace first_sailor by second_sailor and second_sailor by first_sailor
+    # return the event with the swapped crews
 
-    index = event["flotilla"].index(first_crew)
-    event["flotilla"].pop(index)
-    event["flotilla"].insert(index, second_crew)
+    swapped_event = copy.deepcopy(event)
+    crews = swapped_event["flotilla"]
+    first_crew = [crew for crew in crews if crew["sailors"].count(first_sailor) > 0][0]
+    first_crew_index = crews.index(first_crew)
 
-    return event
+    second_crew = [crew for crew in crews if crew["sailors"].count(second_sailor) > 0][0]
+    second_crew_index = crews.index(second_crew)
 
-def check_assist(crew):
+    sailor_index = first_crew["sailors"].index(first_sailor)
+    first_crew["sailors"].pop(sailor_index)
+    first_crew["sailors"].insert(sailor_index, second_sailor)
+
+    sailor_index = second_crew["sailors"].index(second_sailor)
+    second_crew["sailors"].pop(sailor_index)
+    second_crew["sailors"].insert(sailor_index, first_sailor)
+
+    # swap the crews in the event
+
+    swapped_event["flotilla"].pop(first_crew_index)
+    swapped_event["flotilla"].insert(first_crew_index, first_crew)
+
+    swapped_event["flotilla"].pop(second_crew_index)
+    swapped_event["flotilla"].insert(second_crew_index, second_crew)
+
+    return swapped_event
+
+def assist_score(crew):
 
     # if the boat in the crew has no assist requirement, or
     # any sailor in the crew has an experienced skill level,
-    # return "compliant".  Otherwise, return "non-compliant".
+    # return 0.  Otherwise, return assist_weight
 
     assist = [boat["assistance"] for boat in database.boats_data if boat["key"] == crew["boat"]][0]
     if assist == "False":
-        # database.debug += "-Y\n"
-        return "compliant"
+        return 0
     for event_sailor in crew["sailors"]:
         skill = [sailor["skill"] for sailor in database.sailors_data if sailor["key"] == event_sailor][0]
         if int(skill) == 2:
-            # database.debug += "-Y\n"
-            return "compliant"
-    # database.debug += "-N\n"
-    return "non-compliant"
+            return 0
+    return constants.assist_weight
 
 
-def check_whitelist(crew):
+def whitelist_score(crew):
 
     for event_sailor in crew["sailors"]:
         whitelist = [sailor["whitelist"] for sailor in database.sailors_data if sailor["key"] == event_sailor][0]
         if whitelist.count(crew["boat"]) == 0:
-            # database.debug += "--N\n"
-            return "non-compliant"
+            return constants.whitelist_weight
         else:
             continue
-    # database.debug += "--Y\n"
-    return "compliant"
+    return 0
 
 
-def check_skill(crew):
+def skill_score(crew):
 
     min_skill = 2
     max_skill = 0
@@ -82,107 +96,100 @@ def check_skill(crew):
         min_skill = min(int(skill), min_skill)
         max_skill = max(int(skill), max_skill)
     if max_skill - min_skill < 2:
-        # database.debug += "---Y\n"
-        return "compliant"
-    # database.debug += "---N\n"
-    return "non-compliant"
+        return 0
+    return constants.skill_weight
 
-def check_partner(crew):
+def partner_score(crew):
 
-    for i in range(len(crew["sailors"]) - 1):
-        for j in range(i + 1, len(crew["sailors"])):
-            first_partner = [sailor["partner key"] for sailor in database.sailors_data if sailor["key"] == crew["sailors"][i]][0]
-            second_key = [sailor["key"] for sailor in database.sailors_data if sailor["key"] == crew["sailors"][j]][0]
-            if first_partner == second_key:
-                # database.debug += "----N\n"
-                return "non-compliant"
-    # database.debug += "----Y\n"
-    return "compliant"
+    for i in range(len(crew["sailors"])):
+        for j in range(len(crew["sailors"])):
+            if not i == j:
+                first_partner = [sailor["partner key"] for sailor in database.sailors_data if sailor["key"] == crew["sailors"][i]][0]
+                second_key = crew["sailors"][j]
+                if first_partner == second_key:
+                    return constants.partner_weight
+    return 0
 
 
-def check_repeat(crew, event_date):
+def repeat_score(crew, event_date):
 
     for sailor in crew["sailors"]:
         sailor_history = [history for history in database.sailor_histories if history["key"] == sailor][0]
         event_index = constants.event_dates.index(event_date)
         for index in (max(0, event_index - constants.streak), max(0, event_index - 1)):
             if sailor_history[constants.event_dates[index]] == crew["boat"]:
-                # database.debug += "-----N\n"
-                return "non-compliant"
-    # database.debug += "-----Y\n"
-    return "compliant"
+                return constants.repeat_weight
+    return 0
 
 
-def check_compliant(event, crew, rule):
+def score_from_crew(event, crew):
 
-    # return "compliant" if the crew complies with the identified rule.  Otherwise, return "non-compliant"
+    # return the overall non-compliance score for the crew
 
-    match rule:
-        case "assist":
-            return check_assist(crew)
-        case "whitelist":
-            return check_whitelist(crew)
-        case "skill":
-            return check_skill(crew)
-        case "partner":
-            return check_partner(crew)
-        case "repeat":
-            return check_repeat(crew, event["date"])
-    return
+    crew_score = 0
+    crew_score += assist_score(crew)
+    crew_score += whitelist_score(crew)
+    crew_score += skill_score(crew)
+    crew_score += partner_score(crew)
+    crew_score += repeat_score(crew, event["date"])
+    return crew_score
 
 
-def make_compliant(event, first_crew, rules):
+def score_from_event(event):
 
-    # first_crew fails to comply with rules[-1]
-    # find a swap that makes both crews compliant with all rules
-    print()
-    swaps = []
+    # return the overall non-compliance score for the event
 
-    # print(first_crew)
-    # print(event["flotilla"])
-    flotilla = [crew for crew in event["flotilla"] if not crew == first_crew]
-    # print(flotilla)
-
-    # print()
-    for first_sailor in first_crew["sailors"]:
-        for second_crew in flotilla:
-            for second_sailor in second_crew["sailors"]:
-                posited_crews = swap_sailor(event, first_sailor, second_sailor)
-                swaps.append(posited_crews)
-
-                # print(posited_crews)
-
-    for swap in swaps:
-        for rule in rules:
-            if check_compliant(event, swap[0], rule) == "compliant" and \
-                check_compliant(event, swap[1], rule) == "compliant":
-                compliant = "compliant" # try next rule
-            else:
-                compliant = "non-compliant" # try next swap
-                break
-        if compliant == "compliant":
-            event = replace_crew(event, swap[0], swap[1])
-            event = replace_crew(event, swap[1], swap[0])
-            return event  # compliant
-
-    return event  # non-compliant
+    event_score = 0
+    for crew in event["flotilla"]:
+        event_score += score_from_crew(event, crew)
+    return event_score
 
 
 def discretionary(event):
 
-    # for each rule in the list of rules
-    # then for each crew in the event
-    # check if the crew complies with the rule
-    # in case it does not, adjust the event's crews until the crew complies with
-    # all rules to the depth of the current rule while ensuring that all other crews
-    # also comply
+    # for the number of epochs
+    # make a list of crew scores and a score for the whole event
+    # if the score for the whole event is 0, stop
+    # find the crew with the highest score
+    # posit swaps between the sailors in that crew and all the remaining sailors
+    # calculate the score for the posited event
+    # if it lower than the lowest score so far, retain the posited event
 
-    for i in range(len(constants.rules)):
-        for j in range(len(event["flotilla"])):
-            crew = event["flotilla"][j]
-            rule = constants.rules[i]
-            if check_compliant(event, crew, rule) == "compliant":
-                continue
-            else:
-                event = make_compliant(event, crew, constants.rules[:i+1])
+    event_score = score_from_event(event)
+    if event_score == 0:
+        return event
+
+    for _ in range(constants.epochs):
+        crews = event["flotilla"]
+        crew_scores = []
+        for crew in crews:
+            crew_score = score_from_crew(event, crew)
+            crew_scores.append(crew_score)
+        high_score = 0
+        for i in range(len(crew_scores)):
+            if crew_scores[i] >= high_score:
+                high_score_crew_index = i
+                high_score = crew_scores[i]
+        high_score_crew = crews[high_score_crew_index]
+        for sailor in high_score_crew["sailors"]:
+            remaining_crews = copy.deepcopy(crews)
+            remaining_crews.pop(high_score_crew_index)
+            for remaining_crew in remaining_crews:
+                for remaining_sailor in remaining_crew["sailors"]:
+                    posit_event = swap_events(event, sailor, remaining_sailor)
+                    posit_event_score = score_from_event(posit_event)
+                    swapped = False
+                    if posit_event_score < event_score:
+                        database.debug += "swap: " + str(posit_event_score) + "\n"
+                        event_score = posit_event_score
+                        event = copy.deepcopy(posit_event)
+                        if event_score == 0:
+                            return event
+                        else: # next epoch
+                            swapped = True
+                            break
+                if swapped == True:
+                    break
+            if swapped == True:
+                break
     return event

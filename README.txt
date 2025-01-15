@@ -140,26 +140,23 @@ Event calendar
 
 The event calendar contains the assignments for the season, based on the current registered boats and sailors.
 
-The calendar also shows the non-conformance score for each event.  Single-digit scores are generally acceptable.  But, double-digit scores are likely to be encountered, particularly towards the end of the season.
-
 Data structures
 
-An important data structure is the flotilla:
+An important data structure is the event:
 
-flotilla {
-  crews [
-    (crew) {
-      boat
-      sailors [
-        (sailor) {}
-      ]
-      score
-    }
-  ]
-  wait list [
-    (sailor) {}
-  ]
-  score
+event {
+ date
+ flotilla {
+  [
+   { boat
+     sailors [
+      (sailor)
+     ]
+   }
+ ]
+ wait list [
+  (sailor)
+ ]
 }
 
 Reports
@@ -171,25 +168,4 @@ process.py creates reports:
 2. crew_info.txt contains the resumes of sailors in the next event organized by boat.
 
 The latter is intended to be provided to the boat owners taking part in the upcoming event.
-
-TRY THIS:-
-
-for epoch times
- calculate the score for each crew as the weighted sum for each rule
- sum the crew scores to get the flotilla score
- if the flotilla score is zero
-  break 
- take the crew with the highest score
- for all sailors in the crew
-  for all potential swaps
-   get a combined score for each crew pair before
-   get a combined score for each crew pair after the swap
-   remember the swap with the lowest score
-   if the score is zero
-    break
- apply the best swap
-
-
-
-
 

@@ -28,7 +28,7 @@ def assignment():
 
     for event_date in constants.event_dates:
 
-        database.debug += event_date + "\n\n"
+        database.debug += "\nEvent date: " + event_date + "\n\n"
         addresses.add_date(event_date)
 
         event_datetime = datetime.datetime.strptime(event_date, date_format)
