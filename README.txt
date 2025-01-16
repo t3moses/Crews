@@ -146,8 +146,7 @@ An important data structure is the event:
 
 event {
  date
- flotilla {
-  [
+ flotilla [
    { boat
      sailors [
       (sailor)

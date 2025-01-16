@@ -2,6 +2,7 @@
 import constants
 import database
 import copy
+import random
 
 
 def swap_crews(crews, first_sailor, second_sailor):
@@ -145,21 +146,24 @@ def score_from_event(event):
     return event_score
 
 
-def discretionary(event):
+def local_minimum(event):
 
-    # for the number of epochs
-    # make a list of crew scores and a score for the whole event
-    # if the score for the whole event is 0, stop
+    # Find a local minimum of the event non-compliance score
+    # for the set number of local epochs
+    # make a list of crew scores and an overall score for the event
+    # if the score for the whole event is 0, return without updating the event
     # find the crew with the highest score
     # posit swaps between the sailors in that crew and all the remaining sailors
-    # calculate the score for the posited event
-    # if it lower than the lowest score so far, retain the posited event
+    # calculate the score for each posited event
+    # if the posited score is less than the event score, update the event with the posited event
 
     event_score = score_from_event(event)
     if event_score == 0:
         return event
 
-    for _ in range(constants.epochs):
+    local_event = copy.deepcopy(event)
+
+    for _ in range(constants.local_epochs):
         crews = event["flotilla"]
         crew_scores = []
         for crew in crews:
@@ -180,11 +184,11 @@ def discretionary(event):
                     posit_event_score = score_from_event(posit_event)
                     swapped = False
                     if posit_event_score < event_score:
-                        database.debug += "swap: " + str(posit_event_score) + "\n"
+                        database.debug += "local: " + str(posit_event_score) + "\n"
                         event_score = posit_event_score
-                        event = copy.deepcopy(posit_event)
+                        local_event = copy.deepcopy(posit_event)
                         if event_score == 0:
-                            return event
+                            return local_event
                         else: # next epoch
                             swapped = True
                             break
@@ -192,4 +196,51 @@ def discretionary(event):
                     break
             if swapped == True:
                 break
-    return event
+    return local_event
+
+
+def discretionary(event):
+
+    # use gradient descent to find a local minimum
+    # if the result is fully compliant, stop
+    # shuffle the sailors and try again
+    # keep the event with the best score, and
+    # if no compliant solution is found, return the one with the best score
+
+    event_score = score_from_event(event)
+    if event_score == 0:
+        database.debug += "\n"
+        database.debug += "global: 0\n"
+        return event
+
+    local_event = copy.deepcopy(event)
+
+    for _ in range(constants.global_epochs):
+
+        posit_event = local_minimum(local_event)
+        posit_event_score = score_from_event(posit_event)
+        if posit_event_score == 0:
+            database.debug += "\n"
+            database.debug += "global: 0\n"
+            return posit_event
+        if posit_event_score < event_score:
+            event_score = posit_event_score
+            best_event = copy.deepcopy(posit_event)
+
+        # shuffle sailors
+
+        sailor_list = []
+        for crew in local_event["flotilla"]:
+            sailor_list.extend(crew["sailors"])
+        random.shuffle(sailor_list)
+        for crew in local_event["flotilla"]:
+            for i in range(len(crew["sailors"])):
+                crew["sailors"].pop(i)
+                crew["sailors"].insert(i, sailor_list[0])
+                sailor_list.pop(0)
+        database.debug += "\n"
+
+    best_score = score_from_event(best_event)
+    database.debug += "expired: " + str(best_score) + "\n"
+
+    return best_event
