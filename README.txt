@@ -11,7 +11,7 @@ Discretionary rules determine which boat a particular sailor will be assigned to
 Mandatory rules are executed procedurally, and so they are fully enforced.
 
 Discretionary rules calculate a "non-compliance" score.  The score is used to select a suitably compliant assignment.  Discretionary rules are applied with best effort.  
-A gradient-descent algorithm finds a local loss minimum.  But a solution with lower score may exist globally.
+A gradient-descent algorithm finds a local minimum.  But a solution with lower score may exist globally.
 
 Mandatory rules:
 
@@ -22,21 +22,23 @@ Mandatory rules:
 - Sailors who have sailed fewer times in the current season of the program shall take priority over those who have sailed more times.
 - Boats that have sailed fewer times in the current season of the program shall take priority over those that have sailed more times.
 
-Discretionary rules:
+Discretionary rules (in priority order):
 
-- Sailors should only be assigned to boats on their white-list.
 - Skippers requiring assistance should be assigned at least one sailor from the highest skill band;
+- Sailors should only be assigned to boats on their white-list.
 - The skill-spread on a boat should not exceed two bands;
-- Sailors should be assigned to the same boat as few times as possible throughout the season.
 - Members of a partnership should not be assigned to the same boat.
+- Sailors should be assigned to the same boat as few times as possible throughout the season.
 
-Machine-learning
+Neural network
 
 Once the mandatory rules have been applied, crews are ordered by their non-compliance score.
 
-The two crews with the highest score are selected, every possible swap of sailors between those two crews
-is made and the loss recalculated for each swap.  The swap with the lowest loss is retained.
+The crew with the highest score is selected, every possible swap of sailors between this crew
+and the remaining crews is made and the loss recalculated for each swap.  The swap with the lowest loss is retained.
 Then the process is repeated a set number of times.
+
+This may only find a local minimum.  By randomizing the initial conditions and repeating, a more compliant solution may be found.
 
 Input files
 
@@ -112,7 +114,10 @@ Self-service web-site
 
 The application works in conjunction with a Wixstudio web-site.  Boat owners and sailors provide information for the application using web forms.
 
-When the admin receives an email they must save it in plain text to a specific folder.  Old files are replaced when a new one is processed.
+When the admin receives an email, they must save it in plain-text to a specific folder.  Old files are replaced when a new one is processed.
+
+It appears that registration forms submitted while the admin is logged-on may NOT produce email notifications.  Therefore, processing registrations
+should be performed quickly, seldom and outside peak times.
 
 Process
 
@@ -157,6 +162,12 @@ event {
   (sailor)
  ]
 }
+
+Version control
+
+The Git repository is here:
+
+https://github.com/t3moses/Crews
 
 Reports
 

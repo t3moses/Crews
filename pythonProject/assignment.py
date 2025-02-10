@@ -101,7 +101,8 @@ def assignment():
 
             # Modify the flotilla by applying the discretionary rules.
 
-            event = discretionary.discretionary(event)
+            if len(event["flotilla"]) > 1:
+                event = discretionary.discretionary(event)
 
             # Update the sailor_histories file with the crew assignments for the event date.
 

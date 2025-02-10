@@ -1,380 +1,51 @@
 
 Event date: Fri Jun 6
 
-local: 8
-local: 4
-
-local: 0
-
-global: 0
 
 Event date: Fri Jun 13
 
-local: 20
-local: 8
-local: 4
-
-local: 12
-local: 8
-
-local: 8
-
-local: 8
-
-local: 21
-local: 5
-
-local: 16
-local: 12
-local: 8
-
-local: 4
-local: 0
-
-global: 0
 
 Event date: Fri Jun 20
 
-local: 6
-local: 4
-local: 0
-
-global: 0
 
 Event date: Sat Jun 28
 
-local: 8
-
-local: 17
-local: 10
-
-local: 5
-local: 1
-local: 0
-
-global: 0
 
 Event date: Fri Jul 4
 
-local: 13
-local: 9
-local: 5
-
-local: 1
-local: 0
-
-global: 0
 
 Event date: Fri Jul 11
 
-local: 0
-
-global: 0
 
 Event date: Sat Jul 19
 
-local: 6
-
-local: 2
-
-local: 12
-local: 8
-local: 7
-
-local: 10
-local: 8
-local: 6
-local: 4
-
-local: 11
-local: 9
-local: 7
-local: 5
-
-local: 8
-local: 6
-local: 2
-
-local: 3
-
-local: 6
-local: 4
-
-expired: 2
 
 Event date: Fri Jul 25
 
-local: 8
-
-local: 21
-local: 5
-
-local: 10
-local: 9
-local: 6
-
-local: 20
-local: 18
-local: 17
-
-local: 20
-local: 8
-
-local: 0
-
-global: 0
 
 Event date: Fri Aug 1
 
-local: 0
-
-global: 0
 
 Event date: Sat Aug 9
 
-local: 11
-
-local: 9
-local: 6
-
-local: 9
-local: 5
-
-local: 14
-local: 9
-
-local: 12
-
-local: 10
-local: 8
-
-local: 5
-
-local: 28
-local: 9
-
-expired: 5
 
 Event date: Fri Aug 15
 
-local: 26
-
-local: 16
-local: 15
-
-local: 14
-
-local: 9
-
-local: 11
-local: 9
-
-local: 13
-local: 10
-local: 9
-
-local: 8
-local: 5
-
-local: 8
-local: 6
-local: 2
-
-expired: 2
 
 Event date: Fri Aug 22
 
-local: 29
-local: 14
-
-local: 30
-local: 28
-local: 26
-
-local: 34
-local: 28
-local: 27
-local: 25
-local: 24
-
-local: 17
-
-local: 15
-local: 14
-
-local: 2
-
-local: 15
-
-local: 23
-local: 16
-local: 15
-
-expired: 2
 
 Event date: Sat Aug 30
 
-local: 15
-local: 11
-
-local: 5
-
-local: 8
-local: 5
-local: 1
-
-local: 9
-local: 5
-local: 1
-
-local: 7
-local: 2
-
-local: 11
-local: 7
-local: 6
-
-local: 15
-local: 12
-local: 10
-local: 7
-
-local: 4
-
-expired: 1
 
 Event date: Fri Sep 5
 
-local: 25
-local: 11
-local: 10
-local: 6
-
-local: 9
-local: 5
-
-local: 22
-local: 21
-local: 15
-local: 14
-local: 10
-
-local: 25
-local: 9
-
-local: 20
-
-local: 15
-local: 11
-local: 7
-
-local: 38
-local: 17
-local: 16
-
-local: 4
-
-expired: 4
 
 Event date: Fri Sep 12
 
-local: 16
-
-local: 5
-
-local: 13
-local: 8
-
-local: 17
-local: 13
-local: 9
-local: 8
-
-local: 8
-
-local: 14
-local: 9
-local: 5
-
-local: 5
-local: 1
-
-local: 32
-local: 20
-local: 16
-local: 12
-
-expired: 1
 
 Event date: Fri Sep 19
 
-local: 16
-local: 13
-local: 12
-local: 9
-
-local: 9
-local: 6
-local: 2
-
-local: 14
-
-local: 8
-local: 7
-local: 5
-local: 4
-
-local: 11
-local: 8
-local: 6
-
-local: 17
-local: 14
-local: 10
-
-local: 7
-
-local: 26
-local: 14
-local: 10
-
-expired: 2
 
 Event date: Fri Sep 26
 
-local: 15
-local: 7
-
-local: 32
-local: 30
-local: 29
-local: 28
-
-local: 23
-local: 20
-local: 15
-local: 12
-
-local: 18
-local: 15
-
-local: 29
-local: 28
-local: 24
-local: 23
-
-local: 20
-local: 19
-local: 18
-local: 16
-
-local: 20
-local: 16
-local: 15
-
-local: 18
-local: 14
-local: 11
-local: 10
-
-expired: 7

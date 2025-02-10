@@ -156,6 +156,7 @@ def local_minimum(event):
     # posit swaps between the sailors in that crew and all the remaining sailors
     # calculate the score for each posited event
     # if the posited score is less than the event score, update the event with the posited event
+    # return the event with the lowest score
 
     event_score = score_from_event(event)
     if event_score == 0:
