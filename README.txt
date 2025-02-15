@@ -114,10 +114,9 @@ Self-service web-site
 
 The application works in conjunction with a Wixstudio web-site.  Boat owners and sailors provide information for the application using web forms.
 
-When the admin receives an email, they must save it in plain-text to a specific folder.  Old files are replaced when a new one is processed.
+When the admin receives an email, they must save it in plain-text to a folder called User input.  Old files are replaced when a new one is saved.
 
-It appears that registration forms submitted while the admin is logged-on may NOT produce email notifications.  Therefore, processing registrations
-should be performed quickly, seldom and outside peak times.
+It appears that registration forms submitted while the admin is logged-on may NOT produce email notifications.  Therefore, processing registrations should be performed quickly, seldom and outside peak times.
 
 Process
 
@@ -144,6 +143,8 @@ The key comprises the first and last names, concatenated and all lowercase.  The
 Event calendar
 
 The event calendar contains the assignments for the season, based on the current registered boats and sailors.
+
+process.py creates a file called assignments.html in the html folder.  This must be opened in a text editor, copied and pasted into the iframe of the calendar page.
 
 Data structures
 

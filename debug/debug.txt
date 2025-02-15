@@ -2,6 +2,15 @@
 Event date: Fri Jun 6
 
 
+
+
+
+
+
+
+
+expired: 8
+
 Event date: Fri Jun 13
 
 
@@ -13,6 +22,17 @@ Event date: Sat Jun 28
 
 Event date: Fri Jul 4
 
+
+local: 24
+
+
+local: 24
+
+
+
+
+
+expired: 24
 
 Event date: Fri Jul 11
 
@@ -26,6 +46,15 @@ Event date: Fri Jul 25
 Event date: Fri Aug 1
 
 
+
+
+
+
+
+
+
+expired: 16
+
 Event date: Sat Aug 9
 
 
@@ -37,6 +66,19 @@ Event date: Fri Aug 22
 
 Event date: Sat Aug 30
 
+
+local: 8
+
+local: 8
+
+local: 8
+
+
+
+local: 8
+
+
+expired: 8
 
 Event date: Fri Sep 5
 

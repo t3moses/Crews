@@ -2,51 +2,51 @@ Fri Jun 6
 
 boats
 
-
+gachaudron@gmail.com, ssottawa@outlook.com
 
 sailors
 
-
+angus134@gmail.com, al.bellehumeur@outlook.com
 
 Fri Jun 13
 
 boats
 
-
+tomkelly@tomkellyphoto.ca
 
 sailors
 
-
+angus134@gmail.com
 
 Fri Jun 20
 
 boats
 
-
+t3moses@icloud.com
 
 sailors
 
-
+al.bellehumeur@outlook.com, angus134@gmail.com
 
 Sat Jun 28
 
 boats
 
-
+ssottawa@outlook.com
 
 sailors
 
-
+angus134@gmail.com
 
 Fri Jul 4
 
 boats
 
-
+ssottawa@outlook.com, tomkelly@tomkellyphoto.ca
 
 sailors
 
-
+al.bellehumeur@outlook.com, angus134@gmail.com
 
 Fri Jul 11
 
@@ -62,11 +62,11 @@ Sat Jul 19
 
 boats
 
-
+ssottawa@outlook.com
 
 sailors
 
-
+al.bellehumeur@outlook.com
 
 Fri Jul 25
 
@@ -82,51 +82,51 @@ Fri Aug 1
 
 boats
 
-
+t3moses@icloud.com, tomkelly@tomkellyphoto.ca
 
 sailors
 
-
+angus134@gmail.com, al.bellehumeur@outlook.com, ssottawa@outlook.com
 
 Sat Aug 9
 
 boats
 
-
+ssottawa@outlook.com
 
 sailors
 
-
+angus134@gmail.com
 
 Fri Aug 15
 
 boats
 
-
+ssottawa@outlook.com
 
 sailors
 
-
+al.bellehumeur@outlook.com
 
 Fri Aug 22
 
 boats
 
-
+gachaudron@gmail.com
 
 sailors
 
-
+angus134@gmail.com
 
 Sat Aug 30
 
 boats
 
-
+gachaudron@gmail.com, ssottawa@outlook.com
 
 sailors
 
-
+al.bellehumeur@outlook.com, angus134@gmail.com
 
 Fri Sep 5
 
@@ -142,11 +142,11 @@ Fri Sep 12
 
 boats
 
-
+gachaudron@gmail.com
 
 sailors
 
-
+al.bellehumeur@outlook.com
 
 Fri Sep 19
 
@@ -162,9 +162,9 @@ Fri Sep 26
 
 boats
 
-
+gachaudron@gmail.com
 
 sailors
 
-
+al.bellehumeur@outlook.com
 

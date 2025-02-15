@@ -1,1 +1,5 @@
 key,owner key,display name,email address,mobile,female,min occupancy,max occupancy,assistance
+kookaburra,sylvieseufert,Kookaburra,ssottawa@outlook.com,613 371 9771 ,True,1,2,False
+triton,tomkelly,Triton,tomkelly@tomkellyphoto.ca,6139790784,False,1,2,True
+cariad,timmoses,Cariad,t3moses@icloud.com,613 325 4291,False,2,4,False
+xelha,georgesandréchaudronwmikeroper,Xel-ha,gachaudron@gmail.com,819-593-7212,False,1,4,False

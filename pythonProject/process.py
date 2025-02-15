@@ -40,7 +40,7 @@ def sailor_availability(sailor_key, event_date):
     # Return True unless the sailor is a boat owner and the boat is scheduled on the event date.
 
     # Check whether the sailor identified by the sailor key is a boat owner
-    # and (if so) is their boat sailing on the event date.
+    # and (if so) is their boat sailing on the event date?
     # If it is, then the sailor is NOT available.
 
     for boat in database.boats_data:
@@ -177,6 +177,8 @@ def enrol_boat(user_input):
     owner_last_name = user_input.get("Owner's last name")
     email_address = user_input.get("Owner's email address")
     mobile_number = user_input.get("Owner's mobile number")
+    if mobile_number == None:
+        mobile_number = "None"
     min_occupancy = user_input.get("Minimum number of sailors assigned by the program")
     max_occupancy = user_input.get("Maximum number of sailors assigned by the program")
 
@@ -184,7 +186,7 @@ def enrol_boat(user_input):
     owner_key = strings.key_from_strings(owner_first_name, owner_last_name)
 
     # If the boat account already exists, get the display name from the account.
-    # Then remove the account from the boats database and from the sailor whitelists..
+    # Then remove the account from the boats database and from the sailor whitelists.
     # If the boat account does not exist, create the display name from the supplied boat name.
 
     if strings.key_exists(boat_key, database.boats_data):
@@ -352,7 +354,7 @@ def enrol_sailor(user_input):
     available_sailor["key"] = key
     for event_date in constants.event_dates:
         if user_input.get(event_date) == "Available":
-            if sailor_availability(display_name, event_date):
+            if sailor_availability(key, event_date):
                 available_sailor[event_date] = "Y"
             else:  # The sailor is scheduled as a boat owner.
                 available_sailor[event_date] = ""
@@ -388,7 +390,7 @@ def register_boat(user_input):
     boat_name = user_input.get("Boat name")
     key = strings.key_from_string(boat_name)
 
-    # If the boat account does not exist, use the default boat to create a new account.
+    # If the boat account does not exist, create a new account using the default boat data.
 
     if not strings.key_exists(key, database.boats_data):
         display_name = strings.display_name_from_string(boat_name)
@@ -407,6 +409,8 @@ def register_boat(user_input):
             for event_date in constants.event_dates:
                 if user_input.get(event_date) == "Available":
                     boat[event_date] = "Y"
+                else:
+                    boat[event_date] = ""
                 sailor_unavailable(key, event_date)
             return
 
@@ -437,7 +441,7 @@ def register_sailor(user_input):
         if sailor["key"] == key:
             for event_date in constants.event_dates:
                 if user_input.get(event_date) == "I am available":
-                    if sailor_availability(display_name, event_date):
+                    if sailor_availability(key, event_date):
                         sailor[event_date] = "Y"
                     else: # The sailor is scheduled as a boat owner.
                         sailor[event_date] = ""

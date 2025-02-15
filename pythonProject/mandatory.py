@@ -27,26 +27,30 @@ def case_1(boats, sailors):
 
     # The number of sailors is less than the minimum number required.
     # Remove boats until the minimum number of sailors required is less than
-    # or equal to the number of sailors.
+    # or equal to the number of sailors available.
     # Then apply case 3.
 
     min_overall = 0
+    max_overall = 0
     for event_boat in boats:
         min_overall += [int(boat["min occupancy"]) for boat in database.boats_data if boat["key"] == event_boat][0]
+        max_overall += [int(boat["max occupancy"]) for boat in database.boats_data if boat["key"] == event_boat][0]
 
     while len(sailors) < min_overall:
         min_overall -= [int(boat["min occupancy"]) for boat in database.boats_data if boat["key"] == boats[-1]][0]
-        # min_overall -= int(boats[-1]["min occupancy"])
-        boats.pop() # Remove the last boat in the boats list.
+        max_overall -= [int(boat["max occupancy"]) for boat in database.boats_data if boat["key"] == boats[-1]][0]
+        boats.pop() # Remove the last boat in the list.
 
-    extended_flotilla = case_3(boats, sailors)
+    if len(sailors) > max_overall:
+        extended_flotilla = case_2(boats, sailors)
+    else:
+        extended_flotilla = case_3(boats, sailors)
 
     return extended_flotilla
 
 def case_2(boats, sailors):
 
     # The number of sailors is greater than the maximum number of spaces available.
-
     # Remove sailors until the number of sailors is equal to the maximum number of spaces available.
     # Then apply case 3.  Excess sailors are assigned to the wait list.
 
@@ -78,11 +82,11 @@ def case_3(event_boats, event_sailors):
                 min_overall += int(boat["min occupancy"])
                 max_overall += int(boat["max occupancy"])
 
-    if not ( len(event_sailors) >= min_overall ):
+    if len(event_sailors) < min_overall:
         print("Number of sailors is less than min_occupancy.")
         sys.exit(1)
 
-    if not ( len(event_sailors) <= max_overall ):
+    if len(event_sailors) > max_overall:
         print("Number of sailors is greater than max_occupancy.")
         sys.exit(1)
 

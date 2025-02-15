@@ -215,6 +215,7 @@ def discretionary(event):
         return event
 
     local_event = copy.deepcopy(event)
+    best_event = local_event
 
     for _ in range(constants.global_epochs):
 

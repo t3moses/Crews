@@ -1,2 +1,5 @@
 key,display name,partner key,email address,member,skill,experience,request female,whitelist
-chriscolumbus,ChrisC,,ccolum@example.com,True,2,I have sailed the ocean.,False,
+tomkelly,TomK,,tomkelly@tomkellyphoto.ca,True,2,I have sailed most of my life and have owned a number of boats large and small,False,triton;cariad;xelha
+sylvieseufert,SylvieS,,ssottawa@outlook.com,True,1,Keelboat sailing 1 certificate plus Tanzer 22 experience helming and crewing on various sailboats,False,triton;cariad;xelha
+albellehumeur,AlB,,al.bellehumeur@outlook.com,True,1,Basic Cruising,False,triton;cariad;xelha
+angusmacdonald,AngusM,,angus134@gmail.com,True,1,Beginner and Intermediate qualifications ,False,triton;cariad;xelha
