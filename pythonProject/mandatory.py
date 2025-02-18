@@ -1,195 +1,217 @@
 
 import database
-import sys
+import math
+import copy
 import random
 
-def mandatory(available_boats, available_sailors):
 
-    ordered_sailors = order_sailors_by_loyalty(available_sailors)
-    ordered_boats = order_boats_by_loyalty(available_boats)
+def max_berths(boat_keys):
 
-    min_occupancy = 0
-    max_occupancy = 0
-    for available_boat in available_boats:
-        min_occupancy += [int(boat['min occupancy']) for boat in database.boats_data if boat["key"] == available_boat][0]
-        max_occupancy += [int(boat['max occupancy']) for boat in database.boats_data if boat["key"] == available_boat][0]
+# Return the maximum number of berths available.
 
-    if len(ordered_sailors) < min_occupancy:
-        extended_flotilla = case_1(ordered_boats, ordered_sailors)
-    elif len(ordered_sailors) > max_occupancy:
-        extended_flotilla = case_2(ordered_boats, ordered_sailors)
-    else: # len(ordered_sailors) >= min_occupancy AND len(ordered_sailors) <= max_occupancy
-        extended_flotilla = case_3(ordered_boats, ordered_sailors)
+    berths = 0
+    for boat_key in boat_keys:
+        berths += int([boat["max occupancy"] for boat in database.boats_data if boat["key"] == boat_key][0])
 
-    return extended_flotilla
+    return berths
 
-def case_1(boats, sailors):
+def min_berths(boat_keys):
 
-    # The number of sailors is less than the minimum number required.
-    # Remove boats until the minimum number of sailors required is less than
-    # or equal to the number of sailors available.
-    # Then apply case 3.
+# Return the minimum number of sailors required.
 
-    min_overall = 0
-    max_overall = 0
-    for event_boat in boats:
-        min_overall += [int(boat["min occupancy"]) for boat in database.boats_data if boat["key"] == event_boat][0]
-        max_overall += [int(boat["max occupancy"]) for boat in database.boats_data if boat["key"] == event_boat][0]
+    berths = 0
+    for boat_key in boat_keys:
+        berths += int([boat["min occupancy"] for boat in database.boats_data if boat["key"] == boat_key][0])
 
-    while len(sailors) < min_overall:
-        min_overall -= [int(boat["min occupancy"]) for boat in database.boats_data if boat["key"] == boats[-1]][0]
-        max_overall -= [int(boat["max occupancy"]) for boat in database.boats_data if boat["key"] == boats[-1]][0]
-        boats.pop() # Remove the last boat in the list.
+    return berths
 
-    if len(sailors) > max_overall:
-        extended_flotilla = case_2(boats, sailors)
-    else:
-        extended_flotilla = case_3(boats, sailors)
+def remove_flex_sailor_keys(boat_keys, sailor_keys):
 
-    return extended_flotilla
+# Return the list of sailors that do not own one of the boats.
 
-def case_2(boats, sailors):
+    core_sailor_keys = copy.deepcopy(sailor_keys)
+    for sailor_key in sailor_keys:
+        for boat_key in boat_keys:
+            for boat in database.boats_data:        
+                if boat_key == boat["key"] and sailor_key == boat["owner key"]:
+                    core_sailor_keys.remove(sailor_key)
+    return core_sailor_keys
 
-    # The number of sailors is greater than the maximum number of spaces available.
-    # Remove sailors until the number of sailors is equal to the maximum number of spaces available.
-    # Then apply case 3.  Excess sailors are assigned to the wait list.
+def remove_flex_boat_keys(boat_keys, sailor_keys):
 
-    max_overall = 0
-    for available_boat in boats:
-        max_overall += [int(boat['max occupancy']) for boat in database.boats_data if boat["key"] == available_boat][0]
+# Return the list of boats whose owners are not amongst the sailors.
 
-    extended_flotilla = case_3(boats, sailors[ : max_overall])
-    extended_flotilla["wait list"] = sailors[max_overall : ]
+    core_boat_keys = copy.deepcopy(boat_keys)
+    for sailor_key in sailor_keys:
+        for boat_key in boat_keys:
+            for boat in database.boats_data:
+                if boat_key == boat["key"] and sailor_key == boat["owner key"]:
+                    core_boat_keys.remove(boat_key)
+    return core_boat_keys
 
-    return extended_flotilla
+def remove_most_loyal_sailor_key(sailor_keys):
 
-def case_3(event_boats, event_sailors):
+# Return the list of sailors having removed the one who has sailed most.
 
-    # The number of sailors is greater than or equal to minimum number required AND
-    # The number of sailors is less than or equal to the number of spaces available.
+    ordered_sailor_keys = order_sailor_keys_by_loyalty(sailor_keys)
+    ordered_sailor_keys.pop(-1)
+    return ordered_sailor_keys
 
-    # Set the occupancy of each boat, starting with min_occupancy.
-    # Order the boats by headroom.  For the boat with the greatest headroom, increment
-    # the occupancy by 1.  Repeat ordering and incrementing until overall_occupancy
-    # is equal to the number of sailors.
+def remove_most_loyal_boat_key(boat_keys):
 
-    min_overall = 0
-    max_overall = 0
-    for event_boat in event_boats:
-        for boat in database.boats_data:
-            if event_boat == boat["key"]:
-                boat["actual_occupancy"] = boat["min occupancy"]
-                min_overall += int(boat["min occupancy"])
-                max_overall += int(boat["max occupancy"])
+    # Return the list of boats having removed the one who has sailed most.
 
-    if len(event_sailors) < min_overall:
-        print("Number of sailors is less than min_occupancy.")
-        sys.exit(1)
+    ordered_boat_keys = order_boat_keys_by_loyalty(boat_keys)
+    ordered_boat_keys.pop(-1)
+    return ordered_boat_keys
 
-    if len(event_sailors) > max_overall:
-        print("Number of sailors is greater than max_occupancy.")
-        sys.exit(1)
+def boat_from_sailor(sailor_key):
 
-    overall_occupancy = min_overall
+# Return the boat that is owned by the sailor.
 
-    # Repeatedly add 1 to the occupancy of the boat with the greatest headroom,
-    # until overall_occupancy is equal to the number of sailors.
+    added_boat_key = [boat["key"] for boat in database.boats_data if boat["owner key"] == sailor_key][0]
+    return added_boat_key
 
-    while len(event_sailors) > overall_occupancy:
-        event_boats = order_boats_by_headroom(event_boats)
-        for boat in database.boats_data:
-            if event_boats[-1] == boat["key"]:
-                boat["actual_occupancy"] = str(int(boat["actual_occupancy"]) + 1)
-                overall_occupancy += 1
+def mandatory(all_boat_keys, all_sailor_keys):
 
-    extended_flotilla = {}
-    extended_flotilla["flotilla"] = assign(event_boats, event_sailors)
-    extended_flotilla["wait list"] = []
+    core_sailor_keys = remove_flex_sailor_keys(all_boat_keys, all_sailor_keys)
+    core_boat_keys = remove_flex_boat_keys(all_boat_keys, all_sailor_keys)
+    wait_sailor_keys = []
+    wait_boat_keys = []
 
-    return extended_flotilla
+    if len(core_sailor_keys) > max_berths(all_boat_keys): # over-demand - cut sailors
+        while len(core_sailor_keys) > max_berths(all_boat_keys):
+            redundant_sailor_key = order_sailor_keys_by_loyalty(core_sailor_keys)[-1]
+            core_sailor_keys.remove(redundant_sailor_key)
+            wait_sailor_keys.append(redundant_sailor_key)
 
-def assign(event_boats, event_sailors):
+        event_boat_keys = copy.deepcopy(all_boat_keys)
+        event_sailor_keys = copy.deepcopy(core_sailor_keys)
 
-    # Return crews, which is a list of crew by assigning sailors to boats.
+    elif len(all_sailor_keys) < min_berths(core_boat_keys): # over-supply - cut boats:
+        while len(all_sailor_keys) < min_berths(core_boat_keys) and len(core_boat_keys) > 1:
+            redundant_boat_key = order_boat_keys_by_loyalty(core_boat_keys)[-1]
+            core_boat_keys.remove(redundant_boat_key)
+            wait_boat_keys.append(redundant_boat_key)
 
-    # Reorder boats by boat loyalty,
-    # Randomize the sailors list before.
-    # Then assign boats and sailors to crews
-    # until the number of sailors assigned to each boat is equal to its occupancy.
-    # initial and final are the indices in sailors list of the first and last
-    # sailors assigned to a boat.
+        event_boat_keys = copy.deepcopy(core_boat_keys)
+        event_sailor_keys = copy.deepcopy(all_sailor_keys)
 
+    else: # supply and demand can match
+
+        sailor_keys = copy.copy(all_sailor_keys)
+        boat_keys = copy.copy(core_boat_keys)
+
+        while len(sailor_keys) > max_berths(boat_keys):
+            flex_sailor_keys = [sailor_key for sailor_key in sailor_keys if sailor_key not in core_sailor_keys]
+            skipper_key = order_sailor_keys_by_loyalty(flex_sailor_keys)[-1]
+            sailor_keys.remove(skipper_key)
+            boat_keys.append(boat_from_sailor(skipper_key))
+
+        event_boat_keys = copy.deepcopy(boat_keys)
+        event_sailor_keys = copy.deepcopy(sailor_keys)
+
+    event = {}
+    event["flotilla"] = assign(event_boat_keys, event_sailor_keys)
+    event["wait list"] = wait_sailor_keys
+
+    return event
+
+
+def assign(boat_keys, sailor_keys):
+
+    shuffled_sailor_keys = []
+    while len(sailor_keys) > 0:
+        sailor_key = sailor_keys[random.randint(0, len(sailor_keys) - 1)]
+        sailor_keys.remove(sailor_key)
+        shuffled_sailor_keys.append(sailor_key)
+
+    crew = {}
     crews = []
 
-    shuffled_sailors = []
-    while len(event_sailors) > 0:
-        sailor = event_sailors[random.randint(0, len(event_sailors) - 1)]
-        event_sailors.remove(sailor)
-        shuffled_sailors.append(sailor)
+    for boat_key in boat_keys:
+        crew["boat"] = boat_key
+        crews.append(copy.copy(crew))
 
-    initial = 0
+    space_min = 0
+    space_max = 0
+    for boat_key in boat_keys:
+        space_min += [int(boat["min occupancy"]) for boat in database.boats_data if boat["key"] == boat_key][0]
+        space_max += [int(boat["max occupancy"]) for boat in database.boats_data if boat["key"] == boat_key][0]
 
-    boats = order_boats_by_loyalty(event_boats)
+    space_spread = space_max - space_min
+    sailors_max = len(shuffled_sailor_keys)
+    sailors_spread = sailors_max - space_min
 
-    for event_boat in event_boats:
-        crew = {}
-        crew["boat"] = event_boat
-        final = initial + [int(boat["actual_occupancy"]) for boat in database.boats_data if boat["key"] == event_boat][0]
-        crew["sailors"] = shuffled_sailors[initial : final]
-        initial = final
-        crews.append(crew)
+    if space_spread == 0:
+        sailors_per_space = 0.0
+    else:
+        sailors_per_space = float(sailors_spread) / float(space_spread)
+
+    final_flt = 0.0
+    initial_int = 0
+    for i in range(len(crews) - 1):
+        min = [int(boat["min occupancy"]) for boat in database.boats_data if boat["key"] == crews[i]["boat"]][0]
+        max = [int(boat["max occupancy"]) for boat in database.boats_data if boat["key"] == crews[i]["boat"]][0]
+        spread = max - min
+        final_flt += float(min) + float(spread) * sailors_per_space
+        final_int = math.ceil(final_flt)
+        crews[i]["sailors"] = shuffled_sailor_keys[initial_int : final_int]
+        initial_int = final_int
+    if len(crews) > 0:
+        crews[-1]["sailors"] = shuffled_sailor_keys[initial_int : ]
 
     return crews
 
 
-def order_sailors_by_loyalty(sailors):
+def order_sailor_keys_by_loyalty(sailor_keys):
 
-    # Create a list that orders sailors by their membership status and loyalty band.
+    # Create a list that orders sailor keys by their membership status and loyalty band.
     # The order of sailors in the same loyalty band is randomized.
 
-    members = []
-    non_members = []
-    ordered_members = []
-    ordered_non_members = []
-    ordered_sailors = []
+    member_keys = []
+    non_member_keys = []
+    ordered_member_keys = []
+    ordered_non_member_keys = []
+    ordered_sailor_keys = []
 
     # Divide sailors into members and non-members.
 
-    for event_sailor in sailors:
+    for sailor_key in sailor_keys:
         for sailor in database.sailors_data:
-            if event_sailor == sailor["key"]:
+            if sailor["key"] == sailor_key:
                 if sailor["member"] == "True":
-                    members.append(event_sailor)
+                    member_keys.append(sailor_key)
                 else:
-                    non_members.append(event_sailor)
+                    non_member_keys.append(sailor_key)
 
     # Order members and non-members into lists of sailors in the same loyalty band.
 
-    i = len(members)
+    i = len(member_keys)
     loyalty = 0
     while i > 0:
-        equal_loyalty_members = [] # list of members in the same loyalty band.
-        for member in members:
+        equal_loyalty_member_keys = [] # list of members in the same loyalty band.
+        for member_key in member_keys:
             for sailor in database.sailors_data:
-                if member == sailor["key"]:
+                if sailor["key"] == member_key:
                     if int(sailor["loyalty"]) == loyalty:
-                        equal_loyalty_members.append(member)
+                        equal_loyalty_member_keys.append(member_key)
                         i -= 1
         loyalty += 1
-        ordered_members.extend(equal_loyalty_members)
+        ordered_member_keys.extend(equal_loyalty_member_keys)
 
-    i = len(non_members)
+    i = len(non_member_keys)
     loyalty = 0
     while i > 0:
-        equal_loyalty_non_members = []
-        for non_member in non_members:
+        equal_loyalty_non_member_keys = []
+        for non_member_key in non_member_keys:
             for sailor in database.sailors_data:
-                if non_member == sailor["key"]:
+                if sailor["key"] == non_member_key:
                     if int(sailor["loyalty"]) == loyalty:
-                        equal_loyalty_non_members.append(non_member)
+                        equal_loyalty_non_member_keys.append(non_member_key)
                         i -= 1
         loyalty += 1
-        ordered_non_members.extend(equal_loyalty_non_members)
+        ordered_non_member_keys.extend(equal_loyalty_non_member_keys)
 
     # For members first and then for non-members, randomize the order within each loyalty band.
     # Ordered_sailors will then contain the list of sailors in priority order.
@@ -197,109 +219,74 @@ def order_sailors_by_loyalty(sailors):
     # Then those in low loyalty bands are prioritized over those in higher bands.
 
     loyalty = 0
-    while len(ordered_members) > 0:
-        equal_loyalty_members = []
-        for member in ordered_members:
+    while len(ordered_member_keys) > 0:
+        equal_loyalty_member_keys = []
+        for member_key in ordered_member_keys:
             for sailor in database.sailors_data:
-                if member == sailor["key"]:
-                    equal_loyalty_members.append(member)
-        while len(equal_loyalty_members) > 0:
-            if len(equal_loyalty_members) > 1:
-                member_number = random.randint(0, len(equal_loyalty_members) - 1)
+                if member_key == sailor["key"]:
+                    equal_loyalty_member_keys.append(member_key)
+        while len(equal_loyalty_member_keys) > 0:
+            if len(equal_loyalty_member_keys) > 1:
+                member_number = random.randint(0, len(equal_loyalty_member_keys) - 1)
             else:
                 member_number = 0
-            next_member = equal_loyalty_members[member_number]
-            equal_loyalty_members.remove(next_member)
-            ordered_sailors.append(next_member)
-            ordered_members.remove(next_member)
+            next_member = equal_loyalty_member_keys[member_number]
+            equal_loyalty_member_keys.remove(next_member)
+            ordered_sailor_keys.append(next_member)
+            ordered_member_keys.remove(next_member)
         loyalty += 1
 
     loyalty = 0
-    while len(ordered_non_members) > 0:
-        equal_loyalty_non_members = []
-        for non_member in ordered_non_members:
+    while len(ordered_non_member_keys) > 0:
+        equal_loyalty_non_member_keys = []
+        for non_member_key in ordered_non_member_keys:
             for sailor in database.sailors_data:
-                if non_member == sailor["key"]:
+                if sailor["key"] == non_member_key:
                     if int(sailor["loyalty"]) == loyalty:
-                        equal_loyalty_non_members.append(non_member)
-        while len(equal_loyalty_non_members) > 0:
-            if len(equal_loyalty_non_members) > 1:
-                non_member_number = random.randint(0, len(equal_loyalty_non_members) - 1)
+                        equal_loyalty_non_member_keys.append(non_member_key)
+        while len(equal_loyalty_non_member_keys) > 0:
+            if len(equal_loyalty_non_member_keys) > 1:
+                non_member_number = random.randint(0, len(equal_loyalty_non_member_keys) - 1)
             else:
                 non_member_number = 0
-            next_non_member = equal_loyalty_non_members[non_member_number]
-            equal_loyalty_non_members.remove(next_non_member)
-            ordered_sailors.append(next_non_member)
-            ordered_non_members.remove(next_non_member)
+            next_non_member = equal_loyalty_non_member_keys[non_member_number]
+            equal_loyalty_non_member_keys.remove(next_non_member)
+            ordered_sailor_keys.append(next_non_member)
+            ordered_non_member_keys.remove(next_non_member)
         loyalty += 1
 
-    return ordered_sailors
+    return ordered_sailor_keys
 
 
-def order_boats_by_loyalty(boats):
+def order_boat_keys_by_loyalty(boat_keys):
 
     # Create a list that orders boats by their loyalty band.
     # The order of boats in the same loyalty band is randomized.
 
-    ordered_boats = []
-    banded_boats = [] # A list of lists of boats in the same loyalty band.
+    ordered_boat_keys = []
+    banded_boat_keys = [] # A list of lists of boats in the same loyalty band.
 
-    i = len(boats)
+    i = len(boat_keys)
     loyalty = 0
     while i > 0:
-        equal_loyalty_boats = [] # list of boats in the same loyalty band.
-        for event_boat in boats:
+        equal_loyalty_boat_keys = [] # list of boats in the same loyalty band.
+        for event_boat_key in boat_keys:
             for boat in database.boats_data:
-                if event_boat == boat["key"]:
+                if event_boat_key == boat["key"]:
                     if int(boat["loyalty"]) == loyalty:
-                        equal_loyalty_boats.append(event_boat)
+                        equal_loyalty_boat_keys.append(event_boat_key)
                         i -= 1
         loyalty += 1
-        banded_boats.append(equal_loyalty_boats)
+        banded_boat_keys.append(equal_loyalty_boat_keys)
 
-    while len(banded_boats) > 0:
-        while len(banded_boats[0]) > 0:
-            if len(banded_boats[0]) > 1:
-                boat_number = random.randint(0, len(banded_boats[0]) - 1)
+    while len(banded_boat_keys) > 0:
+        while len(banded_boat_keys[0]) > 0:
+            if len(banded_boat_keys[0]) > 1:
+                boat_number = random.randint(0, len(banded_boat_keys[0]) - 1)
             else:
                 boat_number = 0
-            ordered_boats.append(banded_boats[0][boat_number])
-            banded_boats[0].pop(boat_number)
-        banded_boats.pop(0)
+            ordered_boat_keys.append(banded_boat_keys[0][boat_number])
+            banded_boat_keys[0].pop(boat_number)
+        banded_boat_keys.pop(0)
 
-    return ordered_boats
-
-
-def order_boats_by_headroom(boats):
-
-    # Create a list that orders boats by their headroom band.
-    # A boat's headroom is the difference between its max_occupancy and its assigned occupancy.
-    # The order of boats in the same headroom band is randomized.
-
-    ordered_boats = []
-    banded_boats = []
-
-    i = len(boats)
-    headroom = 0
-    while i > 0:
-        headroom_boats = [] # list of boats in the same headroom band.
-        for event_boat in boats:
-            for boat in database.boats_data:
-                if event_boat == boat["key"]:
-                    if int(boat["max occupancy"]) - int(boat["actual_occupancy"]) == headroom:
-                        headroom_boats.append(event_boat)
-                        i -= 1
-        headroom += 1
-        banded_boats.append(headroom_boats)
-
-    while len(banded_boats) > 0:
-        while len(banded_boats[0]) > 0:
-            if len(banded_boats[0]) > 1:
-                boat_number = random.randint(0, len(banded_boats[0]) - 1)
-            else:
-                boat_number = 0
-            ordered_boats.append(banded_boats[0][boat_number])
-            banded_boats[0].pop(boat_number)
-        banded_boats.pop(0)
-
-    return ordered_boats
+    return ordered_boat_keys

@@ -1,5 +1,8 @@
 key,display name,partner key,email address,member,skill,experience,request female,whitelist
-tomkelly,TomK,,tomkelly@tomkellyphoto.ca,True,2,I have sailed most of my life and have owned a number of boats large and small,False,triton;cariad;xelha
-sylvieseufert,SylvieS,,ssottawa@outlook.com,True,1,Keelboat sailing 1 certificate plus Tanzer 22 experience helming and crewing on various sailboats,False,triton;cariad;xelha
-albellehumeur,AlB,,al.bellehumeur@outlook.com,True,1,Basic Cruising,False,triton;cariad;xelha
-angusmacdonald,AngusM,,angus134@gmail.com,True,1,Beginner and Intermediate qualifications ,False,triton;cariad;xelha
+tomkelly,TomK,,tomkelly@tomkellyphoto.ca,True,2,I have sailed most of my life and have owned a number of boats large and small,False,triton;cariad;xelha;wrightouswind;princessfe;brisa
+sylvieseufert,SylvieS,,ssottawa@outlook.com,True,1,Keelboat sailing 1 certificate plus Tanzer 22 experience helming and crewing on various sailboats,False,triton;cariad;xelha;wrightouswind;princessfe;brisa
+angusmacdonald,AngusM,,angus134@gmail.com,True,1,Beginner and Intermediate qualifications ,False,triton;cariad;xelha;wrightouswind;princessfe;brisa
+albellehumeur,AlB,,al.bellehumeur@outlook.com,True,1,Basic Cruising,False,triton;cariad;xelha;wrightouswind;princessfe;brisa
+greencheese,GreenC,,,False,0,,False,wrightouswind;princessfe;brisa
+donmclaughlin,DonM,,,False,0,,False,brisa;brisa
+fayeking,FayeK,,nsc.mxq9z@ncf.ca,True,1,"I've seen every episode of Gilligan's Island.  They also went on a ""3-hour tour"".",False,triton;cariad;xelha;wrightouswind;princessfe;brisa

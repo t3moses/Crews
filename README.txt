@@ -146,6 +146,11 @@ The event calendar contains the assignments for the season, based on the current
 
 process.py creates a file called assignments.html in the html folder.  This must be opened in a text editor, copied and pasted into the iframe of the calendar page.
 
+Over-capacity
+
+In the event that there are insufficient crew to meet the minimum required for the flotilla, boats are removed from the flotilla repeatedly until the minimum is equal to or less than the number of crew.
+First of all, boats whose skippers have also enrolled as sailors are removed.  Then boats that have sailed fewest times in the season are removed.
+
 Data structures
 
 An important data structure is the event:

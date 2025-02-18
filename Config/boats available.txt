@@ -3,3 +3,6 @@ kookaburra,Y,Y,,Y,Y,Y,Y,Y,,Y,Y,Y,Y,Y,Y,Y,Y
 triton,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
 cariad,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
 xelha,Y,Y,Y,,,,,,,,,Y,Y,Y,Y,Y,Y
+wrightouswind,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+princessfe,,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y
+brisa,,,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y,Y

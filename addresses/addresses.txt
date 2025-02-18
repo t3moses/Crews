@@ -2,107 +2,107 @@ Fri Jun 6
 
 boats
 
-gachaudron@gmail.com, ssottawa@outlook.com
+ssottawa@outlook.com, t3moses@icloud.com, gachaudron@gmail.com, 
 
 sailors
 
-angus134@gmail.com, al.bellehumeur@outlook.com
+angus134@gmail.com, , tomkelly@tomkellyphoto.ca, , al.bellehumeur@outlook.com
 
 Fri Jun 13
 
 boats
 
-tomkelly@tomkellyphoto.ca
+Don121@hotmail.com
 
 sailors
 
-angus134@gmail.com
+nsc.mxq9z@ncf.ca, tomkelly@tomkellyphoto.ca, angus134@gmail.com
 
 Fri Jun 20
 
 boats
 
-t3moses@icloud.com
+scott.alexander.mcdougall@gmail.com
 
 sailors
 
-al.bellehumeur@outlook.com, angus134@gmail.com
+tomkelly@tomkellyphoto.ca, angus134@gmail.com, al.bellehumeur@outlook.com
 
 Sat Jun 28
 
 boats
 
-ssottawa@outlook.com
+scott.alexander.mcdougall@gmail.com
 
 sailors
 
-angus134@gmail.com
+angus134@gmail.com, , tomkelly@tomkellyphoto.ca
 
 Fri Jul 4
 
 boats
 
-ssottawa@outlook.com, tomkelly@tomkellyphoto.ca
+Don121@hotmail.com, scott.alexander.mcdougall@gmail.com
 
 sailors
 
-al.bellehumeur@outlook.com, angus134@gmail.com
+ssottawa@outlook.com, al.bellehumeur@outlook.com, angus134@gmail.com, tomkelly@tomkellyphoto.ca
 
 Fri Jul 11
 
 boats
 
-
+scott.alexander.mcdougall@gmail.com
 
 sailors
 
-
+tomkelly@tomkellyphoto.ca
 
 Sat Jul 19
 
 boats
 
-ssottawa@outlook.com
+scott.alexander.mcdougall@gmail.com
 
 sailors
 
-al.bellehumeur@outlook.com
+tomkelly@tomkellyphoto.ca, al.bellehumeur@outlook.com
 
 Fri Jul 25
 
 boats
 
-
+scott.alexander.mcdougall@gmail.com
 
 sailors
 
-
+tomkelly@tomkellyphoto.ca
 
 Fri Aug 1
 
 boats
 
-t3moses@icloud.com, tomkelly@tomkellyphoto.ca
+Don121@hotmail.com, scott.alexander.mcdougall@gmail.com
 
 sailors
 
-angus134@gmail.com, al.bellehumeur@outlook.com, ssottawa@outlook.com
+ssottawa@outlook.com, angus134@gmail.com, al.bellehumeur@outlook.com, tomkelly@tomkellyphoto.ca
 
 Sat Aug 9
 
 boats
 
-ssottawa@outlook.com
+ssottawa@outlook.com, scott.alexander.mcdougall@gmail.com
 
 sailors
 
-angus134@gmail.com
+angus134@gmail.com, tomkelly@tomkellyphoto.ca
 
 Fri Aug 15
 
 boats
 
-ssottawa@outlook.com
+scott.alexander.mcdougall@gmail.com
 
 sailors
 
@@ -122,7 +122,7 @@ Sat Aug 30
 
 boats
 
-gachaudron@gmail.com, ssottawa@outlook.com
+ssottawa@outlook.com, gachaudron@gmail.com
 
 sailors
 
@@ -132,7 +132,7 @@ Fri Sep 5
 
 boats
 
-
+gachaudron@gmail.com
 
 sailors
 
@@ -152,7 +152,7 @@ Fri Sep 19
 
 boats
 
-
+gachaudron@gmail.com
 
 sailors
 

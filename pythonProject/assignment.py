@@ -42,27 +42,25 @@ def assignment():
 
             # List the boats and sailors available on the event date.
 
-            available_boats = []  # list of boats available on the event date.
+            available_boat_keys = []  # list of boats available on the event date.
             for available_boat in database.boats_availability:
                 if not available_boat[event_date] == "":
-                    for boat in database.boats_data:
-                        if available_boat["key"] == boat["key"]:
-                            available_boats.append(boat["key"])
+                    available_boat_keys.append(available_boat["key"])
 
-            available_sailors = []  # list of sailors available on the event date.
+            available_sailor_keys = []  # list of sailors available on the event date.
             for available_sailor in database.sailors_availability:
                 if not available_sailor[event_date] == '':
                     for sailor in database.sailors_data:
                         if available_sailor["key"] == sailor["key"]:
-                            available_sailors.append(sailor["key"])
+                            available_sailor_keys.append(sailor["key"])
 
             # For each available boat and sailor, calculate their loyalty band, and add it to their data.
             # Boat loyalty is the number of times they have sailed this season, according to boat availability.
             # Sailor loyalty is the number of times they have sailed this season, according to sailor history,
 
-            for available_boat in available_boats:
+            for available_boat_key in available_boat_keys:
                 for boat_availability in database.boats_availability:
-                    if available_boat == boat_availability["key"]:
+                    if available_boat_key == boat_availability["key"]:
                         loyalty = 0
                         for date in constants.event_dates:
                             if date == event_date:
@@ -70,25 +68,25 @@ def assignment():
                             if not boat_availability[date] == '':
                                 loyalty += 1
                         for i in range(len(database.boats_data)):
-                            if available_boat == database.boats_data[i]["key"]:
+                            if available_boat_key == database.boats_data[i]["key"]:
                                 database.boats_data[i]["loyalty"] = str(loyalty)
 
-            for available_sailor in available_sailors:
+            for available_sailor_key in available_sailor_keys:
                 for sailor_history in database.sailor_histories:
                     loyalty = 0
-                    if available_sailor == sailor_history["key"]:
+                    if available_sailor_key == sailor_history["key"]:
                         for date in constants.event_dates:
                             if date == event_date:
                                 break
                             if not sailor_history[date] == '':
                                 loyalty += 1
                         for i in range(len(database.sailors_data)):
-                            if available_sailor == database.sailors_data[i]["key"]:
+                            if available_sailor_key == database.sailors_data[i]["key"]:
                                 database.sailors_data[i]["loyalty"] = str(loyalty)
 
             # Form a new flotilla by applying the mandatory rules.
 
-            extended_flotilla = mandatory.mandatory(available_boats, available_sailors)
+            extended_flotilla = mandatory.mandatory(available_boat_keys, available_sailor_keys)
 
             event = {}
             event["date"] = event_date

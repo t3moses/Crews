@@ -21,36 +21,6 @@ def remove_dict(list, key, value):
         list.pop(indices[j])
     return list
 
-def sailor_unavailable(boat_key, event_date):
-
-    # If the owner of the boat is scheduled to be a sailor on the event date, then
-    # their availability for sailing is cancelled.
-
-    for boat in database.boats_data:
-        if boat["key"] == boat_key:
-            for sailor_availability in database.sailors_availability:
-                if sailor_availability["key"] == boat["owner key"]:
-                    sailor_availability[event_date] = ""
-                    break
-            break
-    return
-
-def sailor_availability(sailor_key, event_date):
-
-    # Return True unless the sailor is a boat owner and the boat is scheduled on the event date.
-
-    # Check whether the sailor identified by the sailor key is a boat owner
-    # and (if so) is their boat sailing on the event date?
-    # If it is, then the sailor is NOT available.
-
-    for boat in database.boats_data:
-        if boat["owner key"] == sailor_key:
-            for boat_availability in database.boats_availability:
-                if boat_availability["key"] == boat["key"]:
-                    if boat_availability[event_date] == "Y":
-                        return False
-    return True
-
 def remove_duplicate_boats(boat_key, boats_data, boats_availability, sailors_data):
 
     for boat in boats_data:
@@ -240,7 +210,6 @@ def enrol_boat(user_input):
                     boat[event_date] = "Y"
                 else:
                     boat[event_date] = ""
-                sailor_unavailable(boat_key, event_date)
 
     return
 
@@ -317,7 +286,6 @@ def enrol_sailor(user_input):
             new_sailor["partner key"] = sailor["key"]
             break
 
-
     # If the sailor prefers a female skipper, add ALL boats to their whitelist.
     # Else only add boats whose skipper is not female.
 
@@ -354,12 +322,10 @@ def enrol_sailor(user_input):
     available_sailor["key"] = key
     for event_date in constants.event_dates:
         if user_input.get(event_date) == "Available":
-            if sailor_availability(key, event_date):
-                available_sailor[event_date] = "Y"
-            else:  # The sailor is scheduled as a boat owner.
-                available_sailor[event_date] = ""
+            available_sailor[event_date] = "Y"
         else:
             available_sailor[event_date] = ""
+
     database.sailors_availability.append(available_sailor)
 
     # If the sailor is already in the histories database, delete future event entries.
@@ -411,7 +377,7 @@ def register_boat(user_input):
                     boat[event_date] = "Y"
                 else:
                     boat[event_date] = ""
-                sailor_unavailable(key, event_date)
+
             return
 
     return
@@ -437,19 +403,39 @@ def register_sailor(user_input):
         new_sailor["key"] = key
         new_sailor["display name"] = display_name
 
-    for sailor in database.sailors_availability:
-        if sailor["key"] == key:
+        # Add the new sailor data to the database,
+
+        database.sailors_data.append(new_sailor)
+
+    # Add the new sailor availability to the sailors availability database,
+    # unless the sailor is available as an owner on those dates.
+
+    available_sailor = {}
+    available_sailor["key"] = key
+    for event_date in constants.event_dates:
+        if user_input.get(event_date) == "I am available":
+            available_sailor[event_date] = "Y"
+        else:  # The sailor is scheduled as a boat owner.
+            available_sailor[event_date] = ""
+
+    database.sailors_availability.append(available_sailor)
+
+    # If the sailor is already in the histories database, delete future event entries.
+    # Otherwise, add the sailor to the histories database and set all events to empty.
+
+    date_format = '%a %b %d'
+
+    for sailor_history in database.sailor_histories:
+        if sailor_history["key"] == key:
             for event_date in constants.event_dates:
-                if user_input.get(event_date) == "I am available":
-                    if sailor_availability(key, event_date):
-                        sailor[event_date] = "Y"
-                    else: # The sailor is scheduled as a boat owner.
-                        sailor[event_date] = ""
-                else:
-                    sailor[event_date] = ""
-            return
-        else: pass
-    return
+                if datetime.datetime.strptime(event_date, date_format) >= datetime.datetime.now():
+                    sailor_history[event_date] = ""
+
+    sailor_history = {}
+    sailor_history["key"] = key
+    for event_date in constants.event_dates:
+        sailor_history[event_date] = ""
+    database.sailor_histories.append(sailor_history)
 
 # --------------------------------------------------
 
