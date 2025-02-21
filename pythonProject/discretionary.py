@@ -136,6 +136,30 @@ def score_from_crew(event, crew):
     return crew_score
 
 
+def explanation_from_event(event):
+
+    explanation = ""
+
+    for crew in event["flotilla"]:
+        score = score_from_crew(event, crew)
+        if score > 0:
+            explanation += crew["boat"] + " ("
+            if assist_score(crew) > 0:
+                explanation += "assist, "
+            if whitelist_score(crew) > 0:
+                explanation += "whitelist, "
+            if skill_score(crew) > 0:
+                explanation += "skill, "
+            if partner_score(crew) > 0:
+                explanation += "partner, "
+            if repeat_score(crew, event["date"]) > 0:
+                explanation += "repeat, "
+            explanation = explanation.rstrip(", ")
+            explanation += "), "
+    explanation = explanation.rstrip(", ")
+    return explanation
+
+
 def score_from_event(event):
 
     # return the overall non-compliance score for the event
@@ -158,6 +182,7 @@ def local_minimum(event):
     # if the posited score is less than the event score, update the event with the posited event
     # return the event with the lowest score
 
+    record = {}
     event_score = score_from_event(event)
     if event_score == 0:
         return event
@@ -185,7 +210,8 @@ def local_minimum(event):
                     posit_event_score = score_from_event(posit_event)
                     swapped = False
                     if posit_event_score < event_score:
-                        database.debug += "local: " + str(posit_event_score) + "\n"
+                        record["interim"] = str(posit_event_score)
+                        database.debug.append(record)
                         event_score = posit_event_score
                         local_event = copy.deepcopy(posit_event)
                         if event_score == 0:
@@ -210,8 +236,9 @@ def discretionary(event):
 
     event_score = score_from_event(event)
     if event_score == 0:
-        database.debug += "\n"
-        database.debug += "global: 0\n"
+        record = {}
+        record["final"] = "0"
+        database.debug.append(record)
         return event
 
     local_event = copy.deepcopy(event)
@@ -222,8 +249,9 @@ def discretionary(event):
         posit_event = local_minimum(local_event)
         posit_event_score = score_from_event(posit_event)
         if posit_event_score == 0:
-            database.debug += "\n"
-            database.debug += "global: 0\n"
+            record = {}
+            record["final"] = "0"
+            database.debug.append(record)
             return posit_event
         if posit_event_score < event_score:
             event_score = posit_event_score
@@ -240,9 +268,11 @@ def discretionary(event):
                 crew["sailors"].pop(i)
                 crew["sailors"].insert(i, sailor_list[0])
                 sailor_list.pop(0)
-        database.debug += "\n"
 
     best_score = score_from_event(best_event)
-    database.debug += "expired: " + str(best_score) + "\n"
+    record = {}
+    record["final"] = str(best_score)
+    record["explanation"] = explanation_from_event(best_event)
+    database.debug.append(record)
 
     return best_event

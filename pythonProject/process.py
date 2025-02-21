@@ -8,20 +8,9 @@ import crew_html
 import constants
 import datetime
 
-def remove_dict(list, key, value):
-
-    # Return the list of dictionaries having removed all entries containing the key:value pair.
-
-    indices = []
-    for i in range(len(list)):
-        if list[i][key] == value:
-            indices.append(i)
-    indices.reverse()
-    for j in range(len(indices)):
-        list.pop(indices[j])
-    return list
-
 def remove_duplicate_boats(boat_key, boats_data, boats_availability, sailors_data):
+
+    # Remove the boat identified by boat_key from the database.
 
     for boat in boats_data:
         if boat_key == boat["key"]:
@@ -147,7 +136,7 @@ def enrol_boat(user_input):
     owner_last_name = user_input.get("Owner's last name")
     email_address = user_input.get("Owner's email address")
     mobile_number = user_input.get("Owner's mobile number")
-    if mobile_number == None:
+    if mobile_number == None: # mobile number is not a required field in the web form.
         mobile_number = "None"
     min_occupancy = user_input.get("Minimum number of sailors assigned by the program")
     max_occupancy = user_input.get("Maximum number of sailors assigned by the program")
@@ -161,7 +150,6 @@ def enrol_boat(user_input):
 
     if strings.key_exists(boat_key, database.boats_data):
 
-        # boats_data_copy = []
         for boat in database.boats_data:
             if boat["key"] == boat_key:
                 display_name = boat["display name"]
@@ -402,6 +390,12 @@ def register_sailor(user_input):
         new_sailor = constants.default_sailor
         new_sailor["key"] = key
         new_sailor["display name"] = display_name
+        whitelist = ""
+        for boat in database.boats_data:
+            if boat["female"] == "False":
+                whitelist += boat["key"] + ";"
+        whitelist.rstrip(";")
+        new_sailor["whitelist"] = whitelist
 
         # Add the new sailor data to the database,
 

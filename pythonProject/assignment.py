@@ -28,7 +28,10 @@ def assignment():
 
     for event_date in constants.event_dates:
 
-        database.debug += "\nEvent date: " + event_date + "\n\n"
+        record = {}
+        record["date"] = event_date
+        database.debug.append(record)
+
         addresses.add_date(event_date)
 
         event_datetime = datetime.datetime.strptime(event_date, date_format)
@@ -93,14 +96,17 @@ def assignment():
             event["flotilla"] = extended_flotilla["flotilla"]
             event["wait list"] = extended_flotilla["wait list"]
 
-            addresses.add_boats(event)
-            addresses.add_sailors(event)
-            crew_info.add_info(event)
 
             # Modify the flotilla by applying the discretionary rules.
 
             if len(event["flotilla"]) > 1:
                 event = discretionary.discretionary(event)
+
+            # Update the addresses and crew information files with the data for the event date.
+
+            addresses.add_boats(event)
+            addresses.add_sailors(event)
+            crew_info.add_info(event)
 
             # Update the sailor_histories file with the crew assignments for the event date.
 
@@ -115,3 +121,5 @@ def assignment():
             database.html = crew_html.html(event)
 
     return
+
+# --------------------------------------------------

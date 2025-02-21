@@ -9,20 +9,20 @@ boats_availability_filename = ""
 sailors_availability_filename = ""
 sailor_histories_filename = ""
 user_input_form_filename = ""
-assignments_file_name = ""
-debug_file_name = ""
-addresses_file_name = ""
-crew_info_file_name = ""
+assignments_filename = ""
+debug_filename = ""
+addresses_filename = ""
+crew_info_filename = ""
 
 boats_data = [] # list of boat data dictionaries.
 sailors_data = [] # list of sailor data dictionaries.
 boats_availability = [] # list of boats availability dictionaries.
 sailors_availability = [] # list of sailors availability dictionaries.
 sailor_histories = [] # list of sailor histories dictionaries.
+debug = [] # list of debug records.
 
 form = "" # contents of the user input form.
 html = "" # contents of the event calendar output html.
-debug = "" # contents of the debug file.
 addresses = "" # contents of the addresses file.
 crew_info = "" # contents of the addresses file.
 
@@ -38,10 +38,10 @@ def begin():
     global sailors_availability_filename
     global sailor_histories_filename
     global user_input_form_filename
-    global assignments_file_name
-    global debug_file_name
-    global addresses_file_name
-    global crew_info_file_name
+    global assignments_filename
+    global debug_filename
+    global addresses_filename
+    global crew_info_filename
     global boats_data
     global sailors_data
     global boats_availability
@@ -70,10 +70,10 @@ def begin():
     sailors_availability_filename = Working_directory+s_line_4.split(': ')[1].split(' //')[0]
     sailor_histories_filename = Working_directory+s_line_5.split(': ')[1].split(' //')[0]
     user_input_form_filename = Working_directory+s_line_6.split(': ')[1].split(' //')[0]
-    assignments_file_name = Working_directory+s_line_7.split(': ')[1].split(' //')[0]
-    debug_file_name = Working_directory+s_line_8.split(': ')[1].split(' //')[0]
-    addresses_file_name = Working_directory+s_line_9.split(': ')[1].split(' //')[0]
-    crew_info_file_name = Working_directory+s_line_10.split(': ')[1].split(' //')[0]
+    assignments_filename = Working_directory+s_line_7.split(': ')[1].split(' //')[0]
+    debug_filename = Working_directory+s_line_8.split(': ')[1].split(' //')[0]
+    addresses_filename = Working_directory+s_line_9.split(': ')[1].split(' //')[0]
+    crew_info_filename = Working_directory+s_line_10.split(': ')[1].split(' //')[0]
 
     # Open the boat data file.  If it doesn't yet exist, create it.
     # Import boats data.
@@ -206,7 +206,7 @@ def end():
     global sailors_availability_filename
     global sailor_histories_filename
     global debug_filename
-    global assignments_file_name
+    global assignments_filename
     global boats_data
     global sailors_data
     global boats_availability
@@ -267,19 +267,22 @@ def end():
         writer.writerow(sailor_history)
     sailor_histories_file.close()
 
-    assignments_file = open(assignments_file_name, 'w', newline='')
+    debug_file = open(debug_filename, 'w', newline='')
+    writer = csv.DictWriter(debug_file, fieldnames=constants.debug_header_row)
+    writer.writeheader()
+    for record in debug:
+        writer.writerow(record)
+    debug_file.close()
+
+    assignments_file = open(assignments_filename, 'w', newline='')
     assignments_file.write(html)
     assignments_file.close()
 
-    debug_file = open(debug_file_name, 'w', newline='')
-    debug_file.write(debug)
-    debug_file.close()
-
-    addresses_file = open(addresses_file_name, 'w', newline='')
+    addresses_file = open(addresses_filename, 'w', newline='')
     addresses_file.write(addresses)
     addresses_file.close()
 
-    crew_info_file = open(crew_info_file_name, 'w', newline='')
+    crew_info_file = open(crew_info_filename, 'w', newline='')
     crew_info_file.write(crew_info)
     crew_info_file.close()
 

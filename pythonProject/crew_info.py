@@ -32,7 +32,7 @@ def begin():
 
 def add_info(event):
 
-    # Store details of the next event.
+    # Store details of the participants in the next event.
 
     global next_event_date
 
@@ -49,5 +49,6 @@ def add_info(event):
                         experience = sailor["experience"]
                         experience = experience.replace("+u002C", ",")
                         experience = experience.replace("+u2028", "\n")
-                        database.crew_info += experience + "\n"
+                        database.crew_info += experience
+            database.crew_info += "\n"
     return

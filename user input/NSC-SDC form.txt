@@ -1,54 +1,63 @@
-From: "NSC-SDC admin" <NSC-sdc@nsc.ca>
+From: NSC-SDC admin <NSC-sdc@nsc.ca>
 Subject: NSC-SDC form
-Date: February 15, 2025 at 2:41:06 PM EST
-To: "nsc-sdc" <nsc-sdc@nsc.ca>
-Reply-To: NSC-sdc@nsc.ca
+Date: February 14, 2025 at 12:15:29 PM EST
+To: nsc-sdc <nsc-sdc@nsc.ca>
+Reply-To: NSC-SDC admin <NSC-sdc@nsc.ca>
 
 Can't see this message? View in a browser
  
-Enter sailor availability
+Open boat account
 
 Submission summary:
-First name:
-Green  
-Last name:
-Cheese  
+Boat name:
+Cariad  
+Owner's first name:
+Tim  
+Owner's last name:
+Moses  
+Owner's email address:
+t3moses@icloud.com  
+Owner's mobile number:
+613 325 4291  
+Minimum number of sailors assigned by the program:
+2  
+Maximum number of sailors assigned by the program:
+4  
 Fri Jun 6:
-I am available  
+Available  
 Fri Jun 13:
-I am not available  
+Available  
 Fri Jun 20:
-I am not available  
+Available  
 Sat Jun 28:
-I am available  
+Available  
 Fri Jul 4:
-I am not available  
+Available  
 Fri Jul 11:
-I am not available  
+Available  
 Sat Jul 19:
-I am not available  
+Available  
 Fri Jul 25:
-I am not available  
+Available  
 Fri Aug 1:
-I am not available  
+Available  
 Sat Aug 9:
-I am not available  
+Available  
 Fri Aug 15:
-I am not available  
+Available  
 Fri Aug 22:
-I am not available  
+Available  
 Sat Aug 30:
-I am not available  
+Available  
 Fri Sep 5:
-I am not available  
+Available  
 Fri Sep 12:
-I am not available  
+Available  
 Fri Sep 19:
-I am not available  
+Available  
 Fri Sep 26:
-I am not available  
+Available  
 
 This email was created with Wix.‌ Discover More
  
 This email was sent as a notification from this site.
-  
