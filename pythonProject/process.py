@@ -344,49 +344,48 @@ def register_boat(user_input):
     boat_name = user_input.get("Boat name")
     key = strings.key_from_string(boat_name)
 
-    # If the boat account does not exist, create a new account using the default boat data.
+    # If the boat account does not exist, create and populate a new account using the default boat data.
 
-    if not strings.key_exists(key, database.boats_data):
+    if strings.key_exists(key, database.boats_data):
+        pass
+    else:
         display_name = strings.display_name_from_string(boat_name)
         new_boat = constants.default_boat
         new_boat["key"] = key
         new_boat["display name"] = display_name
-
-        # Add the new boat to the boats database.
-
         database_from_boat(new_boat, database.boats_data, database.boats_availability, database.sailors_data)
 
     # Update the boats availability file.
 
+    date_format = '%a %b %d'
+
     for boat in database.boats_availability:
         if boat["key"] == key:
             for event_date in constants.event_dates:
-                if user_input.get(event_date) == "Available":
-                    boat[event_date] = "Y"
-                else:
-                    boat[event_date] = ""
-
-            return
-
-    return
+                if datetime.datetime.strptime(event_date, date_format) >= datetime.datetime.now():
+                    if user_input.get(event_date) == "Available":
+                        boat[event_date] = "Y"
+                    else:
+                        boat[event_date] = ""
 
 
 def register_sailor(user_input):
 
-    # Check if the sailor is already enrolled, based on entries in the sailors data file.
-    # If not, enrol the default sailor augmented with the name from the form.
-    # Update the sailor availability file with information from the form.
-
-    # Check if the sailor is also a boat owner who is registered for any of the dates.
-    # Prioritize the boat owner role over the sailor role.
+    # Get the sailor data from the user input.
 
     first_name = user_input.get("First name")
     last_name = user_input.get("Last name")
     key = strings.key_from_strings(first_name, last_name)
     display_name = strings.display_name_from_strings(first_name, last_name, database.sailors_data)
 
-    if not strings.key_exists(key, database.sailors_data):
+    # Check if the sailor is already enrolled, based on entries in the sailors data,
+    # sailors availability and sailor histories files.
 
+    # If they are not already enrolled, create and populate entries in the respective files.
+
+    if strings.key_exists(key, database.sailors_data):
+        pass
+    else:
         new_sailor = constants.default_sailor
         new_sailor["key"] = key
         new_sailor["display name"] = display_name
@@ -394,42 +393,40 @@ def register_sailor(user_input):
         for boat in database.boats_data:
             if boat["female"] == "False":
                 whitelist += boat["key"] + ";"
-        whitelist.rstrip(";")
+        whitelist = whitelist.rstrip(";")
         new_sailor["whitelist"] = whitelist
-
-        # Add the new sailor data to the database,
-
         database.sailors_data.append(new_sailor)
 
-    # Add the new sailor availability to the sailors availability database,
-    # unless the sailor is available as an owner on those dates.
-
-    available_sailor = {}
-    available_sailor["key"] = key
-    for event_date in constants.event_dates:
-        if user_input.get(event_date) == "I am available":
-            available_sailor[event_date] = "Y"
-        else:  # The sailor is scheduled as a boat owner.
+    if strings.key_exists(key, database.sailors_availability):
+        pass
+    else:
+        available_sailor = {}
+        available_sailor["key"] = key
+        for event_date in constants.event_dates:
             available_sailor[event_date] = ""
+        database.sailors_availability.append(available_sailor)
 
-    database.sailors_availability.append(available_sailor)
+    if strings.key_exists(key, database.sailor_histories):
+        pass
+    else:
+        sailor_history = {}
+        sailor_history["key"] = key
+        for event_date in constants.event_dates:
+            sailor_history[event_date] = ""
+        database.sailor_histories.append(sailor_history)
 
-    # If the sailor is already in the histories database, delete future event entries.
-    # Otherwise, add the sailor to the histories database and set all events to empty.
+    # Update the sailor's future availability in the sailors availability database, based on user input,
 
     date_format = '%a %b %d'
 
-    for sailor_history in database.sailor_histories:
-        if sailor_history["key"] == key:
+    for available_sailor in database.sailors_availability:
+        if available_sailor["key"] == key:
             for event_date in constants.event_dates:
                 if datetime.datetime.strptime(event_date, date_format) >= datetime.datetime.now():
-                    sailor_history[event_date] = ""
-
-    sailor_history = {}
-    sailor_history["key"] = key
-    for event_date in constants.event_dates:
-        sailor_history[event_date] = ""
-    database.sailor_histories.append(sailor_history)
+                    if user_input.get(event_date) == "I am available":
+                        available_sailor[event_date] = "Y"
+                    else:
+                        available_sailor[event_date] = ""
 
 # --------------------------------------------------
 
