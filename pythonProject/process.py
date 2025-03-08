@@ -358,11 +358,14 @@ def register_boat(user_input):
     # Update the boats availability file.
 
     date_format = '%a %b %d'
+    this_year = datetime.date.today().year
+    today = datetime.datetime.today()
 
     for boat in database.boats_availability:
         if boat["key"] == key:
             for event_date in constants.event_dates:
-                if datetime.datetime.strptime(event_date, date_format) >= datetime.datetime.now():
+                full_event_date = datetime.datetime.strptime(event_date, date_format).replace(year = this_year)
+                if full_event_date >= today:
                     if user_input.get(event_date) == "Available":
                         boat[event_date] = "Y"
                     else:
@@ -418,11 +421,14 @@ def register_sailor(user_input):
     # Update the sailor's future availability in the sailors availability database, based on user input,
 
     date_format = '%a %b %d'
+    this_year = datetime.date.today().year
+    today = datetime.datetime.today()
 
     for available_sailor in database.sailors_availability:
         if available_sailor["key"] == key:
             for event_date in constants.event_dates:
-                if datetime.datetime.strptime(event_date, date_format) >= datetime.datetime.now():
+                full_event_date = datetime.datetime.strptime(event_date, date_format).replace(year = this_year)
+                if full_event_date >= today:
                     if user_input.get(event_date) == "I am available":
                         available_sailor[event_date] = "Y"
                     else:
