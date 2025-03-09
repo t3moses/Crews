@@ -189,7 +189,6 @@ def enrol_boat(user_input):
     database_from_boat(new_boat, database.boats_data, database.boats_availability, database.sailors_data)
 
     # Add the new boat availability to the boats availability database.
-    # Make the owner unavailable as a sailor on those dates.
 
     for boat in database.boats_availability:
         if boat["key"] == boat_key:
@@ -207,7 +206,7 @@ def enrol_sailor(user_input):
     display_name = ""
 
     # Add the sailor described by the form to the sailors data file, the sailors available file
-    # and the sailor histories.
+    # and the sailor histories file.
 
     first_name = user_input.get("First name")
     last_name = user_input.get("Last name")
@@ -304,7 +303,6 @@ def enrol_sailor(user_input):
     database.sailors_data.append(new_sailor)
 
     # Add the new sailor availability to the sailors availability database,
-    # unless the sailor is available as an owner on those dates.
 
     available_sailor = {}
     available_sailor["key"] = key
@@ -316,23 +314,27 @@ def enrol_sailor(user_input):
 
     database.sailors_availability.append(available_sailor)
 
-    # If the sailor is already in the histories database, delete future event entries.
+    # If the sailor is already in the histories database, delete future event entries,
+    # leaving past availability untouched..
     # Otherwise, add the sailor to the histories database and set all events to empty.
 
     date_format = '%a %b %d'
+    this_year = datetime.date.today().year
+    today = datetime.date.today()
 
-    for sailor_history in database.sailor_histories:
-        if sailor_history["key"] == key:
-            for event_date in constants.event_dates:
-                if datetime.datetime.strptime(event_date, date_format) >= datetime.datetime.now():
-                    sailor_history[event_date] = ""
-            return
-
-    sailor_history = {}
-    sailor_history["key"] = key
-    for event_date in constants.event_dates:
-        sailor_history[event_date] = ""
-    database.sailor_histories.append(sailor_history)
+    if strings.key_exists(key, database.sailor_histories):
+        for sailor_history in database.sailor_histories:
+            if sailor_history["key"] == key:
+                for event_date in constants.event_dates:
+                    full_event_date = datetime.datetime.strptime(event_date, date_format).replace(year = this_year)
+                    if full_event_date >= today:
+                        sailor_history[event_date] = ""
+    else:
+        sailor_history = {}
+        sailor_history["key"] = key
+        for event_date in constants.event_dates:
+            sailor_history[event_date] = ""
+        database.sailor_histories.append(sailor_history)
 
     return
 
@@ -359,7 +361,7 @@ def register_boat(user_input):
 
     date_format = '%a %b %d'
     this_year = datetime.date.today().year
-    today = datetime.datetime.today()
+    today = datetime.date.today()
 
     for boat in database.boats_availability:
         if boat["key"] == key:
@@ -422,7 +424,7 @@ def register_sailor(user_input):
 
     date_format = '%a %b %d'
     this_year = datetime.date.today().year
-    today = datetime.datetime.today()
+    today = datetime.date.today()
 
     for available_sailor in database.sailors_availability:
         if available_sailor["key"] == key:
@@ -439,7 +441,7 @@ def register_sailor(user_input):
 database.begin()
 crew_html.begin()
 
-# Convert the form to a dictionary of boat data.
+# Add the form contents to the database.
 
 user_input = user_input_from_form(database.form)
 
