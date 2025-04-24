@@ -217,8 +217,8 @@ def enrol_sailor(user_input):
 
     key = strings.key_from_strings(first_name, last_name)
 
-    if membership_number == "":
-        member = "False" # string not Boolean.
+    if ( membership_number == None ) or ( len( membership_number ) < 6 ):
+        member = "False" # member is a string not a Boolean.
     else:
         member = "True"
 
@@ -326,7 +326,7 @@ def enrol_sailor(user_input):
         for sailor_history in database.sailor_histories:
             if sailor_history["key"] == key:
                 for event_date in constants.event_dates:
-                    full_event_date = datetime.datetime.strptime(event_date, date_format).replace(year = this_year)
+                    full_event_date = datetime.datetime.strptime(event_date, date_format).replace(year = this_year).date()
                     if full_event_date >= today:
                         sailor_history[event_date] = ""
     else:
@@ -366,7 +366,7 @@ def register_boat(user_input):
     for boat in database.boats_availability:
         if boat["key"] == key:
             for event_date in constants.event_dates:
-                full_event_date = datetime.datetime.strptime(event_date, date_format).replace(year = this_year)
+                full_event_date = datetime.datetime.strptime(event_date, date_format).replace(year = this_year).date()
                 if full_event_date >= today:
                     if user_input.get(event_date) == "Available":
                         boat[event_date] = "Y"
@@ -429,7 +429,7 @@ def register_sailor(user_input):
     for available_sailor in database.sailors_availability:
         if available_sailor["key"] == key:
             for event_date in constants.event_dates:
-                full_event_date = datetime.datetime.strptime(event_date, date_format).replace(year = this_year)
+                full_event_date = datetime.datetime.strptime(event_date, date_format).replace(year = this_year).date()
                 if full_event_date >= today:
                     if user_input.get(event_date) == "I am available":
                         available_sailor[event_date] = "Y"
