@@ -1,0 +1,2 @@
+001: When a boat owner or sailor opens an account by clicking on the submit button, the browser should load a page that indicates the request has been received and offers a link to reload the program description page.
+

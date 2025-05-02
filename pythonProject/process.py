@@ -217,7 +217,7 @@ def enrol_sailor(user_input):
 
     key = strings.key_from_strings(first_name, last_name)
 
-    if ( membership_number == None ) or ( len( membership_number ) < 6 ):
+    if ( membership_number == None ) or ( len( membership_number ) < constants.min_membership_number_length ):
         member = "False" # member is a string not a Boolean.
     else:
         member = "True"

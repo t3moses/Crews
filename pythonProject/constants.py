@@ -7,6 +7,7 @@ default_boat = { "key" : "", "owner key" : "", "display name" : "", "email addre
 default_sailor = { "key" : "", "display name" : "", "partner key" : "", "email address" : "", "member" : "False", "skill" : "0", "experience" : "", "request female" : "False","whitelist" : ""}
 rules = ["assist", "whitelist", "skill", "partner", "repeat"]
 streak = 2 # Minimum compliant gap between repeats.
+min_membership_number_length = 6 # Genuine membership numbers may be 6 to 9 digits in length.
 global_epochs = 8 # Iterations to find 'global' minimum.
 local_epochs = 6 # Iterations to find 'local' minimum.
 assist_weight = 16

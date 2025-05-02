@@ -120,11 +120,15 @@ def mandatory(all_boat_keys, all_sailor_keys):
 
 def assign(boat_keys, sailor_keys):
 
+    # Create shuffled_sailor_keys by randomly shuffling sailor_keys.
+
     shuffled_sailor_keys = []
     while len(sailor_keys) > 0:
         sailor_key = sailor_keys[random.randint(0, len(sailor_keys) - 1)]
         sailor_keys.remove(sailor_key)
         shuffled_sailor_keys.append(sailor_key)
+
+    # Create crews by adding boat_keys to an initially-empty list of crews.
 
     crew = {}
     crews = []
@@ -132,6 +136,8 @@ def assign(boat_keys, sailor_keys):
     for boat_key in boat_keys:
         crew["boat"] = boat_key
         crews.append(copy.copy(crew))
+
+    # Calculate sailors_per_space as the .
 
     space_min = 0
     space_max = 0
