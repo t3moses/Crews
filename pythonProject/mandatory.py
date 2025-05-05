@@ -186,7 +186,7 @@ def order_sailor_keys_by_loyalty(sailor_keys):
     for sailor_key in sailor_keys:
         for sailor in database.sailors_data:
             if sailor["key"] == sailor_key:
-                if sailor["member"] == "True":
+                if sailor["member"] == "TRUE":
                     member_keys.append(sailor_key)
                 else:
                     non_member_keys.append(sailor_key)
