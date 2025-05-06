@@ -120,7 +120,11 @@ It appears that registration forms submitted while the admin is logged-on may NO
 
 Process
 
+The calendar is updated in one of two ways.
+
 process.py processes the contents of the email sent to the admin when a boat-owner or sailor submits a form.  It updates the database files described above.
+
+recalculate.py updates the calendar without processing an email.
 
 Boat owners and sailors should open an account.  This allows them to enter information about themselves and their boat.
 
