@@ -41,14 +41,16 @@ def add_info(event):
             boat_name = [boat["display name"] for boat in database.boats_data if boat["key"] == crew["boat"]][0]
             database.crew_info += boat_name + " "
             boat_mobile = [boat["mobile"] for boat in database.boats_data if boat["key"] == crew["boat"]][0]
-            database.crew_info += boat_mobile + "\n"
+            database.crew_info += boat_mobile + "\n\n"
             for event_sailor in crew["sailors"]:
                 for sailor in database.sailors_data:
                     if event_sailor == sailor["key"]:
-                        database.crew_info += " " + sailor["display name"] + "\n"
+                        database.crew_info += sailor["display name"] + "\n"
                         experience = sailor["experience"]
                         experience = experience.replace("+u002C", ",")
                         experience = experience.replace("+u2028", "\n")
-                        database.crew_info += experience
+                        experience.rstrip("\n")
+                        experience += "\n"
+                        database.crew_info += experience + "\n"
             database.crew_info += "\n"
     return
