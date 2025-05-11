@@ -213,7 +213,7 @@ def enrol_sailor(user_input):
     email_address = user_input.get("Email address")
     membership_number = user_input.get("NSC membership number")
     background = user_input.get("Background")
-    experience = user_input.get("Qualifications and experience")
+    experience = user_input.get("Qualifications and experience", "")
 
     key = strings.key_from_strings(first_name, last_name)
 

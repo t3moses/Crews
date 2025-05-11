@@ -4,3 +4,10 @@
 
 003: Address line-break issues in the crew info.txt file.  RESOLVED.
 
+004: File "/crew_info.py", line 50, in add_info
+    experience = experience.replace("+u002C", ",")
+                 ^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'replace'
+
+This occurs when the registrant leaves the Qualifications and experience field blank.  RESOLVED.
+

@@ -49,8 +49,7 @@ def add_info(event):
                         experience = sailor["experience"]
                         experience = experience.replace("+u002C", ",")
                         experience = experience.replace("+u2028", "\n")
-                        experience.rstrip("\n")
-                        experience += "\n"
-                        database.crew_info += experience + "\n"
+                        experience.rstrip("\n") # Replace one or more "\n" characters with two "\n" characters.
+                        database.crew_info += experience + "\n" + "\n"
             database.crew_info += "\n"
     return
