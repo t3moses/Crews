@@ -1,6 +1,6 @@
 001: When a boat owner or sailor opens an account by clicking on the submit button, the browser should load a page that indicates the request has been received and offers a link to reload the program description page.
 
-002: When a sailor enters their availability without opening an account, their whitelist should be recorded in the database.
+002: When a sailor enters their availability without opening an account, their whitelist should be recorded in the database.  RESOLVED.
 
 003: Address line-break issues in the crew info.txt file.  RESOLVED.
 

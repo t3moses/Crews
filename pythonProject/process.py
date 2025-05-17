@@ -396,7 +396,7 @@ def register_sailor(user_input):
         new_sailor["display name"] = display_name
         whitelist = ""
         for boat in database.boats_data:
-            if boat["female"] == "False":
+            if boat["female"].upper() == "FALSE":
                 whitelist += boat["key"] + ";"
         whitelist = whitelist.rstrip(";")
         new_sailor["whitelist"] = whitelist

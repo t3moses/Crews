@@ -68,7 +68,7 @@ def assist_score(crew):
     # return 0.  Otherwise, return assist_weight
 
     assist = [boat["assistance"] for boat in database.boats_data if boat["key"] == crew["boat"]][0]
-    if assist == "FALSE":
+    if assist.upper() == "FALSE":
         return 0
     for event_sailor in crew["sailors"]:
         skill = [sailor["skill"] for sailor in database.sailors_data if sailor["key"] == event_sailor][0]

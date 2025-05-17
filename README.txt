@@ -75,17 +75,22 @@ In case the number of sailors is greater than the available spaces, then the wai
 
 User interactions
 
-The program description web page provides links to web forms for submitting:
+The program description web page includes links for registration as a:
 
-Boat information
-Sailor information
-Event calendar
+Boat owner
+crew member
 
-The first two of these contain an "Update" button.  Clicking this causes an email to be sent to the admin.
+And a link to the event calendar.
+
+Registration involves opening an account and setting initial availability for program events.
+
+If the registrant's availability changes, it can be updated without reopening the account.
+
+Clicking the update button causes an email to be sent to the admin.
 
 Set-up
 
-Some or all of the files may be created using a text editor or spreadsheet.  In case they don't exist, they will be created when the script runs.
+Some or all of the files may be created using a text editor or spreadsheet program.  In case they don't exist, they will be created when the script runs.
 
 The program checks the consistency of the boat names, sailor names and event dates amongst the files.  It raises an exception if an inconsistency is encountered.
 
@@ -109,6 +114,9 @@ Configure Python Launcher to
 Copy the Python and config files to a folder.
 
 Double-click the process.py file.
+
+Double-clicking recalculate.py refreshes the assignments.html file without importing new boat or sailor data.
+This is useful if any of the .csv files have been edited directly.
 
 Self-service web-site
 
@@ -181,11 +189,13 @@ https://github.com/t3moses/Crews
 
 Reports
 
-process.py creates reports:
+process.py and recalculate.py create reports:
 
 1. address.txt contains the email addresses of participants in all future events, separating boat owners from sailors.
 
 2. crew_info.txt contains the resumes of sailors in the next event organized by boat.
 
 The latter is intended to be provided to the boat owners taking part in the upcoming event.
+
+3. debug.txt lists the non-compliance scores for each iteration and each event date.  It also lists the causes of non-compliance in the final assignment.
 
