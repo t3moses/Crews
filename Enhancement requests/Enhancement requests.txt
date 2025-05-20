@@ -11,3 +11,5 @@ AttributeError: 'NoneType' object has no attribute 'replace'
 
 This occurs when the registrant leaves the Qualifications and experience field blank.  RESOLVED.
 
+005: Let form submitters know the contents of the form they submitted.  RESOLVED by offering a submission receipt by email.
+
