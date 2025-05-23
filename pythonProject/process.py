@@ -42,9 +42,9 @@ def database_from_boat(new_boat, boats_data, boats_availability, sailors_data):
     # If the new boat has a female skipper, add it to the whitelist of every sailor that requested a female skipper.
     # If the new boat's skipper is not female, add it to every sailor's whitelist.
 
-    if new_boat["female"] == "True":
+    if new_boat["female"].upper() == "TRUE":
         for sailor in sailors_data:
-            if sailor["request female"] == "True":
+            if sailor["request female"].upper() == "TRUE":
                 if len(sailor["whitelist"]) != 0:
                     sailor["whitelist"] += ";"
                 sailor["whitelist"] += new_boat["key"]
@@ -170,7 +170,7 @@ def enrol_boat(user_input):
 
     print()
     response = input("Does " + boat_name + " have a female skipper? (Y/N):")
-    if response == "Y" or response == "y":
+    if response.upper() == "Y":
         new_boat["female"] = "True"
     else:
         new_boat["female"] = "False"
@@ -277,14 +277,14 @@ def enrol_sailor(user_input):
     # Else only add boats whose skipper is not female.
 
     whitelist = ""
-    if request_female == "True":
+    if request_female.upper() == "TRUE":
         for boat in database.boats_data:
             if len(whitelist) != 0:
                 whitelist += ";"
             whitelist += boat["key"]
     else:
         for boat in database.boats_data:
-            if not boat["female"] == "True":
+            if not boat["female"].upper() == "TRUE":
                 if len(whitelist) != 0:
                     whitelist += ";"
                 whitelist += boat["key"]
