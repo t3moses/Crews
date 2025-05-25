@@ -14,3 +14,7 @@ This occurs when the registrant leaves the Qualifications and experience field b
 005: Let form submitters know the contents of the form they submitted.  RESOLVED by offering a submission receipt by email.
 
 006: When a female skipper registers add their boat to the whitelist of every sailor that requested a female skipper.  RESOLVED.
+
+007: If the wait list is longer than the highest boat occupancy, spread it over multiple lines.
+Needs updates to AS_2_25 crew_html.py lines 40-42, 69-79.
+

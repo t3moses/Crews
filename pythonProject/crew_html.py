@@ -37,10 +37,6 @@ def html(event):
         crew_size = len(crew["sailors"])
         if crew_size > max_crew_size:
             max_crew_size = crew_size
-    crew_size = len(event["wait list"])
-    if crew_size > max_crew_size:
-        max_crew_size = crew_size
-
     table_width = ( max_crew_size + 1 ) * column_width
 
     global contents
@@ -66,14 +62,21 @@ def html(event):
                 for _ in range( empty_cells ):
                     contents += "<td>" + "" + "</td>"
                 contents += "</tr>"
-    contents += "<tr><td>" + "Wait list" + "</td>"
-    for event_sailor in event["wait list"]:
-        for sailor in database.sailors_data:
-            if event_sailor == sailor["key"]:
-                contents += "<td>" + sailor["display name"] + "</td>"
-    empty_cells = max_crew_size - len(event["wait list"])
-    for _ in range( empty_cells ):
-        contents += "<td>" + "" + "</td>"
+
+    for row_index in range( len( event[ "wait list" ]) // max_crew_size + 1 ):
+        if row_index == 0:
+            contents += "<tr><td>Wait list</td>"
+        else:
+            contents += "<tr><td></td>"
+        for column_index in range(max_crew_size):
+            cell_index = max_crew_size * row_index + column_index
+            if cell_index < len(event["wait list"]):
+                wait_list_sailor_key = event["wait list"][cell_index]
+                for sailor in database.sailors_data:
+                    if wait_list_sailor_key == sailor["key"]:
+                        contents += "<td>" + sailor["display name"] + "</td>"
+            else:
+                contents += "<td></td>"
     contents += "</tr></table>"
 
     html = top + contents + tail
