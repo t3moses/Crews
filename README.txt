@@ -30,6 +30,12 @@ Discretionary rules (in priority order):
 - Members of a partnership should not be assigned to the same boat.
 - Sailors should be assigned to the same boat as few times as possible throughout the season.
 
+No-show rule
+
+A sailor is categorized as a no-show if, at any time in the current season, they registered but did not show up or cancelled later than 10:00 AM on the event day.  The administrator should record this by entering N in the sailor histories.txt file in the location corresponding to the specific sailor and specific event date.
+
+No-shows, whether member or non-member, are assigned the lowest priority for the remainder of the season.  If there is more than one sailor in the no-show sub-category, then their relative priorities are assigned randomly.
+
 Neural network
 
 Once the mandatory rules have been applied, crews are ordered by their non-compliance score.

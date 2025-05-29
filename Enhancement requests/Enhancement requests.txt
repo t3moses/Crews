@@ -16,5 +16,15 @@ This occurs when the registrant leaves the Qualifications and experience field b
 006: When a female skipper registers add their boat to the whitelist of every sailor that requested a female skipper.  RESOLVED.
 
 007: If the wait list is longer than the highest boat occupancy, spread it over multiple lines.
-Needs updates to AS_2_25 crew_html.py lines 40-42, 69-79.
+Needs updates to AS_2_25 crew_html.py lines 40-42, 69-79.  RESOLVED.
+
+008: Move no-shows to the lowest priority.
+
+assignment.py block starting with line 77 goes through the history of available sailors to calculate loyalty, which gets added to database.sailors_data.  This is where to determine whether an available sailor has been a no-show in the past, and add the no-show string to database.sailors_data.
+
+In mandatory.py starting at line 173, sailors are divided into members and non-members and ordered by loyalty, then randomized within bands of equal loyalty.  Add a thrid category: no_shows.  No_shows are marked by an "N" in their history.  The "N" is entered by the administrator.  No_shows are extracted from the list of sailors before dividing into members and non-members.  But, they are then listed after non-members in the list of sailors.  RESOLVED.
+
+009: When the last line of a wait list in the calendar is full, an empty extra line is added.  There is no need for this.  RESOLVED.
+
+010: When members are placed on the wait list, they should be the first entries.  RESOLVED.
 

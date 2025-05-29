@@ -68,7 +68,7 @@ def assignment():
                         for date in constants.event_dates:
                             if date == event_date:
                                 break
-                            if not boat_availability[date] == '':
+                            if boat_availability[date].upper() == 'Y':
                                 loyalty += 1
                         for i in range(len(database.boats_data)):
                             if available_boat_key == database.boats_data[i]["key"]:
@@ -81,11 +81,28 @@ def assignment():
                         for date in constants.event_dates:
                             if date == event_date:
                                 break
-                            if not sailor_history[date] == '':
+                            if sailor_history[date].upper() == 'Y':
                                 loyalty += 1
                         for i in range(len(database.sailors_data)):
                             if available_sailor_key == database.sailors_data[i]["key"]:
                                 database.sailors_data[i]["loyalty"] = str(loyalty)
+
+            # For each available sailor, calculate their no_show status, and add it to their data.
+            # no_show status is TRUE if their availability entry is 'N' for any date prior to the event_date.
+
+            for available_sailor_key in available_sailor_keys:
+                for sailors_availability in database.sailors_availability:
+                    if available_sailor_key == sailors_availability["key"]:
+                        no_show = "FALSE"
+                        for date in constants.event_dates:
+                            if sailors_availability[date].upper() == 'N':
+                                no_show = "TRUE"
+                                break
+                            elif date == event_date:
+                                break
+                        for i in range(len(database.sailors_data)):
+                            if available_sailor_key == database.sailors_data[i]["key"]:
+                                database.sailors_data[i]["no_show"] = no_show
 
             # Form a new flotilla by applying the mandatory rules.
 

@@ -83,7 +83,7 @@ def mandatory(all_boat_keys, all_sailor_keys):
         while len(core_sailor_keys) > max_berths(all_boat_keys):
             redundant_sailor_key = order_sailor_keys_by_loyalty(core_sailor_keys)[-1]
             core_sailor_keys.remove(redundant_sailor_key)
-            wait_sailor_keys.append(redundant_sailor_key)
+            wait_sailor_keys.insert(0, redundant_sailor_key)
 
         event_boat_keys = copy.deepcopy(all_boat_keys)
         event_sailor_keys = copy.deepcopy(core_sailor_keys)
@@ -137,7 +137,7 @@ def assign(boat_keys, sailor_keys):
         crew["boat"] = boat_key
         crews.append(copy.copy(crew))
 
-    # Calculate sailors_per_space as the .
+    # Calculate sailors_per_space.
 
     space_min = 0
     space_max = 0
@@ -172,21 +172,24 @@ def assign(boat_keys, sailor_keys):
 
 def order_sailor_keys_by_loyalty(sailor_keys):
 
-    # Create a list that orders sailor keys by their membership status and loyalty band.
-    # The order of sailors in the same loyalty band is randomized.
+    # Create a list that orders sailor keys by their membership and no_shoe status.
+    # The order of sailors in the same band is randomized.
 
     member_keys = []
     non_member_keys = []
+    no_show_keys = []
     ordered_member_keys = []
     ordered_non_member_keys = []
     ordered_sailor_keys = []
 
-    # Divide sailors into members and non-members.
+    # Divide sailors into members, non-members and no_shows.
 
     for sailor_key in sailor_keys:
         for sailor in database.sailors_data:
             if sailor["key"] == sailor_key:
-                if sailor["member"].upper() == "TRUE":
+                if sailor["no_show"].upper() == "TRUE":
+                    no_show_keys.append(sailor_key)
+                elif sailor["member"].upper() == "TRUE":
                     member_keys.append(sailor_key)
                 else:
                     non_member_keys.append(sailor_key)
@@ -223,6 +226,7 @@ def order_sailor_keys_by_loyalty(sailor_keys):
     # Ordered_sailors will then contain the list of sailors in priority order.
     # First, members are prioritized over non-members.
     # Then those in low loyalty bands are prioritized over those in higher bands.
+    # The order of no_shows is randomized and appended to Ordered_sailors.
 
     loyalty = 0
     while len(ordered_member_keys) > 0:
@@ -260,6 +264,15 @@ def order_sailor_keys_by_loyalty(sailor_keys):
             ordered_sailor_keys.append(next_non_member)
             ordered_non_member_keys.remove(next_non_member)
         loyalty += 1
+
+    while len( no_show_keys ) > 0:
+        if len( no_show_keys ) > 1:
+            no_show_number = random.randint( 0, len( no_show_keys ) - 1)
+        else:
+            no_show_number = 0
+        next_no_show = no_show_keys[ no_show_number ]
+        ordered_sailor_keys.append( next_no_show )
+        no_show_keys.remove( next_no_show )
 
     return ordered_sailor_keys
 
