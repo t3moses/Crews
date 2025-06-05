@@ -1,3 +1,5 @@
+
+import math
 import database
 
 top = ""
@@ -63,7 +65,7 @@ def html(event):
                     contents += "<td>" + "" + "</td>"
                 contents += "</tr>"
 
-    for row_index in range( len( event[ "wait list" ]) // max_crew_size + 1 ):
+    for row_index in range(math.ceil(len(event["wait list"]) / max_crew_size)):
         if row_index == 0:
             contents += "<tr><td>Wait list</td>"
         else:
