@@ -83,7 +83,7 @@ def mandatory(all_boat_keys, all_sailor_keys):
         while len(core_sailor_keys) > max_berths(all_boat_keys):
             redundant_sailor_key = order_sailor_keys_by_loyalty(core_sailor_keys)[-1]
             core_sailor_keys.remove(redundant_sailor_key)
-            wait_sailor_keys.append(redundant_sailor_key)
+            wait_sailor_keys.insert(0, redundant_sailor_key)
 
         event_boat_keys = copy.deepcopy(all_boat_keys)
         event_sailor_keys = copy.deepcopy(core_sailor_keys)
