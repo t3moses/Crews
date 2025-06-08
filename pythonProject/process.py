@@ -308,7 +308,7 @@ def enrol_sailor(user_input):
     available_sailor["key"] = key
     for event_date in constants.event_dates:
         if user_input.get(event_date) == "Available":
-            available_sailor[event_date] = "Y"
+            available_sailor[event_date] = "A"
         else:
             available_sailor[event_date] = ""
 
@@ -432,7 +432,7 @@ def register_sailor(user_input):
                 full_event_date = datetime.datetime.strptime(event_date, date_format).replace(year = this_year).date()
                 if full_event_date >= today:
                     if user_input.get(event_date) == "I am available":
-                        available_sailor[event_date] = "Y"
+                        available_sailor[event_date] = "A"
                     else:
                         available_sailor[event_date] = ""
 

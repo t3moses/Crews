@@ -239,7 +239,7 @@ def end():
 
     # Update the boats availability file.
 
-    boat_availability_header_row = ["key"] + constants.event_dates
+    boat_availability_header_row = ["key"] + constants.event_ids
     boats_availability_file = open(boats_availability_filename, 'w', newline='')
     writer = csv.DictWriter(boats_availability_file, fieldnames=boat_availability_header_row)
     writer.writeheader()
@@ -249,7 +249,7 @@ def end():
 
     # Update the sailors availability file.
 
-    sailor_availability_header_row = ["key"] + constants.event_dates
+    sailor_availability_header_row = ["key"] + constants.event_ids
     sailors_availability_file = open(sailors_availability_filename, 'w', newline='')
     writer = csv.DictWriter(sailors_availability_file, fieldnames=sailor_availability_header_row)
     writer.writeheader()
@@ -259,7 +259,7 @@ def end():
 
     # Update the sailor histories file.
 
-    sailor_histories_header_row = ["key"] + constants.event_dates
+    sailor_histories_header_row = ["key"] + constants.event_ids
     sailor_histories_file = open(sailor_histories_filename, 'w', newline='')
     writer = csv.DictWriter(sailor_histories_file, fieldnames=sailor_histories_header_row)
     writer.writeheader()

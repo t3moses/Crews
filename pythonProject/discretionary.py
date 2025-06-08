@@ -112,13 +112,13 @@ def partner_score(crew):
     return 0
 
 
-def repeat_score(crew, event_date):
+def repeat_score(crew, event_id):
 
     for sailor in crew["sailors"]:
         sailor_history = [history for history in database.sailor_histories if history["key"] == sailor][0]
-        event_index = constants.event_dates.index(event_date)
+        event_index = constants.event_ids.index(event_id)
         for index in (max(0, event_index - constants.streak), max(0, event_index - 1)):
-            if sailor_history[constants.event_dates[index]] == crew["boat"]:
+            if sailor_history[constants.event_ids[index]] == crew["boat"]:
                 return constants.repeat_weight
     return 0
 

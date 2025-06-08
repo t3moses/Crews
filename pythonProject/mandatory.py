@@ -53,7 +53,7 @@ def remove_most_loyal_sailor_key(sailor_keys):
 
 # Return the list of sailors having removed the one who has sailed most.
 
-    ordered_sailor_keys = order_sailor_keys_by_loyalty(sailor_keys)
+    ordered_sailor_keys = order_sailor_keys(sailor_keys)
     ordered_sailor_keys.pop(-1)
     return ordered_sailor_keys
 
@@ -81,7 +81,7 @@ def mandatory(all_boat_keys, all_sailor_keys):
 
     if len(core_sailor_keys) > max_berths(all_boat_keys): # over-demand - cut sailors
         while len(core_sailor_keys) > max_berths(all_boat_keys):
-            redundant_sailor_key = order_sailor_keys_by_loyalty(core_sailor_keys)[-1]
+            redundant_sailor_key = order_sailor_keys(core_sailor_keys)[-1]
             core_sailor_keys.remove(redundant_sailor_key)
             wait_sailor_keys.insert(0, redundant_sailor_key)
 
@@ -104,7 +104,7 @@ def mandatory(all_boat_keys, all_sailor_keys):
 
         while len(sailor_keys) > max_berths(boat_keys):
             flex_sailor_keys = [sailor_key for sailor_key in sailor_keys if sailor_key not in core_sailor_keys]
-            skipper_key = order_sailor_keys_by_loyalty(flex_sailor_keys)[-1]
+            skipper_key = order_sailor_keys(flex_sailor_keys)[-1]
             sailor_keys.remove(skipper_key)
             boat_keys.append(boat_from_sailor(skipper_key))
 
@@ -137,7 +137,7 @@ def assign(boat_keys, sailor_keys):
         crew["boat"] = boat_key
         crews.append(copy.copy(crew))
 
-    # Calculate sailors_per_space as the .
+    # Calculate sailors_per_space.
 
     space_min = 0
     space_max = 0
@@ -170,7 +170,7 @@ def assign(boat_keys, sailor_keys):
     return crews
 
 
-def order_sailor_keys_by_loyalty(sailor_keys):
+def order_sailor_keys(sailor_keys):
 
     # Create a list that orders sailor keys by their membership status and loyalty band.
     # The order of sailors in the same loyalty band is randomized.

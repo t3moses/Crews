@@ -12,21 +12,28 @@ def begin():
 
     global next_event_date
 
-    database.crew_info = ""
     date_format = '%a %b %d'
-
     current_datetime = datetime.datetime.now()
-    first_day = datetime.datetime.strptime(constants.event_dates[0], date_format)
-    last_datetime = datetime.datetime.strptime(constants.event_dates[-1], date_format)
-    if current_datetime > last_datetime:
-        current_day = int(first_day.timetuple().tm_yday)
+    current_date = current_datetime.date()
 
-    for event_date in constants.event_dates:
-        event_day = datetime.datetime.strptime(event_date, date_format).timetuple().tm_yday
-        if event_day > current_day:
+    first_datetime = datetime.datetime.strptime(constants.event_ids[0], date_format)
+    first_date = datetime.date(current_date.year, first_datetime.month, first_datetime.day)
+
+    last_datetime = datetime.datetime.strptime(constants.event_ids[-1], date_format)
+    last_date = datetime.date(current_date.year, last_datetime.month, last_datetime.day)
+
+    if current_date > last_date: # You must be working on next year's calendar.
+        current_date = first_date
+
+    for event_id in constants.event_ids:
+
+        event_datetime = datetime.datetime.strptime(event_id, date_format)
+        event_date = datetime.date(current_date.year, event_datetime.month, event_datetime.day)
+
+        if event_date > current_date:
             return
         else:
-            next_event_date = event_date
+            next_event_date = event_id
 
     return
 
