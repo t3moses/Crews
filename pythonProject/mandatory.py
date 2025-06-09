@@ -1,4 +1,4 @@
-
+import constants
 import database
 import math
 import copy
@@ -27,7 +27,7 @@ def min_berths(boat_keys):
 
 def remove_flex_sailor_keys(boat_keys, sailor_keys):
 
-# Return the list of sailors that do not own one of the boats.
+    # Return the list of sailors who do not own one of the boats.
 
     core_sailor_keys = copy.deepcopy(sailor_keys)
     for sailor_key in sailor_keys:
@@ -48,7 +48,7 @@ def remove_flex_boat_keys(boat_keys, sailor_keys):
                 if boat_key == boat["key"] and sailor_key == boat["owner key"]:
                     core_boat_keys.remove(boat_key)
     return core_boat_keys
-
+'''
 def remove_most_loyal_sailor_key(sailor_keys):
 
 # Return the list of sailors having removed the one who has sailed most.
@@ -64,7 +64,7 @@ def remove_most_loyal_boat_key(boat_keys):
     ordered_boat_keys = order_boat_keys_by_loyalty(boat_keys)
     ordered_boat_keys.pop(-1)
     return ordered_boat_keys
-
+'''
 def boat_from_sailor(sailor_key):
 
 # Return the boat that is owned by the sailor.
@@ -72,102 +72,39 @@ def boat_from_sailor(sailor_key):
     added_boat_key = [boat["key"] for boat in database.boats_data if boat["owner key"] == sailor_key][0]
     return added_boat_key
 
-def mandatory(all_boat_keys, all_sailor_keys):
 
-    core_sailor_keys = remove_flex_sailor_keys(all_boat_keys, all_sailor_keys)
-    core_boat_keys = remove_flex_boat_keys(all_boat_keys, all_sailor_keys)
-    wait_sailor_keys = []
-    wait_boat_keys = []
+def order_boat_keys_by_loyalty(boat_keys):
 
-    if len(core_sailor_keys) > max_berths(all_boat_keys): # over-demand - cut sailors
-        while len(core_sailor_keys) > max_berths(all_boat_keys):
-            redundant_sailor_key = order_sailor_keys(core_sailor_keys)[-1]
-            core_sailor_keys.remove(redundant_sailor_key)
-            wait_sailor_keys.insert(0, redundant_sailor_key)
+    # Create a list that orders boats by their loyalty band.
+    # The order of boats in the same loyalty band is randomized.
 
-        event_boat_keys = copy.deepcopy(all_boat_keys)
-        event_sailor_keys = copy.deepcopy(core_sailor_keys)
+    ordered_boat_keys = []
+    banded_boat_keys = [] # A list of lists of boats in the same loyalty band.
 
-    elif len(all_sailor_keys) < min_berths(core_boat_keys): # over-supply - cut boats:
-        while len(all_sailor_keys) < min_berths(core_boat_keys) and len(core_boat_keys) > 1:
-            redundant_boat_key = order_boat_keys_by_loyalty(core_boat_keys)[-1]
-            core_boat_keys.remove(redundant_boat_key)
-            wait_boat_keys.append(redundant_boat_key)
+    i = len(boat_keys)
+    loyalty = 0
+    while i > 0:
+        equal_loyalty_boat_keys = [] # list of boats in the same loyalty band.
+        for event_boat_key in boat_keys:
+            for boat in database.boats_data:
+                if event_boat_key == boat["key"]:
+                    if int(boat["loyalty"]) == loyalty:
+                        equal_loyalty_boat_keys.append(event_boat_key)
+                        i -= 1
+        loyalty += 1
+        banded_boat_keys.append(equal_loyalty_boat_keys)
 
-        event_boat_keys = copy.deepcopy(core_boat_keys)
-        event_sailor_keys = copy.deepcopy(all_sailor_keys)
+    while len(banded_boat_keys) > 0:
+        while len(banded_boat_keys[0]) > 0:
+            if len(banded_boat_keys[0]) > 1:
+                boat_number = random.randint(0, len(banded_boat_keys[0]) - 1)
+            else:
+                boat_number = 0
+            ordered_boat_keys.append(banded_boat_keys[0][boat_number])
+            banded_boat_keys[0].pop(boat_number)
+        banded_boat_keys.pop(0)
 
-    else: # supply and demand can match
-
-        sailor_keys = copy.copy(all_sailor_keys)
-        boat_keys = copy.copy(core_boat_keys)
-
-        while len(sailor_keys) > max_berths(boat_keys):
-            flex_sailor_keys = [sailor_key for sailor_key in sailor_keys if sailor_key not in core_sailor_keys]
-            skipper_key = order_sailor_keys(flex_sailor_keys)[-1]
-            sailor_keys.remove(skipper_key)
-            boat_keys.append(boat_from_sailor(skipper_key))
-
-        event_boat_keys = copy.deepcopy(boat_keys)
-        event_sailor_keys = copy.deepcopy(sailor_keys)
-
-    event = {}
-    event["flotilla"] = assign(event_boat_keys, event_sailor_keys)
-    event["wait list"] = wait_sailor_keys
-
-    return event
-
-
-def assign(boat_keys, sailor_keys):
-
-    # Create shuffled_sailor_keys by randomly shuffling sailor_keys.
-
-    shuffled_sailor_keys = []
-    while len(sailor_keys) > 0:
-        sailor_key = sailor_keys[random.randint(0, len(sailor_keys) - 1)]
-        sailor_keys.remove(sailor_key)
-        shuffled_sailor_keys.append(sailor_key)
-
-    # Create crews by adding boat_keys to an initially-empty list of crews.
-
-    crew = {}
-    crews = []
-
-    for boat_key in boat_keys:
-        crew["boat"] = boat_key
-        crews.append(copy.copy(crew))
-
-    # Calculate sailors_per_space.
-
-    space_min = 0
-    space_max = 0
-    for boat_key in boat_keys:
-        space_min += [int(boat["min occupancy"]) for boat in database.boats_data if boat["key"] == boat_key][0]
-        space_max += [int(boat["max occupancy"]) for boat in database.boats_data if boat["key"] == boat_key][0]
-
-    space_spread = space_max - space_min
-    sailors_max = len(shuffled_sailor_keys)
-    sailors_spread = sailors_max - space_min
-
-    if space_spread == 0:
-        sailors_per_space = 0.0
-    else:
-        sailors_per_space = float(sailors_spread) / float(space_spread)
-
-    final_flt = 0.0
-    initial_int = 0
-    for i in range(len(crews) - 1):
-        min = [int(boat["min occupancy"]) for boat in database.boats_data if boat["key"] == crews[i]["boat"]][0]
-        max = [int(boat["max occupancy"]) for boat in database.boats_data if boat["key"] == crews[i]["boat"]][0]
-        spread = max - min
-        final_flt += float(min) + float(spread) * sailors_per_space
-        final_int = math.ceil(final_flt)
-        crews[i]["sailors"] = shuffled_sailor_keys[initial_int : final_int]
-        initial_int = final_int
-    if len(crews) > 0:
-        crews[-1]["sailors"] = shuffled_sailor_keys[initial_int : ]
-
-    return crews
+    return ordered_boat_keys
 
 
 def order_sailor_keys(sailor_keys):
@@ -264,35 +201,154 @@ def order_sailor_keys(sailor_keys):
     return ordered_sailor_keys
 
 
-def order_boat_keys_by_loyalty(boat_keys):
+def assign(boat_keys, sailor_keys):
 
-    # Create a list that orders boats by their loyalty band.
-    # The order of boats in the same loyalty band is randomized.
+    # Create crews by adding boat_keys to an initially-empty list of crews.
 
-    ordered_boat_keys = []
-    banded_boat_keys = [] # A list of lists of boats in the same loyalty band.
+    crew = {}
+    crews = []
 
-    i = len(boat_keys)
-    loyalty = 0
-    while i > 0:
-        equal_loyalty_boat_keys = [] # list of boats in the same loyalty band.
-        for event_boat_key in boat_keys:
-            for boat in database.boats_data:
-                if event_boat_key == boat["key"]:
-                    if int(boat["loyalty"]) == loyalty:
-                        equal_loyalty_boat_keys.append(event_boat_key)
-                        i -= 1
-        loyalty += 1
-        banded_boat_keys.append(equal_loyalty_boat_keys)
+    for boat_key in boat_keys:
+        crew["boat"] = boat_key
+        crews.append(copy.copy(crew))
 
-    while len(banded_boat_keys) > 0:
-        while len(banded_boat_keys[0]) > 0:
-            if len(banded_boat_keys[0]) > 1:
-                boat_number = random.randint(0, len(banded_boat_keys[0]) - 1)
-            else:
-                boat_number = 0
-            ordered_boat_keys.append(banded_boat_keys[0][boat_number])
-            banded_boat_keys[0].pop(boat_number)
-        banded_boat_keys.pop(0)
+    # Calculate sailors_per_space.
 
-    return ordered_boat_keys
+    space_min = 0
+    space_max = 0
+    for boat_key in boat_keys:
+        space_min += [int(boat["min occupancy"]) for boat in database.boats_data if boat["key"] == boat_key][0]
+        space_max += [int(boat["max occupancy"]) for boat in database.boats_data if boat["key"] == boat_key][0]
+
+    space_spread = space_max - space_min
+    sailors_max = len(sailor_keys)
+    sailors_spread = sailors_max - space_min
+
+    if space_spread == 0:
+        sailors_per_space = 0.0
+    else:
+        sailors_per_space = float(sailors_spread) / float(space_spread)
+
+    final_flt = 0.0
+    initial_int = 0
+    for i in range(len(crews) - 1):
+        min = [int(boat["min occupancy"]) for boat in database.boats_data if boat["key"] == crews[i]["boat"]][0]
+        max = [int(boat["max occupancy"]) for boat in database.boats_data if boat["key"] == crews[i]["boat"]][0]
+        spread = max - min
+        final_flt += float(min) + float(spread) * sailors_per_space
+        final_int = math.ceil(final_flt)
+        crews[i]["sailors"] = sailor_keys[initial_int : final_int]
+        initial_int = final_int
+    if len(crews) > 0:
+        crews[-1]["sailors"] = sailor_keys[initial_int : ]
+
+    return crews
+
+
+def shuffle(unshuffled_list):
+
+    shuffled_list = []
+
+    while len(unshuffled_list) > 0:
+        if len(unshuffled_list) > 1:
+            list_index = random.randint(0, len(unshuffled_list) - 1)
+        else:
+            list_index = 0
+        next_entry = unshuffled_list[list_index]
+        unshuffled_list.remove(next_entry)
+        shuffled_list.append(next_entry)
+
+    return shuffled_list
+
+
+def prioritize_category_keys(category_list):
+
+    # Separate the category list into loyalty bands, shuffle each band and return the category list
+    # prioritized by loyalty and shuffled.
+
+    prioritized_category_list = []
+    progress = 0
+    for loyalty in range( len( constants.event_ids )):
+        if progress >= len( category_list ): break
+        band = [sailor["key"] for sailor in database.sailors_data if category_list.count(sailor["key"]) > 0\
+                and sailor["loyalty"] == str(loyalty)]
+        if not len( band ) == 0:
+            progress += len( band )
+            prioritized_category_list.extend(shuffle(band))
+
+    return prioritized_category_list
+
+
+def prioritize_sailor_keys(unprioritized_sailors):
+
+    # Separate the sailor list into categories.  Prioritize each category by loyalty (least first).
+    # Extend prioritized_sailors by each category in turn.  Return prioritized_sailors.
+
+    prioritized_sailors = []
+
+    category = [sailor["key"] for sailor in database.sailors_data if unprioritized_sailors.count(sailor["key"]) > 0\
+            and sailor["category"] == 'G']
+
+    prioritized_sailors.extend(prioritize_category_keys(category))
+
+    category = [sailor["key"] for sailor in database.sailors_data if unprioritized_sailors.count(sailor["key"]) > 0\
+            and sailor["category"] == 'A'\
+            and sailor["member"].upper() == "TRUE"]
+    prioritized_sailors.extend(prioritize_category_keys(category))
+
+    category = [sailor["key"] for sailor in database.sailors_data if unprioritized_sailors.count(sailor["key"]) > 0\
+            and sailor["category"] == 'A'\
+            and sailor["member"].upper() == "FALSE"]
+    prioritized_sailors.extend(prioritize_category_keys(category))
+
+    category = [sailor["key"] for sailor in database.sailors_data if unprioritized_sailors.count(sailor["key"]) > 0\
+            and sailor["category"] == 'N']
+    prioritized_sailors.extend(prioritize_category_keys(category))
+
+    return prioritized_sailors
+
+
+def mandatory(all_boat_keys, all_sailor_keys):
+
+    core_sailor_keys = remove_flex_sailor_keys(all_boat_keys, all_sailor_keys)
+    core_boat_keys = remove_flex_boat_keys(all_boat_keys, all_sailor_keys)
+    wait_sailor_keys = []
+    wait_boat_keys = []
+
+    if len(core_sailor_keys) > max_berths(all_boat_keys): # over-demand - cut sailors
+        while len(core_sailor_keys) > max_berths(all_boat_keys):
+            redundant_sailor_key = prioritize_sailor_keys(core_sailor_keys)[-1]
+            core_sailor_keys.remove(redundant_sailor_key)
+            wait_sailor_keys.insert(0, redundant_sailor_key)
+
+        event_boat_keys = copy.deepcopy(all_boat_keys)
+        event_sailor_keys = copy.deepcopy(core_sailor_keys)
+
+    elif len(all_sailor_keys) < min_berths(core_boat_keys): # over-supply - cut boats:
+        while len(all_sailor_keys) < min_berths(core_boat_keys) and len(core_boat_keys) > 1:
+            redundant_boat_key = order_boat_keys_by_loyalty(core_boat_keys)[-1]
+            core_boat_keys.remove(redundant_boat_key)
+            wait_boat_keys.append(redundant_boat_key)
+
+        event_boat_keys = copy.deepcopy(core_boat_keys)
+        event_sailor_keys = copy.deepcopy(all_sailor_keys)
+
+    else: # supply and demand can match
+
+        sailor_keys = copy.copy(all_sailor_keys)
+        boat_keys = copy.copy(core_boat_keys)
+
+        while len(sailor_keys) > max_berths(boat_keys):
+            flex_sailor_keys = [sailor_key for sailor_key in sailor_keys if sailor_key not in core_sailor_keys]
+            skipper_key = order_sailor_keys(flex_sailor_keys)[-1]
+            sailor_keys.remove(skipper_key)
+            boat_keys.append(boat_from_sailor(skipper_key))
+
+        event_boat_keys = copy.deepcopy(boat_keys)
+        event_sailor_keys = copy.deepcopy(sailor_keys)
+
+    event = {}
+    event["flotilla"] = assign(event_boat_keys, event_sailor_keys)
+    event["wait list"] = wait_sailor_keys
+
+    return event

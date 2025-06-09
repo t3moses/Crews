@@ -56,15 +56,28 @@ def assignment():
 
             available_boat_keys = []  # list of boats available on the event date.
             for available_boat in database.boats_availability:
-                if not available_boat[event_id] == "":
+                if available_boat[event_id] == "Y":
                     available_boat_keys.append(available_boat["key"])
 
             available_sailor_keys = []  # list of sailors available on the event date.
             for available_sailor in database.sailors_availability:
-                if not available_sailor[event_id] == '':
+                if available_sailor[event_id] == 'A':
+                    available_sailor_keys.append(available_sailor["key"])
                     for sailor in database.sailors_data:
-                        if available_sailor["key"] == sailor["key"]:
-                            available_sailor_keys.append(sailor["key"])
+                        if sailor["key"] == available_sailor["key"]:
+                            sailor["category"] = 'A'
+                elif available_sailor[event_id] == 'G':
+                    available_sailor_keys.append(available_sailor["key"])
+                    for sailor in database.sailors_data:
+                        if sailor["key"] == available_sailor["key"]:
+                            sailor["category"] = 'G'
+                elif available_sailor[event_id] == 'N':
+                    available_sailor_keys.append(available_sailor["key"])
+                    for sailor in database.sailors_data:
+                        if sailor["key"] == available_sailor["key"]:
+                            sailor["category"] = 'N'
+                else:
+                    pass
 
             # For each available boat and sailor, calculate their loyalty band, and add it to their data.
             # Boat loyalty is the number of times they have sailed this season, according to boat availability.
@@ -77,7 +90,7 @@ def assignment():
                         for date in constants.event_ids:
                             if date == event_id:
                                 break
-                            if not boat_availability[date] == '':
+                            if boat_availability[date] == 'Y':
                                 loyalty += 1
                         for i in range(len(database.boats_data)):
                             if available_boat_key == database.boats_data[i]["key"]:

@@ -21,6 +21,8 @@ Mandatory rules:
 - Sailors shall be distributed evenly across all boats, taking into account their maximum capacities.
 - Sailors who have sailed fewer times in the current season of the program shall take priority over those who have sailed more times.
 - Boats that have sailed fewer times in the current season of the program shall take priority over those that have sailed more times.
+- Sailors (members or non-members) who have been assigned a space seven days ahead of an event will not lose their space,
+  even if higher-priority sailors enrol in the interim.  This rule does not apply in case a boat withdraws.
 
 Discretionary rules (in priority order):
 
@@ -162,6 +164,12 @@ Over-capacity
 
 In the event that there are insufficient crew to meet the minimum required for the flotilla, boats are removed from the flotilla repeatedly until the minimum is equal to or less than the number of crew.
 First of all, boats whose skippers have also enrolled as sailors are removed.  Then boats that have sailed fewest times in the season are removed.
+
+No-shows
+
+Sailors who fail to show-up or cancel later than 10:00 am on the day of the event may be deprioritized for future events.
+
+This is effected by changing 'A' in their availability record to 'N'.
 
 Data structures
 
