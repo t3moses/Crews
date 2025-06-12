@@ -1,5 +1,4 @@
 
-import copy
 import database
 import addresses
 import crew_info

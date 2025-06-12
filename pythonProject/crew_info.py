@@ -3,14 +3,14 @@ import datetime
 import constants
 import database
 
-next_event_date = str
+next_event_id = str
 
 def begin():
 
     # Convert the current date to day-of-the-year.
     # If it is later than the last event, set it to the date of the first event.
 
-    global next_event_date
+    global next_event_id
 
     date_format = '%a %b %d'
     current_datetime = datetime.datetime.now()
@@ -27,13 +27,13 @@ def begin():
 
     for event_id in constants.event_ids:
 
-        event_datetime = datetime.datetime.strptime(event_id, date_format)
-        event_date = datetime.date(current_date.year, event_datetime.month, event_datetime.day)
+        next_event_datetime = datetime.datetime.strptime(event_id, date_format)
+        next_event_date = datetime.date(current_date.year, next_event_datetime.month, next_event_datetime.day)
 
-        if event_date > current_date:
-            return
+        if next_event_date < current_date: pass
         else:
-            next_event_date = event_id
+            next_event_id = event_id
+            break
 
     return
 
@@ -41,9 +41,9 @@ def add_info(event):
 
     # Store details of the participants in the next event.
 
-    global next_event_date
+    global next_event_id
 
-    if event["date"] == next_event_date:
+    if event["date"] == next_event_id:
         for crew in event["flotilla"]:
             boat_name = [boat["display name"] for boat in database.boats_data if boat["key"] == crew["boat"]][0]
             database.crew_info += boat_name + " "

@@ -48,23 +48,7 @@ def remove_flex_boat_keys(boat_keys, sailor_keys):
                 if boat_key == boat["key"] and sailor_key == boat["owner key"]:
                     core_boat_keys.remove(boat_key)
     return core_boat_keys
-'''
-def remove_most_loyal_sailor_key(sailor_keys):
 
-# Return the list of sailors having removed the one who has sailed most.
-
-    ordered_sailor_keys = order_sailor_keys(sailor_keys)
-    ordered_sailor_keys.pop(-1)
-    return ordered_sailor_keys
-
-def remove_most_loyal_boat_key(boat_keys):
-
-    # Return the list of boats having removed the one who has sailed most.
-
-    ordered_boat_keys = order_boat_keys_by_loyalty(boat_keys)
-    ordered_boat_keys.pop(-1)
-    return ordered_boat_keys
-'''
 def boat_from_sailor(sailor_key):
 
 # Return the boat that is owned by the sailor.
@@ -201,50 +185,6 @@ def order_sailor_keys(sailor_keys):
     return ordered_sailor_keys
 
 
-def assign(boat_keys, sailor_keys):
-
-    # Create crews by adding boat_keys to an initially-empty list of crews.
-
-    crew = {}
-    crews = []
-
-    for boat_key in boat_keys:
-        crew["boat"] = boat_key
-        crews.append(copy.copy(crew))
-
-    # Calculate sailors_per_space.
-
-    space_min = 0
-    space_max = 0
-    for boat_key in boat_keys:
-        space_min += [int(boat["min occupancy"]) for boat in database.boats_data if boat["key"] == boat_key][0]
-        space_max += [int(boat["max occupancy"]) for boat in database.boats_data if boat["key"] == boat_key][0]
-
-    space_spread = space_max - space_min
-    sailors_max = len(sailor_keys)
-    sailors_spread = sailors_max - space_min
-
-    if space_spread == 0:
-        sailors_per_space = 0.0
-    else:
-        sailors_per_space = float(sailors_spread) / float(space_spread)
-
-    final_flt = 0.0
-    initial_int = 0
-    for i in range(len(crews) - 1):
-        min = [int(boat["min occupancy"]) for boat in database.boats_data if boat["key"] == crews[i]["boat"]][0]
-        max = [int(boat["max occupancy"]) for boat in database.boats_data if boat["key"] == crews[i]["boat"]][0]
-        spread = max - min
-        final_flt += float(min) + float(spread) * sailors_per_space
-        final_int = math.ceil(final_flt)
-        crews[i]["sailors"] = sailor_keys[initial_int : final_int]
-        initial_int = final_int
-    if len(crews) > 0:
-        crews[-1]["sailors"] = sailor_keys[initial_int : ]
-
-    return crews
-
-
 def shuffle(unshuffled_list):
 
     shuffled_list = []
@@ -264,7 +204,7 @@ def shuffle(unshuffled_list):
 def prioritize_category_keys(category_list):
 
     # Separate the category list into loyalty bands, shuffle each band and return the category list
-    # prioritized by loyalty and shuffled.
+    # prioritized by loyalty and shuffled. Least loyalty has highest priority.
 
     prioritized_category_list = []
     progress = 0
@@ -288,7 +228,6 @@ def prioritize_sailor_keys(unprioritized_sailors):
 
     category = [sailor["key"] for sailor in database.sailors_data if unprioritized_sailors.count(sailor["key"]) > 0\
             and sailor["category"] == 'G']
-
     prioritized_sailors.extend(prioritize_category_keys(category))
 
     category = [sailor["key"] for sailor in database.sailors_data if unprioritized_sailors.count(sailor["key"]) > 0\
@@ -308,12 +247,64 @@ def prioritize_sailor_keys(unprioritized_sailors):
     return prioritized_sailors
 
 
+def assign(boat_keys, sailor_keys):
+
+    # Create crews by adding boat_keys to an initially-empty list of crews.
+
+    crew = {}
+    crews = []
+
+    for boat_key in boat_keys:
+        crew["boat"] = boat_key
+        crews.append(copy.copy(crew))
+
+    # Calculate sailors_per_space.  Once boat minimums have been satisfied, additionsl sailors should be distributed
+    # between boats according to their remaining capacity.
+
+    space_min = 0
+    space_max = 0
+    for boat_key in boat_keys:
+        space_min += [int(boat["min occupancy"]) for boat in database.boats_data if boat["key"] == boat_key][0]
+        space_max += [int(boat["max occupancy"]) for boat in database.boats_data if boat["key"] == boat_key][0]
+
+    space_spread = space_max - space_min
+    sailors_max = len(sailor_keys)
+    sailors_spread = sailors_max - space_min
+
+    if space_spread == 0:
+        sailors_per_space = 0.0
+    else:
+        sailors_per_space = float(sailors_spread) / float(space_spread)
+
+    # sailor_keys lists sailors in priority order.  So, assign sailors from the list in order.
+
+    final_flt = 0.0
+    initial_int = 0
+    for i in range(len(crews) - 1):
+        min = [int(boat["min occupancy"]) for boat in database.boats_data if boat["key"] == crews[i]["boat"]][0]
+        max = [int(boat["max occupancy"]) for boat in database.boats_data if boat["key"] == crews[i]["boat"]][0]
+        spread = max - min
+        final_flt += float(min) + float(spread) * sailors_per_space
+        final_int = math.ceil(final_flt)
+        crews[i]["sailors"] = sailor_keys[initial_int : final_int]
+        initial_int = final_int
+    if len(crews) > 0:
+        crews[-1]["sailors"] = sailor_keys[initial_int : ]
+
+    return crews
+
+
 def mandatory(all_boat_keys, all_sailor_keys):
+
+    # flex sailors are sailors who own a boat and who have made their boat available.
+    # flex boats are boats whose owners have made themselves available to crew.
 
     core_sailor_keys = remove_flex_sailor_keys(all_boat_keys, all_sailor_keys)
     core_boat_keys = remove_flex_boat_keys(all_boat_keys, all_sailor_keys)
     wait_sailor_keys = []
     wait_boat_keys = []
+
+    # Separate the cases of over-demand, over-supply and matching supply and demand.
 
     if len(core_sailor_keys) > max_berths(all_boat_keys): # over-demand - cut sailors
         while len(core_sailor_keys) > max_berths(all_boat_keys):
