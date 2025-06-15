@@ -16,5 +16,28 @@ This occurs when the registrant leaves the Qualifications and experience field b
 006: When a female skipper registers add their boat to the whitelist of every sailor that requested a female skipper.  RESOLVED.
 
 007: If the wait list is longer than the highest boat occupancy, spread it over multiple lines.
-Needs updates to AS_2_25 crew_html.py lines 40-42, 69-79.
+Needs updates to AS_2_25 crew_html.py lines 40-42, 69-79.  RESOLVED.
+
+008: Move no-shows to the lowest priority.  RESOLVED.
+
+009: When the last line of a wait list in the calendar is full, an empty extra line is added.  There is no need for this.  RESOLVED.
+
+010: When members are placed on the wait list, they should be the first entries.  RESOLVED.
+
+011: Although crews get shuffled when each request is processed, the wait list should not get shuffled.
+
+In the case of over-demand, sailors and wait list are separated in mandatory.py->mandatory->309.
+
+This includes a call to prioritize_sailor_keys->prioritize_category_keys->217.
+
+This orders sailors by loyalty and shuffles the loyalty bands.
+
+1. Remove the shuffle step from prioritize_category_keys.  Then core_sailor_keys and wait_sailor_keys will be ordered by category and loyalty band.
+core_sailor_keys lists those with places and wait_sailor_keys lists those on the wait list.
+
+2. Add core_sailor_keys = shuffle(core_sailor_keys) to mandatory.py->mandatory->314.
+
+Then, every time process.py or recalculate.py runs, core_sailor_keys will be shuffled, but wait_sailor_keys won't be.
+
+RESOLVED with just change 1 above.
 

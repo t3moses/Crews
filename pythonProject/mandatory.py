@@ -214,7 +214,8 @@ def prioritize_category_keys(category_list):
                 and sailor["loyalty"] == str(loyalty)]
         if not len( band ) == 0:
             progress += len( band )
-            prioritized_category_list.extend(shuffle(band))
+            # prioritized_category_list.extend(shuffle(band))
+            prioritized_category_list.extend(band)
 
     return prioritized_category_list
 
