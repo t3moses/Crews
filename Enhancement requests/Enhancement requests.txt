@@ -24,20 +24,9 @@ Needs updates to AS_2_25 crew_html.py lines 40-42, 69-79.  RESOLVED.
 
 010: When members are placed on the wait list, they should be the first entries.  RESOLVED.
 
-011: Although crews get shuffled when each request is processed, the wait list should not get shuffled.
+011: Although crews get shuffled when each request is processed, the wait list should not get shuffled.  RESOLVED.
 
-In the case of over-demand, sailors and wait list are separated in mandatory.py->mandatory->309.
+012: Anyone who has been allocated a space seven days in advance of an event should not lose that space, except in the event a boat withdraws, regardless whether a later registrant has higher priority by virtue of membership or loyalty.  RESOLVED.
 
-This includes a call to prioritize_sailor_keys->prioritize_category_keys->217.
-
-This orders sailors by loyalty and shuffles the loyalty bands.
-
-1. Remove the shuffle step from prioritize_category_keys.  Then core_sailor_keys and wait_sailor_keys will be ordered by category and loyalty band.
-core_sailor_keys lists those with places and wait_sailor_keys lists those on the wait list.
-
-2. Add core_sailor_keys = shuffle(core_sailor_keys) to mandatory.py->mandatory->314.
-
-Then, every time process.py or recalculate.py runs, core_sailor_keys will be shuffled, but wait_sailor_keys won't be.
-
-RESOLVED with just change 1 above.
+013: Sailor availability update forms should allow register, cancel and no change for individual events.  RESOLVED.
 

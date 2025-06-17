@@ -314,7 +314,8 @@ def mandatory(all_boat_keys, all_sailor_keys):
             wait_sailor_keys.insert(0, redundant_sailor_key)
 
         event_boat_keys = copy.deepcopy(all_boat_keys)
-        event_sailor_keys = copy.deepcopy(core_sailor_keys)
+        # event_sailor_keys = copy.deepcopy(core_sailor_keys)
+        event_sailor_keys = copy.deepcopy(shuffle(core_sailor_keys))
 
     elif len(all_sailor_keys) < min_berths(core_boat_keys): # over-supply - cut boats:
         while len(all_sailor_keys) < min_berths(core_boat_keys) and len(core_boat_keys) > 1:

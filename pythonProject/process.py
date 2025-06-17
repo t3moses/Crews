@@ -431,10 +431,12 @@ def register_sailor(user_input):
             for event_id in constants.event_ids:
                 full_event_id = datetime.datetime.strptime(event_id, date_format).replace(year = this_year).date()
                 if full_event_id >= today:
-                    if user_input.get(event_id) == "I am available":
+                    if user_input.get(event_id) == "Register":
                         available_sailor[event_id] = "A"
-                    else:
+                    elif user_input.get(event_id) == "Cancel":
                         available_sailor[event_id] = ""
+                    else:
+                        pass
 
 # --------------------------------------------------
 
