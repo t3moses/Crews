@@ -126,12 +126,7 @@ def assignment():
                         for i in range(len(database.sailors_availability)):
                             if database.sailors_availability[i]["key"] == sailor_key:
                                 database.sailors_availability[i][event_id] = 'G'
-                '''
-                for sailor_key in event["wait list"]:
-                    for i in range(len(database.sailors_availability)):
-                        if database.sailors_availability[i]["key"] == sailor_key:
-                            database.sailors_availability[i][event_id] = 'A'
-                '''
+
             # Modify the flotilla by applying the discretionary rules.
 
             if len(event["flotilla"]) > 1:
