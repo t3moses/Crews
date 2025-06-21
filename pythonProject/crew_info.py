@@ -53,6 +53,7 @@ def add_info(event):
                 for sailor in database.sailors_data:
                     if event_sailor == sailor["key"]:
                         database.crew_info += sailor["display name"] + "\n"
+                        database.crew_info += sailor["email address"] + "\n"
                         experience = sailor["experience"]
                         experience = experience.replace("+u002C", ",")
                         experience = experience.replace("+u2028", "\n")

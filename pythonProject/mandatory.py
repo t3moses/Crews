@@ -7,7 +7,7 @@ import random
 
 def max_berths(boat_keys):
 
-# Return the maximum number of berths available.
+    # Return the maximum number of berths available.
 
     berths = 0
     for boat_key in boat_keys:
@@ -17,7 +17,7 @@ def max_berths(boat_keys):
 
 def min_berths(boat_keys):
 
-# Return the minimum number of sailors required.
+    # Return the minimum number of sailors required.
 
     berths = 0
     for boat_key in boat_keys:
@@ -39,7 +39,7 @@ def remove_flex_sailor_keys(boat_keys, sailor_keys):
 
 def remove_flex_boat_keys(boat_keys, sailor_keys):
 
-# Return the list of boats whose owners are not amongst the sailors.
+    # Return the list of boats whose owners are not amongst the sailors.
 
     core_boat_keys = copy.deepcopy(boat_keys)
     for sailor_key in sailor_keys:
@@ -51,7 +51,7 @@ def remove_flex_boat_keys(boat_keys, sailor_keys):
 
 def boat_from_sailor(sailor_key):
 
-# Return the boat that is owned by the sailor.
+    # Return the boat that is owned by the sailor.
 
     added_boat_key = [boat["key"] for boat in database.boats_data if boat["owner key"] == sailor_key][0]
     return added_boat_key
@@ -214,7 +214,6 @@ def prioritize_category_keys(category_list):
                 and sailor["loyalty"] == str(loyalty)]
         if not len( band ) == 0:
             progress += len( band )
-            # prioritized_category_list.extend(shuffle(band))
             prioritized_category_list.extend(band)
 
     return prioritized_category_list
@@ -314,7 +313,6 @@ def mandatory(all_boat_keys, all_sailor_keys):
             wait_sailor_keys.insert(0, redundant_sailor_key)
 
         event_boat_keys = copy.deepcopy(all_boat_keys)
-        # event_sailor_keys = copy.deepcopy(core_sailor_keys)
         event_sailor_keys = copy.deepcopy(shuffle(core_sailor_keys))
 
     elif len(all_sailor_keys) < min_berths(core_boat_keys): # over-supply - cut boats:
