@@ -67,6 +67,11 @@ def html(event):
 
     for row_index in range(math.ceil(len(event["wait list"]) / max_crew_size)):
         if row_index == 0:
+            # Add a blank line here.
+            contents += "<tr>"
+            for column in range(max_crew_size + 1):
+                contents += "<td></td>"
+            contents += "</tr>"
             contents += "<tr><td>Wait list</td>"
         else:
             contents += "<tr><td></td>"

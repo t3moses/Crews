@@ -30,3 +30,7 @@ Needs updates to AS_2_25 crew_html.py lines 40-42, 69-79.  RESOLVED.
 
 013: Sailor availability update forms should allow register, cancel and no change for individual events.  RESOLVED.
 
+014: Add crew email addresses to crew info.  RESOLVED.
+
+015: Add an empty line to the assignment html between the boats and the wait list.  RESOLVED.
+
