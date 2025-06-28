@@ -307,7 +307,7 @@ def enrol_sailor(user_input):
     available_sailor = {}
     available_sailor["key"] = key
     for event_id in constants.event_ids:
-        if user_input.get(event_id) == "Available":
+        if user_input.get(event_id) == "I am available":
             available_sailor[event_id] = "A"
         else:
             available_sailor[event_id] = ""
