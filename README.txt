@@ -46,11 +46,11 @@ Input files
 
 Inputs are taken from the following files.
 
-boats data.txt
-sailors data.txt
-boats available.txt
-sailors available.txt
-sailor histories.txt
+boats data.csv
+sailors data.csv
+boats available.csv
+sailors available.csv
+sailor histories.csv
 user input.txt
 
 With the exception of the user input file, these files are formatted as CSV.  In this way, they may be edited in a text editor or a spreasheet program.
