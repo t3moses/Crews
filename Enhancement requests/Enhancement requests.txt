@@ -36,3 +36,7 @@ Needs updates to AS_2_25 crew_html.py lines 40-42, 69-79.  RESOLVED.
 
 016: Change configuration file extensions to .csv.  RESOLVED.
 
+017: Accept membership numbers that are more than 3 and less than 10 decimal digits after non-digits have been removed.  RESOLVED.
+
+018: Include wait list addresses in the addresses.txt file.
+
