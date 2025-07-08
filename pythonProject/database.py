@@ -13,6 +13,7 @@ assignments_filename = ""
 debug_filename = ""
 addresses_filename = ""
 crew_info_filename = ""
+tickets_filename = ""
 
 boats_data = [] # list of boat data dictionaries.
 sailors_data = [] # list of sailor data dictionaries.
@@ -25,6 +26,7 @@ form = "" # contents of the user input form.
 html = "" # contents of the event calendar output html.
 addresses = "" # contents of the addresses file.
 crew_info = "" # contents of the addresses file.
+tickets = "" # contents of the tickets file.
 
 upper_crew_size = 0 # Used to calculate html column width.
 
@@ -42,6 +44,7 @@ def begin():
     global debug_filename
     global addresses_filename
     global crew_info_filename
+    global tickets_filename
     global boats_data
     global sailors_data
     global boats_availability
@@ -63,6 +66,7 @@ def begin():
         s_line_8 = f_config.readline()  # debug file
         s_line_9 = f_config.readline()  # addresses file
         s_line_10 = f_config.readline()  # crew info file
+        s_line_11 = f_config.readline()  # tickets file
 
     boats_data_filename += Working_directory+s_line_1.split(': ')[1].split(' //')[0]
     sailors_data_filename = Working_directory+s_line_2.split(': ')[1].split(' //')[0]
@@ -74,6 +78,7 @@ def begin():
     debug_filename = Working_directory+s_line_8.split(': ')[1].split(' //')[0]
     addresses_filename = Working_directory+s_line_9.split(': ')[1].split(' //')[0]
     crew_info_filename = Working_directory+s_line_10.split(': ')[1].split(' //')[0]
+    tickets_filename = Working_directory+s_line_11.split(': ')[1].split(' //')[0]
 
     # Open the boat data file.  If it doesn't yet exist, create it.
     # Import boats data.
@@ -285,5 +290,9 @@ def end():
     crew_info_file = open(crew_info_filename, 'w', newline='')
     crew_info_file.write(crew_info)
     crew_info_file.close()
+
+    tickets_file = open(tickets_filename, 'w', newline='')
+    tickets_file.write(tickets)
+    tickets_file.close()
 
     return

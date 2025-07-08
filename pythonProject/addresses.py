@@ -51,3 +51,11 @@ def add_sailors( event ):
     database.addresses += addresses + "\n\n"
 
     return
+
+def add_wait_list( event ):
+
+    addresses = ""
+
+    database.addresses += "wait list\n\n"
+
+    return

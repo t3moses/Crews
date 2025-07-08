@@ -2,12 +2,49 @@
 import database
 import addresses
 import crew_info
+import tickets
 import random
 import datetime
 import constants
 import mandatory
 import discretionary
 import crew_html
+
+
+
+def next_event_id():
+
+    # Convert the current date to day-of-the-year.
+    # If it is later than the last event, set it to the date of the first event.
+
+    next_event_id = str
+
+    date_format = '%a %b %d'
+    current_datetime = datetime.datetime.now()
+    current_date = current_datetime.date()
+
+    first_datetime = datetime.datetime.strptime(constants.event_ids[0], date_format)
+    first_date = datetime.date(current_date.year, first_datetime.month, first_datetime.day)
+
+    last_datetime = datetime.datetime.strptime(constants.event_ids[-1], date_format)
+    last_date = datetime.date(current_date.year, last_datetime.month, last_datetime.day)
+
+    if current_date > last_date: # You must be working on next year's calendar.
+        current_date = first_date
+
+    for event_id in constants.event_ids:
+
+        next_event_datetime = datetime.datetime.strptime(event_id, date_format)
+        next_event_date = datetime.date(current_date.year, next_event_datetime.month, next_event_datetime.day)
+
+        if next_event_date < current_date: pass
+        else:
+            next_event_id = event_id
+            break
+
+    return next_event_id
+
+
 
 def assignment():
 
@@ -27,7 +64,7 @@ def assignment():
         current_date = first_date
 
     addresses.begin()
-    crew_info.begin()
+    tickets.begin()
 
     random.seed(None)
 
@@ -136,7 +173,10 @@ def assignment():
 
             addresses.add_boats(event)
             addresses.add_sailors(event)
-            crew_info.add_info(event)
+            addresses.add_wait_list(event)
+
+            if event["date"] == next_event_id():
+                crew_info.add_info( event )
 
             # Update the sailor_histories file with the crew assignments for the event date.
 
@@ -149,6 +189,8 @@ def assignment():
             # Add to the html file for all FUTURE event dates.
 
             database.html = crew_html.html(event)
+            if event["date"] == next_event_id():
+                database.tickets = tickets.html( event )
 
     return
 

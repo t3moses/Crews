@@ -16,4 +16,4 @@ whitelist_weight = 8
 skill_weight = 4
 partner_weight = 2
 repeat_weight = 1
-cut_off = 7 # Days prior to the event during which crew positions may be guaranteed.
+cut_off = 6 # Days prior to the event during which crew positions may be guaranteed.

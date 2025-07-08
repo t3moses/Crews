@@ -8,6 +8,8 @@ import crew_html
 import constants
 import datetime
 
+
+
 def remove_duplicate_boats(boat_key, boats_data, boats_availability, sailors_data):
 
     # Remove the boat identified by boat_key from the database.
@@ -217,16 +219,18 @@ def enrol_sailor(user_input):
 
     key = strings.key_from_strings(first_name, last_name)
 
-    membership_numeric = ""
-    for char in membership_number:
-        if char.isnumeric(): membership_numeric += char
-
-    if ( membership_numeric == None ) or \
-            ( len( membership_numeric ) < constants.min_membership_number_length ) or \
-            ( len( membership_numeric ) > constants.max_membership_number_length ):
+    if ( membership_number == None):
         member = "False" # member is a string not a Boolean.
     else:
-        member = "True"
+        membership_numeric = ""
+        for char in membership_number:
+            if char.isnumeric(): membership_numeric += char
+
+        if ( len( membership_numeric ) < constants.min_membership_number_length ) or \
+                ( len( membership_numeric ) > constants.max_membership_number_length ):
+            member = "False" # member is a string not a Boolean.
+        else:
+            member = "True"
 
     if user_input.get("(Women only) I would like to sail with a female captain when space allows") == "Checked":
         request_female = "True"
