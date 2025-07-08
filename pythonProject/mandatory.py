@@ -227,7 +227,13 @@ def prioritize_sailor_keys(unprioritized_sailors):
     prioritized_sailors = []
 
     category = [sailor["key"] for sailor in database.sailors_data if unprioritized_sailors.count(sailor["key"]) > 0\
-            and sailor["category"] == 'G']
+            and sailor["category"] == 'G'\
+            and sailor["member"].upper() == "TRUE"]
+    prioritized_sailors.extend(prioritize_category_keys(category))
+
+    category = [sailor["key"] for sailor in database.sailors_data if unprioritized_sailors.count(sailor["key"]) > 0\
+            and sailor["category"] == 'G'\
+            and sailor["member"].upper() == "FALSE"]
     prioritized_sailors.extend(prioritize_category_keys(category))
 
     category = [sailor["key"] for sailor in database.sailors_data if unprioritized_sailors.count(sailor["key"]) > 0\

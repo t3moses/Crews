@@ -42,5 +42,7 @@ Needs updates to AS_2_25 crew_html.py lines 40-42, 69-79.  RESOLVED.
 
 019: Add a file containing all program participant addresses.
 
-020: Add a file for tickets - html table, one row per available boat, each cell contains the boat name, one cell per available space.
+020: Add a file for tickets - html table, one row per available space, each row contains the date and boat name.  RESOLVED.
+
+021: When a boat withdraws within seven days of an event, some guaranteed crew have to be dropped.  Non-members should be dropped before members.
 
