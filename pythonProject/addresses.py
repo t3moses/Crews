@@ -58,4 +58,15 @@ def add_wait_list( event ):
 
     database.addresses += "wait list\n\n"
 
+    index = 0
+    for event_sailor in event["wait list"]:
+        for sailor in database.sailors_data:
+            if event_sailor == sailor["key"]:
+                if not index == 0:
+                    addresses += ", "
+                index += 1
+                addresses += sailor["email address"]
+
+    database.addresses += addresses + "\n\n"
+
     return

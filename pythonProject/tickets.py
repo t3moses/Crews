@@ -14,8 +14,8 @@ def begin():
 
     top += "<!DOCTYPE html><html><head><style>"
     top += "table {font-family: arial, sans-serif; font-size: 40px; border-collapse: collapse;}"
-    top += "td {border: 1px solid #dddddd;text-align: left;padding: 8px;}"
-    top += "tr:nth-child(even) {background-color: #dddddd;}"
+    top += "td {border: 20px solid #999999;text-align: left; padding: 8px;}"
+#    top += "tr:nth-child(even) {background-color: #dddddd;}"
     top += "</style></head><body>"
 
     tail += "</body></html>"

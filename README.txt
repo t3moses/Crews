@@ -63,8 +63,8 @@ The boats ... files contain a row for each boat.
 The sailors ... files contain a row for each sailor.
 The ... available files contain the dates on which the subject (boat or sailor) is available.
 
-The boat assistance field contains True or False according to whether the skipper requires assistance on board.
-The sailor member field contains True or False according to whether the sailor is an NSC member.
+The boat assistance field contains TRUE or FALSE according to whether the skipper requires assistance on board.
+The sailor member field contains TRUE or FALSE according to whether the sailor is an NSC member.
 The skill field contains integer values 0 .. 2.  0 for novice, 1 for basic qualified, 2 for experienced.
 The whitelist field contains a list of boats in the subject's whitelist.  Boats in the list must be separated by ;.
 
@@ -144,7 +144,7 @@ They must also enter information about their availability.
 
 An individual may enrol as both a boat owner and a sailor.  In the event of an availability clash, their boat owner role takes precedence.
 
-When a boat-owner enrols, the admin is asked if the owner is female.  This information is used in support of the policy that places women who request it be assigned to boats skippered by a woman.
+When a boat-owner enrols, the admin is asked if the owner is female.  This information is used in support of the policy that places women who request it to be assigned to boats skippered by a woman.
 
 When a sailor enrols, the admin is asked for the display name of the sailor's partner.  This information is used in support of the policy that places partners on different boats.
 
@@ -206,4 +206,7 @@ process.py and recalculate.py create reports:
 The latter is intended to be provided to the boat owners taking part in the upcoming event.
 
 3. debug.txt lists the non-compliance scores for each iteration and each event date.  It also lists the causes of non-compliance in the final assignment.
+
+4. tickets.html contains a ticket for each space on a participating boat.
+
 

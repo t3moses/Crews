@@ -38,11 +38,11 @@ Needs updates to AS_2_25 crew_html.py lines 40-42, 69-79.  RESOLVED.
 
 017: Accept membership numbers that are more than 3 and less than 10 decimal digits after non-digits have been removed.  RESOLVED.
 
-018: Include wait list addresses in the addresses.txt file.
+018: Include wait list addresses in the addresses.txt file.  RESOLVED.
 
 019: Add a file containing all program participant addresses.
 
 020: Add a file for tickets - html table, one row per available space, each row contains the date and boat name.  RESOLVED.
 
-021: When a boat withdraws within seven days of an event, some guaranteed crew have to be dropped.  Non-members should be dropped before members.
+021: When a boat withdraws within seven days of an event, some guaranteed crew have to be dropped.  Non-members should be dropped before members.  RESOLVED.
 

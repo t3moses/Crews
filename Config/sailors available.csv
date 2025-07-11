@@ -1,7 +1,7 @@
 key,Fri Jun 6,Fri Jun 13,Fri Jun 20,Sat Jun 28,Fri Jul 4,Fri Jul 11,Sat Jul 19,Fri Jul 25,Fri Aug 1,Sat Aug 9,Fri Aug 15,Fri Aug 22,Sat Aug 30,Fri Sep 5,Fri Sep 12,Fri Sep 19,Fri Sep 26
 albellehumeur,G,,G,,G,G,,,A,,,A,,A,A,A,A
 angusmacdonald,G,G,G,G,G,G,,A,A,,,A,A,A,A,A,A
-annhardie,,,,,,,,,,,,,,,,,
+annhardie,,,,,,,,A,A,,A,A,,A,A,A,A
 azermehmoodi,,,,,,,A,A,,,,,,,,,
 brendabradley,,A,G,,,G,,A,A,,,A,,A,A,A,A
 bronsonlevesque,,,,G,G,N,N,N,N,N,N,N,N,N,N,N,N
@@ -17,8 +17,8 @@ dominickhussey,,G,G,,G,G,,A,A,,A,A,,A,A,A,A
 dominiquebellehumeur,G,,G,,G,G,,A,A,,,A,,A,A,A,A
 glennmacintosh,G,,G,G,G,,,,A,A,A,A,A,A,A,A,A
 grettabradley,,G,,G,,,,,,,,,,,,,
-haroldchung,,,,,G,G,,,,A,,A,,,,,
-heatherkidd,G,G,G,G,G,G,A,A,,,A,,,A,A,A,A
+haroldchung,,,,,G,,,,,A,,A,,,,,
+heatherkidd,G,G,G,G,G,G,,A,,,A,,,A,A,A,A
 hollyevans,G,,,G,,,A,A,A,A,,,A,,,,
 janetmacdonald,,G,G,G,G,G,A,A,A,A,A,A,A,A,A,A,A
 jessicapeters,,G,,,,,A,A,A,A,A,,,A,A,A,A
@@ -26,7 +26,7 @@ johnlunn,,G,G,G,G,G,A,A,A,A,A,A,A,A,A,A,A
 karimismagilov,,,,G,N,N,N,N,N,N,N,N,,,,,
 kathylarge,,,,,,,A,,,A,,,,,,,
 kellybutler,,,,G,,,A,,,,,,A,,,,
-lauralunn,,G,G,G,G,G,A,A,A,A,A,A,A,A,A,A,A
+lauralunn,,G,G,G,G,,A,A,A,A,A,A,A,A,A,A,A
 lauraszucs,,,,,,G,,,,A,A,,,,,,
 leonardmandel,G,G,G,,,,,,,,,,,,,,
 marielouisegidaro,,,,,G,,,,A,A,,,A,A,,,
@@ -51,11 +51,11 @@ corneliunitu,,,,G,,,A,A,,,,A,,A,A,A,A
 ginabies,,,,,G,G,A,A,,,A,A,A,A,A,A,A
 mikemikestcyr,,,,,,,,,,A,,,,,,,
 emilystcyr,,,,,,,,,,A,,,,,,,
-fionakalwarowskyj,,,G,G,G,G,A,A,A,A,A,A,A,A,A,A,A
+fionakalwarowskyj,,,G,G,G,,A,A,A,A,A,A,A,A,A,A,A
 johnbedard,,,G,G,,,,,,,,,,,,,
 angelasmith,,,,,G,G,A,,,A,A,A,A,A,A,A,A
 sylvieseufert,,,,,,,,,A,,A,,,A,,,A
-sheilamorrison,,,G,,,A,,,A,A,A,A,A,A,A,A,A
+sheilamorrison,,,G,,,G,,,A,A,A,A,A,A,A,A,A
 daniellebreton,,,,,G,G,A,A,A,A,A,A,A,,,A,A
 kenmartin,,,,G,N,N,N,N,N,N,N,N,N,N,N,N,N
 juliecavanagh,,,,,G,,A,A,A,A,A,A,A,A,A,A,A
