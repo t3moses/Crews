@@ -5,13 +5,13 @@ import copy
 import random
 
 
-def max_berths(boat_keys):
+def max_berths(boat_keys, event_id):
 
     # Return the maximum number of berths available.
 
     berths = 0
     for boat_key in boat_keys:
-        berths += int([boat["max occupancy"] for boat in database.boats_data if boat["key"] == boat_key][0])
+        berths += int([boat[event_id] for boat in database.boats_availability if boat["key"] == boat_key][0])
 
     return berths
 
@@ -253,7 +253,7 @@ def prioritize_sailor_keys(unprioritized_sailors):
     return prioritized_sailors
 
 
-def assign(boat_keys, sailor_keys):
+def assign(boat_keys, sailor_keys, event_id):
 
     # Create crews by adding boat_keys to an initially-empty list of crews.
 
@@ -271,7 +271,8 @@ def assign(boat_keys, sailor_keys):
     space_max = 0
     for boat_key in boat_keys:
         space_min += [int(boat["min occupancy"]) for boat in database.boats_data if boat["key"] == boat_key][0]
-        space_max += [int(boat["max occupancy"]) for boat in database.boats_data if boat["key"] == boat_key][0]
+        space_max += int([boat[event_id] for boat in database.boats_availability if boat["key"] == boat_key][0])
+        # space_max += [int(boat["max occupancy"]) for boat in database.boats_data if boat["key"] == boat_key][0]
 
     space_spread = space_max - space_min
     sailors_max = len(sailor_keys)
@@ -288,7 +289,8 @@ def assign(boat_keys, sailor_keys):
     initial_int = 0
     for i in range(len(crews) - 1):
         min = [int(boat["min occupancy"]) for boat in database.boats_data if boat["key"] == crews[i]["boat"]][0]
-        max = [int(boat["max occupancy"]) for boat in database.boats_data if boat["key"] == crews[i]["boat"]][0]
+        max = int([boat[event_id] for boat in database.boats_availability if boat["key"] == crews[i]["boat"]][0])
+        # max = [int(boat["max occupancy"]) for boat in database.boats_data if boat["key"] == crews[i]["boat"]][0]
         spread = max - min
         final_flt += float(min) + float(spread) * sailors_per_space
         final_int = math.ceil(final_flt)
@@ -300,7 +302,7 @@ def assign(boat_keys, sailor_keys):
     return crews
 
 
-def mandatory(all_boat_keys, all_sailor_keys):
+def mandatory(all_boat_keys, all_sailor_keys, event_id):
 
     # flex sailors are sailors who own a boat and who have made their boat available.
     # flex boats are boats whose owners have made themselves available to crew.
@@ -312,8 +314,8 @@ def mandatory(all_boat_keys, all_sailor_keys):
 
     # Separate the cases of over-demand, over-supply and matching supply and demand.
 
-    if len(core_sailor_keys) > max_berths(all_boat_keys): # over-demand - cut sailors
-        while len(core_sailor_keys) > max_berths(all_boat_keys):
+    if len(core_sailor_keys) > max_berths(all_boat_keys, event_id): # over-demand - cut sailors
+        while len(core_sailor_keys) > max_berths(all_boat_keys, event_id):
             redundant_sailor_key = prioritize_sailor_keys(core_sailor_keys)[-1]
             core_sailor_keys.remove(redundant_sailor_key)
             wait_sailor_keys.insert(0, redundant_sailor_key)
@@ -335,7 +337,7 @@ def mandatory(all_boat_keys, all_sailor_keys):
         sailor_keys = copy.copy(all_sailor_keys)
         boat_keys = copy.copy(core_boat_keys)
 
-        while len(sailor_keys) > max_berths(boat_keys):
+        while len(sailor_keys) > max_berths(boat_keys, event_id):
             flex_sailor_keys = [sailor_key for sailor_key in sailor_keys if sailor_key not in core_sailor_keys]
             skipper_key = order_sailor_keys(flex_sailor_keys)[-1]
             sailor_keys.remove(skipper_key)
@@ -345,7 +347,7 @@ def mandatory(all_boat_keys, all_sailor_keys):
         event_sailor_keys = copy.deepcopy(sailor_keys)
 
     event = {}
-    event["flotilla"] = assign(event_boat_keys, event_sailor_keys)
+    event["flotilla"] = assign(event_boat_keys, event_sailor_keys, event_id)
     event["wait list"] = wait_sailor_keys
 
     return event

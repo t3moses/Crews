@@ -154,6 +154,8 @@ There is no live connection between front and back end.  So user input is requir
 
 The key comprises the first and last names, concatenated and all lowercase.  Therefore, the spelling must be identical in each interaction.
 
+Boat availability is an integer indicating the number of crew spaces that the boat offers.  Initially, this is set to the maximum capacity that the owner enters.  Subsequently, this value can be modified on a per-event basis by the admin.
+
 Event calendar
 
 The event calendar contains the assignments for the season, based on the current registered boats and sailors.
@@ -207,6 +209,6 @@ The latter is intended to be provided to the boat owners taking part in the upco
 
 3. debug.txt lists the non-compliance scores for each iteration and each event date.  It also lists the causes of non-compliance in the final assignment.
 
-4. tickets.html contains a ticket for each space on a participating boat.
+4. tickets.html contains a ticket for each space on an available boat.
 
 

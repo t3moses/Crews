@@ -92,7 +92,7 @@ def assignment():
 
             available_boat_keys = []  # list of boats available on the event date.
             for available_boat in database.boats_availability:
-                if available_boat[event_id] == "Y":
+                if not available_boat[event_id] == "0":
                     available_boat_keys.append(available_boat["key"])
 
             available_sailor_keys = []  # list of sailors available on the event date.
@@ -147,7 +147,7 @@ def assignment():
 
             # Form a new flotilla by applying the mandatory rules.
 
-            extended_flotilla = mandatory.mandatory(available_boat_keys, available_sailor_keys)
+            extended_flotilla = mandatory.mandatory(available_boat_keys, available_sailor_keys, event_id)
 
             event = {}
             event["date"] = event_id

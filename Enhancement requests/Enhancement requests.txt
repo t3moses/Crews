@@ -48,11 +48,11 @@ Needs updates to AS_2_25 crew_html.py lines 40-42, 69-79.  RESOLVED.
 
 022: Provide boat owners with the flexibility to set maximum occupancy on a per-event basis.
 
-Modify the boat availability file to replace "" and "Y" with the number of available spaces, initially 0 or maximum occupancy set at registration (process.py line 198 - 201).
+Modify the boat availability file to replace "" and "Y" with the number of available spaces, i.e. 0 or the value of maximum occupancy that was set during registration (process.py line 198 - 201).
 
-Modify the assignment function to use the number of spaces available on the event date taken from the boat availability file to determine availability (assignment.py line 95).
+Modify the assignment function to use the number of spaces available on the event date taken from the boat availability file to determine availability (assignment.py line 95).  Pass event_id to the mandatory function.
 
-In mandatory.py replace boat["max occupancy"] (lines 14, 274 and 291) with max occupancy for the event.
+In mandatory.py replace boat["max occupancy"] (lines 14, 274 and 291) with occupancy for the event by replacing database.boats_data with database.boats_availability["event id"].
 
 Update the boat availability form to accept the number of available spaces on each event date.  
 

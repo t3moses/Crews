@@ -196,10 +196,9 @@ def enrol_boat(user_input):
         if boat["key"] == boat_key:
             for event_id in constants.event_ids:
                 if user_input.get(event_id) == "Available":
-                    boat[event_id] = "Y"
+                    boat[event_id] = max_occupancy
                 else:
-                    boat[event_id] = ""
-
+                    boat[event_id] = "0"
     return
 
 
