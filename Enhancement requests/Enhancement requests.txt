@@ -56,5 +56,5 @@ In mandatory.py replace boat["max occupancy"] (lines 14, 274 and 291) with occup
 
 Update the boat availability form to accept the number of available spaces on each event date.  
 
-
+023: The tickets.py html() function must use the boat maximum occupancy from database.boats_availability["event id"] to calculate the number_of_tickets in line 33.  RESOLVED.
 

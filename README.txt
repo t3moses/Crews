@@ -154,7 +154,7 @@ There is no live connection between front and back end.  So user input is requir
 
 The key comprises the first and last names, concatenated and all lowercase.  Therefore, the spelling must be identical in each interaction.
 
-Boat availability is an integer indicating the number of crew spaces that the boat offers.  Initially, this is set to the maximum capacity that the owner enters.  Subsequently, this value can be modified on a per-event basis by the admin.
+Boat availability is an integer indicating the number of crew spaces that the boat offers.  Initially, this is set to the maximum capacity that the owner enters.  Subsequently, this value can be modified on a per-event basis.
 
 Event calendar
 

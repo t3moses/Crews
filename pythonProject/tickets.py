@@ -30,7 +30,7 @@ def html(event):
 
     for crew in event["flotilla"]:
 
-        number_of_tickets = [int(boat["max occupancy"]) for boat in database.boats_data if crew["boat"] == boat["key"]][0]
+        number_of_tickets = int([boat_availability[event["date"]] for boat_availability in database.boats_availability if crew["boat"] == boat_availability["key"]][0])
         boat_display_name = [boat["display name"] for boat in database.boats_data if crew["boat"] == boat["key"]][0]
         for _ in range(number_of_tickets):
             contents += "<tr>"
