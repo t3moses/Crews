@@ -60,6 +60,8 @@ Update the boat availability form to accept the number of available spaces on ea
 
 024: Crew with a no-show record should never take priority over other applicants in an event, even if they were registered seven days in advance of the event.
 
+assignment.py line 160 is where sailor availability is set to 'G'.  The assignment on line 165 should not be executed if the current sailor availability is 'N'.
+
 025: Modify the sailor background question to better capture their competence.
 
 Offer the options: I am new to sailing, I have regularly performed the duties of crew, I have regularly performed the duties of skipper.
