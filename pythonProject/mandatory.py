@@ -255,51 +255,70 @@ def prioritize_sailor_keys(unprioritized_sailors):
 
 def assign(boat_keys, sailor_keys, event_id):
 
-    # Create crews by adding boat_keys to an initially-empty list of crews.
+    # crews is a list of crew, and crew is a dictionary containing a boat key and a list of sailors.
 
     crew = {}
     crews = []
+
+    # Create crews by adding boat_keys to an initially-empty list of crews.
 
     for boat_key in boat_keys:
         crew["boat"] = boat_key
         crews.append(copy.copy(crew))
 
-    # Calculate sailors_per_space.  Once boat minimums have been satisfied, additionsl sailors should be distributed
-    # between boats according to their remaining capacity.
+    # spaces is a list of space with one entry per boat, and space ia dictionary containing a boat key,
+    # an integer for occupied spaces and an integer for spaces that are available to be occupied.
 
-    space_min = 0
-    space_max = 0
+    space = {}
+    spaces = []
+
+    # Initialize spaces with the minimum occupancy and the remaining space on each boat.
+
     for boat_key in boat_keys:
-        space_min += [int(boat["min occupancy"]) for boat in database.boats_data if boat["key"] == boat_key][0]
-        space_max += int([boat[event_id] for boat in database.boats_availability if boat["key"] == boat_key][0])
-        # space_max += [int(boat["max occupancy"]) for boat in database.boats_data if boat["key"] == boat_key][0]
 
-    space_spread = space_max - space_min
-    sailors_max = len(sailor_keys)
-    sailors_spread = sailors_max - space_min
+        space["boat key"] = boat_key
+        space["occupied"] = [int(boat["min occupancy"]) for boat in database.boats_data if boat["key"] == boat_key][0]
+        space["unoccupied"] = int([boat[event_id] for boat in database.boats_availability if boat["key"] == \
+        boat_key][0]) - space["occupied"]
 
-    if space_spread == 0:
-        sailors_per_space = 0.0
-    else:
-        sailors_per_space = float(sailors_spread) / float(space_spread)
+        spaces.append(copy.copy(space))
 
-    # sailor_keys lists sailors in priority order.  So, assign sailors from the list in order.
+    # Calculate the total occupied spaces across all boats.  This is the sum of all the minimum occupancies.
 
-    final_flt = 0.0
-    initial_int = 0
-    for i in range(len(crews) - 1):
-        min = [int(boat["min occupancy"]) for boat in database.boats_data if boat["key"] == crews[i]["boat"]][0]
-        max = int([boat[event_id] for boat in database.boats_availability if boat["key"] == crews[i]["boat"]][0])
-        # max = [int(boat["max occupancy"]) for boat in database.boats_data if boat["key"] == crews[i]["boat"]][0]
-        spread = max - min
-        final_flt += float(min) + float(spread) * sailors_per_space
-        final_int = math.ceil(final_flt)
-        crews[i]["sailors"] = sailor_keys[initial_int : final_int]
-        initial_int = final_int
-    if len(crews) > 0:
-        crews[-1]["sailors"] = sailor_keys[initial_int : ]
+    total_occupied_spaces = 0
+    for space in spaces:
+        total_occupied_spaces += space["occupied"]
+
+    # While the number of sailors is greater than the total occupied spaces,
+    #  Make a list of all the boats with the most unoccupied spaces.
+    #  Choose a boat from the list at random.
+    #  Increment its occupied spaces and decrement its unoccupied spaces.
+    #  Adjust the total occupied spaces.
+
+    len_sailors = len(sailor_keys)
+
+    while len_sailors > total_occupied_spaces:
+        max_unoccupied_spaces = 0
+        for space in spaces:
+            if space["unoccupied"] > max_unoccupied_spaces:
+                max_unoccupied_spaces = space["unoccupied"]
+
+        most_unoccupied_boats = [space["boat key"] for space in spaces if space["unoccupied"] == max_unoccupied_spaces]
+        chosen_boat = random.choice(most_unoccupied_boats)
+        for space in spaces:
+            if space["boat key"] == chosen_boat:
+                space["occupied"] += 1
+                space["unoccupied"] -= 1
+                total_occupied_spaces += 1
+
+    initial_index = 0
+    for i in range(len(spaces)):
+        final_index = initial_index + spaces[i]["occupied"]
+        crews[i]["sailors"] = sailor_keys[initial_index : final_index]
+        initial_index = final_index
 
     return crews
+
 
 
 def mandatory(all_boat_keys, all_sailor_keys, event_id):
@@ -315,6 +334,7 @@ def mandatory(all_boat_keys, all_sailor_keys, event_id):
     # Separate the cases of over-demand, over-supply and matching supply and demand.
 
     if len(core_sailor_keys) > max_berths(all_boat_keys, event_id): # over-demand - cut sailors
+
         while len(core_sailor_keys) > max_berths(all_boat_keys, event_id):
             redundant_sailor_key = prioritize_sailor_keys(core_sailor_keys)[-1]
             core_sailor_keys.remove(redundant_sailor_key)
@@ -324,13 +344,14 @@ def mandatory(all_boat_keys, all_sailor_keys, event_id):
         event_sailor_keys = copy.deepcopy(shuffle(core_sailor_keys))
 
     elif len(all_sailor_keys) < min_berths(core_boat_keys): # over-supply - cut boats:
+
         while len(all_sailor_keys) < min_berths(core_boat_keys) and len(core_boat_keys) > 1:
             redundant_boat_key = order_boat_keys_by_loyalty(core_boat_keys)[-1]
             core_boat_keys.remove(redundant_boat_key)
             wait_boat_keys.append(redundant_boat_key)
 
         event_boat_keys = copy.deepcopy(core_boat_keys)
-        event_sailor_keys = copy.deepcopy(all_sailor_keys)
+        event_sailor_keys = copy.deepcopy(shuffle(all_sailor_keys))
 
     else: # supply and demand can match
 
@@ -344,7 +365,7 @@ def mandatory(all_boat_keys, all_sailor_keys, event_id):
             boat_keys.append(boat_from_sailor(skipper_key))
 
         event_boat_keys = copy.deepcopy(boat_keys)
-        event_sailor_keys = copy.deepcopy(sailor_keys)
+        event_sailor_keys = copy.deepcopy(shuffle(sailor_keys))
 
     event = {}
     event["flotilla"] = assign(event_boat_keys, event_sailor_keys, event_id)

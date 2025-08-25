@@ -60,11 +60,22 @@ Update the boat availability form to accept the number of available spaces on ea
 
 024: Crew with a no-show record should never take priority over other applicants in an event, even if they were registered seven days in advance of the event.
 
-assignment.py line 160 is where sailor availability is set to 'G'.  The assignment on line 165 should not be executed if the current sailor availability is 'N'.
+assignment.py line 160 is where sailor availability is set to 'G'.  The assignment on line 165 should not be executed if the current sailor availability is 'N'.  RESOLVED.
 
 025: Modify the sailor background question to better capture their competence.
 
 Offer the options: I am new to sailing, I have regularly performed the duties of crew, I have regularly performed the duties of skipper.
 
 The input is processed by process.py line 239.  RESOLVED.
+
+026: The roster for Sat Aug 30 (2025) shows Fixen with no crew.
+
+At the end of the block starting at mandatory.py line 317, the number of sailors is 20 and the number of spaces is 21, so the number of sailors on one of the boats has to be its max capacity minus one.
+
+assign() at mandatory.py line 256 distributes sailors amongst the available spaces.
+
+After the block starting at mandatory.py line 298, len(crews) == 0.  So no sailors get assigned to the last crew.
+
+The code between lines 296 and 307 needs a different approach.  RESOLVED.
+
 
