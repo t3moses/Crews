@@ -65,25 +65,29 @@ def html(event):
                     contents += "<td>" + "" + "</td>"
                 contents += "</tr>"
 
-    for row_index in range(math.ceil(len(event["wait list"]) / max_crew_size)):
-        if row_index == 0:
-            # Add a blank line here.
-            contents += "<tr>"
-            for column in range(max_crew_size + 1):
-                contents += "<td></td>"
-            contents += "</tr>"
-            contents += "<tr><td>Wait list</td>"
-        else:
-            contents += "<tr><td></td>"
-        for column_index in range(max_crew_size):
-            cell_index = max_crew_size * row_index + column_index
-            if cell_index < len(event["wait list"]):
-                wait_list_sailor_key = event["wait list"][cell_index]
-                for sailor in database.sailors_data:
-                    if wait_list_sailor_key == sailor["key"]:
-                        contents += "<td>" + sailor["display name"] + "</td>"
+    # Write the wait list to the HTML content.
+
+    if max_crew_size > 0:
+        for row_index in range(math.ceil(len(event["wait list"]) / max_crew_size)):
+            if row_index == 0:
+                # Add a blank line here.
+                contents += "<tr>"
+                for column in range(max_crew_size + 1):
+                    contents += "<td></td>"
+                contents += "</tr>"
+                contents += "<tr><td>Wait list</td>"
             else:
-                contents += "<td></td>"
+                contents += "<tr><td></td>"
+            for column_index in range(max_crew_size):
+                cell_index = max_crew_size * row_index + column_index
+                if cell_index < len(event["wait list"]):
+                    wait_list_sailor_key = event["wait list"][cell_index]
+                    for sailor in database.sailors_data:
+                        if wait_list_sailor_key == sailor["key"]:
+                            contents += "<td>" + sailor["display name"] + "</td>"
+                else:
+                    contents += "<td></td>"
+
     contents += "</tr></table>"
 
     html = top + contents + tail

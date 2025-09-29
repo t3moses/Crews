@@ -1,5 +1,5 @@
 working_directory = "/Users/timmoses/Documents/Tech/Projects/Version_controlled/Assignment/"
-event_ids = ["Fri Jun 6","Fri Jun 13","Fri Jun 20","Sat Jun 28","Fri Jul 4","Fri Jul 11","Sat Jul 19","Fri Jul 25","Fri Aug 1","Sat Aug 9","Fri Aug 15","Fri Aug 22","Sat Aug 30","Fri Sep 5","Fri Sep 12","Fri Sep 19","Fri Sep 26"]
+event_ids = ["Fri May 29", "Fri Jun 5", "Fri Jun 12", "Fri Jun 19", "Sat Jun 27", "Fri Jul 3", "Fri Jul 10", "Sat Jul 18", "Fri Jul 24", "Fri Jul 31", "Sat Aug 8", "Fri Aug 14", "Fri Aug 21", "Sat Aug 29", "Fri Sep 4", "Fri Sep 11", "Fri Sep 18", "Fri Sep 25"]
 boat_header_row = ["key","owner key","display name","email address","mobile","female","min occupancy","max occupancy","assistance"]
 sailor_header_row = ["key","display name","partner key","email address","member","skill","experience","request female","whitelist"]
 debug_header_row = ["date","interim","final","explanation"]

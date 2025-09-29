@@ -58,3 +58,5 @@ Update the boat availability form to accept the number of available spaces on ea
 
 023: The tickets.py html() function must use the boat maximum occupancy from database.boats_availability["event id"] to calculate the number_of_tickets in line 33.  RESOLVED.
 
+024: The number of available crew should be less than the minimum capacity of the flotilla before boats get cut.
+
