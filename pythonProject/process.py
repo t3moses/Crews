@@ -238,9 +238,9 @@ def enrol_sailor(user_input):
 
     if background == "I am new to sailing":
         skill = 0
-    elif background == "I have a basic qualification":
+    elif background == "I have regularly performed the duties of a crew member":
         skill = 1
-    elif background == "I am an experienced sailor":
+    elif background == "I have regularly performed the duties of a skipper":
         skill = 2
     else:
         skill = 0

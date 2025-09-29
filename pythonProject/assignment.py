@@ -154,14 +154,16 @@ def assignment():
             event["flotilla"] = extended_flotilla["flotilla"]
             event["wait list"] = extended_flotilla["wait list"]
 
-            # If the days to the event date are less than the cut_off, set the sailors' availability to 'G'.
+            # If the days to the event date are less than the cut_off, set the sailors' availability to 'G',
+            # unless it is currently 'N', in which case do not change it.
             # Leave the wait-list availability unaltered.
 
             if (event_date - current_date).days <= constants.cut_off:
                 for crew in event["flotilla"]:
                     for sailor_key in crew["sailors"]:
                         for i in range(len(database.sailors_availability)):
-                            if database.sailors_availability[i]["key"] == sailor_key:
+                            if database.sailors_availability[i]["key"] == sailor_key \
+                                    and not database.sailors_availability[i][event_id] == 'N':
                                 database.sailors_availability[i][event_id] = 'G'
 
             # Modify the flotilla by applying the discretionary rules.

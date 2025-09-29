@@ -22,7 +22,7 @@ Mandatory rules:
 - Sailors who have sailed fewer times in the current season of the program shall take priority over those who have sailed more times.
 - Boats that have sailed fewer times in the current season of the program shall take priority over those that have sailed more times.
 - Sailors (members or non-members) who have been assigned a space seven days ahead of an event will not lose their space,
-  even if higher-priority sailors enrol in the interim.  This rule does not apply in case a boat withdraws.
+  even if higher-priority sailors enrol in the interim.  This rule does not apply to sailors with a no-show record.  Neither does it apply in case a boat withdraws.
 
 Discretionary rules (in priority order):
 
@@ -69,6 +69,8 @@ The skill field contains integer values 0 .. 2.  0 for novice, 1 for basic quali
 The whitelist field contains a list of boats in the subject's whitelist.  Boats in the list must be separated by ;.
 
 In the sailor resume field, commas and newlines are escaped.
+
+The sailor histories file is populated by assignment.py with the display names of the boats to which it assigns the sailors.  Due to no-shows, standbys and switches, this may not accurately reflect the boats on which the sailors actually sailed.  To the extent possible, the admininstrator should manually edit the file after the event to reflect which sailors actually sailed on which boats.
 
 Outputs
 
